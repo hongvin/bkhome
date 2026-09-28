@@ -6,7 +6,14 @@
  * confirmed this" and "three people on Twitter think so".
  */
 
-import type { DisruptionSignal, IssueType, SignalStatus } from "@/lib/contracts";
+import type {
+  DisruptionSignal,
+  IssueType,
+  LineId,
+  SegmentId,
+  SignalStatus,
+  StationId,
+} from "@/lib/contracts";
 
 import type { CalibrationInput } from "./calibration";
 
@@ -28,8 +35,16 @@ export const ISSUE_FAMILIES: Readonly<Record<IssueType, string>> = {
   UNKNOWN: "UNKNOWN",
 };
 
+/** The subset of a signal that determines its identity. */
+export interface LocationIdentityInput {
+  issueType: IssueType;
+  segmentIds: SegmentId[];
+  lineIds: LineId[];
+  stationIds: StationId[];
+}
+
 /** Location part of a signal's identity. Unresolved signals are keyed by line. */
-export function locationIdentityKey(signal: DisruptionSignal): string {
+export function locationIdentityKey(signal: LocationIdentityInput): string {
   if (signal.segmentIds.length > 0) return signal.segmentIds.join("|");
   if (signal.lineIds.length > 0) return `LINE:${signal.lineIds.join("|")}`;
   if (signal.stationIds.length > 0) return `STN:${signal.stationIds.join("|")}`;
@@ -41,7 +56,7 @@ export function locationIdentityKey(signal: DisruptionSignal): string {
  * window so that a later report of the same thing updates one signal instead of
  * creating a second one.
  */
-export function signalIdentityKey(signal: DisruptionSignal): string {
+export function signalIdentityKey(signal: LocationIdentityInput): string {
   return `${ISSUE_FAMILIES[signal.issueType]}|${locationIdentityKey(signal)}`;
 }
 
@@ -98,7 +113,14 @@ export function mergeStatus(previous: SignalStatus, incoming: SignalStatus): Sig
   return STATUS_RANK[incoming] >= STATUS_RANK[previous] ? incoming : previous;
 }
 
-/** Minutes between first sighting and public operator acknowledgement. */
+/**
+ * Minutes between first sighting and public operator acknowledgement.
+ *
+ * Clamped at zero: a negative value would mean the operator announced it before
+ * we saw anything, i.e. this pipeline provided NO early warning. Reporting that
+ * as "0 minutes of lead time" is the honest statement; a negative number would
+ * read as a bug and a fudged positive would be a lie.
+ */
 export function leadTimeMinutes(
   firstSeenAt: string,
   operatorNotifiedAt: string | null,
@@ -106,7 +128,7 @@ export function leadTimeMinutes(
   if (!operatorNotifiedAt) return null;
   const delta = Date.parse(operatorNotifiedAt) - Date.parse(firstSeenAt);
   if (!Number.isFinite(delta)) return null;
-  return Math.round((delta / 60_000) * 10) / 10;
+  return Math.max(0, Math.round((delta / 60_000) * 10) / 10);
 }
 
 /** Evidence counts carried on the VERIFY provenance hop so a merge can re-derive them. */

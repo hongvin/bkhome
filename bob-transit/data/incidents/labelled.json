@@ -9,13 +9,13 @@
   "plannedServiceChanges": 2,
   "nonIncidents": 119,
   "unreadable": 0,
-  "overridden": 29,
+  "overridden": 34,
   "duplicates": 3,
   "withExplicitOnset": 21,
   "withDateOnlyOnset": 4,
   "withDatelineOnlyOnset": 16,
   "inconsistentOnset": 1,
-  "distinctEvents": 32,
+  "distinctEvents": 28,
   "datelineDisagrees": 3
  },
  "incidents": [
@@ -31,9 +31,11 @@
     "KJ"
    ],
    "stationIds": [
+    "KJ23",
     "KJ26"
    ],
    "stationNames": [
+    "TAMAN BAHAGIA",
     "ARA DAMANSARA"
    ],
    "issueType": "SIGNAL_FAULT",
@@ -63,10 +65,16 @@
     "KGL"
    ],
    "stationIds": [
-    "KG12"
+    "KG12",
+    "KG14"
    ],
    "stationNames": [
     "PHILEO DAMANSARA",
+    "PHILEO DAMANSARA",
+    "SEMANTAN",
+    "PHILEO DAMANSARA",
+    "SEMANTAN",
+    "SEMANTAN",
     "PHILEO DAMANSARA"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -98,14 +106,17 @@
    ],
    "stationIds": [
     "KG12",
-    "KG05",
-    "KG14"
+    "KG14",
+    "KG05"
    ],
    "stationNames": [
     "PHILEO DAMANSARA",
     "PHILEO DAMANSARA",
     "PHILEO DAMANSARA",
+    "PHILEO DAMANSARA",
+    "SEMANTAN",
     "KWASA SENTRAL",
+    "PHILEO DAMANSARA",
     "SEMANTAN"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -199,10 +210,12 @@
     "KJ"
    ],
    "stationIds": [
-    "KJ20"
+    "KJ20",
+    "KJ19"
    ],
    "stationNames": [
     "TAMAN JAYA",
+    "UNIVERSITI",
     "TAMAN JAYA"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -233,10 +246,12 @@
     "PH"
    ],
    "stationIds": [
-    "SP14"
+    "SP14",
+    "SP25"
    ],
    "stationNames": [
-    "BANDAR TUN RAZAK"
+    "BANDAR TUN RAZAK",
+    "PUSAT BANDAR PUCHONG"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
    "severity": "MAJOR",
@@ -307,10 +322,12 @@
    ],
    "stationNames": [
     "KL SENTRAL",
+    "KL SENTRAL",
     "KAMPUNG BARU",
     "UNIVERSITI",
     "KL SENTRAL",
     "BANGSAR",
+    "KLCC",
     "BANGSAR",
     "KLCC"
    ],
@@ -375,10 +392,12 @@
     "KJ"
    ],
    "stationIds": [
-    "KJ9"
+    "KJ9",
+    "KJ10"
    ],
    "stationNames": [
-    "AMPANG PARK"
+    "AMPANG PARK",
+    "KLCC"
    ],
    "issueType": "CROWDING",
    "severity": "MAJOR",
@@ -412,8 +431,11 @@
    ],
    "stationNames": [
     "JELATEK",
+    "KLCC",
     "JELATEK",
     "JELATEK",
+    "JELATEK",
+    "KLCC",
     "KLCC"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -445,13 +467,19 @@
    ],
    "stationIds": [
     "KJ15",
+    "KG16",
     "KJ8",
-    "KJ10"
+    "KJ7",
+    "KJ10",
+    "KJ5"
    ],
    "stationNames": [
     "KL SENTRAL",
+    "PASAR SENI",
     "DAMAI",
-    "KLCC"
+    "DATO KERAMAT",
+    "KLCC",
+    "SETIAWANGSA"
    ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
@@ -509,13 +537,20 @@
    ],
    "stationIds": [
     "AG6",
+    "AG7",
     "AG8",
     "AG1"
    ],
    "stationNames": [
     "BANDARAYA",
+    "MASJID JAMEK",
+    "BANDARAYA",
+    "BANDARAYA",
     "PLAZA RAKYAT",
+    "PLAZA RAKYAT",
+    "BANDARAYA",
     "SENTUL TIMUR",
+    "BANDARAYA",
     "BANDARAYA"
    ],
    "issueType": "TRACK_FAULT",
@@ -523,9 +558,9 @@
    "publishedAt": "2023-01-26T15:10:03.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2023-01-27",
-   "onsetAt": "2023-01-26T16:00:00.000Z",
+   "onsetAt": "2023-01-25T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2023-01-27",
+   "onsetEvidence": "2023-01-26",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/01/SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
@@ -547,24 +582,37 @@
    ],
    "stationIds": [
     "AG6",
+    "AG7",
     "KJ37",
+    "AG18",
     "AG9",
     "AG1",
     "AG8"
    ],
    "stationNames": [
     "BANDARAYA",
+    "BANDARAYA",
+    "MASJID JAMEK",
+    "BANDARAYA",
     "PUTRA HEIGHTS",
+    "AMPANG",
     "HANG TUAH",
     "SENTUL TIMUR",
     "BANDARAYA",
     "HANG TUAH",
+    "MASJID JAMEK",
     "BANDARAYA",
     "PLAZA RAKYAT",
+    "PLAZA RAKYAT",
+    "BANDARAYA",
     "SENTUL TIMUR",
     "BANDARAYA",
+    "BANDARAYA",
+    "SENTUL TIMUR",
     "HANG TUAH",
-    "BANDARAYA"
+    "BANDARAYA",
+    "BANDARAYA",
+    "HANG TUAH"
    ],
    "issueType": "TRACK_FAULT",
    "severity": "SEVERE",
@@ -586,15 +634,25 @@
    "filename": "KENYATAAN-MEDIA-OPERASI-ALTERNATIF-PERKHIDMATAN-LRT-LALUAN-AMPANG-BERJALAN-LANCAR_FINAL.pdf",
    "contentId": "15a76cfd2e28",
    "kind": "INCIDENT",
-   "kindReason": "override: Rule said NON_INCIDENT on 'BERJALAN LANCAR'. It is a service update during the Bandaraya viaduct closure, i.e. the same unplanned disruption.",
+   "kindReason": "override: Alternative-operation update during the same Bandaraya viaduct closure.",
    "isIncident": true,
    "headline": "1 Untuk Siaran Segera OPERASI PERKHIDMATAN ALTERNATIF LRT LALUAN AMPANG/SRI PETALING BERJALAN LANCAR Para penumpang dinasihat untuk merancang perjalanan",
    "lineIds": [
     "AG",
     "PH"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG9",
+    "AG7",
+    "AG6"
+   ],
+   "stationNames": [
+    "HANG TUAH",
+    "HANG TUAH",
+    "MASJID JAMEK",
+    "HANG TUAH",
+    "BANDARAYA"
+   ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
    "publishedAt": "2023-01-30T09:00:33.000Z",
@@ -609,22 +667,29 @@
    "waybackUrl": "https://web.archive.org/web/20241218115936id_/https://myrapid.com.my/wp-content/uploads/2023/01/KENYATAAN-MEDIA-OPERASI-ALTERNATIF-PERKHIDMATAN-LRT-LALUAN-AMPANG-BERJALAN-LANCAR_FINAL.pdf",
    "archiveTimestamp": "20241218115936",
    "textLength": 2138,
-   "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
-   "overrideNote": "Rule said NON_INCIDENT on 'BERJALAN LANCAR'. It is a service update during the Bandaraya viaduct closure, i.e. the same unplanned disruption."
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Alternative-operation update during the same Bandaraya viaduct closure."
   },
   {
    "id": "KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL-1",
    "filename": "KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL-1.pdf",
    "contentId": "7a0b7a2b52ec",
    "kind": "INCIDENT",
-   "kindReason": "override: Rule said NON_INCIDENT on 'SIASATAN MENYELURUH'. It reports the ongoing suspension of AG/PH service between Masjid Jamek and Bandaraya after the viaduct cracked.",
+   "kindReason": "override: Investigation update on the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera PERKHIDMATAN LRT LALUAN AMPANG: SIASATAN MENYELURUH SEDANG DIJALANKAN",
    "lineIds": [
     "AG"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG6",
+    "AG7"
+   ],
+   "stationNames": [
+    "BANDARAYA",
+    "BANDARAYA",
+    "MASJID JAMEK"
+   ],
    "issueType": "TRACK_FAULT",
    "severity": "INFO",
    "publishedAt": "2023-02-01T09:55:00.000Z",
@@ -639,22 +704,31 @@
    "waybackUrl": "https://web.archive.org/web/20241218120603id_/https://myrapid.com.my/wp-content/uploads/2023/02/KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL-1.pdf",
    "archiveTimestamp": "20241218120603",
    "textLength": 1954,
-   "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
-   "overrideNote": "Rule said NON_INCIDENT on 'SIASATAN MENYELURUH'. It reports the ongoing suspension of AG/PH service between Masjid Jamek and Bandaraya after the viaduct cracked."
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Investigation update on the same Bandaraya viaduct disruption."
   },
   {
    "id": "RAPID-BUS-SIARAN-MEDIA-RAPID-BUS-MENDAPAT-SOKONGAN-DBKL_v4",
    "filename": "RAPID-BUS-SIARAN-MEDIA-RAPID-BUS-MENDAPAT-SOKONGAN-DBKL_v4.pdf",
    "contentId": "a8e95c702fb0",
    "kind": "INCIDENT",
-   "kindReason": "override: Follow-up on the Ampang corridor disruption. Issue type restated to the underlying cause (damaged structure at Bandaraya) rather than the bus-bridging subject of the release.",
+   "kindReason": "override: Bus-bridging update for the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera KEMASKINI PERKHIDMATAN LRT LALUAN AMPANG: RAPID BUS MENDAPAT SOKONGAN DBKL BAGI MELANCARKAN PERJALANAN BAS",
    "lineIds": [
     "AG"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG9",
+    "AG6",
+    "AG7"
+   ],
+   "stationNames": [
+    "HANG TUAH",
+    "BANDARAYA",
+    "MASJID JAMEK",
+    "BANDARAYA"
+   ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
    "publishedAt": "2023-02-02T10:30:47.000Z",
@@ -669,22 +743,26 @@
    "waybackUrl": "https://web.archive.org/web/20230202112009id_/https://myrapid.com.my/wp-content/uploads/2023/02/RAPID-BUS-SIARAN-MEDIA-RAPID-BUS-MENDAPAT-SOKONGAN-DBKL_v4.pdf",
    "archiveTimestamp": "20230202112009",
    "textLength": 1990,
-   "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
-   "overrideNote": "Follow-up on the Ampang corridor disruption. Issue type restated to the underlying cause (damaged structure at Bandaraya) rather than the bus-bridging subject of the release."
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Bus-bridging update for the same Bandaraya viaduct disruption."
   },
   {
    "id": "Siaran-Media-9-Feb-Siasatan-Ke-Atas-Punca-Kerosakan-Yang-Menyebabkan-Gangguan-Perkhidmatan-LRT-Laluan-Ampang-Masih-Lagi-Dijalankan",
    "filename": "Siaran-Media-9-Feb-Siasatan-Ke-Atas-Punca-Kerosakan-Yang-Menyebabkan-Gangguan-Perkhidmatan-LRT-Laluan-Ampang-Masih-Lagi-Dijalankan.pdf",
    "contentId": "ca1edb4dd51d",
    "kind": "INCIDENT",
-   "kindReason": "disruption markers (2) with line(s) AG",
+   "kindReason": "override: Cause investigation for the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Muka 1 daripada 1 Untuk siaran segera SIASATAN KEATAS PUNCA KEROSAKAN YANG MENYEBABKAN GANGGUAN PERKHIDMATAN LRT LALUAN AMPANG MASIH LAGI DIJALANKAN Kami merujuk kepada laporan berita yang disiarkan oleh sebuah portal berbahasa Inggeris pa…",
    "lineIds": [
     "AG"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG6"
+   ],
+   "stationNames": [
+    "BANDARAYA"
+   ],
    "issueType": "UNKNOWN",
    "severity": "MAJOR",
    "publishedAt": "2023-02-09T06:20:22.000Z",
@@ -698,22 +776,31 @@
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/02/Siaran-Media-9-Feb-Siasatan-Ke-Atas-Punca-Kerosakan-Yang-Menyebabkan-Gangguan-Perkhidmatan-LRT-Laluan-Ampang-Masih-Lagi-Dijalankan.pdf",
    "waybackUrl": "https://web.archive.org/web/20230210021600id_/https://myrapid.com.my/wp-content/uploads/2023/02/Siaran-Media-9-Feb-Siasatan-Ke-Atas-Punca-Kerosakan-Yang-Menyebabkan-Gangguan-Perkhidmatan-LRT-Laluan-Ampang-Masih-Lagi-Dijalankan.pdf",
    "archiveTimestamp": "20230210021600",
-   "textLength": 1683
+   "textLength": 1683,
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Cause investigation for the same Bandaraya viaduct disruption."
   },
   {
    "id": "KENYATAAN-MEDIA-SIASATAN-LRT-AMPANG.SRI-PETALING-SELESAI_FINAL",
    "filename": "KENYATAAN-MEDIA-SIASATAN-LRT-AMPANG.SRI-PETALING-SELESAI_FINAL.pdf",
    "contentId": "7320244c3b2c",
    "kind": "INCIDENT",
-   "kindReason": "override: Rule said NON_INCIDENT on 'SIASATAN ... SELESAI'. It states service was suspended between Masjid Jamek and Bandaraya since 27 Jan 2023 — a real disruption.",
+   "kindReason": "override: Investigation concluded for the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera SIASATAN LRT AMPANG/SRI PETALING SELESAI",
    "lineIds": [
     "AG",
     "PH"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG6",
+    "AG7"
+   ],
+   "stationNames": [
+    "BANDARAYA",
+    "MASJID JAMEK",
+    "BANDARAYA"
+   ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
    "publishedAt": "2023-02-22T02:28:13.000Z",
@@ -728,23 +815,33 @@
    "waybackUrl": "https://web.archive.org/web/20230306221454id_/https://myrapid.com.my/wp-content/uploads/2023/02/KENYATAAN-MEDIA-SIASATAN-LRT-AMPANG.SRI-PETALING-SELESAI_FINAL.pdf",
    "archiveTimestamp": "20230306221454",
    "textLength": 2648,
-   "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
-   "overrideNote": "Rule said NON_INCIDENT on 'SIASATAN ... SELESAI'. It states service was suspended between Masjid Jamek and Bandaraya since 27 Jan 2023 — a real disruption."
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Investigation concluded for the same Bandaraya viaduct disruption."
   },
   {
    "id": "SIARAN-MEDIA-PENGURANGAN-JUMLAH-TREN-YANG-BEROPERASI-DI-ANTARA-SENTUL-TIMUR-DAN-BANDARAYA_FINAL",
    "filename": "SIARAN-MEDIA-PENGURANGAN-JUMLAH-TREN-YANG-BEROPERASI-DI-ANTARA-SENTUL-TIMUR-DAN-BANDARAYA_FINAL.pdf",
    "contentId": "9b909fea75bc",
    "kind": "INCIDENT",
-   "kindReason": "override: Rule said NON_INCIDENT. Trains withdrawn from service and headway cut to 12 min because the Bandaraya structure and track are damaged — a service degradation, not a planned change.",
+   "kindReason": "override: Service reduction caused by the same Bandaraya viaduct damage.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera PERKHIDMATAN LRT LALUAN AMPANG/SRI PETALING: PENGURANGAN JUMLAH TREN YANG BEROPERASI DI ANTARA STESEN SENTUL TIMUR DAN BANDARAYA Kekerapan tren berkurangan kepada setiap 12 minit",
    "lineIds": [
     "AG",
     "PH"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG1",
+    "AG6"
+   ],
+   "stationNames": [
+    "SENTUL TIMUR",
+    "SENTUL TIMUR",
+    "BANDARAYA",
+    "BANDARAYA",
+    "SENTUL TIMUR",
+    "SENTUL TIMUR"
+   ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
    "publishedAt": "2023-02-23T10:37:41.000Z",
@@ -759,23 +856,31 @@
    "waybackUrl": "https://web.archive.org/web/20230320054633id_/https://myrapid.com.my/wp-content/uploads/2023/02/SIARAN-MEDIA-PENGURANGAN-JUMLAH-TREN-YANG-BEROPERASI-DI-ANTARA-SENTUL-TIMUR-DAN-BANDARAYA_FINAL.pdf",
    "archiveTimestamp": "20230320054633",
    "textLength": 1714,
-   "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
-   "overrideNote": "Rule said NON_INCIDENT. Trains withdrawn from service and headway cut to 12 min because the Bandaraya structure and track are damaged — a service degradation, not a planned change."
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Service reduction caused by the same Bandaraya viaduct damage."
   },
   {
    "id": "SIARAN-MEDIA-PERKHIDMATAN-BAS-PERANTARA-DIPERTINGKATKAN_FINAL",
    "filename": "SIARAN-MEDIA-PERKHIDMATAN-BAS-PERANTARA-DIPERTINGKATKAN_FINAL.pdf",
    "contentId": "abbd75ed294e",
    "kind": "INCIDENT",
-   "kindReason": "disruption markers (3) with line(s) AG,PH",
+   "kindReason": "override: Bus-bridging update for the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera LRT LALUAN AMPANG/SRI PETALING: PERKHIDMATAN BAS PERANTARA LRT11 DIPERTINGKATKAN Kekerapan tren di antara Sentul Timur dan Bandaraya akan dikurangkan atas faktor keselamatan",
    "lineIds": [
     "AG",
     "PH"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG1",
+    "AG6"
+   ],
+   "stationNames": [
+    "SENTUL TIMUR",
+    "SENTUL TIMUR",
+    "SENTUL TIMUR",
+    "BANDARAYA"
+   ],
    "issueType": "VEHICLE_BREAKDOWN",
    "severity": "SEVERE",
    "publishedAt": "2023-02-25T17:15:17.000Z",
@@ -789,7 +894,9 @@
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/02/SIARAN-MEDIA-PERKHIDMATAN-BAS-PERANTARA-DIPERTINGKATKAN_FINAL.pdf",
    "waybackUrl": "https://web.archive.org/web/20230320211205id_/https://myrapid.com.my/wp-content/uploads/2023/02/SIARAN-MEDIA-PERKHIDMATAN-BAS-PERANTARA-DIPERTINGKATKAN_FINAL.pdf",
    "archiveTimestamp": "20230320211205",
-   "textLength": 2302
+   "textLength": 2302,
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Bus-bridging update for the same Bandaraya viaduct disruption."
   },
   {
    "id": "RAPID-RAIL-KENYATAAN-MEDIA-GANGGUAN-BEKALAN-KUASA-JEJAS-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-ANTARA-STESEN-LRT-AMPANG-PARK-DAN-STESEN-LRT-MASJID-JAMEK",
@@ -803,11 +910,15 @@
     "KJ"
    ],
    "stationIds": [
+    "KJ9",
     "AG7",
     "KG16",
     "KJ8"
    ],
    "stationNames": [
+    "AMPANG PARK",
+    "MASJID JAMEK",
+    "AMPANG PARK",
     "MASJID JAMEK",
     "PASAR SENI",
     "DAMAI"
@@ -841,12 +952,17 @@
    ],
    "stationIds": [
     "KJ9",
-    "KG16"
+    "AG7",
+    "KG16",
+    "KJ12"
    ],
    "stationNames": [
     "AMPANG PARK",
+    "MASJID JAMEK",
     "PASAR SENI",
-    "PASAR SENI"
+    "DANG WANGI",
+    "PASAR SENI",
+    "DANG WANGI"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
    "severity": "SEVERE",
@@ -875,10 +991,14 @@
     "KJ"
    ],
    "stationIds": [
-    "KJ2"
+    "KJ2",
+    "KJ1"
    ],
    "stationNames": [
-    "TAMAN MELATI"
+    "TAMAN MELATI",
+    "GOMBAK",
+    "TAMAN MELATI",
+    "GOMBAK"
    ],
    "issueType": "SIGNAL_FAULT",
    "severity": "MAJOR",
@@ -901,7 +1021,7 @@
    "filename": "Kenyataan-Media-RAPID-RAIL-PERTINGKATKAN-USAHA-MITIGASI-UNTUK-ATASI-GANGGUAN-PERKHIDMATAN-REL_310323.pdf",
    "contentId": "c572bf471ff8",
    "kind": "INCIDENT",
-   "kindReason": "disruption markers (8) with line(s) KJ,KGL,PYL,MR",
+   "kindReason": "override: Retrospective that re-states the 22 Mar 2023 Kelana Jaya signalling failure already reported in the 22 Mar statement.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera RAPID RAIL PERTINGKATKAN USAHA MITIGASI UNTUK ATASI GANGGUAN PERKHIDMATAN REL",
    "lineIds": [
@@ -911,20 +1031,30 @@
     "MR"
    ],
    "stationIds": [
-    "PY04",
+    "KTM_SUNGAI_BULOH",
+    "PY05",
     "KG04",
+    "PY09",
     "KG16",
+    "KG20",
     "KJ23",
+    "KJ22",
     "PY13",
-    "KJ2"
+    "KJ2",
+    "KJ1"
    ],
    "stationNames": [
     "SUNGAI BULOH",
+    "DAMANSARA DAMAI",
     "KWASA DAMANSARA",
+    "METRO PRIMA",
     "PASAR SENI",
+    "TUN RAZAK EXCHANGE",
     "TAMAN BAHAGIA",
+    "TAMAN PARAMOUNT",
     "KAMPUNG BATU",
-    "TAMAN MELATI"
+    "TAMAN MELATI",
+    "GOMBAK"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
    "severity": "MAJOR",
@@ -939,7 +1069,9 @@
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/03/Kenyataan-Media-RAPID-RAIL-PERTINGKATKAN-USAHA-MITIGASI-UNTUK-ATASI-GANGGUAN-PERKHIDMATAN-REL_310323.pdf",
    "waybackUrl": "https://web.archive.org/web/20230331103355id_/https://myrapid.com.my/wp-content/uploads/2023/03/Kenyataan-Media-RAPID-RAIL-PERTINGKATKAN-USAHA-MITIGASI-UNTUK-ATASI-GANGGUAN-PERKHIDMATAN-REL_310323.pdf",
    "archiveTimestamp": "20230331103355",
-   "textLength": 5754
+   "textLength": 5754,
+   "sameEventAs": "RAPID-RAIL-KENYATAAN-MEDIA-SISTEM-SEMBOYAN-YANG-DIPANAH-PETIR-GANGGU-PERKHIDMATAN-LALUAN-KELANA-JAYA-DI-ANTARA-STESEN-GOMBAK-DAN-TAMAN-MELATI_v1.pdf",
+   "overrideNote": "Retrospective that re-states the 22 Mar 2023 Kelana Jaya signalling failure already reported in the 22 Mar statement."
   },
   {
    "id": "Rapid-Rail-Kenyataan-Media-GANGGUAN-TEKNIKAL-TREN-JEJAS-JADUAL-PERKHIDMATAN-MRT-LALUAN-KAJANG_190523_V2",
@@ -955,11 +1087,13 @@
    "stationIds": [
     "KG16",
     "KG15",
+    "AG13",
     "KG30"
    ],
    "stationNames": [
     "PASAR SENI",
     "MUZIUM NEGARA",
+    "MALURI",
     "BATU 11 CHERAS"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -982,7 +1116,7 @@
    "filename": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-SRI-PETALING-OPERASI-NORMAL-AKAN-DISAMBUNG-SEMULA-PADA-BULAN-FEBRUARI-2024.pdf",
    "contentId": "59158f4ddc58",
    "kind": "INCIDENT",
-   "kindReason": "disruption markers (1) with line(s) AG,PH",
+   "kindReason": "override: Recovery timeline for the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera PERKHIDMATAN LRT LALUAN AMPANG/SRI PETALING: OPERASI NORMAL AKAN DISAMBUNG SEMULA PADA BULAN FEBRUARI 2024",
    "lineIds": [
@@ -1008,7 +1142,9 @@
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/09/SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-SRI-PETALING-OPERASI-NORMAL-AKAN-DISAMBUNG-SEMULA-PADA-BULAN-FEBRUARI-2024.pdf",
    "waybackUrl": "https://web.archive.org/web/20240106125124id_/https://myrapid.com.my/wp-content/uploads/2023/09/SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-SRI-PETALING-OPERASI-NORMAL-AKAN-DISAMBUNG-SEMULA-PADA-BULAN-FEBRUARI-2024.pdf",
    "archiveTimestamp": "20240106125124",
-   "textLength": 2232
+   "textLength": 2232,
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Recovery timeline for the same Bandaraya viaduct disruption."
   },
   {
    "id": "SIARAN-MEDIA-GANGGUAN-TEKNIKAL-JEJAS-JADUAL-PERKHIDMATAN-MRT-LALUAN-KAJANG-DAN-MRT-LALUAN-PUTRAJAYA",
@@ -1024,17 +1160,25 @@
    ],
    "stationIds": [
     "KG12",
-    "PY04",
+    "KG13",
+    "KTM_SUNGAI_BULOH",
+    "PY05",
     "KG04",
-    "PY03"
+    "PY03",
+    "PY04"
    ],
    "stationNames": [
     "PHILEO DAMANSARA",
+    "PUSAT BANDAR DAMANSARA",
     "PHILEO DAMANSARA",
+    "PUSAT BANDAR DAMANSARA",
     "SUNGAI BULOH",
+    "DAMANSARA DAMAI",
     "SUNGAI BULOH",
+    "DAMANSARA DAMAI",
     "KWASA DAMANSARA",
-    "KAMPUNG SELAMAT"
+    "KAMPUNG SELAMAT",
+    "SUNGAI BULOH"
    ],
    "issueType": "SIGNAL_FAULT",
    "severity": "MAJOR",
@@ -1091,7 +1235,7 @@
    "filename": "RAPID-RAIL-SIARAN-MEDIA-PENUMPANG-LRT-DARI-ARAH-AMPANG-DAN-PUTRA-HEIGHTS-BOLEH-TERUS-KE-MASJID-JAMEK-BERMULA-1-FEBRUARI-2024_FINAL1.pdf",
    "contentId": "49ee70b76ed1",
    "kind": "INCIDENT",
-   "kindReason": "override: Rule said NON_INCIDENT. Through-running restored after the Bandaraya closure — a restoration notice for the same unplanned disruption.",
+   "kindReason": "override: Through-running restored after the same Bandaraya viaduct disruption.",
    "isIncident": true,
    "headline": "Untuk Siaran Segera PENUMPANG LRT DARI ARAH AMPANG DAN PUTRA HEIGHTS BOLEH TERUS KE MASJID JAMEK BERMULA 1 FEBRUARI 2024 • Penumpang tidak perlu turun di Stesen Hang Tuah bagi mendapatkan tren perantara untuk ke Masjid Jamek • Rapid Rail a…",
    "lineIds": [
@@ -1106,13 +1250,17 @@
    "stationNames": [
     "HANG TUAH",
     "MASJID JAMEK",
+    "BANDARAYA",
     "MASJID JAMEK",
     "HANG TUAH",
     "MASJID JAMEK",
     "MASJID JAMEK",
-    "MASJID JAMEK",
     "BANDARAYA",
     "MASJID JAMEK",
+    "BANDARAYA",
+    "BANDARAYA",
+    "MASJID JAMEK",
+    "BANDARAYA",
     "BANDARAYA"
    ],
    "issueType": "TRACK_FAULT",
@@ -1129,8 +1277,8 @@
    "waybackUrl": "https://web.archive.org/web/20240417041318id_/https://myrapid.com.my/wp-content/uploads/2024/01/RAPID-RAIL-SIARAN-MEDIA-PENUMPANG-LRT-DARI-ARAH-AMPANG-DAN-PUTRA-HEIGHTS-BOLEH-TERUS-KE-MASJID-JAMEK-BERMULA-1-FEBRUARI-2024_FINAL1.pdf",
    "archiveTimestamp": "20240417041318",
    "textLength": 2881,
-   "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
-   "overrideNote": "Rule said NON_INCIDENT. Through-running restored after the Bandaraya closure — a restoration notice for the same unplanned disruption."
+   "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+   "overrideNote": "Through-running restored after the same Bandaraya viaduct disruption."
   },
   {
    "id": "Rapid-Rail-Kenyataan-Media-GANGGUAN-PERKHIDMATAN-LALUAN-MONOREL-AKIBAT-DAHAN-POKOK-TUMBANG-KE-ATAS-LANDASAN-TREN",
@@ -1145,11 +1293,13 @@
    ],
    "stationIds": [
     "MR7",
-    "KJ15"
+    "KJ15",
+    "MR9"
    ],
    "stationNames": [
     "RAJA CHULAN",
-    "KL SENTRAL"
+    "KL SENTRAL",
+    "MEDAN TUANKU"
    ],
    "issueType": "WEATHER",
    "severity": "MAJOR",
@@ -1218,14 +1368,18 @@
     "PH"
    ],
    "stationIds": [
-    "AG5",
     "AG4",
+    "AG5",
+    "AG1",
     "AG18"
    ],
    "stationNames": [
-    "SULTAN ISMAIL",
     "PWTC",
     "SULTAN ISMAIL",
+    "SENTUL TIMUR",
+    "PWTC",
+    "SULTAN ISMAIL",
+    "SENTUL TIMUR",
     "AMPANG",
     "SULTAN ISMAIL"
    ],
@@ -1257,10 +1411,12 @@
     "KJ"
    ],
    "stationIds": [
-    "KG16"
+    "KG16",
+    "KJ15"
    ],
    "stationNames": [
-    "PASAR SENI"
+    "PASAR SENI",
+    "KL SENTRAL"
    ],
    "issueType": "ROAD_BLOCKED",
    "severity": "MINOR",
@@ -1295,7 +1451,9 @@
    "stationNames": [
     "GOMBAK",
     "WANGSA MAJU",
+    "WANGSA MAJU",
     "GOMBAK",
+    "WANGSA MAJU",
     "WANGSA MAJU"
    ],
    "issueType": "TRACK_FAULT",
@@ -1326,10 +1484,12 @@
     "KJ"
    ],
    "stationIds": [
-    "KJ3"
+    "KJ3",
+    "KJ1"
    ],
    "stationNames": [
-    "WANGSA MAJU"
+    "WANGSA MAJU",
+    "GOMBAK"
    ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
@@ -1360,11 +1520,13 @@
     "KGL"
    ],
    "stationIds": [
-    "KG09"
+    "KG09",
+    "KG08"
    ],
    "stationNames": [
     "BANDAR UTAMA",
-    "BANDAR UTAMA"
+    "BANDAR UTAMA",
+    "MUTIARA DAMANSARA"
    ],
    "issueType": "TRACK_FAULT",
    "severity": "MAJOR",
@@ -1394,18 +1556,24 @@
     "KJ"
    ],
    "stationIds": [
+    "KJ10",
     "PY21",
     "KJ9",
-    "KJ10"
+    "KJ12"
    ],
    "stationNames": [
-    "PERSIARAN KLCC",
-    "AMPANG PARK",
-    "KLCC",
     "KLCC",
     "PERSIARAN KLCC",
     "AMPANG PARK",
-    "KLCC"
+    "AMPANG PARK",
+    "KLCC",
+    "DANG WANGI",
+    "KLCC",
+    "PERSIARAN KLCC",
+    "AMPANG PARK",
+    "AMPANG PARK",
+    "KLCC",
+    "DANG WANGI"
    ],
    "issueType": "UNKNOWN",
    "severity": "SEVERE",
@@ -1435,14 +1603,16 @@
     "KJ"
    ],
    "stationIds": [
-    "KJ9",
     "KJ10",
+    "KJ9",
     "KJ12",
     "MR8"
    ],
    "stationNames": [
+    "KLCC",
     "AMPANG PARK",
     "KLCC",
+    "DANG WANGI",
     "KLCC",
     "DANG WANGI",
     "AMPANG PARK",
@@ -1504,8 +1674,12 @@
    "isIncident": false,
    "headline": "Untuk Siaran Segera JOM KE MOTOGP 2023 BERSAMA !",
    "lineIds": [],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "KJ10"
+   ],
+   "stationNames": [
+    "KLCC"
+   ],
    "issueType": "UNKNOWN",
    "severity": "INFO",
    "publishedAt": "2023-10-28T05:24:10.000Z",
@@ -1535,19 +1709,25 @@
    ],
    "stationIds": [
     "KG04",
-    "PY03",
+    "PY13",
     "PY04",
+    "PY03",
+    "KTM_SUNGAI_BULOH",
     "KG05"
    ],
    "stationNames": [
     "KWASA DAMANSARA",
+    "KAMPUNG BATU",
     "KWASA DAMANSARA",
+    "SUNGAI BULOH",
     "KWASA DAMANSARA",
     "KAMPUNG SELAMAT",
     "SUNGAI BULOH",
     "SUNGAI BULOH",
+    "SUNGAI BULOH",
     "KWASA SENTRAL",
     "KWASA SENTRAL",
+    "SUNGAI BULOH",
     "KAMPUNG SELAMAT",
     "KWASA DAMANSARA"
    ],
@@ -1706,9 +1886,9 @@
    "publishedAt": "2022-04-05T08:33:24.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2022-04-06",
-   "onsetAt": "2022-04-05T16:00:00.000Z",
+   "onsetAt": "2022-04-04T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2022-04-06",
+   "onsetEvidence": "2022-04-05",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2022/04/KENYATAAN-MEDIA-PERCUBAAN-PENGGUNAAN-BAS-ELEKTRIK-UNTUK-OPERASI-BAS-RAPID-KL.pdf",
@@ -1734,8 +1914,10 @@
    ],
    "stationNames": [
     "TAMAN JAYA",
+    "TAMAN JAYA",
     "ASIA JAYA",
     "TAMAN BAHAGIA",
+    "TAMAN JAYA",
     "ASIA JAYA"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -1799,9 +1981,9 @@
    "publishedAt": "2022-07-23T03:00:26.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2022-07-25",
-   "onsetAt": "2022-07-24T16:00:00.000Z",
+   "onsetAt": "2022-07-22T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2022-07-25",
+   "onsetEvidence": "2022-07-23",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2022/07/KENYATAAN-MEDIA-PRASARANA-SASAR-SIFAR-KEMALANGAN-DI-SEMUA-PREMIS-KENDALIANNYA.pdf",
@@ -1853,10 +2035,13 @@
     "MR"
    ],
    "stationIds": [
+    "AG6",
     "AG9",
     "AG1"
    ],
    "stationNames": [
+    "BANDARAYA",
+    "BANDARAYA",
     "HANG TUAH",
     "SENTUL TIMUR"
    ],
@@ -1901,8 +2086,10 @@
     "UNIVERSITI",
     "KL SENTRAL",
     "BANGSAR",
+    "PASAR SENI",
     "BANGSAR",
-    "KL SENTRAL"
+    "KL SENTRAL",
+    "PASAR SENI"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
    "severity": "SEVERE",
@@ -1932,6 +2119,7 @@
     "AG13"
    ],
    "stationNames": [
+    "MALURI",
     "MALURI"
    ],
    "issueType": "TRACK_FAULT",
@@ -1966,10 +2154,12 @@
     "MR"
    ],
    "stationIds": [
-    "AG7"
+    "AG7",
+    "AG6"
    ],
    "stationNames": [
-    "MASJID JAMEK"
+    "MASJID JAMEK",
+    "BANDARAYA"
    ],
    "issueType": "TRACK_FAULT",
    "severity": "INFO",
@@ -2097,7 +2287,11 @@
    ],
    "stationNames": [
     "MASJID JAMEK",
+    "BANDARAYA",
     "MASJID JAMEK",
+    "BANDARAYA",
+    "MASJID JAMEK",
+    "BANDARAYA",
     "BANDARAYA"
    ],
    "issueType": "TRACK_FAULT",
@@ -2186,6 +2380,7 @@
    ],
    "stationNames": [
     "SRI DAMANSARA SENTRAL",
+    "SRI DAMANSARA SENTRAL",
     "SRI DAMANSARA SENTRAL"
    ],
    "issueType": "TRACK_FAULT",
@@ -2273,10 +2468,12 @@
     "PYL"
    ],
    "stationIds": [
-    "PY41"
+    "PY41",
+    "KG04"
    ],
    "stationNames": [
-    "PUTRAJAYA SENTRAL"
+    "PUTRAJAYA SENTRAL",
+    "KWASA DAMANSARA"
    ],
    "issueType": "DOOR_FAULT",
    "severity": "INFO",
@@ -2309,9 +2506,9 @@
    "publishedAt": "2022-12-22T01:00:30.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2022-12-23",
-   "onsetAt": "2022-12-22T16:00:00.000Z",
+   "onsetAt": "2022-12-21T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2022-12-23",
+   "onsetEvidence": "2022-12-22",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "",
@@ -2390,6 +2587,7 @@
     "KJ1"
    ],
    "stationNames": [
+    "GOMBAK",
     "GOMBAK"
    ],
    "issueType": "ROAD_BLOCKED",
@@ -2419,8 +2617,12 @@
     "MR",
     "BRT"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "KJ15"
+   ],
+   "stationNames": [
+    "KL SENTRAL"
+   ],
    "issueType": "UNKNOWN",
    "severity": "INFO",
    "publishedAt": "2024-07-13T01:56:21.000Z",
@@ -2541,6 +2743,7 @@
    "stationIds": [
     "KG27",
     "KG28",
+    "KG29",
     "KG30",
     "KG33",
     "KG34",
@@ -2557,6 +2760,7 @@
    "stationNames": [
     "TAMAN SUNTEX",
     "SRI RAYA",
+    "BANDAR TUN HUSSEIN ONN",
     "BATU 11 CHERAS",
     "SUNGAI JERNIH",
     "STADIUM KAJANG",
@@ -2651,19 +2855,21 @@
     "PYL"
    ],
    "stationIds": [
-    "PY41"
+    "PY41",
+    "KG04"
    ],
    "stationNames": [
-    "PUTRAJAYA SENTRAL"
+    "PUTRAJAYA SENTRAL",
+    "KWASA DAMANSARA"
    ],
    "issueType": "DOOR_FAULT",
    "severity": "INFO",
    "publishedAt": "2022-10-08T06:32:25.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2022-10-09",
-   "onsetAt": "2022-10-08T16:00:00.000Z",
+   "onsetAt": "2022-10-07T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2022-10-09",
+   "onsetEvidence": "2022-10-08",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2022/10/Kenyataan-Media-SESI-UJIAN-MIGRASI-MRT-LALUAN-PUTRAJAYA-FASA-2_091022.pdf",
@@ -2688,7 +2894,7 @@
     "KG34",
     "KG05",
     "KG08",
-    "KTM_SUNGAI_BULOH",
+    "PY04",
     "PY05",
     "KG20",
     "PY39",
@@ -2809,8 +3015,12 @@
    "lineIds": [
     "PYL"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "KG04"
+   ],
+   "stationNames": [
+    "KWASA DAMANSARA"
+   ],
    "issueType": "UNKNOWN",
    "severity": "INFO",
    "publishedAt": "2023-03-15T21:06:18.000Z",
@@ -2934,30 +3144,35 @@
     "KG34",
     "KG05",
     "PY04",
-    "AG7"
+    "AG7",
+    "AG6"
    ],
    "stationNames": [
+    "BUKIT JALIL",
     "BUKIT JALIL",
     "WANGSA MAJU",
     "AWAN BESAR",
     "BUKIT JALIL",
+    "AWAN BESAR",
     "SRI PETALING",
     "STADIUM KAJANG",
     "KWASA SENTRAL",
     "SUNGAI BULOH",
     "SUNGAI BULOH",
     "MASJID JAMEK",
+    "BANDARAYA",
     "BUKIT JALIL",
-    "MASJID JAMEK"
+    "MASJID JAMEK",
+    "BANDARAYA"
    ],
    "issueType": "CROWDING",
    "severity": "MAJOR",
    "publishedAt": "2023-01-27T15:00:23.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2023-01-28",
-   "onsetAt": "2023-01-27T16:00:00.000Z",
+   "onsetAt": "2023-01-26T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2023-01-28",
+   "onsetEvidence": "2023-01-27",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/01/PRASARANA-Siaran-Media-Lanjutan-Operasi-Stesen-LRT-Bukit-Jalil-Laluan-Bas-RAPID-KL-Terpilih_280123-1.pdf",
@@ -2981,6 +3196,7 @@
     "SP15"
    ],
    "stationNames": [
+    "BANDAR TASIK SELATAN",
     "BANDAR TASIK SELATAN",
     "BANDAR TASIK SELATAN"
    ],
@@ -3292,9 +3508,9 @@
    "publishedAt": "2024-06-18T11:19:03.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2024-06-19",
-   "onsetAt": "2024-06-18T16:00:00.000Z",
+   "onsetAt": "2024-06-17T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2024-06-19",
+   "onsetEvidence": "2024-06-18",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2024/06/RAPID-BUS-SIARAN-MEDIA-JOMNAIKVAN-KE-PARLIMEN-PERKHIDMATAN-ALTERNATIF-MUDAH-BAGI-KELANCARAN-PERJALANAN_Jun_Julai_2024_v2.pdf",
@@ -3452,12 +3668,14 @@
    "stationIds": [
     "BRT3",
     "BRT4",
-    "BRT5"
+    "BRT5",
+    "BRT6"
    ],
    "stationNames": [
     "SUNWAY LAGOON",
     "SUNMED",
-    "SUNU MONASH"
+    "SUNU MONASH",
+    "SOUTH QUAY USJ 1"
    ],
    "issueType": "CROWDING",
    "severity": "MAJOR",
@@ -3492,9 +3710,9 @@
    "publishedAt": "2022-09-26T04:10:23.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2022-09-27",
-   "onsetAt": "2022-09-26T16:00:00.000Z",
+   "onsetAt": "2022-09-25T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2022-09-27",
+   "onsetEvidence": "2022-09-26",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2022/09/RAPID-BUS-SIARAN-MEDIA-MAJLIS-PERTUKARAN-MEMORANDUM-PERSEFAHAMAN-DI-ANTARA-RAPID-BUS-SDN-BHD-DAN-EMOOVIT-TECHNOLOGY-SDN-B.pdf",
@@ -3934,11 +4152,14 @@
    ],
    "stationIds": [
     "AG6",
+    "AG1",
     "AG3"
    ],
    "stationNames": [
     "BANDARAYA",
     "BANDARAYA",
+    "BANDARAYA",
+    "SENTUL TIMUR",
     "BANDARAYA",
     "TITIWANGSA",
     "TITIWANGSA"
@@ -3971,8 +4192,12 @@
     "KJ",
     "KGL"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "KJ10"
+   ],
+   "stationNames": [
+    "KLCC"
+   ],
    "issueType": "CROWDING",
    "severity": "MAJOR",
    "publishedAt": "2024-10-11T01:54:28.000Z",
@@ -4094,11 +4319,55 @@
    "headline": "68 LALUAN PERKHIDMATAN BAS MASIH BELUM BOLEH BEROPERASI",
    "lineIds": [],
    "stationIds": [
-    "KJ37"
+    "KJ37",
+    "KJ24",
+    "KJ20",
+    "KJ23",
+    "SA15",
+    "KJ35",
+    "KJ28",
+    "KJ27",
+    "KJ31",
+    "KJ34",
+    "KJ25",
+    "KJ22",
+    "KJ21",
+    "KJ19",
+    "KJ18",
+    "KJ16",
+    "KG14",
+    "SP29"
    ],
    "stationNames": [
     "PUTRA HEIGHTS",
-    "PUTRA HEIGHTS"
+    "PUTRA HEIGHTS",
+    "PUTRA HEIGHTS",
+    "KELANA JAYA",
+    "TAMAN JAYA",
+    "TAMAN JAYA",
+    "TAMAN BAHAGIA",
+    "TAMAN BAHAGIA",
+    "TAMAN BAHAGIA",
+    "SEKSYEN 7",
+    "ALAM MEGAH",
+    "SUBANG JAYA",
+    "ALAM MEGAH",
+    "GLENMARIE",
+    "USJ 7",
+    "USJ 21",
+    "KELANA JAYA",
+    "KELANA JAYA",
+    "LEMBAH SUBANG",
+    "TAMAN BAHAGIA",
+    "TAMAN PARAMOUNT",
+    "ASIA JAYA",
+    "ASIA JAYA",
+    "UNIVERSITI",
+    "KERINCHI",
+    "BANGSAR",
+    "SEMANTAN",
+    "PUCHONG PRIMA",
+    "TAMAN JAYA"
    ],
    "issueType": "WEATHER",
    "severity": "MAJOR",
@@ -4129,6 +4398,7 @@
     "SP17"
    ],
    "stationNames": [
+    "BUKIT JALIL",
     "BUKIT JALIL"
    ],
    "issueType": "CROWDING",
@@ -4282,9 +4552,9 @@
    "publishedAt": "2022-09-21T00:32:26.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2022-09-22",
-   "onsetAt": "2022-09-21T16:00:00.000Z",
+   "onsetAt": "2022-09-20T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2022-09-22",
+   "onsetEvidence": "2022-09-21",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2022/09/SIARAN-AKHBAR-Kesediaan-dan-Siap-Siaga-Stesen-Penting-Demi-Meningkat-Pengalaman-Pengguna-Pengangkutan-Awam_FINAL.pdf",
@@ -4363,14 +4633,19 @@
     "AG"
    ],
    "stationIds": [
+    "PY13",
     "AG7",
     "KJ15",
-    "KJ10"
+    "KJ10",
+    "KG18A"
    ],
    "stationNames": [
+    "KAMPUNG BATU",
+    "KAMPUNG BATU",
     "MASJID JAMEK",
     "KL SENTRAL",
-    "KLCC"
+    "KLCC",
+    "BUKIT BINTANG"
    ],
    "issueType": "UNKNOWN",
    "severity": "INFO",
@@ -4514,12 +4789,16 @@
    ],
    "stationIds": [
     "KJ10",
+    "KJ11",
     "KJ24",
+    "KJ19",
     "KJ16"
    ],
    "stationNames": [
     "KLCC",
+    "KAMPUNG BARU",
     "KELANA JAYA",
+    "UNIVERSITI",
     "BANGSAR"
    ],
    "issueType": "VEHICLE_BREAKDOWN",
@@ -4587,7 +4866,11 @@
    "stationNames": [
     "UNIVERSITI",
     "ABDULLAH HUKUM",
-    "ABDULLAH HUKUM"
+    "ABDULLAH HUKUM",
+    "UNIVERSITI",
+    "UNIVERSITI",
+    "ABDULLAH HUKUM",
+    "UNIVERSITI"
    ],
    "issueType": "DELAY",
    "severity": "MINOR",
@@ -4617,11 +4900,14 @@
    ],
    "stationIds": [
     "KG16",
+    "KJ9",
     "KJ10"
    ],
    "stationNames": [
     "PASAR SENI",
+    "AMPANG PARK",
     "PASAR SENI",
+    "AMPANG PARK",
     "KLCC"
    ],
    "issueType": "TRACK_FAULT",
@@ -4655,14 +4941,16 @@
     "KJ8",
     "KJ9",
     "KJ4",
-    "KJ2"
+    "KJ2",
+    "KJ1"
    ],
    "stationNames": [
     "PASAR SENI",
     "DAMAI",
     "AMPANG PARK",
     "SRI RAMPAI",
-    "TAMAN MELATI"
+    "TAMAN MELATI",
+    "GOMBAK"
    ],
    "issueType": "CROWDING",
    "severity": "MAJOR",
@@ -4692,6 +4980,7 @@
     "SP17"
    ],
    "stationNames": [
+    "BUKIT JALIL",
     "BUKIT JALIL"
    ],
    "issueType": "UNKNOWN",
@@ -4725,6 +5014,7 @@
     "KJ37"
    ],
    "stationNames": [
+    "PUTRA HEIGHTS",
     "PUTRA HEIGHTS",
     "PUTRA HEIGHTS",
     "PUTRA HEIGHTS",
@@ -4792,8 +5082,14 @@
     "PH",
     "KJ"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "AG16",
+    "KJ16"
+   ],
+   "stationNames": [
+    "CEMPAKA",
+    "BANGSAR"
+   ],
    "issueType": "UNKNOWN",
    "severity": "MAJOR",
    "publishedAt": "2022-03-17T02:43:39.000Z",
@@ -4883,8 +5179,14 @@
    "lineIds": [
     "KJ"
    ],
-   "stationIds": [],
-   "stationNames": [],
+   "stationIds": [
+    "KJ10",
+    "KG16"
+   ],
+   "stationNames": [
+    "KLCC",
+    "PASAR SENI"
+   ],
    "issueType": "TRACK_FAULT",
    "severity": "MINOR",
    "publishedAt": "2021-06-11T09:08:43.000Z",
@@ -4943,11 +5245,11 @@
    "publishedAt": "2023-12-28T15:10:58.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2023-12-29",
-   "onsetAt": "2023-12-29T05:00:00.000Z",
+   "onsetAt": "2023-12-28T05:00:00.000Z",
    "onsetBasis": "explicit_time",
-   "onsetEvidence": "dateline:2023-12-29 jam 1.00 petang — ngguna, kekerapan tren bagi semua perkhidmatan LRT, MRT dan Monorel akan ditambah bermula «jam 1.00 petang» pada hari tersebut sehingga tamat waktu operasi. Ra…",
-   "operatorLatencyMinutes": null,
-   "onsetAfterPublication": true,
+   "onsetEvidence": "dateline:2023-12-28 jam 1.00 petang — ngguna, kekerapan tren bagi semua perkhidmatan LRT, MRT dan Monorel akan ditambah bermula «jam 1.00 petang» pada hari tersebut sehingga tamat waktu operasi. Ra…",
+   "operatorLatencyMinutes": 610.967,
+   "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/12/SIARAN-MEDIA-RAPID-KL-LANJUT-WAKTU-OPERASI-REL-DAN-BAS-TERPILIH-SEMPENA-AMBANG-TAHUN-BAHARU-2024-FINAL.pdf",
    "waybackUrl": "https://web.archive.org/web/20240715043701id_/https://myrapid.com.my/wp-content/uploads/2023/12/SIARAN-MEDIA-RAPID-KL-LANJUT-WAKTU-OPERASI-REL-DAN-BAS-TERPILIH-SEMPENA-AMBANG-TAHUN-BAHARU-2024-FINAL.pdf",
    "archiveTimestamp": "20240715043701",
@@ -4967,11 +5269,13 @@
    "stationIds": [
     "KG16",
     "KJ19",
+    "KJ10",
     "KJ3"
    ],
    "stationNames": [
     "PASAR SENI",
     "UNIVERSITI",
+    "KLCC",
     "WANGSA MAJU"
    ],
    "issueType": "UNKNOWN",
@@ -5005,10 +5309,14 @@
     "AG"
    ],
    "stationIds": [
-    "KJ15"
+    "PY10",
+    "KJ15",
+    "KG18A"
    ],
    "stationNames": [
-    "KL SENTRAL"
+    "KEPONG BARU",
+    "KL SENTRAL",
+    "BUKIT BINTANG"
    ],
    "issueType": "UNKNOWN",
    "severity": "INFO",
@@ -5079,9 +5387,9 @@
    "publishedAt": "2023-04-12T14:26:03.000Z",
    "publishedAtSource": "pdf_creation_date",
    "bodyDateline": "2023-04-13",
-   "onsetAt": "2023-04-12T16:00:00.000Z",
+   "onsetAt": "2023-04-11T16:00:00.000Z",
    "onsetBasis": "dateline_only",
-   "onsetEvidence": "2023-04-13",
+   "onsetEvidence": "2023-04-12",
    "operatorLatencyMinutes": null,
    "onsetAfterPublication": false,
    "originalUrl": "https://myrapid.com.my/wp-content/uploads/2023/04/SIARAN-MEDIA-Rapid-Rail-Lanjut-Perkhidmatan-Stesen-Rel-Terpilih-Pada-15-April-2023.pdf",
@@ -5167,14 +5475,19 @@
     "MR"
    ],
    "stationIds": [
-    "KJ10",
     "PY21",
+    "KJ10",
     "KJ9",
     "KG16",
     "KG18A",
     "AG7"
    ],
    "stationNames": [
+    "PERSIARAN KLCC",
+    "KLCC",
+    "PERSIARAN KLCC",
+    "PERSIARAN KLCC",
+    "KLCC",
     "KLCC",
     "PERSIARAN KLCC",
     "KLCC",
@@ -5325,12 +5638,17 @@
    ],
    "stationIds": [
     "KJ10",
-    "KG16"
+    "KJ11",
+    "KG16",
+    "KJ9"
    ],
    "stationNames": [
     "KLCC",
+    "KAMPUNG BARU",
     "PASAR SENI",
+    "AMPANG PARK",
     "PASAR SENI",
+    "AMPANG PARK",
     "KLCC"
    ],
    "issueType": "DOOR_FAULT",

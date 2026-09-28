@@ -8,7 +8,11 @@
       "title": "Three independent witnesses, one segment",
       "description": "Genuine multi-witness cluster on the Kelana Jaya Line between KLCC and Ampang Park. No official source yet — this is the early-warning case the product exists for.",
       "now": "2024-03-05T09:00:00+08:00",
-      "sourceIds": ["soc-kj-sig-001", "soc-kj-sig-002", "soc-kj-sig-003"],
+      "sourceIds": [
+        "soc-kj-sig-001",
+        "soc-kj-sig-002",
+        "soc-kj-sig-003"
+      ],
       "expect": {
         "signalCount": 1,
         "issueType": "SIGNAL_FAULT",
@@ -26,7 +30,12 @@
       "title": "A fourth independent witness raises confidence",
       "description": "Same incident with a fourth distinct author. Confidence must be strictly higher than kj-signal-fault-cluster — more corroboration never lowers it.",
       "now": "2024-03-05T09:00:00+08:00",
-      "sourceIds": ["soc-kj-sig-001", "soc-kj-sig-002", "soc-kj-sig-003", "soc-kj-sig-004"],
+      "sourceIds": [
+        "soc-kj-sig-001",
+        "soc-kj-sig-002",
+        "soc-kj-sig-003",
+        "soc-kj-sig-004"
+      ],
       "expect": {
         "signalCount": 1,
         "issueType": "SIGNAL_FAULT",
@@ -60,7 +69,8 @@
         "officialSources": 1,
         "status": "CONFIRMED",
         "operatorNotifiedAt": "2024-03-05T08:52:00+08:00",
-        "leadTimeMinutes": 47
+        "minLeadTimeMinutes": 46,
+        "maxLeadTimeMinutes": 47
       }
     },
     {
@@ -68,7 +78,9 @@
       "title": "Official statement with no social evidence",
       "description": "An OFFICIAL_STATEMENT is high-precision and high-latency. On its own it is still a full confirmation.",
       "now": "2024-03-05T09:10:00+08:00",
-      "sourceIds": ["off-kj-sig-confirm-001"],
+      "sourceIds": [
+        "off-kj-sig-confirm-001"
+      ],
       "expect": {
         "signalCount": 1,
         "issueType": "SIGNAL_FAULT",
@@ -76,7 +88,8 @@
         "minConfidence": 0.85,
         "maxConfidence": 0.95,
         "band": "VERY_HIGH",
-        "status": "CONFIRMED"
+        "status": "CONFIRMED",
+        "maxLeadTimeMinutes": 0
       }
     },
     {
@@ -102,7 +115,12 @@
       "title": "Sarcasm and jokes are not evidence",
       "description": "Mock praise, absurd alternatives and meme framing about a real line. These are the posts that a sentiment filter would score as the strongest negative evidence. They must be dropped from corroboration entirely.",
       "now": "2024-03-05T09:00:00+08:00",
-      "sourceIds": ["soc-sarc-001", "soc-sarc-002", "soc-sarc-003", "soc-sarc-004"],
+      "sourceIds": [
+        "soc-sarc-001",
+        "soc-sarc-002",
+        "soc-sarc-003",
+        "soc-sarc-004"
+      ],
       "expect": {
         "signalCount": 0,
         "allRejected": true,
@@ -114,7 +132,11 @@
       "title": "Quoting an old incident is not a new incident",
       "description": "Throwback posts, a screenshot of the 2021 Kelana Jaya closure, and a 'last week' reference. All must be rejected as stale rather than reported as a live disruption.",
       "now": "2024-03-05T09:00:00+08:00",
-      "sourceIds": ["soc-stale-001", "soc-stale-002", "soc-stale-003"],
+      "sourceIds": [
+        "soc-stale-001",
+        "soc-stale-002",
+        "soc-stale-003"
+      ],
       "expect": {
         "signalCount": 0,
         "allRejected": true
@@ -125,13 +147,17 @@
       "title": "Ambiguous place name refuses to pick",
       "description": "'Klang' matches three distinct physical stations (Pasar Klang, Bandar Baru Klang, Klang Jaya). The Verifier must return UNRESOLVED with every candidate segment listed, never a silent pick.",
       "now": "2024-03-05T09:00:00+08:00",
-      "sourceIds": ["soc-amb-001", "soc-amb-002", "soc-amb-003"],
+      "sourceIds": [
+        "soc-amb-001",
+        "soc-amb-002",
+        "soc-amb-003"
+      ],
       "expect": {
         "signalCount": 1,
         "resolution": "UNRESOLVED",
         "minConfidence": 0.3,
         "maxConfidence": 0.45,
-        "band": "MODERATE",
+        "band": "LOW",
         "socialDistinctAuthors": 3,
         "minUnresolvedCandidates": 6
       }
@@ -141,15 +167,22 @@
       "title": "A line is not a segment",
       "description": "'LALUAN KELANA JAYA' names a line, not a segment. The Verifier must refuse to choose one and list every candidate segment on the line.",
       "now": "2024-03-05T08:30:00+08:00",
-      "sourceIds": ["soc-line-001", "soc-line-002", "soc-line-003"],
+      "sourceIds": [
+        "soc-line-001",
+        "soc-line-002",
+        "soc-line-003"
+      ],
       "expect": {
         "signalCount": 1,
         "resolution": "UNRESOLVED",
         "issueType": "DELAY",
-        "lineIds": ["KJ"],
+        "lineIds": [
+          "KJ"
+        ],
         "unresolvedCandidateCount": 72,
         "minConfidence": 0.3,
-        "maxConfidence": 0.45
+        "maxConfidence": 0.45,
+        "band": "LOW"
       }
     },
     {
@@ -157,7 +190,9 @@
       "title": "One post is an anecdote",
       "description": "A single report of a broken lift at KLCC. Real, but a single post cannot clear the reportable threshold.",
       "now": "2024-03-05T09:30:00+08:00",
-      "sourceIds": ["soc-single-001"],
+      "sourceIds": [
+        "soc-single-001"
+      ],
       "expect": {
         "signalCount": 0
       }
@@ -167,7 +202,12 @@
       "title": "Realtime telemetry is position, not health",
       "description": "Two stalled-vehicle observations, one platform-crowding observation and one absence-of-vehicle observation. The realtime channel is capped at 0.15, so this stays silent. Absence of a vehicle contributes nothing at all.",
       "now": "2024-03-05T09:00:00+08:00",
-      "sourceIds": ["rt-kj-stall-001", "rt-kj-stall-002", "rt-kj-absent-001", "rt-kj-crowd-001"],
+      "sourceIds": [
+        "rt-kj-stall-001",
+        "rt-kj-stall-002",
+        "rt-kj-absent-001",
+        "rt-kj-crowd-001"
+      ],
       "expect": {
         "signalCount": 0,
         "realtimeChannelCap": 0.15
@@ -178,7 +218,12 @@
       "title": "An official 'service normal' beats three complaints",
       "description": "Three social complaints plus an official statement that the line is running normally. Social confidence must be heavily discounted and the claim must not be reported.",
       "now": "2024-03-05T09:40:00+08:00",
-      "sourceIds": ["soc-denial-001", "soc-denial-002", "soc-denial-003", "off-kj-normal-001"],
+      "sourceIds": [
+        "soc-denial-001",
+        "soc-denial-002",
+        "soc-denial-003",
+        "off-kj-normal-001"
+      ],
       "expect": {
         "signalCount": 0,
         "officialDenialApplied": true
@@ -189,13 +234,20 @@
       "title": "Official statement about an inter-station track closure",
       "description": "An explicit 'antara stesen Maluri dan Taman Pertama' claim on the MRT Kajang Line. Both endpoints resolve on one line, so the segment is identified precisely and the canonical line id must be KGL (never MRT).",
       "now": "2024-03-07T18:00:00+08:00",
-      "sourceIds": ["off-kgl-track-001"],
+      "sourceIds": [
+        "off-kgl-track-001"
+      ],
       "expect": {
         "signalCount": 1,
         "issueType": "TRACK_FAULT",
         "resolution": "RESOLVED",
-        "lineIds": ["KGL"],
-        "segmentIds": ["KGL:KG22->KG23", "KGL:KG23->KG22"],
+        "lineIds": [
+          "KGL"
+        ],
+        "segmentIds": [
+          "KGL:KG22->KG23",
+          "KGL:KG23->KG22"
+        ],
         "status": "CONFIRMED"
       }
     },

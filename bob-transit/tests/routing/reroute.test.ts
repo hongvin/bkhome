@@ -118,7 +118,7 @@ describe("A2: a high-confidence incident re-routes the recommendation", () => {
       // maxItineraries comes from the query
     });
     const combos = after.map(lineSet);
-    expect(combos).toContain("PYL+AG");
+    expect(combos).toContain("AG+PYL");
     // The baseline run surfaces the three-line interchange route; assert it
     // exists for this origin/destination pair at all.
     const baseline = planJourneys({ graph, query: makeQuery("KJ9", "AG9", { maxItineraries: 8 }) });
@@ -180,6 +180,8 @@ describe("A2: a high-confidence incident re-routes the recommendation", () => {
       expect(itinerary.whyThisRank.trim().endsWith(".")).toBe(true);
       expect(itinerary.whyThisRank).not.toMatch(/TODO|placeholder|brevity/i);
     }
-    expect(after[0].whyThisRank).not.toContain("flagged");
+    // The top pick is clean, and says so.
+    expect(after[0].riskySegmentIds).toEqual([]);
+    expect(after[0].whyThisRank).toMatch(/no segment on it is currently flagged/);
   });
 });

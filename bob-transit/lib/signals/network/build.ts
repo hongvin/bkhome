@@ -315,21 +315,25 @@ export function buildNetworkIndex(input: BuildNetworkInput): NetworkIndex {
     return Math.round(values.reduce((a, b) => a + b, 0) / values.length);
   };
 
-  const sequenceFor = (lineId: LineId, direction: 0 | 1, stopId: string): number => {
-    const ids = orderByLineDirection.get(`${lineId}|${direction}`);
+  /**
+   * Sequence of a stop in the line's CANONICAL order (direction 0). Both travel
+   * directions use this same numbering, so `min(fromSequence,toSequence)` is a
+   * well-defined position along the line and "between X and Y" selects the same
+   * track section in both directions. Using each direction's own ordering would
+   * make the two directions incomparable.
+   */
+  const sequenceFor = (lineId: LineId, stopId: string): number => {
+    const ids = orderByLineDirection.get(`${lineId}|0`);
     if (ids) {
       const idx = ids.indexOf(stopId);
       if (idx >= 0) return idx + 1;
     }
     // Fallback: the feed's stop_ids are numbered along the line in stops.txt order.
-    const station = stationById.get(stopId);
-    if (station) {
-      const fallbackIds = input.stops
-        .filter((s) => toCanonicalLineId(s.rawRouteId) === lineId)
-        .map((s) => s.stopId);
-      const idx = fallbackIds.indexOf(stopId);
-      if (idx >= 0) return idx + 1;
-    }
+    const fallbackIds = input.stops
+      .filter((s) => toCanonicalLineId(s.rawRouteId) === lineId)
+      .map((s) => s.stopId);
+    const idx = fallbackIds.indexOf(stopId);
+    if (idx >= 0) return idx + 1;
     return numericSuffix(stopId);
   };
 
@@ -363,7 +367,6 @@ export function buildNetworkIndex(input: BuildNetworkInput): NetworkIndex {
 
     for (let p = 0; p < patterns.length; p += 1) {
       const pattern = patterns[p];
-      const direction = (p === 0 ? 0 : 1) as 0 | 1;
       for (let i = 0; i < pattern.length - 1; i += 1) {
         const fromStationId = pattern[i];
         const toStationId = pattern[i + 1];
@@ -381,8 +384,8 @@ export function buildNetworkIndex(input: BuildNetworkInput): NetworkIndex {
           lineId,
           fromStationId,
           toStationId,
-          fromSequence: sequenceFor(lineId, direction, fromStationId),
-          toSequence: sequenceFor(lineId, direction, toStationId),
+          fromSequence: sequenceFor(lineId, fromStationId),
+          toSequence: sequenceFor(lineId, toStationId),
           scheduledRunSeconds: average(
             runByLinePair.get(`${lineId}|${fromStationId}|${toStationId}`),
             average(runByLinePair.get(`${lineId}|${toStationId}|${fromStationId}`), 120),

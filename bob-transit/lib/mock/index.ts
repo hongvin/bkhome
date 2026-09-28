@@ -120,6 +120,18 @@ export function apiMetaFor(overlay: RiskOverlay, mode: DataMode): ApiMeta {
   };
 }
 
+/** segment id -> the fixture signal that explains it. */
+export function mockSegmentSignalIndex(): Map<string, string> {
+  const index = new Map<string, string>();
+  for (const signal of MOCK_SIGNALS) {
+    for (const segmentId of signal.segmentIds) {
+      const existing = index.get(segmentId);
+      if (!existing) index.set(segmentId, signal.id);
+    }
+  }
+  return index;
+}
+
 /* ------------------------------------------------------------------ */
 /* Mock implementation                                                 */
 /* ------------------------------------------------------------------ */
@@ -187,6 +199,7 @@ export function createMockDataSource(): TransitDataSource {
         riskAsOf: overlay.asOf,
         computedOffline: mode === "cache",
         topology: topo(),
+        signalIndex: mockSegmentSignalIndex(),
       });
     },
 

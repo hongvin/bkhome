@@ -8,14 +8,21 @@
  * here once.
  */
 
-/** Uppercase, strip diacritics, keep apostrophes and hyphens, collapse spaces. */
+/**
+ * Uppercase, strip diacritics, keep apostrophes, hyphens and SENTENCE
+ * punctuation, collapse spaces.
+ *
+ * Sentence punctuation is deliberately preserved: `extractBetweenMention` needs
+ * "…dan Ampang Park. Perkhidmatan tren…" to end the claim at the full stop. If
+ * the full stop is folded away, the place name swallows the next clause.
+ */
 export function foldMalay(input: string): string {
   return input
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .toUpperCase()
     .replace(/[\u2018\u2019]/g, "'")
-    .replace(/[^A-Z0-9'\- ]+/g, " ")
+    .replace(/[^A-Z0-9'\- .!?;]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -32,6 +39,9 @@ export const PLACE_STOPWORDS: ReadonlySet<string> = new Set([
   "SILA", "GUNA", "LALUAN", "STESEN", "SEBELAH", "ARAH", "HINGGA", "SAMPAI", "SELEPAS",
   "KERANA", "SEMENTARA", "BAGI", "SAHAJA", "LAGI", "BELUM", "BUKAN", "IKUT", "NAIK",
   "ANTARA", "BETWEEN", "MELALUI", "SERTA", "JUGA", "AKAN", "SEDANG", "DILAPORKAN", "TELAH",
+  "STATION", "HENTIAN", "STOP", "PENUH", "SESAK", "RAMAI", "ORANG", "BERAT", "TERUK",
+  "DAPAT", "BERGERAK", "MENUNGGU", "TUNGGU", "KENA", "NAIK", "TURUN", "MASUK", "KELUAR",
+  "PAGI", "TENGAHARI", "PETANG", "MALAM", "HARI", "SEMUA", "SETIAP", "MENGENAI", "AKIBAT",
 ]);
 
 /** Keep at most `maxTokens` leading tokens, dropping a trailing clause. */

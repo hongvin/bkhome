@@ -44,8 +44,13 @@ export interface StalenessInput {
    * Real elapsed time, measured by the client, added on top of the server figure.
    */
   offlineExtraMinutes?: number;
-  /** When true, prefix nothing but still return the same "as of …" sentence. */
-  includeLivePrefix?: boolean;
+  /**
+   * True when the payload came from cache. Defaults to `true`, and that default
+   * is the point: the formatter fails safe. Unless a caller explicitly says the
+   * data is live, it renders the "as of …" sentence rather than claiming
+   * freshness. `cached: false` is the ONLY way to get "Live".
+   */
+  cached?: boolean;
 }
 
 export interface StalenessResult {
@@ -67,12 +72,13 @@ export interface StalenessResult {
  */
 export function formatStaleness(input: StalenessInput): StalenessResult {
   const clock = klClock(input.asOf);
+  const cached = input.cached ?? true;
   const totalMinutes = Math.max(
     0,
     Math.floor(input.stalenessMinutes) + Math.floor(input.offlineExtraMinutes ?? 0),
   );
 
-  if (totalMinutes <= 0 && !input.includeLivePrefix) {
+  if (!cached && totalMinutes <= 0) {
     return {
       text: translate(input.locale, "stale.live"),
       clock,

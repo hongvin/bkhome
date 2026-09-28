@@ -17,11 +17,13 @@ import type {
 } from "@/lib/contracts";
 import { SEVERITY_BASE_MULTIPLIER } from "@/lib/contracts";
 import { buildTransitGraph } from "@/lib/gtfs/build";
+import { serializeCompactGraph, toCompactGraph } from "@/lib/gtfs/compact";
 import { parseTransitGraph, serializeTransitGraph } from "@/lib/gtfs/graph-io";
 import { GTFS_RAIL_FIXTURE_DIR, readGtfsFeed } from "@/lib/gtfs/read-feed";
 
 export const REPO_ROOT = process.cwd();
 export const GRAPH_PATH = join(REPO_ROOT, "public/graph/transit-graph.json");
+export const COMPACT_GRAPH_PATH = join(REPO_ROOT, "public/graph/transit-graph.compact.json");
 export const GTFS_DIR = join(REPO_ROOT, GTFS_RAIL_FIXTURE_DIR);
 
 /** Monday. The fixture's MonFri service pattern is active. */
@@ -56,6 +58,21 @@ let cached: TransitGraph | null = null;
 export function cachedGraph(): TransitGraph {
   if (cached === null) cached = parseTransitGraph(readGraphJson());
   return cached;
+}
+
+/**
+ * The compact artifact, exactly as the browser would receive it. Rebuilt if
+ * absent, so `vitest run tests/routing` stays self-contained.
+ */
+export function readCompactGraphJson(): string {
+  if (!existsSync(COMPACT_GRAPH_PATH)) {
+    const graph = buildTransitGraph(readGtfsFeed(GTFS_DIR), {
+      builtAt: "1970-01-01T00:00:00.000Z",
+    });
+    mkdirSync(dirname(COMPACT_GRAPH_PATH), { recursive: true });
+    writeFileSync(COMPACT_GRAPH_PATH, serializeCompactGraph(toCompactGraph(graph)), "utf8");
+  }
+  return readFileSync(COMPACT_GRAPH_PATH, "utf8");
 }
 
 export function makeQuery(

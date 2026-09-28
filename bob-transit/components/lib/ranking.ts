@@ -139,16 +139,26 @@ export interface ExplainOptions {
   fastest?: Itinerary | null;
 }
 
+/**
+ * The riskiest segment this itinerary actually rides.
+ *
+ * Scans EVERY ride segment, not just `riskySegmentIds`: that field is restricted
+ * to material risk (>= MATERIAL_RISK_CONFIDENCE_THRESHOLD) by the contract, but
+ * a minor signal still belongs in the explanation. Saying "no known disruption"
+ * about a route that carries a 31%-confidence delay would be dishonest.
+ */
 function worstRiskOn(
   itinerary: Itinerary,
   riskLookup: SegmentRiskLookup | undefined,
 ): SegmentRisk | undefined {
   if (!riskLookup) return undefined;
   let worst: SegmentRisk | undefined;
-  for (const segmentId of itinerary.riskySegmentIds) {
-    const risk = riskLookup(segmentId);
-    if (!risk) continue;
-    if (!worst || risk.degradationProbability > worst.degradationProbability) worst = risk;
+  for (const leg of itinerary.legs) {
+    for (const segmentId of leg.segmentIds) {
+      const risk = riskLookup(segmentId);
+      if (!risk) continue;
+      if (!worst || risk.degradationProbability > worst.degradationProbability) worst = risk;
+    }
   }
   return worst;
 }
@@ -201,6 +211,18 @@ export function explainRank(
 
   if (itinerary.rank === 1) {
     if (fastest && fastest.id !== itinerary.id) {
+      // The headline case: the top option is NOT the quickest, and the reason
+      // is a disruption on the route that is.
+      const fastestWorst = fastest ? worstRiskOn(fastest, riskLookup) : undefined;
+      if (fastestWorst) {
+        details.unshift({
+          key: "why.avoidsTheDisruption",
+          params: {
+            severity: severityKey(fastestWorst.severity),
+            issue: `issue.${fastestWorst.issueType}`,
+          },
+        });
+      }
       return {
         headline: {
           key: "why.saferThanFaster",

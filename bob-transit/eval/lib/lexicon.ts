@@ -218,8 +218,8 @@ export const ISSUE_RULES: IssueRule[] = [
   {
     issueType: "ROAD_BLOCKED",
     weight: 4,
-    pattern: /JALAN\s+DITUTUP|MENGHALANG\s+JALAN|TERSANGKUT/,
-    note: "road blocked / vehicle stuck",
+    pattern: /JALAN\s+DITUTUP|MENGHALANG\s+JALAN|TERSANGKUT\s+(?:DI|PADA)\s+(?:JALAN|STRUKTUR|TEROWONG)|(?:BAS|KENDERAAN|KERETA|LORI|VAN)\s+TERSANGKUT/,
+    note: "road blocked / road vehicle stuck (NOT 'tren tersangkut', which is a breakdown)",
   },
   {
     issueType: "ROAD_BLOCKED",

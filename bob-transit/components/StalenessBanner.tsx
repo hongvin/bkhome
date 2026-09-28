@@ -39,7 +39,7 @@ export function StalenessChip({
     stalenessMinutes,
     locale,
     offlineExtraMinutes,
-    includeLivePrefix: cached,
+    cached,
   });
 
   return (

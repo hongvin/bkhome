@@ -50,8 +50,15 @@ import { mockRiskPenalty } from "./risk";
 
 /** Modelled average wait for the next train at the origin. */
 export const MODELLED_ORIGIN_WAIT_SECONDS = 120;
-/** Modelled average wait after a transfer, on top of the walk. */
-export const MODELLED_TRANSFER_WAIT_SECONDS = 150;
+/**
+ * Modelled average wait after a transfer, on top of the walk between platforms.
+ *
+ * 240s, not 150s: a transfer is a platform walk plus a wait for the next train
+ * plus the risk of just missing one, and the Klang Valley interchange walks
+ * (Masjid Jamek, Maluri) are genuinely long. Understating this is what makes a
+ * two-transfer itinerary look artificially attractive.
+ */
+export const MODELLED_TRANSFER_WAIT_SECONDS = 240;
 /** Assumed coefficient of variation on scheduled run time. */
 const RUN_TIME_CV = 0.08;
 /** Weight applied to a disruption penalty when converting it to variance. */
@@ -537,6 +544,8 @@ export interface AdvisoryOptions {
   riskAsOf: string;
   computedOffline: boolean;
   topology?: LoadedTopology;
+  /** segment id -> the signal that explains it, so `consideredSignals` cites real signal ids. */
+  signalIndex?: ReadonlyMap<SegmentId, string>;
 }
 
 /**
@@ -563,7 +572,11 @@ export function assembleAdvisory(
 
   const recommended = ranked[0];
   const fastest = fastestByP90(ranked);
-  const consideredSignals = collectConsideredSignals(ranked, options.riskLookup);
+  const consideredSignals = collectConsideredSignals(
+    ranked,
+    options.riskLookup,
+    options.signalIndex,
+  );
   const fallback = buildFallback(ranked, topology, options.query);
 
   return {
@@ -596,38 +609,39 @@ export function planMockAdvisory(options: AdvisoryOptions): RouteAdvisory {
     riskAsOf: options.riskAsOf,
     computedOffline: options.computedOffline,
     topology,
+    signalIndex: options.signalIndex,
   });
 }
 
 function collectConsideredSignals(
   itineraries: readonly Itinerary[],
   lookup: SegmentRiskLookup,
+  signalIndex: ReadonlyMap<SegmentId, string> | undefined,
 ): RouteAdvisory["consideredSignals"] {
-  const bySegment = new Map<string, { confidence: number; severity: string; segmentIds: string[] }>();
+  const bySegment = new Map<
+    string,
+    { signalId: string; confidence: number; severity: string; segmentIds: string[] }
+  >();
   for (const itinerary of itineraries) {
     for (const leg of itinerary.legs) {
       for (const segmentId of leg.segmentIds) {
         const risk = lookup(segmentId);
         if (!risk) continue;
-        const existing = bySegment.get(segmentId);
-        if (!existing) {
-          bySegment.set(segmentId, {
-            confidence: risk.degradationProbability,
-            severity: risk.severity,
-            segmentIds: [segmentId],
-          });
-        }
+        if (bySegment.has(segmentId)) continue;
+        bySegment.set(segmentId, {
+          // Cite the real signal when we know it; fall back to the segment so
+          // the field is never empty.
+          signalId: signalIndex?.get(segmentId) ?? `SEGMENT:${segmentId}`,
+          confidence: risk.degradationProbability,
+          severity: risk.severity,
+          segmentIds: [segmentId],
+        });
       }
     }
   }
-  return [...bySegment.entries()]
-    .map(([segmentId, value]) => ({
-      signalId: `SEG-${segmentId}`,
-      confidence: value.confidence,
-      severity: value.severity,
-      segmentIds: value.segmentIds,
-    }))
-    .sort((a, b) => b.confidence - a.confidence || a.signalId.localeCompare(b.signalId));
+  return [...bySegment.values()].sort(
+    (a, b) => b.confidence - a.confidence || a.signalId.localeCompare(b.signalId),
+  );
 }
 
 function buildFallback(

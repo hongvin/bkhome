@@ -80,6 +80,8 @@ export const ms: Dictionary = {
   "why.lowerRisk":
     "Laluan ini melalui {severity} {issue} pada keyakinan {pct}%, jadi kedudukannya lebih rendah.",
   "why.lowerScore": "Kurang boleh dipercayai berbanding pilihan di atasnya.",
+  "why.avoidsTheDisruption":
+    "Mengelak {severity} {issue} yang dilalui pilihan terpantas.",
   "why.riskOnBoard": "{severity} {issue} pada laluan ini, keyakinan {pct}%.",
   "why.delayAdded": "Kira-kira {min} min kelewatan dijangka.",
   "why.slowerThanFastest": "{delta} min lebih lambat daripada pilihan terpantas.",

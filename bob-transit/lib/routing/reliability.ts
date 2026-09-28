@@ -83,7 +83,18 @@ function clamp01(value: number): number {
   return Math.min(1, Math.max(0, value));
 }
 
-/** 0..1, higher is better. Primary sort key per the product thesis. */
+/**
+ * PROVISIONAL / ROUTER-INTERNAL. Do not render this number.
+ *
+ * `lib/risk/rank.ts` (S4) owns the CANONICAL user-visible reliability score; the
+ * Impact agent overwrites `Itinerary.reliabilityScore` with it before anything
+ * reaches the API or the UI. This function exists only so path generation and
+ * candidate ranking inside the router have a monotone, deterministic ordering
+ * key. It deliberately does NOT import `lib/risk/**`: S4's arrival model imports
+ * this module, so a back-import would be a cycle.
+ *
+ * 0..1, higher is better. Primary sort key per the product thesis.
+ */
 export function computeReliabilityScore(input: ReliabilityInput): number {
   const delayShare = clamp01(
     input.expectedDelaySeconds /
@@ -98,6 +109,12 @@ export function computeReliabilityScore(input: ReliabilityInput): number {
   return clamp01(score);
 }
 
+/**
+ * PROVISIONAL / ROUTER-INTERNAL, paired with `computeReliabilityScore`. The
+ * canonical badge comes from `lib/risk/rank.ts` (S4). Thresholds here are
+ * deliberately coarse so the router can order candidates; they are not the
+ * calibrated bands the UI shows.
+ */
 export function badgeForScore(score: number): ReliabilityBadge {
   if (score >= 0.9) return "VERY_RELIABLE";
   if (score >= 0.75) return "RELIABLE";
@@ -129,6 +146,22 @@ function minutes(seconds: number): number {
 
 function percent(value: number): number {
   return Math.round(value * 100);
+}
+
+/** 1 -> "1st", 2 -> "2nd", 11 -> "11th". */
+function ordinal(value: number): string {
+  const mod100 = value % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${value}th`;
+  switch (value % 10) {
+    case 1:
+      return `${value}st`;
+    case 2:
+      return `${value}nd`;
+    case 3:
+      return `${value}rd`;
+    default:
+      return `${value}th`;
+  }
 }
 
 /** `HH:MM` for seconds after local midnight, wrapping past midnight. */
@@ -170,7 +203,7 @@ export function explainRank(input: RankExplanationInput): string {
   if (input.rank === 1) {
     if (input.riskySegmentCount > 0) {
       return (
-        `Ranked 1st of ${input.total}: the best available option at ${reliability}% (${input.badge}) — ` +
+        `Ranked ${ordinal(input.rank)} of ${input.total}: the best available option at ${reliability}% (${input.badge}) — ` +
         `P90 arrival ${p90}, ${duration} min door-to-door via ${via} with ${transferText}, but it still crosses ` +
         `${input.riskySegmentCount} flagged segment${input.riskySegmentCount === 1 ? "" : "s"} ` +
         `(up to ${percent(input.maxDegradationProbability)}% modelled disruption probability` +
@@ -178,7 +211,7 @@ export function explainRank(input: RankExplanationInput): string {
       );
     }
     return (
-      `Ranked 1st of ${input.total}: ${reliability}% reliability (${input.badge}) — ` +
+      `Ranked ${ordinal(input.rank)} of ${input.total}: ${reliability}% reliability (${input.badge}) — ` +
       `P90 arrival ${p90}, ${duration} min door-to-door via ${via} with ${transferText}, ` +
       `and no segment on it is currently flagged.`
     );
@@ -195,7 +228,7 @@ export function explainRank(input: RankExplanationInput): string {
           ? `${slowerBy} min slower than the top pick and `
           : `about the same duration as the top pick, but `;
     return (
-      `Ranked ${input.rank} of ${input.total}: ${speedClause}it crosses ` +
+      `Ranked ${ordinal(input.rank)} of ${input.total}: ${speedClause}it crosses ` +
       `${input.riskySegmentCount} flagged segment${input.riskySegmentCount === 1 ? "" : "s"} ` +
       `(up to ${percent(input.maxDegradationProbability)}% disruption probability${delayClause}), ` +
       `so it scores ${reliability}% (${input.badge}) against ${percent(input.topPickReliabilityScore)}% for the top pick.`
@@ -204,7 +237,7 @@ export function explainRank(input: RankExplanationInput): string {
 
   const slowerClause = slowerBy > 0 ? `${slowerBy} min slower` : "about the same duration";
   return (
-    `Ranked ${input.rank} of ${input.total}: healthy at ${reliability}% reliability (${input.badge}) via ${via}, ` +
+    `Ranked ${ordinal(input.rank)} of ${input.total}: healthy at ${reliability}% reliability (${input.badge}) via ${via}, ` +
     `but ${slowerClause} door-to-door than the top pick.`
   );
 }

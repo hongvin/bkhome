@@ -82,7 +82,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 1
+    "AG": 18
    }
   },
   {
@@ -98,7 +98,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 10
+    "AG": 9
    }
   },
   {
@@ -115,7 +115,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 11
+    "AG": 8
    }
   },
   {
@@ -130,7 +130,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 12
+    "AG": 7
    }
   },
   {
@@ -146,7 +146,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 13
+    "AG": 6
    }
   },
   {
@@ -161,7 +161,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 14
+    "AG": 5
    }
   },
   {
@@ -176,7 +176,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 15
+    "AG": 4
    }
   },
   {
@@ -191,7 +191,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 16
+    "AG": 3
    }
   },
   {
@@ -206,7 +206,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 17
+    "AG": 2
    }
   },
   {
@@ -221,7 +221,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 18
+    "AG": 1
    }
   },
   {
@@ -237,7 +237,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 2
+    "AG": 17
    }
   },
   {
@@ -255,7 +255,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 3
+    "AG": 16
    }
   },
   {
@@ -271,7 +271,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 4
+    "AG": 15
    }
   },
   {
@@ -287,7 +287,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 5
+    "AG": 14
    }
   },
   {
@@ -303,7 +303,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 6
+    "AG": 13
    }
   },
   {
@@ -320,7 +320,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 7
+    "AG": 12
    }
   },
   {
@@ -337,7 +337,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 8
+    "AG": 11
    }
   },
   {
@@ -354,7 +354,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "AG": 9
+    "AG": 10
    }
   },
   {
@@ -369,7 +369,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "BRT": 7
+    "BRT": 1
    }
   },
   {
@@ -384,7 +384,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "BRT": 6
+    "BRT": 2
    }
   },
   {
@@ -399,7 +399,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "BRT": 5
+    "BRT": 3
    }
   },
   {
@@ -429,7 +429,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "BRT": 3
+    "BRT": 5
    }
   },
   {
@@ -444,7 +444,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "BRT": 2
+    "BRT": 6
    }
   },
   {
@@ -460,7 +460,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "BRT": 1
+    "BRT": 7
    }
   },
   {
@@ -476,7 +476,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 29
+    "KGL": 1
    }
   },
   {
@@ -491,7 +491,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 28
+    "KGL": 2
    }
   },
   {
@@ -506,7 +506,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 27
+    "KGL": 3
    }
   },
   {
@@ -521,7 +521,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 26
+    "KGL": 4
    }
   },
   {
@@ -536,7 +536,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 25
+    "KGL": 5
    }
   },
   {
@@ -552,7 +552,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 24
+    "KGL": 6
    }
   },
   {
@@ -567,7 +567,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 23
+    "KGL": 7
    }
   },
   {
@@ -582,7 +582,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 22
+    "KGL": 8
    }
   },
   {
@@ -597,7 +597,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 21
+    "KGL": 9
    }
   },
   {
@@ -612,7 +612,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 20
+    "KGL": 10
    }
   },
   {
@@ -627,7 +627,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 19
+    "KGL": 11
    }
   },
   {
@@ -643,7 +643,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 18
+    "KGL": 12
    }
   },
   {
@@ -660,7 +660,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 17
+    "KGL": 13
    }
   },
   {
@@ -676,7 +676,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 16
+    "KGL": 14
    }
   },
   {
@@ -707,7 +707,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 14
+    "KGL": 16
    }
   },
   {
@@ -723,7 +723,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 13
+    "KGL": 17
    }
   },
   {
@@ -738,7 +738,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 12
+    "KGL": 18
    }
   },
   {
@@ -753,7 +753,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 11
+    "KGL": 19
    }
   },
   {
@@ -768,7 +768,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 10
+    "KGL": 20
    }
   },
   {
@@ -783,7 +783,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 9
+    "KGL": 21
    }
   },
   {
@@ -798,7 +798,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 8
+    "KGL": 22
    }
   },
   {
@@ -813,7 +813,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 7
+    "KGL": 23
    }
   },
   {
@@ -828,7 +828,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 6
+    "KGL": 24
    }
   },
   {
@@ -843,7 +843,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 5
+    "KGL": 25
    }
   },
   {
@@ -858,7 +858,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 4
+    "KGL": 26
    }
   },
   {
@@ -873,7 +873,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 3
+    "KGL": 27
    }
   },
   {
@@ -888,7 +888,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 2
+    "KGL": 28
    }
   },
   {
@@ -903,7 +903,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KGL": 1
+    "KGL": 29
    }
   },
   {
@@ -918,7 +918,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 1
+    "KJ": 37
    }
   },
   {
@@ -933,7 +933,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 10
+    "KJ": 28
    }
   },
   {
@@ -948,7 +948,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 11
+    "KJ": 27
    }
   },
   {
@@ -964,7 +964,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 12
+    "KJ": 26
    }
   },
   {
@@ -981,7 +981,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 13
+    "KJ": 25
    }
   },
   {
@@ -997,7 +997,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 14
+    "KJ": 24
    }
   },
   {
@@ -1013,7 +1013,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 15
+    "KJ": 23
    }
   },
   {
@@ -1028,7 +1028,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 16
+    "KJ": 22
    }
   },
   {
@@ -1043,7 +1043,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 17
+    "KJ": 21
    }
   },
   {
@@ -1058,7 +1058,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 18
+    "KJ": 20
    }
   },
   {
@@ -1088,7 +1088,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 2
+    "KJ": 36
    }
   },
   {
@@ -1103,7 +1103,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 20
+    "KJ": 18
    }
   },
   {
@@ -1118,7 +1118,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 21
+    "KJ": 17
    }
   },
   {
@@ -1133,7 +1133,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 22
+    "KJ": 16
    }
   },
   {
@@ -1148,7 +1148,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 23
+    "KJ": 15
    }
   },
   {
@@ -1163,7 +1163,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 24
+    "KJ": 14
    }
   },
   {
@@ -1178,7 +1178,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 25
+    "KJ": 13
    }
   },
   {
@@ -1193,7 +1193,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 26
+    "KJ": 12
    }
   },
   {
@@ -1209,7 +1209,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 27
+    "KJ": 11
    }
   },
   {
@@ -1224,7 +1224,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 28
+    "KJ": 10
    }
   },
   {
@@ -1239,7 +1239,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 29
+    "KJ": 9
    }
   },
   {
@@ -1254,7 +1254,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 3
+    "KJ": 35
    }
   },
   {
@@ -1269,7 +1269,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 30
+    "KJ": 8
    }
   },
   {
@@ -1285,7 +1285,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 31
+    "KJ": 7
    }
   },
   {
@@ -1300,7 +1300,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 32
+    "KJ": 6
    }
   },
   {
@@ -1315,7 +1315,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 33
+    "KJ": 5
    }
   },
   {
@@ -1330,7 +1330,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 34
+    "KJ": 4
    }
   },
   {
@@ -1345,7 +1345,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 35
+    "KJ": 3
    }
   },
   {
@@ -1360,7 +1360,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 36
+    "KJ": 2
    }
   },
   {
@@ -1376,7 +1376,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 37
+    "KJ": 1
    }
   },
   {
@@ -1391,7 +1391,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 4
+    "KJ": 34
    }
   },
   {
@@ -1406,7 +1406,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 5
+    "KJ": 33
    }
   },
   {
@@ -1421,7 +1421,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 6
+    "KJ": 32
    }
   },
   {
@@ -1436,7 +1436,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 7
+    "KJ": 31
    }
   },
   {
@@ -1451,7 +1451,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 8
+    "KJ": 30
    }
   },
   {
@@ -1467,7 +1467,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "KJ": 9
+    "KJ": 29
    }
   },
   {
@@ -1483,7 +1483,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 11
+    "MR": 1
    }
   },
   {
@@ -1498,7 +1498,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 2
+    "MR": 10
    }
   },
   {
@@ -1516,7 +1516,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 1
+    "MR": 11
    }
   },
   {
@@ -1531,7 +1531,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 10
+    "MR": 2
    }
   },
   {
@@ -1546,7 +1546,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 9
+    "MR": 3
    }
   },
   {
@@ -1563,7 +1563,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 8
+    "MR": 4
    }
   },
   {
@@ -1578,7 +1578,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 7
+    "MR": 5
    }
   },
   {
@@ -1609,7 +1609,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 5
+    "MR": 7
    }
   },
   {
@@ -1625,7 +1625,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 4
+    "MR": 8
    }
   },
   {
@@ -1640,7 +1640,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "MR": 3
+    "MR": 9
    }
   },
   {
@@ -1656,7 +1656,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 36
+    "PYL": 1
    }
   },
   {
@@ -1671,7 +1671,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 35
+    "PYL": 2
    }
   },
   {
@@ -1686,7 +1686,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 34
+    "PYL": 3
    }
   },
   {
@@ -1701,7 +1701,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 33
+    "PYL": 4
    }
   },
   {
@@ -1716,7 +1716,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 32
+    "PYL": 5
    }
   },
   {
@@ -1731,7 +1731,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 31
+    "PYL": 6
    }
   },
   {
@@ -1746,7 +1746,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 30
+    "PYL": 7
    }
   },
   {
@@ -1761,7 +1761,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 29
+    "PYL": 8
    }
   },
   {
@@ -1776,7 +1776,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 28
+    "PYL": 9
    }
   },
   {
@@ -1791,7 +1791,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 27
+    "PYL": 10
    }
   },
   {
@@ -1806,7 +1806,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 26
+    "PYL": 11
    }
   },
   {
@@ -1821,7 +1821,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 25
+    "PYL": 12
    }
   },
   {
@@ -1836,7 +1836,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 24
+    "PYL": 13
    }
   },
   {
@@ -1851,7 +1851,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 23
+    "PYL": 14
    }
   },
   {
@@ -1866,7 +1866,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 22
+    "PYL": 15
    }
   },
   {
@@ -1884,7 +1884,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 21
+    "PYL": 16
    }
   },
   {
@@ -1899,7 +1899,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 20
+    "PYL": 17
    }
   },
   {
@@ -1914,7 +1914,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 19
+    "PYL": 18
    }
   },
   {
@@ -1930,7 +1930,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 18
+    "PYL": 19
    }
   },
   {
@@ -1945,7 +1945,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 17
+    "PYL": 20
    }
   },
   {
@@ -1960,7 +1960,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 16
+    "PYL": 21
    }
   },
   {
@@ -1976,7 +1976,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 15
+    "PYL": 22
    }
   },
   {
@@ -1993,7 +1993,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 14
+    "PYL": 23
    }
   },
   {
@@ -2008,7 +2008,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 13
+    "PYL": 24
    }
   },
   {
@@ -2023,7 +2023,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 12
+    "PYL": 25
    }
   },
   {
@@ -2039,7 +2039,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 11
+    "PYL": 26
    }
   },
   {
@@ -2054,7 +2054,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 10
+    "PYL": 27
    }
   },
   {
@@ -2069,7 +2069,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 9
+    "PYL": 28
    }
   },
   {
@@ -2084,7 +2084,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 8
+    "PYL": 29
    }
   },
   {
@@ -2099,7 +2099,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 7
+    "PYL": 30
    }
   },
   {
@@ -2114,7 +2114,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 6
+    "PYL": 31
    }
   },
   {
@@ -2129,7 +2129,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 5
+    "PYL": 32
    }
   },
   {
@@ -2144,7 +2144,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 4
+    "PYL": 33
    }
   },
   {
@@ -2159,7 +2159,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 3
+    "PYL": 34
    }
   },
   {
@@ -2174,7 +2174,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 2
+    "PYL": 35
    }
   },
   {
@@ -2189,7 +2189,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PYL": 1
+    "PYL": 36
    }
   },
   {
@@ -2205,7 +2205,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 20
+    "SA": 1
    }
   },
   {
@@ -2220,7 +2220,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 13
+    "SA": 8
    }
   },
   {
@@ -2235,7 +2235,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 12
+    "SA": 9
    }
   },
   {
@@ -2250,7 +2250,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 11
+    "SA": 10
    }
   },
   {
@@ -2265,7 +2265,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 10
+    "SA": 11
    }
   },
   {
@@ -2280,7 +2280,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 9
+    "SA": 12
    }
   },
   {
@@ -2295,7 +2295,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 8
+    "SA": 13
    }
   },
   {
@@ -2310,7 +2310,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 7
+    "SA": 14
    }
   },
   {
@@ -2325,7 +2325,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 19
+    "SA": 2
    }
   },
   {
@@ -2340,7 +2340,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 6
+    "SA": 15
    }
   },
   {
@@ -2355,7 +2355,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 5
+    "SA": 16
    }
   },
   {
@@ -2370,7 +2370,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 4
+    "SA": 17
    }
   },
   {
@@ -2385,7 +2385,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 3
+    "SA": 18
    }
   },
   {
@@ -2400,7 +2400,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 2
+    "SA": 19
    }
   },
   {
@@ -2415,7 +2415,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 1
+    "SA": 20
    }
   },
   {
@@ -2430,7 +2430,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 18
+    "SA": 3
    }
   },
   {
@@ -2445,7 +2445,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 17
+    "SA": 4
    }
   },
   {
@@ -2460,7 +2460,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 16
+    "SA": 5
    }
   },
   {
@@ -2476,7 +2476,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 15
+    "SA": 6
    }
   },
   {
@@ -2491,7 +2491,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "SA": 14
+    "SA": 7
    }
   },
   {
@@ -2507,7 +2507,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 1
+    "PH": 29
    }
   },
   {
@@ -2523,7 +2523,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 10
+    "PH": 20
    }
   },
   {
@@ -2540,7 +2540,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 11
+    "PH": 19
    }
   },
   {
@@ -2555,7 +2555,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 12
+    "PH": 18
    }
   },
   {
@@ -2570,7 +2570,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 13
+    "PH": 17
    }
   },
   {
@@ -2585,7 +2585,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 14
+    "PH": 16
    }
   },
   {
@@ -2616,7 +2616,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 16
+    "PH": 14
    }
   },
   {
@@ -2631,7 +2631,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 17
+    "PH": 13
    }
   },
   {
@@ -2646,7 +2646,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 18
+    "PH": 12
    }
   },
   {
@@ -2661,7 +2661,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 19
+    "PH": 11
    }
   },
   {
@@ -2677,7 +2677,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 2
+    "PH": 28
    }
   },
   {
@@ -2692,7 +2692,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 20
+    "PH": 10
    }
   },
   {
@@ -2707,7 +2707,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 21
+    "PH": 9
    }
   },
   {
@@ -2722,7 +2722,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 22
+    "PH": 8
    }
   },
   {
@@ -2737,7 +2737,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 23
+    "PH": 7
    }
   },
   {
@@ -2752,7 +2752,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 24
+    "PH": 6
    }
   },
   {
@@ -2767,7 +2767,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 25
+    "PH": 5
    }
   },
   {
@@ -2782,7 +2782,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 26
+    "PH": 4
    }
   },
   {
@@ -2797,7 +2797,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 27
+    "PH": 3
    }
   },
   {
@@ -2812,7 +2812,7 @@
    "isInterchange": false,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 28
+    "PH": 2
    }
   },
   {
@@ -2830,7 +2830,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 3
+    "PH": 27
    }
   },
   {
@@ -2846,7 +2846,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 29
+    "PH": 1
    }
   },
   {
@@ -2862,7 +2862,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 4
+    "PH": 26
    }
   },
   {
@@ -2878,7 +2878,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 5
+    "PH": 25
    }
   },
   {
@@ -2894,7 +2894,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 6
+    "PH": 24
    }
   },
   {
@@ -2911,7 +2911,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 7
+    "PH": 23
    }
   },
   {
@@ -2928,7 +2928,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 8
+    "PH": 22
    }
   },
   {
@@ -2945,7 +2945,7 @@
    "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
-    "PH": 9
+    "PH": 21
    }
   }
  ],
@@ -3142,8 +3142,8 @@
    "lineId": "AG",
    "fromStationId": "AG1",
    "toStationId": "AG2",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 18,
+   "toSequence": 17,
    "scheduledRunSeconds": 79,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 825
@@ -3153,8 +3153,8 @@
    "lineId": "AG",
    "fromStationId": "AG2",
    "toStationId": "AG3",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 17,
+   "toSequence": 16,
    "scheduledRunSeconds": 62,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 555
@@ -3164,8 +3164,8 @@
    "lineId": "AG",
    "fromStationId": "AG3",
    "toStationId": "AG4",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 16,
+   "toSequence": 15,
    "scheduledRunSeconds": 85,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 821
@@ -3175,8 +3175,8 @@
    "lineId": "AG",
    "fromStationId": "AG4",
    "toStationId": "AG5",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 15,
+   "toSequence": 14,
    "scheduledRunSeconds": 70,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 569
@@ -3186,8 +3186,8 @@
    "lineId": "AG",
    "fromStationId": "AG5",
    "toStationId": "AG6",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 14,
+   "toSequence": 13,
    "scheduledRunSeconds": 69,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 633
@@ -3197,8 +3197,8 @@
    "lineId": "AG",
    "fromStationId": "AG6",
    "toStationId": "AG7",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 13,
+   "toSequence": 12,
    "scheduledRunSeconds": 95,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 731
@@ -3208,8 +3208,8 @@
    "lineId": "AG",
    "fromStationId": "AG7",
    "toStationId": "AG8",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 12,
+   "toSequence": 11,
    "scheduledRunSeconds": 92,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 861
@@ -3219,8 +3219,8 @@
    "lineId": "AG",
    "fromStationId": "AG8",
    "toStationId": "AG9",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 66,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 622
@@ -3230,8 +3230,8 @@
    "lineId": "AG",
    "fromStationId": "AG9",
    "toStationId": "AG10",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 73,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 875
@@ -3241,8 +3241,8 @@
    "lineId": "AG",
    "fromStationId": "AG10",
    "toStationId": "AG11",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 87,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 857
@@ -3252,8 +3252,8 @@
    "lineId": "AG",
    "fromStationId": "AG11",
    "toStationId": "AG12",
-   "fromSequence": 11,
-   "toSequence": 12,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 76,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 833
@@ -3263,8 +3263,8 @@
    "lineId": "AG",
    "fromStationId": "AG12",
    "toStationId": "AG13",
-   "fromSequence": 12,
-   "toSequence": 13,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 86,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1071
@@ -3274,8 +3274,8 @@
    "lineId": "AG",
    "fromStationId": "AG13",
    "toStationId": "AG14",
-   "fromSequence": 13,
-   "toSequence": 14,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 108,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1519
@@ -3285,8 +3285,8 @@
    "lineId": "AG",
    "fromStationId": "AG14",
    "toStationId": "AG15",
-   "fromSequence": 14,
-   "toSequence": 15,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 81,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 957
@@ -3296,8 +3296,8 @@
    "lineId": "AG",
    "fromStationId": "AG15",
    "toStationId": "AG16",
-   "fromSequence": 15,
-   "toSequence": 16,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 72,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 830
@@ -3307,8 +3307,8 @@
    "lineId": "AG",
    "fromStationId": "AG16",
    "toStationId": "AG17",
-   "fromSequence": 16,
-   "toSequence": 17,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 56,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 481
@@ -3318,8 +3318,8 @@
    "lineId": "AG",
    "fromStationId": "AG17",
    "toStationId": "AG18",
-   "fromSequence": 17,
-   "toSequence": 18,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 119,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1146
@@ -3725,8 +3725,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ1",
    "toStationId": "KJ2",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 37,
+   "toSequence": 36,
    "scheduledRunSeconds": 155,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1388
@@ -3736,8 +3736,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ2",
    "toStationId": "KJ3",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 36,
+   "toSequence": 35,
    "scheduledRunSeconds": 160,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1883
@@ -3747,8 +3747,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ3",
    "toStationId": "KJ4",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 35,
+   "toSequence": 34,
    "scheduledRunSeconds": 109,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 965
@@ -3758,8 +3758,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ4",
    "toStationId": "KJ5",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 34,
+   "toSequence": 33,
    "scheduledRunSeconds": 255,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 2610
@@ -3769,8 +3769,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ5",
    "toStationId": "KJ6",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 33,
+   "toSequence": 32,
    "scheduledRunSeconds": 111,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 953
@@ -3780,8 +3780,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ6",
    "toStationId": "KJ7",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 32,
+   "toSequence": 31,
    "scheduledRunSeconds": 102,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 455
@@ -3791,8 +3791,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ7",
    "toStationId": "KJ8",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 31,
+   "toSequence": 30,
    "scheduledRunSeconds": 112,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 820
@@ -3802,8 +3802,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ8",
    "toStationId": "KJ9",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 30,
+   "toSequence": 29,
    "scheduledRunSeconds": 138,
    "scheduledDwellSeconds": 35,
    "lengthMeters": 788
@@ -3813,8 +3813,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ9",
    "toStationId": "KJ10",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 29,
+   "toSequence": 28,
    "scheduledRunSeconds": 115,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 645
@@ -3824,8 +3824,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ10",
    "toStationId": "KJ11",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 28,
+   "toSequence": 27,
    "scheduledRunSeconds": 114,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 790
@@ -3835,8 +3835,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ11",
    "toStationId": "KJ12",
-   "fromSequence": 11,
-   "toSequence": 12,
+   "fromSequence": 27,
+   "toSequence": 26,
    "scheduledRunSeconds": 97,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 713
@@ -3846,8 +3846,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ12",
    "toStationId": "KJ13",
-   "fromSequence": 12,
-   "toSequence": 13,
+   "fromSequence": 26,
+   "toSequence": 25,
    "scheduledRunSeconds": 141,
    "scheduledDwellSeconds": 35,
    "lengthMeters": 987
@@ -3857,8 +3857,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ13",
    "toStationId": "KJ14",
-   "fromSequence": 13,
-   "toSequence": 14,
+   "fromSequence": 25,
+   "toSequence": 24,
    "scheduledRunSeconds": 147,
    "scheduledDwellSeconds": 35,
    "lengthMeters": 826
@@ -3868,8 +3868,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ14",
    "toStationId": "KJ15",
-   "fromSequence": 14,
-   "toSequence": 15,
+   "fromSequence": 24,
+   "toSequence": 23,
    "scheduledRunSeconds": 173,
    "scheduledDwellSeconds": 27,
    "lengthMeters": 1344
@@ -3879,8 +3879,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ15",
    "toStationId": "KJ16",
-   "fromSequence": 15,
-   "toSequence": 16,
+   "fromSequence": 23,
+   "toSequence": 22,
    "scheduledRunSeconds": 123,
    "scheduledDwellSeconds": 17,
    "lengthMeters": 1102
@@ -3890,8 +3890,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ16",
    "toStationId": "KJ17",
-   "fromSequence": 16,
-   "toSequence": 17,
+   "fromSequence": 22,
+   "toSequence": 21,
    "scheduledRunSeconds": 135,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1199
@@ -3901,8 +3901,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ17",
    "toStationId": "KJ18",
-   "fromSequence": 17,
-   "toSequence": 18,
+   "fromSequence": 21,
+   "toSequence": 20,
    "scheduledRunSeconds": 112,
    "scheduledDwellSeconds": 17,
    "lengthMeters": 600
@@ -3912,7 +3912,7 @@
    "lineId": "KJ",
    "fromStationId": "KJ18",
    "toStationId": "KJ19",
-   "fromSequence": 18,
+   "fromSequence": 20,
    "toSequence": 19,
    "scheduledRunSeconds": 108,
    "scheduledDwellSeconds": 16,
@@ -3924,7 +3924,7 @@
    "fromStationId": "KJ19",
    "toStationId": "KJ20",
    "fromSequence": 19,
-   "toSequence": 20,
+   "toSequence": 18,
    "scheduledRunSeconds": 202,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 2164
@@ -3934,8 +3934,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ20",
    "toStationId": "KJ21",
-   "fromSequence": 20,
-   "toSequence": 21,
+   "fromSequence": 18,
+   "toSequence": 17,
    "scheduledRunSeconds": 99,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 839
@@ -3945,8 +3945,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ21",
    "toStationId": "KJ22",
-   "fromSequence": 21,
-   "toSequence": 22,
+   "fromSequence": 17,
+   "toSequence": 16,
    "scheduledRunSeconds": 145,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1611
@@ -3956,8 +3956,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ22",
    "toStationId": "KJ23",
-   "fromSequence": 22,
-   "toSequence": 23,
+   "fromSequence": 16,
+   "toSequence": 15,
    "scheduledRunSeconds": 131,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1332
@@ -3967,8 +3967,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ23",
    "toStationId": "KJ24",
-   "fromSequence": 23,
-   "toSequence": 24,
+   "fromSequence": 15,
+   "toSequence": 14,
    "scheduledRunSeconds": 178,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 969
@@ -3978,8 +3978,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ24",
    "toStationId": "KJ25",
-   "fromSequence": 24,
-   "toSequence": 25,
+   "fromSequence": 14,
+   "toSequence": 13,
    "scheduledRunSeconds": 155,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1474
@@ -3989,8 +3989,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ25",
    "toStationId": "KJ26",
-   "fromSequence": 25,
-   "toSequence": 26,
+   "fromSequence": 13,
+   "toSequence": 12,
    "scheduledRunSeconds": 93,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 644
@@ -4000,8 +4000,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ26",
    "toStationId": "KJ27",
-   "fromSequence": 26,
-   "toSequence": 27,
+   "fromSequence": 12,
+   "toSequence": 11,
    "scheduledRunSeconds": 151,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1617
@@ -4011,8 +4011,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ27",
    "toStationId": "KJ28",
-   "fromSequence": 27,
-   "toSequence": 28,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 159,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1154
@@ -4022,8 +4022,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ28",
    "toStationId": "KJ29",
-   "fromSequence": 28,
-   "toSequence": 29,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 185,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 995
@@ -4033,8 +4033,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ29",
    "toStationId": "KJ30",
-   "fromSequence": 29,
-   "toSequence": 30,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 124,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 977
@@ -4044,8 +4044,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ30",
    "toStationId": "KJ31",
-   "fromSequence": 30,
-   "toSequence": 31,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 254,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1526
@@ -4055,8 +4055,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ31",
    "toStationId": "KJ32",
-   "fromSequence": 31,
-   "toSequence": 32,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 113,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 787
@@ -4066,8 +4066,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ32",
    "toStationId": "KJ33",
-   "fromSequence": 32,
-   "toSequence": 33,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 155,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1470
@@ -4077,8 +4077,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ33",
    "toStationId": "KJ34",
-   "fromSequence": 33,
-   "toSequence": 34,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 138,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 935
@@ -4088,8 +4088,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ34",
    "toStationId": "KJ35",
-   "fromSequence": 34,
-   "toSequence": 35,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 219,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1310
@@ -4099,8 +4099,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ35",
    "toStationId": "KJ36",
-   "fromSequence": 35,
-   "toSequence": 36,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 149,
    "scheduledDwellSeconds": 15,
    "lengthMeters": 1527
@@ -4110,8 +4110,8 @@
    "lineId": "KJ",
    "fromStationId": "KJ36",
    "toStationId": "KJ37",
-   "fromSequence": 36,
-   "toSequence": 37,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 182,
    "scheduledDwellSeconds": 17,
    "lengthMeters": 1509
@@ -4429,8 +4429,8 @@
    "lineId": "PH",
    "fromStationId": "SP1",
    "toStationId": "SP2",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 29,
+   "toSequence": 28,
    "scheduledRunSeconds": 79,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 825
@@ -4440,8 +4440,8 @@
    "lineId": "PH",
    "fromStationId": "SP2",
    "toStationId": "SP3",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 28,
+   "toSequence": 27,
    "scheduledRunSeconds": 62,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 555
@@ -4451,8 +4451,8 @@
    "lineId": "PH",
    "fromStationId": "SP3",
    "toStationId": "SP4",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 27,
+   "toSequence": 26,
    "scheduledRunSeconds": 85,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 821
@@ -4462,8 +4462,8 @@
    "lineId": "PH",
    "fromStationId": "SP4",
    "toStationId": "SP5",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 26,
+   "toSequence": 25,
    "scheduledRunSeconds": 70,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 569
@@ -4473,8 +4473,8 @@
    "lineId": "PH",
    "fromStationId": "SP5",
    "toStationId": "SP6",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 25,
+   "toSequence": 24,
    "scheduledRunSeconds": 69,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 633
@@ -4484,8 +4484,8 @@
    "lineId": "PH",
    "fromStationId": "SP6",
    "toStationId": "SP7",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 24,
+   "toSequence": 23,
    "scheduledRunSeconds": 95,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 731
@@ -4495,8 +4495,8 @@
    "lineId": "PH",
    "fromStationId": "SP7",
    "toStationId": "SP8",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 23,
+   "toSequence": 22,
    "scheduledRunSeconds": 92,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 861
@@ -4506,8 +4506,8 @@
    "lineId": "PH",
    "fromStationId": "SP8",
    "toStationId": "SP9",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 22,
+   "toSequence": 21,
    "scheduledRunSeconds": 66,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 622
@@ -4517,8 +4517,8 @@
    "lineId": "PH",
    "fromStationId": "SP9",
    "toStationId": "SP10",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 21,
+   "toSequence": 20,
    "scheduledRunSeconds": 73,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 875
@@ -4528,8 +4528,8 @@
    "lineId": "PH",
    "fromStationId": "SP10",
    "toStationId": "SP11",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 20,
+   "toSequence": 19,
    "scheduledRunSeconds": 87,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 857
@@ -4539,8 +4539,8 @@
    "lineId": "PH",
    "fromStationId": "SP11",
    "toStationId": "SP12",
-   "fromSequence": 11,
-   "toSequence": 12,
+   "fromSequence": 19,
+   "toSequence": 18,
    "scheduledRunSeconds": 128,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1731
@@ -4550,8 +4550,8 @@
    "lineId": "PH",
    "fromStationId": "SP12",
    "toStationId": "SP13",
-   "fromSequence": 12,
-   "toSequence": 13,
+   "fromSequence": 18,
+   "toSequence": 17,
    "scheduledRunSeconds": 111,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1459
@@ -4561,8 +4561,8 @@
    "lineId": "PH",
    "fromStationId": "SP13",
    "toStationId": "SP14",
-   "fromSequence": 13,
-   "toSequence": 14,
+   "fromSequence": 17,
+   "toSequence": 16,
    "scheduledRunSeconds": 126,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1568
@@ -4572,7 +4572,7 @@
    "lineId": "PH",
    "fromStationId": "SP14",
    "toStationId": "SP15",
-   "fromSequence": 14,
+   "fromSequence": 16,
    "toSequence": 15,
    "scheduledRunSeconds": 133,
    "scheduledDwellSeconds": 18,
@@ -4584,7 +4584,7 @@
    "fromStationId": "SP15",
    "toStationId": "SP16",
    "fromSequence": 15,
-   "toSequence": 16,
+   "toSequence": 14,
    "scheduledRunSeconds": 107,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1400
@@ -4594,8 +4594,8 @@
    "lineId": "PH",
    "fromStationId": "SP16",
    "toStationId": "SP17",
-   "fromSequence": 16,
-   "toSequence": 17,
+   "fromSequence": 14,
+   "toSequence": 13,
    "scheduledRunSeconds": 153,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1878
@@ -4605,8 +4605,8 @@
    "lineId": "PH",
    "fromStationId": "SP17",
    "toStationId": "SP18",
-   "fromSequence": 17,
-   "toSequence": 18,
+   "fromSequence": 13,
+   "toSequence": 12,
    "scheduledRunSeconds": 111,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 667
@@ -4616,8 +4616,8 @@
    "lineId": "PH",
    "fromStationId": "SP18",
    "toStationId": "SP19",
-   "fromSequence": 18,
-   "toSequence": 19,
+   "fromSequence": 12,
+   "toSequence": 11,
    "scheduledRunSeconds": 90,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1836
@@ -4627,8 +4627,8 @@
    "lineId": "PH",
    "fromStationId": "SP19",
    "toStationId": "SP20",
-   "fromSequence": 19,
-   "toSequence": 20,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 111,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 889
@@ -4638,8 +4638,8 @@
    "lineId": "PH",
    "fromStationId": "SP20",
    "toStationId": "SP21",
-   "fromSequence": 20,
-   "toSequence": 21,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 114,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1076
@@ -4649,8 +4649,8 @@
    "lineId": "PH",
    "fromStationId": "SP21",
    "toStationId": "SP22",
-   "fromSequence": 21,
-   "toSequence": 22,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 207,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1430
@@ -4660,8 +4660,8 @@
    "lineId": "PH",
    "fromStationId": "SP22",
    "toStationId": "SP24",
-   "fromSequence": 22,
-   "toSequence": 23,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 208,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 2606
@@ -4671,8 +4671,8 @@
    "lineId": "PH",
    "fromStationId": "SP24",
    "toStationId": "SP25",
-   "fromSequence": 23,
-   "toSequence": 24,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 70,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1744
@@ -4682,8 +4682,8 @@
    "lineId": "PH",
    "fromStationId": "SP25",
    "toStationId": "SP26",
-   "fromSequence": 24,
-   "toSequence": 25,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 102,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1188
@@ -4693,8 +4693,8 @@
    "lineId": "PH",
    "fromStationId": "SP26",
    "toStationId": "SP27",
-   "fromSequence": 25,
-   "toSequence": 26,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 86,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 638
@@ -4704,8 +4704,8 @@
    "lineId": "PH",
    "fromStationId": "SP27",
    "toStationId": "SP28",
-   "fromSequence": 26,
-   "toSequence": 27,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 111,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1343
@@ -4715,8 +4715,8 @@
    "lineId": "PH",
    "fromStationId": "SP28",
    "toStationId": "SP29",
-   "fromSequence": 27,
-   "toSequence": 28,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 147,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1291
@@ -4726,8 +4726,8 @@
    "lineId": "PH",
    "fromStationId": "SP29",
    "toStationId": "SP31",
-   "fromSequence": 28,
-   "toSequence": 29,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 214,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 2388
@@ -5045,8 +5045,8 @@
    "lineId": "KGL",
    "fromStationId": "KG35",
    "toStationId": "KG34",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 29,
+   "toSequence": 28,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1376
@@ -5056,8 +5056,8 @@
    "lineId": "KGL",
    "fromStationId": "KG34",
    "toStationId": "KG33",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 28,
+   "toSequence": 27,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 767
@@ -5067,8 +5067,8 @@
    "lineId": "KGL",
    "fromStationId": "KG33",
    "toStationId": "KG31",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 27,
+   "toSequence": 26,
    "scheduledRunSeconds": 240,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 3168
@@ -5078,8 +5078,8 @@
    "lineId": "KGL",
    "fromStationId": "KG31",
    "toStationId": "KG30",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 26,
+   "toSequence": 25,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1679
@@ -5089,8 +5089,8 @@
    "lineId": "KGL",
    "fromStationId": "KG30",
    "toStationId": "KG29",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 25,
+   "toSequence": 24,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 789
@@ -5100,8 +5100,8 @@
    "lineId": "KGL",
    "fromStationId": "KG29",
    "toStationId": "KG28",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 24,
+   "toSequence": 23,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1581
@@ -5111,8 +5111,8 @@
    "lineId": "KGL",
    "fromStationId": "KG28",
    "toStationId": "KG27",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 23,
+   "toSequence": 22,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1465
@@ -5122,8 +5122,8 @@
    "lineId": "KGL",
    "fromStationId": "KG27",
    "toStationId": "KG26",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 22,
+   "toSequence": 21,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 2204
@@ -5133,8 +5133,8 @@
    "lineId": "KGL",
    "fromStationId": "KG26",
    "toStationId": "KG25",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 21,
+   "toSequence": 20,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1417
@@ -5144,8 +5144,8 @@
    "lineId": "KGL",
    "fromStationId": "KG25",
    "toStationId": "KG24",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 20,
+   "toSequence": 19,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1761
@@ -5155,8 +5155,8 @@
    "lineId": "KGL",
    "fromStationId": "KG24",
    "toStationId": "KG23",
-   "fromSequence": 11,
-   "toSequence": 12,
+   "fromSequence": 19,
+   "toSequence": 18,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 947
@@ -5166,8 +5166,8 @@
    "lineId": "KGL",
    "fromStationId": "KG23",
    "toStationId": "KG22",
-   "fromSequence": 12,
-   "toSequence": 13,
+   "fromSequence": 18,
+   "toSequence": 17,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 40,
    "lengthMeters": 1244
@@ -5177,8 +5177,8 @@
    "lineId": "KGL",
    "fromStationId": "KG22",
    "toStationId": "KG21",
-   "fromSequence": 13,
-   "toSequence": 14,
+   "fromSequence": 17,
+   "toSequence": 16,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1157
@@ -5188,7 +5188,7 @@
    "lineId": "KGL",
    "fromStationId": "KG21",
    "toStationId": "KG20",
-   "fromSequence": 14,
+   "fromSequence": 16,
    "toSequence": 15,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
@@ -5200,7 +5200,7 @@
    "fromStationId": "KG20",
    "toStationId": "KG18A",
    "fromSequence": 15,
-   "toSequence": 16,
+   "toSequence": 14,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 40,
    "lengthMeters": 1119
@@ -5210,8 +5210,8 @@
    "lineId": "KGL",
    "fromStationId": "KG18A",
    "toStationId": "KG17",
-   "fromSequence": 16,
-   "toSequence": 17,
+   "fromSequence": 14,
+   "toSequence": 13,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 40,
    "lengthMeters": 1109
@@ -5221,8 +5221,8 @@
    "lineId": "KGL",
    "fromStationId": "KG17",
    "toStationId": "KG16",
-   "fromSequence": 17,
-   "toSequence": 18,
+   "fromSequence": 13,
+   "toSequence": 12,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 40,
    "lengthMeters": 721
@@ -5232,8 +5232,8 @@
    "lineId": "KGL",
    "fromStationId": "KG16",
    "toStationId": "KG15",
-   "fromSequence": 18,
-   "toSequence": 19,
+   "fromSequence": 12,
+   "toSequence": 11,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 40,
    "lengthMeters": 1068
@@ -5243,8 +5243,8 @@
    "lineId": "KGL",
    "fromStationId": "KG15",
    "toStationId": "KG14",
-   "fromSequence": 19,
-   "toSequence": 20,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 240,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 2861
@@ -5254,8 +5254,8 @@
    "lineId": "KGL",
    "fromStationId": "KG14",
    "toStationId": "KG13",
-   "fromSequence": 20,
-   "toSequence": 21,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 887
@@ -5265,8 +5265,8 @@
    "lineId": "KGL",
    "fromStationId": "KG13",
    "toStationId": "KG12",
-   "fromSequence": 21,
-   "toSequence": 22,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 240,
    "scheduledDwellSeconds": 35,
    "lengthMeters": 2721
@@ -5276,8 +5276,8 @@
    "lineId": "KGL",
    "fromStationId": "KG12",
    "toStationId": "KG10",
-   "fromSequence": 22,
-   "toSequence": 23,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1497
@@ -5287,8 +5287,8 @@
    "lineId": "KGL",
    "fromStationId": "KG10",
    "toStationId": "KG09",
-   "fromSequence": 23,
-   "toSequence": 24,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1772
@@ -5298,8 +5298,8 @@
    "lineId": "KGL",
    "fromStationId": "KG09",
    "toStationId": "KG08",
-   "fromSequence": 24,
-   "toSequence": 25,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1425
@@ -5309,8 +5309,8 @@
    "lineId": "KGL",
    "fromStationId": "KG08",
    "toStationId": "KG07",
-   "fromSequence": 25,
-   "toSequence": 26,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1802
@@ -5320,8 +5320,8 @@
    "lineId": "KGL",
    "fromStationId": "KG07",
    "toStationId": "KG06",
-   "fromSequence": 26,
-   "toSequence": 27,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 1693
@@ -5331,8 +5331,8 @@
    "lineId": "KGL",
    "fromStationId": "KG06",
    "toStationId": "KG05",
-   "fromSequence": 27,
-   "toSequence": 28,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 180,
    "scheduledDwellSeconds": 26,
    "lengthMeters": 2714
@@ -5342,8 +5342,8 @@
    "lineId": "KGL",
    "fromStationId": "KG05",
    "toStationId": "KG04",
-   "fromSequence": 28,
-   "toSequence": 29,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 22,
    "lengthMeters": 1061
@@ -5738,8 +5738,8 @@
    "lineId": "PYL",
    "fromStationId": "PY41",
    "toStationId": "PY40",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 36,
+   "toSequence": 35,
    "scheduledRunSeconds": 70,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1005
@@ -5749,8 +5749,8 @@
    "lineId": "PYL",
    "fromStationId": "PY40",
    "toStationId": "PY39",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 35,
+   "toSequence": 34,
    "scheduledRunSeconds": 125,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1605
@@ -5760,8 +5760,8 @@
    "lineId": "PYL",
    "fromStationId": "PY39",
    "toStationId": "PY38",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 34,
+   "toSequence": 33,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1688
@@ -5771,8 +5771,8 @@
    "lineId": "PYL",
    "fromStationId": "PY38",
    "toStationId": "PY37",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 33,
+   "toSequence": 32,
    "scheduledRunSeconds": 142,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 2160
@@ -5782,8 +5782,8 @@
    "lineId": "PYL",
    "fromStationId": "PY37",
    "toStationId": "PY36",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 32,
+   "toSequence": 31,
    "scheduledRunSeconds": 103,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1437
@@ -5793,8 +5793,8 @@
    "lineId": "PYL",
    "fromStationId": "PY36",
    "toStationId": "PY34",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 31,
+   "toSequence": 30,
    "scheduledRunSeconds": 240,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 4229
@@ -5804,8 +5804,8 @@
    "lineId": "PYL",
    "fromStationId": "PY34",
    "toStationId": "PY33",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 30,
+   "toSequence": 29,
    "scheduledRunSeconds": 126,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1512
@@ -5815,8 +5815,8 @@
    "lineId": "PYL",
    "fromStationId": "PY33",
    "toStationId": "PY32",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 29,
+   "toSequence": 28,
    "scheduledRunSeconds": 73,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 781
@@ -5826,8 +5826,8 @@
    "lineId": "PYL",
    "fromStationId": "PY32",
    "toStationId": "PY31",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 28,
+   "toSequence": 27,
    "scheduledRunSeconds": 102,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1497
@@ -5837,8 +5837,8 @@
    "lineId": "PYL",
    "fromStationId": "PY31",
    "toStationId": "PY29",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 27,
+   "toSequence": 26,
    "scheduledRunSeconds": 160,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 2483
@@ -5848,8 +5848,8 @@
    "lineId": "PYL",
    "fromStationId": "PY29",
    "toStationId": "PY28",
-   "fromSequence": 11,
-   "toSequence": 12,
+   "fromSequence": 26,
+   "toSequence": 25,
    "scheduledRunSeconds": 146,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1818
@@ -5859,8 +5859,8 @@
    "lineId": "PYL",
    "fromStationId": "PY28",
    "toStationId": "PY27",
-   "fromSequence": 12,
-   "toSequence": 13,
+   "fromSequence": 25,
+   "toSequence": 24,
    "scheduledRunSeconds": 104,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1465
@@ -5870,8 +5870,8 @@
    "lineId": "PYL",
    "fromStationId": "PY27",
    "toStationId": "PY24",
-   "fromSequence": 13,
-   "toSequence": 14,
+   "fromSequence": 24,
+   "toSequence": 23,
    "scheduledRunSeconds": 340,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 4990
@@ -5881,8 +5881,8 @@
    "lineId": "PYL",
    "fromStationId": "PY24",
    "toStationId": "PY23",
-   "fromSequence": 14,
-   "toSequence": 15,
+   "fromSequence": 23,
+   "toSequence": 22,
    "scheduledRunSeconds": 133,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1664
@@ -5892,8 +5892,8 @@
    "lineId": "PYL",
    "fromStationId": "PY23",
    "toStationId": "PY22",
-   "fromSequence": 15,
-   "toSequence": 16,
+   "fromSequence": 22,
+   "toSequence": 21,
    "scheduledRunSeconds": 82,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 986
@@ -5903,8 +5903,8 @@
    "lineId": "PYL",
    "fromStationId": "PY22",
    "toStationId": "PY21",
-   "fromSequence": 16,
-   "toSequence": 17,
+   "fromSequence": 21,
+   "toSequence": 20,
    "scheduledRunSeconds": 72,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 632
@@ -5914,8 +5914,8 @@
    "lineId": "PYL",
    "fromStationId": "PY21",
    "toStationId": "PY20",
-   "fromSequence": 17,
-   "toSequence": 18,
+   "fromSequence": 20,
+   "toSequence": 19,
    "scheduledRunSeconds": 61,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 573
@@ -5925,8 +5925,8 @@
    "lineId": "PYL",
    "fromStationId": "PY20",
    "toStationId": "PY19",
-   "fromSequence": 18,
-   "toSequence": 19,
+   "fromSequence": 19,
+   "toSequence": 18,
    "scheduledRunSeconds": 100,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1058
@@ -5936,8 +5936,8 @@
    "lineId": "PYL",
    "fromStationId": "PY19",
    "toStationId": "PY18",
-   "fromSequence": 19,
-   "toSequence": 20,
+   "fromSequence": 18,
+   "toSequence": 17,
    "scheduledRunSeconds": 104,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1099
@@ -5947,8 +5947,8 @@
    "lineId": "PYL",
    "fromStationId": "PY18",
    "toStationId": "PY17",
-   "fromSequence": 20,
-   "toSequence": 21,
+   "fromSequence": 17,
+   "toSequence": 16,
    "scheduledRunSeconds": 70,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 731
@@ -5958,8 +5958,8 @@
    "lineId": "PYL",
    "fromStationId": "PY17",
    "toStationId": "PY16",
-   "fromSequence": 21,
-   "toSequence": 22,
+   "fromSequence": 16,
+   "toSequence": 15,
    "scheduledRunSeconds": 104,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1362
@@ -5969,8 +5969,8 @@
    "lineId": "PYL",
    "fromStationId": "PY16",
    "toStationId": "PY15",
-   "fromSequence": 22,
-   "toSequence": 23,
+   "fromSequence": 15,
+   "toSequence": 14,
    "scheduledRunSeconds": 116,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1176
@@ -5980,8 +5980,8 @@
    "lineId": "PYL",
    "fromStationId": "PY15",
    "toStationId": "PY14",
-   "fromSequence": 23,
-   "toSequence": 24,
+   "fromSequence": 14,
+   "toSequence": 13,
    "scheduledRunSeconds": 72,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 720
@@ -5991,8 +5991,8 @@
    "lineId": "PYL",
    "fromStationId": "PY14",
    "toStationId": "PY13",
-   "fromSequence": 24,
-   "toSequence": 25,
+   "fromSequence": 13,
+   "toSequence": 12,
    "scheduledRunSeconds": 101,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1196
@@ -6002,8 +6002,8 @@
    "lineId": "PYL",
    "fromStationId": "PY13",
    "toStationId": "PY12",
-   "fromSequence": 25,
-   "toSequence": 26,
+   "fromSequence": 12,
+   "toSequence": 11,
    "scheduledRunSeconds": 88,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1094
@@ -6013,8 +6013,8 @@
    "lineId": "PYL",
    "fromStationId": "PY12",
    "toStationId": "PY11",
-   "fromSequence": 26,
-   "toSequence": 27,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 88,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1134
@@ -6024,8 +6024,8 @@
    "lineId": "PYL",
    "fromStationId": "PY11",
    "toStationId": "PY10",
-   "fromSequence": 27,
-   "toSequence": 28,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 78,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 880
@@ -6035,8 +6035,8 @@
    "lineId": "PYL",
    "fromStationId": "PY10",
    "toStationId": "PY09",
-   "fromSequence": 28,
-   "toSequence": 29,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 73,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1024
@@ -6046,8 +6046,8 @@
    "lineId": "PYL",
    "fromStationId": "PY09",
    "toStationId": "PY08",
-   "fromSequence": 29,
-   "toSequence": 30,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 114,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1395
@@ -6057,8 +6057,8 @@
    "lineId": "PYL",
    "fromStationId": "PY08",
    "toStationId": "PY07",
-   "fromSequence": 30,
-   "toSequence": 31,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 101,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1291
@@ -6068,8 +6068,8 @@
    "lineId": "PYL",
    "fromStationId": "PY07",
    "toStationId": "PY06",
-   "fromSequence": 31,
-   "toSequence": 32,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 104,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1455
@@ -6079,8 +6079,8 @@
    "lineId": "PYL",
    "fromStationId": "PY06",
    "toStationId": "PY05",
-   "fromSequence": 32,
-   "toSequence": 33,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 110,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1751
@@ -6090,8 +6090,8 @@
    "lineId": "PYL",
    "fromStationId": "PY05",
    "toStationId": "PY04",
-   "fromSequence": 33,
-   "toSequence": 34,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 126,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1406
@@ -6101,8 +6101,8 @@
    "lineId": "PYL",
    "fromStationId": "PY04",
    "toStationId": "PY03",
-   "fromSequence": 34,
-   "toSequence": 35,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 107,
    "scheduledDwellSeconds": 0,
    "lengthMeters": 1082
@@ -6112,8 +6112,8 @@
    "lineId": "PYL",
    "fromStationId": "PY03",
    "toStationId": "PY01",
-   "fromSequence": 35,
-   "toSequence": 36,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 189,
    "scheduledDwellSeconds": 9,
    "lengthMeters": 2432
@@ -6233,8 +6233,8 @@
    "lineId": "MR",
    "fromStationId": "MR11",
    "toStationId": "MR10",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 700
@@ -6244,8 +6244,8 @@
    "lineId": "MR",
    "fromStationId": "MR10",
    "toStationId": "MR9",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 892
@@ -6255,8 +6255,8 @@
    "lineId": "MR",
    "fromStationId": "MR9",
    "toStationId": "MR8",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 745
@@ -6266,8 +6266,8 @@
    "lineId": "MR",
    "fromStationId": "MR8",
    "toStationId": "MR7",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 861
@@ -6277,7 +6277,7 @@
    "lineId": "MR",
    "fromStationId": "MR7",
    "toStationId": "MR6",
-   "fromSequence": 5,
+   "fromSequence": 7,
    "toSequence": 6,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 18,
@@ -6289,7 +6289,7 @@
    "fromStationId": "MR6",
    "toStationId": "MR5",
    "fromSequence": 6,
-   "toSequence": 7,
+   "toSequence": 5,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 422
@@ -6299,8 +6299,8 @@
    "lineId": "MR",
    "fromStationId": "MR5",
    "toStationId": "MR4",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 90,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 459
@@ -6310,8 +6310,8 @@
    "lineId": "MR",
    "fromStationId": "MR4",
    "toStationId": "MR3",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 776
@@ -6321,8 +6321,8 @@
    "lineId": "MR",
    "fromStationId": "MR3",
    "toStationId": "MR2",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 210,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1247
@@ -6332,8 +6332,8 @@
    "lineId": "MR",
    "fromStationId": "MR2",
    "toStationId": "MR1",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 377
@@ -6409,8 +6409,8 @@
    "lineId": "BRT",
    "fromStationId": "BRT7",
    "toStationId": "BRT6",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 903
@@ -6420,8 +6420,8 @@
    "lineId": "BRT",
    "fromStationId": "BRT6",
    "toStationId": "BRT5",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 150,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 665
@@ -6431,7 +6431,7 @@
    "lineId": "BRT",
    "fromStationId": "BRT5",
    "toStationId": "BRT4",
-   "fromSequence": 3,
+   "fromSequence": 5,
    "toSequence": 4,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 25,
@@ -6443,7 +6443,7 @@
    "fromStationId": "BRT4",
    "toStationId": "BRT3",
    "fromSequence": 4,
-   "toSequence": 5,
+   "toSequence": 3,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 599
@@ -6453,8 +6453,8 @@
    "lineId": "BRT",
    "fromStationId": "BRT3",
    "toStationId": "BRT2",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 615
@@ -6464,8 +6464,8 @@
    "lineId": "BRT",
    "fromStationId": "BRT2",
    "toStationId": "BRT1",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 120,
    "scheduledDwellSeconds": 25,
    "lengthMeters": 784
@@ -6684,8 +6684,8 @@
    "lineId": "SA",
    "fromStationId": "SA26",
    "toStationId": "SA24",
-   "fromSequence": 1,
-   "toSequence": 2,
+   "fromSequence": 20,
+   "toSequence": 19,
    "scheduledRunSeconds": 264,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 2396
@@ -6695,8 +6695,8 @@
    "lineId": "SA",
    "fromStationId": "SA24",
    "toStationId": "SA23",
-   "fromSequence": 2,
-   "toSequence": 3,
+   "fromSequence": 19,
+   "toSequence": 18,
    "scheduledRunSeconds": 147,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1436
@@ -6706,8 +6706,8 @@
    "lineId": "SA",
    "fromStationId": "SA23",
    "toStationId": "SA22",
-   "fromSequence": 3,
-   "toSequence": 4,
+   "fromSequence": 18,
+   "toSequence": 17,
    "scheduledRunSeconds": 121,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1180
@@ -6717,8 +6717,8 @@
    "lineId": "SA",
    "fromStationId": "SA22",
    "toStationId": "SA21",
-   "fromSequence": 4,
-   "toSequence": 5,
+   "fromSequence": 17,
+   "toSequence": 16,
    "scheduledRunSeconds": 125,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1219
@@ -6728,8 +6728,8 @@
    "lineId": "SA",
    "fromStationId": "SA21",
    "toStationId": "SA20",
-   "fromSequence": 5,
-   "toSequence": 6,
+   "fromSequence": 16,
+   "toSequence": 15,
    "scheduledRunSeconds": 242,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 2360
@@ -6739,8 +6739,8 @@
    "lineId": "SA",
    "fromStationId": "SA20",
    "toStationId": "SA19",
-   "fromSequence": 6,
-   "toSequence": 7,
+   "fromSequence": 15,
+   "toSequence": 14,
    "scheduledRunSeconds": 142,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1388
@@ -6750,8 +6750,8 @@
    "lineId": "SA",
    "fromStationId": "SA19",
    "toStationId": "SA18",
-   "fromSequence": 7,
-   "toSequence": 8,
+   "fromSequence": 14,
+   "toSequence": 13,
    "scheduledRunSeconds": 102,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 996
@@ -6761,8 +6761,8 @@
    "lineId": "SA",
    "fromStationId": "SA18",
    "toStationId": "SA17",
-   "fromSequence": 8,
-   "toSequence": 9,
+   "fromSequence": 13,
+   "toSequence": 12,
    "scheduledRunSeconds": 178,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1737
@@ -6772,8 +6772,8 @@
    "lineId": "SA",
    "fromStationId": "SA17",
    "toStationId": "SA15",
-   "fromSequence": 9,
-   "toSequence": 10,
+   "fromSequence": 12,
+   "toSequence": 11,
    "scheduledRunSeconds": 247,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 2402
@@ -6783,8 +6783,8 @@
    "lineId": "SA",
    "fromStationId": "SA15",
    "toStationId": "SA14",
-   "fromSequence": 10,
-   "toSequence": 11,
+   "fromSequence": 11,
+   "toSequence": 10,
    "scheduledRunSeconds": 173,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1688
@@ -6794,8 +6794,8 @@
    "lineId": "SA",
    "fromStationId": "SA14",
    "toStationId": "SA12",
-   "fromSequence": 11,
-   "toSequence": 12,
+   "fromSequence": 10,
+   "toSequence": 9,
    "scheduledRunSeconds": 262,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 2361
@@ -6805,8 +6805,8 @@
    "lineId": "SA",
    "fromStationId": "SA12",
    "toStationId": "SA10",
-   "fromSequence": 12,
-   "toSequence": 13,
+   "fromSequence": 9,
+   "toSequence": 8,
    "scheduledRunSeconds": 355,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 3279
@@ -6816,8 +6816,8 @@
    "lineId": "SA",
    "fromStationId": "SA10",
    "toStationId": "SA9",
-   "fromSequence": 13,
-   "toSequence": 14,
+   "fromSequence": 8,
+   "toSequence": 7,
    "scheduledRunSeconds": 151,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1476
@@ -6827,8 +6827,8 @@
    "lineId": "SA",
    "fromStationId": "SA9",
    "toStationId": "SA7",
-   "fromSequence": 14,
-   "toSequence": 15,
+   "fromSequence": 7,
+   "toSequence": 6,
    "scheduledRunSeconds": 357,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 3298
@@ -6838,8 +6838,8 @@
    "lineId": "SA",
    "fromStationId": "SA7",
    "toStationId": "SA6",
-   "fromSequence": 15,
-   "toSequence": 16,
+   "fromSequence": 6,
+   "toSequence": 5,
    "scheduledRunSeconds": 127,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1236
@@ -6849,8 +6849,8 @@
    "lineId": "SA",
    "fromStationId": "SA6",
    "toStationId": "SA5",
-   "fromSequence": 16,
-   "toSequence": 17,
+   "fromSequence": 5,
+   "toSequence": 4,
    "scheduledRunSeconds": 193,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1884
@@ -6860,8 +6860,8 @@
    "lineId": "SA",
    "fromStationId": "SA5",
    "toStationId": "SA3",
-   "fromSequence": 17,
-   "toSequence": 18,
+   "fromSequence": 4,
+   "toSequence": 3,
    "scheduledRunSeconds": 168,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1637
@@ -6871,8 +6871,8 @@
    "lineId": "SA",
    "fromStationId": "SA3",
    "toStationId": "SA2",
-   "fromSequence": 18,
-   "toSequence": 19,
+   "fromSequence": 3,
+   "toSequence": 2,
    "scheduledRunSeconds": 140,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1366
@@ -6882,8 +6882,8 @@
    "lineId": "SA",
    "fromStationId": "SA2",
    "toStationId": "SA1",
-   "fromSequence": 19,
-   "toSequence": 20,
+   "fromSequence": 2,
+   "toSequence": 1,
    "scheduledRunSeconds": 116,
    "scheduledDwellSeconds": 18,
    "lengthMeters": 1133

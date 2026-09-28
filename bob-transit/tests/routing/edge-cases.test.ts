@@ -73,15 +73,17 @@ describe("no service in the requested window", () => {
     expect(result).toEqual([]);
   });
 
-  test("the same 05:00 query succeeds once the rider will wait an hour", () => {
+  test("the same 05:00 query succeeds once the rider will wait long enough", () => {
+    // The first Kelana Jaya train leaves Putra Heights at 06:00 and does not
+    // reach KLCC until roughly 06:35, so the origin wait must cover that.
     const result = planJourneys({
       graph,
-      query: makeQuery("KJ10", "KJ15", { departAfterSeconds: 5 * 3600, maxInitialWaitSeconds: 3600 }),
+      query: makeQuery("KJ10", "KJ15", { departAfterSeconds: 5 * 3600, maxInitialWaitSeconds: 7200 }),
     });
     expect(result.length).toBeGreaterThanOrEqual(1);
     const firstRide = result[0].legs.find((leg) => leg.kind === "RIDE");
     expect(firstRide).toBeDefined();
-    expect((firstRide?.departureTime ?? 0) - 5 * 3600).toBeLessThanOrEqual(3600);
+    expect((firstRide?.departureTime ?? 0) - 5 * 3600).toBeLessThanOrEqual(7200);
   });
 
   test("maxInitialWaitSeconds: 0 returns nothing (the rider never waits)", () => {

@@ -11,5 +11,6 @@ export * from "./normalize";
 export * from "./geo";
 export * from "./interchange";
 export * from "./build";
+export * from "./compact";
 export * from "./graph-io";
 export * from "./graph-index";

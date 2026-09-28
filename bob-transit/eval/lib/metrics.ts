@@ -130,6 +130,78 @@ export function matchSignals(
   };
 }
 
+
+// ---------------------------------------------------------------------------
+// Event-level collapse
+// ---------------------------------------------------------------------------
+
+/**
+ * Collapse a statement-level match to one unit per real-world event.
+ *
+ * The archive contains several statements about the same disruption (an initial
+ * report, follow-ups, bus-bridging updates, restoration notices). Counting each
+ * as a separate incident answers "did we flag every press release", which is not
+ * the product question. This collapses them to "did we flag the disruption".
+ *
+ * A signal that matched any statement of an event counts as a match for that
+ * event; false positives are unchanged.
+ */
+export function collapseToEvents(
+  matches: MatchResult,
+  signals: EvalSignal[],
+  incidents: LabelledIncident[],
+): MatchResult {
+  const parentOf = new Map<string, string>();
+  const parentByFilename = new Map(incidents.map((i) => [i.filename, i.contentId]));
+  for (const i of incidents) {
+    const parent = i.sameEventAs ? parentByFilename.get(i.sameEventAs) : undefined;
+    parentOf.set(i.contentId, parent ?? i.contentId);
+  }
+  const events = incidents.filter((i) => !i.sameEventAs);
+  const signalById = new Map(signals.map((s) => [s.id, s]));
+
+  const byEvent = new Map<string, MatchPair>();
+  for (const pair of matches.truePositives) {
+    const eventId = parentOf.get(pair.incidentId) ?? pair.incidentId;
+    if (!byEvent.has(eventId)) byEvent.set(eventId, { ...pair, incidentId: eventId });
+  }
+  const truePositives = [...byEvent.values()].sort((a, b) =>
+    a.incidentId < b.incidentId ? -1 : 1,
+  );
+
+  const matchedEventIds = new Set(truePositives.map((p) => p.incidentId));
+  const falseNegatives = events.filter((i) => !matchedEventIds.has(i.contentId));
+
+  // A signal is a false positive only when it matches no statement at all.
+  const falsePositives = matches.falsePositives;
+
+  const coveredIncidentIds = events
+    .filter((i) => {
+      const members = incidents.filter((x) => (parentOf.get(x.contentId) ?? x.contentId) === i.contentId);
+      return members.some((m) => signals.some((s) => signalsCover(s, m)));
+    })
+    .map((i) => i.contentId);
+
+  const tp = truePositives.length;
+  const fp = falsePositives.length;
+  const fn = falseNegatives.length;
+  const precision = tp + fp === 0 ? 0 : tp / (tp + fp);
+  const recall = tp + fn === 0 ? 0 : tp / (tp + fn);
+  const f1 = precision + recall === 0 ? 0 : (2 * precision * recall) / (precision + recall);
+  void signalById;
+
+  return {
+    truePositives,
+    falsePositives,
+    falseNegatives,
+    coveredIncidentIds,
+    precision,
+    recall,
+    coverage: events.length === 0 ? 0 : coveredIncidentIds.length / events.length,
+    f1,
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Lead time
 // ---------------------------------------------------------------------------

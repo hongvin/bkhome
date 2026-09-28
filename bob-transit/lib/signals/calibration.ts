@@ -147,7 +147,12 @@ export function calibrationChannels(input: CalibrationInput): ChannelBreakdown {
   const recency = recencyMultiplier(input.newestSocialAgeMinutes ?? null, windowMinutes);
   return {
     social: clamp01(socialChannelStrength(input.socialDistinctAuthors) * socialQuality * recency),
-    official: clamp01(OFFICIAL_STATEMENT_BASE * clamp01(input.officialQuality ?? 1)),
+    // No statement means no official channel at all — the base must never leak
+    // in as evidence on its own.
+    official:
+      input.officialStatementCount > 0
+        ? clamp01(OFFICIAL_STATEMENT_BASE * clamp01(input.officialQuality ?? 1))
+        : 0,
     realtime: clamp01(
       Math.min(REALTIME_CHANNEL_CAP, REALTIME_PER_OBSERVATION * Math.max(0, input.realtimeObservationCount)) *
         clamp01(input.realtimeQuality ?? 1),

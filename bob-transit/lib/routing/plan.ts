@@ -20,10 +20,13 @@ import type {
   Itinerary,
   LineId,
   PlanJourneysFn,
+  PlanJourneysOptions,
   RouteQuery,
   SegmentId,
 } from "@/lib/contracts";
 import { MATERIAL_RISK_CONFIDENCE_THRESHOLD } from "@/lib/contracts";
+import type { CompactTransitGraph } from "@/lib/gtfs/compact";
+import { materializeTransitGraph } from "@/lib/gtfs/compact";
 import { buildRoutingContext } from "./context";
 import { emptyBanSet, runCsa, type CsaResult } from "./csa";
 import { createRiskPricing } from "./risk-pricing";
@@ -263,3 +266,28 @@ export const planJourneys: PlanJourneysFn = (options) => {
 
 /** Re-exported so integration code can build a query without importing contracts twice. */
 export type { RouteQuery };
+
+/**
+ * Convenience entry point for the offline client: expand only the window the
+ * query needs from the compact cached artifact, then plan against it.
+ *
+ * Equivalent to
+ *   planJourneys({ ...options, graph: materializeTransitGraph(compact, window) })
+ * with the window derived from the query, so the phone never holds all ~163k
+ * connections in memory.
+ */
+export function planJourneysFromCompact(
+  compact: CompactTransitGraph,
+  options: Omit<PlanJourneysOptions, "graph">,
+): Itinerary[] {
+  const { query } = options;
+  const graph = materializeTransitGraph(compact, {
+    weekday: query.serviceWeekday,
+    fromSeconds: query.departAfterSeconds,
+    toSeconds:
+      query.departAfterSeconds +
+      Math.max(0, query.maxInitialWaitSeconds) +
+      MAX_PLANNING_HORIZON_SECONDS,
+  });
+  return planJourneys({ ...options, graph });
+}

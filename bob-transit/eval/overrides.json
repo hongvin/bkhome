@@ -81,8 +81,8 @@
         "AG",
         "PH"
       ],
-      "note": "Rule said NON_INCIDENT on 'BERJALAN LANCAR'. It is a service update during the Bandaraya viaduct closure, i.e. the same unplanned disruption.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Alternative-operation update during the same Bandaraya viaduct closure.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL-1.pdf",
@@ -91,8 +91,8 @@
       "lineIds": [
         "AG"
       ],
-      "note": "Rule said NON_INCIDENT on 'SIASATAN MENYELURUH'. It reports the ongoing suspension of AG/PH service between Masjid Jamek and Bandaraya after the viaduct cracked.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Investigation update on the same Bandaraya viaduct disruption.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL.pdf",
@@ -101,8 +101,8 @@
       "lineIds": [
         "AG"
       ],
-      "note": "Duplicate-version file of the 1 Feb 2023 investigation update; same unplanned Bandaraya viaduct disruption.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Duplicate-version file of the same investigation update.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "KENYATAAN-MEDIA-SIASATAN-LRT-AMPANG.SRI-PETALING-SELESAI_FINAL.pdf",
@@ -112,8 +112,8 @@
         "AG",
         "PH"
       ],
-      "note": "Rule said NON_INCIDENT on 'SIASATAN ... SELESAI'. It states service was suspended between Masjid Jamek and Bandaraya since 27 Jan 2023 — a real disruption.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Investigation concluded for the same Bandaraya viaduct disruption.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "SIARAN-MEDIA-PENGURANGAN-JUMLAH-TREN-YANG-BEROPERASI-DI-ANTARA-SENTUL-TIMUR-DAN-BANDARAYA_FINAL.pdf",
@@ -123,8 +123,8 @@
         "AG",
         "PH"
       ],
-      "note": "Rule said NON_INCIDENT. Trains withdrawn from service and headway cut to 12 min because the Bandaraya structure and track are damaged — a service degradation, not a planned change.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Service reduction caused by the same Bandaraya viaduct damage.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "RAPID-RAIL-KENYATAAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-SRI-PETALING-PENGGANTUNGAN-OPERASI-ANTARA-STESEN-BANDARAYA-DAN-SENTUL-TIMUR-BERMULA-2-APRIL-2023-Ver4.pdf",
@@ -154,8 +154,8 @@
       "lineIds": [
         "AG"
       ],
-      "note": "Follow-up on the Ampang corridor disruption. Issue type restated to the underlying cause (damaged structure at Bandaraya) rather than the bus-bridging subject of the release.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Bus-bridging update for the same Bandaraya viaduct disruption.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "KENYATAAN-MEDIA-SASARAN-200000-PURATA-PENGGUNAAN-HARIAN-SELARAS-PEMBUKAAN-SEMULA-LALUAN-ANTARA-STESEN-MASJID-JAMEK-DAN-STESEN-BANDARAYA-Ver-7.0.pdf",
@@ -175,8 +175,8 @@
         "AG",
         "PH"
       ],
-      "note": "Rule said NON_INCIDENT. Through-running restored after the Bandaraya closure — a restoration notice for the same unplanned disruption.",
-      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+      "note": "Through-running restored after the same Bandaraya viaduct disruption.",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf"
     },
     {
       "filename": "RAPID-RAIL-KENYATAAN-MEDIA-SISTEM-SEMBOYAN-YANG-DIPANAH-PETIR-GANGGU-PERKHIDMATAN-LALUAN-KELANA-JAYA-DI-ANTARA-STESEN-GOMBAK-DAN-TAMAN-MELATI_v1.pdf",
@@ -291,6 +291,31 @@
       "filename": "KENYATAAN-MEDIA-KEMASKINI-GANGGUAN-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-PERKHIDMATAN-KEMBALI-PULIH-SEPENUHNYA-PADA-JAM-9.51-MALAM.pdf",
       "sameEventAs": "RAPID-RAIL-KENYATAAN-MEDIA-GANGGUAN-BEKALAN-KUASA-JEJAS-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-ANTARA-STESEN-LRT-AMPANG-PARK-DAN-STESEN-LRT-MASJID-JAMEK.pdf",
       "note": "Restoration statement for the same 6 Mar 2023 Kelana Jaya power-supply disruption."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+      "note": "Same Bandaraya viaduct disruption; this is the 27 Jan update of the 26 Jan statement."
+    },
+    {
+      "filename": "SIARAN-MEDIA-PERKHIDMATAN-BAS-PERANTARA-DIPERTINGKATKAN_FINAL.pdf",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+      "note": "Bus-bridging update for the same Bandaraya viaduct disruption."
+    },
+    {
+      "filename": "Siaran-Media-9-Feb-Siasatan-Ke-Atas-Punca-Kerosakan-Yang-Menyebabkan-Gangguan-Perkhidmatan-LRT-Laluan-Ampang-Masih-Lagi-Dijalankan.pdf",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+      "note": "Cause investigation for the same Bandaraya viaduct disruption."
+    },
+    {
+      "filename": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-SRI-PETALING-OPERASI-NORMAL-AKAN-DISAMBUNG-SEMULA-PADA-BULAN-FEBRUARI-2024.pdf",
+      "sameEventAs": "SIARAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-MENGALAMI-KELEWATAN-AKIBAT-KEROSAKAN-LANDASAN_V3.pdf",
+      "note": "Recovery timeline for the same Bandaraya viaduct disruption."
+    },
+    {
+      "filename": "Kenyataan-Media-RAPID-RAIL-PERTINGKATKAN-USAHA-MITIGASI-UNTUK-ATASI-GANGGUAN-PERKHIDMATAN-REL_310323.pdf",
+      "sameEventAs": "RAPID-RAIL-KENYATAAN-MEDIA-SISTEM-SEMBOYAN-YANG-DIPANAH-PETIR-GANGGU-PERKHIDMATAN-LALUAN-KELANA-JAYA-DI-ANTARA-STESEN-GOMBAK-DAN-TAMAN-MELATI_v1.pdf",
+      "note": "Retrospective that re-states the 22 Mar 2023 Kelana Jaya signalling failure already reported in the 22 Mar statement."
     }
   ]
 }

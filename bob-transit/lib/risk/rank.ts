@@ -432,12 +432,9 @@ export function rankItineraries(options: RankItinerariesOptions): RankingResult 
     };
   }
 
-  const safeItineraries = ranked.filter((itinerary) => {
-    const assessment = assessments.get(itinerary.id);
-    return assessment ? assessment.safe : false;
-  });
-  const noSafeAlternative = safeItineraries.length === 0;
-  const recommendedItineraryId = noSafeAlternative ? null : safeItineraries[0].id;
+  const safeRanked = sorted.filter((assessment) => assessment.safe);
+  const noSafeAlternative = safeRanked.length === 0;
+  const recommendedItineraryId = noSafeAlternative ? null : safeRanked[0].itinerary.id;
 
   const originStationId =
     options.originStationId ?? ranked[0]?.legs[0]?.fromStationId ?? "UNKNOWN_ORIGIN";

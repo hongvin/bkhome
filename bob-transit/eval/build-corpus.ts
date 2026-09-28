@@ -8,7 +8,7 @@
  *
  * The corpus is a MODEL of how fast a disruption becomes visible to a
  * commuter-driven ingest, not observed social data. See the header of
- * `eval/lib/corpus.ts` and `docs/EVAL-METHOD.md`.
+ * `eval/lib/corpus.ts` and `eval/METHOD.md`.
  */
 
 import { readFile, writeFile } from "node:fs/promises";

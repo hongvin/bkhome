@@ -33,6 +33,17 @@ import { assembleAdvisory } from "./routing";
 import { loadTopology } from "./graph";
 import { apiMetaFor, type DataMode, type DataSourceMeta, type NetworkPayload, type TransitDataSource } from "./index";
 
+/** segment id -> signal id, so `consideredSignals` cites real signals. */
+function buildSignalIndex(signals: readonly DisruptionSignal[]): Map<string, string> {
+  const index = new Map<string, string>();
+  for (const signal of signals) {
+    for (const segmentId of signal.segmentIds) {
+      if (!index.has(segmentId)) index.set(segmentId, signal.id);
+    }
+  }
+  return index;
+}
+
 export interface LiveDataSourceDeps {
   /** S1 — the frequency-expanding CSA router. */
   planJourneys: PlanJourneysFn;
@@ -48,8 +59,7 @@ export interface LiveDataSourceDeps {
   describeTopology?: () => { source: "artifact" | "fixture"; path: string };
 }
 
-export function createLiveDataSource(deps: LiveDataSourceDeps): TransitDataSource {
-  const lookupFor = (mode: DataMode): SegmentRiskLookup => {
+export function createLiveDataSource(deps: LiveDataSourceDeps): TransitDataSource {  const lookupFor = (mode: DataMode): SegmentRiskLookup => {
     const overlay = deps.getOverlay(mode);
     const index = new Map(overlay.segments.map((s) => [s.segmentId, s]));
     return (segmentId) => index.get(segmentId);
@@ -107,6 +117,7 @@ export function createLiveDataSource(deps: LiveDataSourceDeps): TransitDataSourc
         riskAsOf: overlay.asOf,
         computedOffline: mode === "cache",
         topology,
+        signalIndex: buildSignalIndex(deps.getSignals()),
       });
     },
 

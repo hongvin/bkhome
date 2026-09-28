@@ -282,7 +282,7 @@ export async function buildLabelledCorpus(
 
   return {
     version: "1.0.0",
-    generatedAt: "deterministic", // deliberately not wall-clock; see docs/EVAL-METHOD.md
+    generatedAt: "deterministic", // deliberately not wall-clock; see eval/METHOD.md
     sourceManifest: "eval/archive/media-statements.json",
     method:
       "Rule-based parse of pdfjs-extracted text + hand review. publishedAt = PDF CreationDate. " +

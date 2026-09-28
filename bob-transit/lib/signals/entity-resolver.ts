@@ -711,6 +711,22 @@ function finalize(
   return { mention, normalized: mention, stationIds: ids, placeKeys, strategy, score };
 }
 
+/**
+ * Match one endpoint of an "antara X dan Y" claim. When the raw capture has
+ * trailing clause words attached ("AMPANG PARK STATION ALMOST"), fall back to
+ * the longest station alias inside it rather than giving up on the whole claim.
+ */
+function matchEndpoint(text: string, aliasIndex: AliasIndex): StationMatch {
+  const direct = matchStationText(text, aliasIndex);
+  if (direct.stationIds.length > 0) return direct;
+  for (const mention of extractMentions(text, aliasIndex)) {
+    if (mention.kind !== "STATION" && mention.kind !== "LINE") continue;
+    const hit = matchStationText(mention.text, aliasIndex);
+    if (hit.stationIds.length > 0) return hit;
+  }
+  return direct;
+}
+
 /* ------------------------------------------------------------------ *
  * Location resolution
  * ------------------------------------------------------------------ */
@@ -778,7 +794,11 @@ function segmentsBetween(
         const lo = Math.min(seqA, seqB);
         const hi = Math.max(seqA, seqB);
         for (const seg of index.segmentsByLine.get(lineId) ?? []) {
-          if (seg.fromSequence >= lo && seg.toSequence <= hi && seg.fromSequence !== seg.toSequence) {
+          // Both travel directions share the canonical numbering, so an unordered
+          // comparison selects exactly the track section between the endpoints.
+          const segLo = Math.min(seg.fromSequence, seg.toSequence);
+          const segHi = Math.max(seg.fromSequence, seg.toSequence);
+          if (segLo >= lo && segHi <= hi && segLo !== segHi) {
             segments.add(seg.id);
             lineIds.add(lineId);
           }
@@ -810,8 +830,8 @@ export function resolveLocation(
   const segmentMention = mentions.find((m) => m.kind === "SEGMENT");
   if (segmentMention?.endpoints) {
     const [left, right] = segmentMention.endpoints;
-    const a = matchStationText(left, aliasIndex);
-    const b = matchStationText(right, aliasIndex);
+    const a = matchEndpoint(left, aliasIndex);
+    const b = matchEndpoint(right, aliasIndex);
     matchedNames.push(a.normalized, b.normalized);
     if (a.placeKeys.length === 1 && b.placeKeys.length === 1 && a.placeKeys[0] !== b.placeKeys[0]) {
       const { segments, lineIds } = segmentsBetween(index, a.stationIds, b.stationIds);
@@ -840,8 +860,10 @@ export function resolveLocation(
 
   // ---- 2. station claims ----------------------------------------------------
   const stationTexts = [
-    ...mentions.filter((m) => m.kind === "STATION").map((m) => m.text),
-    ...(options.extraStationMentions ?? []),
+    ...new Set([
+      ...mentions.filter((m) => m.kind === "STATION").map((m) => m.text),
+      ...(options.extraStationMentions ?? []),
+    ]),
   ];
   const stationMatches = stationTexts
     .map((t) => matchStationText(t, aliasIndex))

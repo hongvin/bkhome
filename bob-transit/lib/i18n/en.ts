@@ -73,6 +73,8 @@ export const en = {
   "why.lowerRisk":
     "This route crosses a {severity} {issue} at {pct}% confidence, so it ranks lower.",
   "why.lowerScore": "Less reliable than the options above it.",
+  "why.avoidsTheDisruption":
+    "Avoids the {severity} {issue} that the fastest option crosses.",
   "why.riskOnBoard": "{severity} {issue} on this route, {pct}% confidence.",
   "why.delayAdded": "About {min} min of expected delay.",
   "why.slowerThanFastest": "{delta} min slower than the fastest option.",

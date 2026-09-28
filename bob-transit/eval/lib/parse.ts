@@ -111,36 +111,70 @@ export function extractLineIds(text: string): string[] {
 // ---------------------------------------------------------------------------
 
 /**
- * Matches "Stesen <Name>" with an optional mode word and up to four following
- * capitalised tokens. The trailing-token limit is what keeps "Stesen LRT
- * Taman Jaya dan Stesen LRT Taman Bahagia" from becoming one giant name.
+ * Station mentions.
+ *
+ * The corpus writes "Stesen <Name>" with an optional mode word. The original
+ * implementation used one greedy regex, which broke on the common
+ * "Stesen A dan Stesen B" construction: the greedy token run swallowed the
+ * second "Stesen", so only the first station was ever recovered. Instead we
+ * find each "Stesen" keyword and scan forward token by token, stopping at the
+ * first stop-word or at the next "Stesen".
  */
-const STATION_CAPTURE =
-  /Stesen\s+(?:(?:LRT|MRT|Monorel|BRT|KTM)\s+)?([A-Za-z][A-Za-z'\/.\-]*(?:\s+(?:[A-Za-z][A-Za-z'\/.\-]*|[0-9]+)){0,4})/g;
+const STATION_KEYWORD = /Stesen\s+/gi;
 
-/** Trailing conjunctions/prepositions that are not part of a station name. */
-const TRAILING_JUNK =
-  /\s+(?:dan|di|ke|yang|untuk|bagi|dari|daripada|akan|telah|ini|itu|pada|serta|sahaja|berikut|menuju|menghala|sehingga|hinggalah|arah|kepada|adalah|tidak|masih|turut|juga|pula|namun|manakala|sementara|selepas|sebelum|apabila|jika|kerana|akibat|ekoran|susulan|berhampiran|berdekatan|terletak|melibatkan|terlibat)$/i;
+/** Words that can never be part of a station name in this corpus. */
+const STATION_STOPWORDS_TOKEN = new Set([
+  "dan", "di", "ke", "yang", "untuk", "bagi", "dari", "daripada", "akan", "telah",
+  "ini", "itu", "pada", "serta", "sahaja", "berikut", "menuju", "menghala",
+  "sehingga", "hinggalah", "arah", "kepada", "adalah", "tidak", "masih", "turut",
+  "juga", "pula", "namun", "manakala", "sementara", "selepas", "sebelum",
+  "apabila", "jika", "kerana", "akibat", "ekoran", "susulan", "berhampiran",
+  "berdekatan", "terletak", "melibatkan", "terlibat", "atau", "dengan", "ialah",
+  "merupakan", "sebagai", "oleh", "dalam", "atas", "bawah", "antara", "lain",
+]);
+
+const STATION_MODE_WORDS = new Set(["lrt", "mrt", "monorel", "brt", "ktm"]);
+
+/** Maximum tokens in a station name ("BANDAR TUN HUSSEIN ONN" is 4). */
+const MAX_STATION_TOKENS = 5;
 
 export function extractStations(text: string, index: StationIndex): StationMatch[] {
   const folded = fold(text);
   const out: StationMatch[] = [];
   const seen = new Set<string>();
-  for (const m of folded.matchAll(STATION_CAPTURE)) {
-    let surface = m[1] ?? "";
-    // Peel trailing junk repeatedly: "Taman Jaya dan" -> "Taman Jaya".
-    for (;;) {
-      const stripped = surface.replace(TRAILING_JUNK, "");
-      if (stripped === surface) break;
-      surface = stripped;
+
+  for (const m of folded.matchAll(STATION_KEYWORD)) {
+    const keywordAt = m.index ?? 0;
+    const rest = folded.slice(keywordAt + m[0].length, keywordAt + m[0].length + 80);
+    const tokens: string[] = [];
+
+    for (const raw of rest.split(/\s+/)) {
+      const token = raw.replace(/[^A-Za-z0-9'/.-]/g, "");
+      if (token.length === 0) break;
+      const lower = token.toLowerCase();
+      if (STATION_MODE_WORDS.has(lower) && tokens.length === 0) continue;
+      if (STATION_STOPWORDS_TOKEN.has(lower)) break;
+      // Station names are capitalised in this corpus; a lowercase first token
+      // means this is prose ("Stesen tersebut", "Stesen ini").
+      if (tokens.length === 0 && !/^[A-Z0-9]/.test(token)) break;
+      if (tokens.length >= MAX_STATION_TOKENS) break;
+      tokens.push(token);
     }
-    const resolved = resolveStation(surface, index);
-    if (!resolved) continue;
-    const dedupeKey = `${resolved.stationId}@${m.index}`;
-    if (seen.has(dedupeKey)) continue;
-    seen.add(dedupeKey);
-    out.push({ ...resolved, index: m.index ?? 0 });
+    if (tokens.length === 0) continue;
+
+    // Longest prefix that resolves wins: "BANDAR TUN HUSSEIN ONN" before
+    // "BANDAR TUN", and "TAMAN JAYA" before "TAMAN".
+    for (let n = tokens.length; n >= 1; n--) {
+      const resolved = resolveStation(tokens.slice(0, n).join(" "), index);
+      if (!resolved) continue;
+      const key = `${resolved.stationId}@${keywordAt}`;
+      if (seen.has(key)) break;
+      seen.add(key);
+      out.push({ ...resolved, index: keywordAt });
+      break;
+    }
   }
+
   return out;
 }
 
@@ -435,7 +469,7 @@ const RELATIVE_TODAY = /\b(pagi\s+tadi|petang\s+tadi|tengah\s+hari\s+tadi|siang\
  *   date_only     — an explicit date with no clock time (00:00 local).
  *   dateline_only — nothing usable; the dateline date at 00:00 local.
  *
- * This is the anchor for lead time. See `docs/EVAL-METHOD.md`.
+ * This is the anchor for lead time. See `eval/METHOD.md`.
  */
 export function estimateOnset(
   text: string,
@@ -445,7 +479,11 @@ export function estimateOnset(
 ): OnsetEstimate {
   const folded = fold(text);
   const pubDate = localDate(publishedAt);
-  const datelineDate = dateline?.date ?? pubDate;
+  // The body dateline is normally the same local day as the PDF CreationDate,
+  // but 3 of 165 statements were written the evening before their stated date
+  // ("KUALA LUMPUR, 27 Januari" in a file created 26 Jan 23:10 local). A
+  // statement cannot describe a day that has not happened yet, so clamp it.
+  const datelineDate = dateline !== null && dateline.date <= pubDate ? dateline.date : pubDate;
   const dates = findDates(folded);
 
   /**

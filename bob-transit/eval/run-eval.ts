@@ -29,6 +29,7 @@ import { fileURLToPath } from "node:url";
 import { isLeadTimeEligible } from "./lib/corpus";
 import { LABELLED_FILE, type LabelledCorpus } from "./lib/label";
 import {
+  collapseToEvents,
   computeLeadTime,
   matchSignals,
   type MatchResult,
@@ -81,15 +82,39 @@ export interface EvalOutcome {
   labelled: LabelledCorpus;
   corpus: EvidenceCorpus;
   signals: EvalSignal[];
+  /** Statement-level: every labelled disruption statement is one unit. */
   matches: MatchResult;
+  /** Event-level: statements about the same real-world event are one unit. */
+  eventMatches: MatchResult;
   lead: ReturnType<typeof computeLeadTime>;
   sweep: Array<{ threshold: number; precision: number; recall: number; emitted: number }>;
 }
 
-export async function loadInputs(): Promise<{ labelled: LabelledCorpus; corpus: EvidenceCorpus }> {
-  const labelled = JSON.parse(await readFile(LABELLED_FILE, "utf8")) as LabelledCorpus;
-  const corpus = JSON.parse(await readFile(CORPUS_FILE, "utf8")) as EvidenceCorpus;
+export async function loadInputs(
+  labelledFile = LABELLED_FILE,
+  corpusFile = CORPUS_FILE,
+): Promise<{ labelled: LabelledCorpus; corpus: EvidenceCorpus }> {
+  const labelled = JSON.parse(await readFile(labelledFile, "utf8")) as LabelledCorpus;
+  const corpus = JSON.parse(await readFile(corpusFile, "utf8")) as EvidenceCorpus;
   return { labelled, corpus };
+}
+
+/** Minimal argv reader: `--flag`, `--key value`. */
+export function parseArgs(argv: string[]): { flags: Set<string>; values: Map<string, string> } {
+  const flags = new Set<string>();
+  const values = new Map<string, string>();
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i]!;
+    if (!a.startsWith("--")) continue;
+    const next = argv[i + 1];
+    if (next !== undefined && !next.startsWith("--")) {
+      values.set(a.slice(2), next);
+      i++;
+    } else {
+      flags.add(a.slice(2));
+    }
+  }
+  return { flags, values };
 }
 
 export function runEval(
@@ -102,6 +127,9 @@ export function runEval(
     referencePipeline.run(evidence, { ...REFERENCE_VERIFY_OPTIONS, confidenceThreshold: threshold }),
   );
   const matches = matchSignals(signals, labelled.incidents);
+  // Event level: statements about the same real-world disruption collapse to
+  // one unit, attributed to the event's first statement.
+  const eventMatches = collapseToEvents(matches, signals, labelled.incidents);
   const lead = computeLeadTime(signals, labelled.incidents, matches, isLeadTimeEligible);
 
   const sweep = THRESHOLD_SWEEP.map((t) => {
@@ -112,7 +140,7 @@ export function runEval(
     return { threshold: t, precision: m.precision, recall: m.recall, emitted: s.length };
   });
 
-  return { labelled, corpus, signals, matches, lead, sweep };
+  return { labelled, corpus, signals, matches, eventMatches, lead, sweep };
 }
 
 // ---------------------------------------------------------------------------
@@ -171,7 +199,7 @@ export function renderExplain(outcome: EvalOutcome): string {
   return lines.join("\n");
 }
 
-export function renderReport(outcome: EvalOutcome): string {  const { labelled, corpus, signals, matches, lead, sweep } = outcome;
+export function renderReport(outcome: EvalOutcome): string {  const { labelled, corpus, signals, matches, eventMatches, lead, sweep } = outcome;
   const c = labelled.counts;
   const lines: string[] = [];
 
@@ -241,6 +269,15 @@ export function renderReport(outcome: EvalOutcome): string {  const { labelled, 
   );
   lines.push("");
   lines.push(row("F1", num(matches.f1, 3)));
+  lines.push("");
+  lines.push(
+    "  EVENT-LEVEL (one unit per real-world disruption; continuation statements merged)",
+  );
+  lines.push(row("  events", String(eventMatches.truePositives.length + eventMatches.falseNegatives.length)));
+  lines.push(row("  precision", pct(eventMatches.precision)));
+  lines.push(row("  recall", pct(eventMatches.recall), "TP / (TP + FN) over distinct events"));
+  lines.push(row("  coverage", pct(eventMatches.coverage)));
+  lines.push(row("  F1", num(eventMatches.f1, 3)));
   lines.push(
     row(
       "median operator latency",
@@ -317,13 +354,16 @@ export function renderReport(outcome: EvalOutcome): string {  const { labelled, 
 }
 
 async function main(): Promise<void> {
-  const argv = new Set(process.argv.slice(2));
-  const { labelled, corpus } = await loadInputs();
+  const { flags, values } = parseArgs(process.argv.slice(2));
+  const { labelled, corpus } = await loadInputs(
+    values.get("labelled") ?? LABELLED_FILE,
+    values.get("corpus") ?? CORPUS_FILE,
+  );
   const outcome = runEval(labelled, corpus);
   process.stdout.write(`${renderReport(outcome)}\n`);
-  if (argv.has("--explain")) process.stdout.write(`${renderExplain(outcome)}\n`);
+  if (flags.has("explain")) process.stdout.write(`${renderExplain(outcome)}\n`);
 
-  if (argv.has("--json")) {
+  if (flags.has("json")) {
     const { sweep, ...rest } = outcome;
     process.stdout.write(
       `${JSON.stringify(
