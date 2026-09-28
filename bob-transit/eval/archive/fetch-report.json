@@ -1,9 +1,9 @@
 {
  "generatedFrom": "media-statements.json",
- "generatedAt": "2026-09-28T12:11:05.247Z",
+ "generatedAt": "2026-09-28T12:25:09.166Z",
  "entries": 165,
- "present": 164,
- "downloaded": 1,
+ "present": 165,
+ "downloaded": 0,
  "failed": 0,
  "results": [
   {
@@ -1052,9 +1052,9 @@
   {
    "filename": "RAPID-RAIL-KENYATAAN-MEDIA-KEMASKINI-GANGGUAN-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-PERKHIDMATAN-KEMBALI-PULIH-SEPENUHNYA-PADA-JAM-9.51-MALAM__dup2__20241218124225.pdf",
    "wayback": "https://web.archive.org/web/20241218124225id_/https://myrapid.com.my/wp-content/uploads/2024/10/RAPID-RAIL-KENYATAAN-MEDIA-KEMASKINI-GANGGUAN-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-PERKHIDMATAN-KEMBALI-PULIH-SEPENUHNYA-PADA-JAM-9.51-MALAM.pdf",
-   "status": "downloaded",
+   "status": "present",
    "bytes": 90745,
-   "attempts": 1
+   "attempts": 0
   },
   {
    "filename": "Rapid-Rail-Kenyataan-Media-RAPID-RAIL-LANCAR-BUKU-PANDUAN-PENGGUNAAN-PERKHIDMATAN-REL-PERTAMA-DI-MALAYSIA.pdf",

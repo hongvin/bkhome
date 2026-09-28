@@ -178,21 +178,41 @@ describe("the demo trip: KL Sentral -> Kajang", () => {
     expect(rest.some((i) => i.reliabilityBadge === "AVOID")).toBe(true);
   });
 
-  it("THE HEADLINE: the fastest option is not the recommended one", () => {
-    const fastest = [...advisory.itineraries].sort(
-      (a, b) => a.arrival.p90Seconds - b.arrival.p90Seconds,
+  it("THE HEADLINE: the quickest option is NOT the recommended one", () => {
+    // "Quickest" by MEAN duration — the number a naive app would lead with.
+    const quickest = [...advisory.itineraries].sort(
+      (a, b) => a.totalDurationSeconds - b.totalDurationSeconds,
     )[0];
-    expect(fastest).toBeDefined();
-    expect(fastest?.id).not.toBe(advisory.recommendedItineraryId);
+    expect(quickest).toBeDefined();
+    expect(quickest?.id).not.toBe(advisory.recommendedItineraryId);
     expect(advisory.itineraries[0]?.id).toBe(advisory.recommendedItineraryId);
   });
 
-  it("makes the fastest option the one that crosses the confirmed fault", () => {
-    const fastest = [...advisory.itineraries].sort(
-      (a, b) => a.arrival.p90Seconds - b.arrival.p90Seconds,
+  it("makes the quickest option the one that crosses the confirmed fault", () => {
+    const quickest = [...advisory.itineraries].sort(
+      (a, b) => a.totalDurationSeconds - b.totalDurationSeconds,
     )[0];
-    expect(fastest?.riskySegmentIds).toContain("KGL:KG17->KG18A");
-    expect(fastest?.maxDegradationProbability).toBeGreaterThanOrEqual(0.7);
+    expect(quickest?.riskySegmentIds).toContain("KGL:KG17->KG18A");
+    expect(quickest?.maxDegradationProbability).toBeGreaterThanOrEqual(0.7);
+    expect(quickest?.reliabilityBadge).toBe("AVOID");
+  });
+
+  it("THE POINT OF P90: the quickest option has the WORSE P90 arrival", () => {
+    // This is the product thesis falling out of real data rather than a fixture:
+    // the route with the better average arrival has the worse tail, because the
+    // disruption inflates its variance. Sorting on speed would pick the wrong one.
+    const quickest = [...advisory.itineraries].sort(
+      (a, b) => a.totalDurationSeconds - b.totalDurationSeconds,
+    )[0];
+    const recommended = advisory.itineraries[0];
+    expect(quickest).toBeDefined();
+    expect(recommended).toBeDefined();
+    if (!quickest || !recommended) return;
+    expect(quickest.totalDurationSeconds).toBeLessThan(recommended.totalDurationSeconds);
+    expect(quickest.arrival.p90Seconds).toBeGreaterThan(recommended.arrival.p90Seconds);
+    expect(quickest.arrival.meanToP90GapSeconds).toBeGreaterThan(
+      recommended.arrival.meanToP90GapSeconds,
+    );
   });
 
   it("reports a P90 window strictly wider than the mean on a risky route", () => {

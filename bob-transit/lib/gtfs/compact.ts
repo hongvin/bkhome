@@ -167,18 +167,19 @@ export function expandConnectionsForWindow(
   for (const frequency of compact.frequencies) {
     if (!activeServices.has(frequency.serviceId)) continue;
     if (frequency.headwaySeconds <= 0) continue;
-    // Skip rows that cannot contribute a departure inside the window.
-    if (frequency.endTime <= fromSeconds) continue;
-    if (frequency.startTime > toSeconds) continue;
 
     const pattern = patternByTrip.get(frequency.tripId);
     if (!pattern) continue;
 
     // A trip that STARTED before the window can still have later stops inside
-    // it (a Kelana Jaya run takes ~1h40m end to end), so the grid must begin
-    // `maxDepartureOffset` earlier than the window's lower bound. The
-    // per-connection filter below then trims the trips that contribute nothing.
+    // it (a Kelana Jaya run takes ~1h40m end to end), so both the row-level
+    // overlap test and the grid alignment must account for the trip's length.
+    // The per-connection filter below then trims the trips that contribute
+    // nothing.
     const lastOffset = pattern.departureOffsets[pattern.departureOffsets.length - 1] ?? 0;
+    if (frequency.endTime + lastOffset <= fromSeconds) continue;
+    if (frequency.startTime > toSeconds) continue;
+
     const gridStart = fromSeconds - lastOffset;
     const firstAligned =
       frequency.startTime +

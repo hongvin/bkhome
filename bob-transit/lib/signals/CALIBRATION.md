@@ -44,7 +44,7 @@ score**, which is exactly the monotonicity property the brief demands.
 | distinct independent authors | social channel | band alone |
 |---|---|---|
 | 0 | 0.00 | — (no evidence) |
-| 1 | 0.18 | VERY_LOW → **LOW** |
+| 1 | **0.22** | **LOW** |
 | 2 | 0.32 | LOW |
 | 3 | **0.45** | **MODERATE** |
 | 4 | 0.53 | MODERATE |
@@ -54,8 +54,9 @@ score**, which is exactly the monotonicity property the brief demands.
 Why these numbers:
 
 - **1 author = anecdote.** It is evidence that *someone said something*, not that
-  a train stopped. A single post is deliberately below `REPORTABLE_CONFIDENCE`,
-  so a lone social post produces no signal at all.
+  a train stopped. 0.22 sits just inside the frozen LOW band (`confidenceBand`
+  returns LOW at >= 0.20) and still below `REPORTABLE_CONFIDENCE = 0.30`, so a
+  lone social post is labelled LOW and produces no signal at all.
 - **3 authors = the threshold where the boring explanation loses.** With three
   independent people, on one segment, inside one window, "three unrelated bad
   mornings" becomes less likely than "the segment is degraded". This is why the
@@ -92,20 +93,21 @@ weighted soup.
 
 | evidence | value | band |
 |---|---|---|
-| 1 social author | 0.180 | LOW |
+| 1 social author | 0.220 | LOW |
 | 2 social authors | 0.320 | LOW |
 | 3 social authors | 0.450 | MODERATE |
 | 6 social authors | 0.600 | MODERATE |
 | official statement alone | 0.900 | VERY_HIGH |
 | 3 social authors **+** official statement | **0.945** | VERY_HIGH |
-| 1 social author + official statement | 0.918 | VERY_HIGH |
+| 1 social author + official statement | 0.922 | VERY_HIGH |
 | 2 realtime observations alone | 0.100 | VERY_LOW |
 | 3 realtime observations alone (cap) | 0.150 | VERY_LOW |
 | 3 social authors, one of them sarcastic | ≪ 0.45 | drops below reportable |
 
 **"Official confirmation raises it sharply"** is satisfied by construction: 1
-social author alone is 0.180; the same author plus one official statement is
-0.918 — a 5× jump. Tested in `officialConfirmationRaisesSharply`.
+social author alone is 0.220; the same author plus one official statement is
+0.922 — a 4.2× jump. Tested in `raises confidence sharply when an official
+statement arrives`.
 
 ---
 
@@ -125,14 +127,25 @@ social author alone is 0.180; the same author plus one official statement is
 Every `ConfidenceFactor.contribution` is computed as:
 
 ```
-contribution(f) = value(all factors) − value(all factors with f neutralised)
+contribution(f) = preCapValue(all) − preCapValue(all with f neutralised)
 ```
 
 So a negative contribution means "removing this factor would have raised the
 score" — i.e. it is a genuine penalty — and a positive contribution means it
 genuinely helped. `weight` is the factor's own magnitude (a count, or a
-multiplier). This is why the trace in `tests/signals/pipeline.test.ts` can show a
-sarcastic post *losing* confidence between hops rather than merely being labelled.
+multiplier).
+
+**Attribution is measured before the unresolved cap, deliberately.** Once the cap
+bites, removing one corroborating author often leaves the capped value unchanged,
+which would report a contribution of exactly `0` for a factor that plainly
+mattered — a misleading row in the Source Inspector. So contributions describe
+the movement of the pre-cap value, and the cap itself is reported as its own
+`location_cap` factor whenever it actually reduces the score. A zero contribution
+therefore means "this factor genuinely did not move the number", never "the cap
+swallowed it".
+
+This is why the trace in `tests/signals/pipeline.test.ts` can show a sarcastic
+post *losing* confidence between hops rather than merely being labelled.
 
 ---
 

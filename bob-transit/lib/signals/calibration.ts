@@ -30,7 +30,9 @@ export const REPORTABLE_CONFIDENCE = 0.3;
  *
  * Justification (see CALIBRATION.md):
  *  - 1 post is an anecdote. It is evidence that *someone said something*, not
- *    that a train stopped.
+ *    that a train stopped. 0.22 places it just inside the frozen LOW band
+ *    (confidenceBand >= 0.20) while staying below REPORTABLE_CONFIDENCE, so a
+ *    lone post is labelled LOW and still produces no signal.
  *  - 3 independent posts on one segment in one window is the smallest cluster
  *    where the "everyone is stuck" explanation beats "three unrelated people
  *    had a bad morning".
@@ -40,7 +42,7 @@ export const REPORTABLE_CONFIDENCE = 0.3;
  */
 export const SOCIAL_AUTHOR_TABLE: ReadonlyArray<{ authors: number; strength: number }> = [
   { authors: 0, strength: 0.0 },
-  { authors: 1, strength: 0.18 },
+  { authors: 1, strength: 0.22 },
   { authors: 2, strength: 0.32 },
   { authors: 3, strength: 0.45 },
   { authors: 4, strength: 0.53 },
@@ -173,12 +175,23 @@ export function recencyMultiplier(ageMinutes: number | null, windowMinutes: numb
   return Math.max(STALE_FLOOR, 1 - over * (1 - STALE_FLOOR));
 }
 
-function rawValue(input: CalibrationInput): number {
+/**
+ * The combined evidence value BEFORE the unresolved hard cap.
+ *
+ * Factor attribution is measured here rather than on the final value: once the
+ * cap bites, removing one corroborating author often leaves the capped value
+ * unchanged, which would report a contribution of exactly 0 for a factor that
+ * plainly mattered. The cap is reported as its own factor instead.
+ */
+function preCapValue(input: CalibrationInput): number {
   const ch = calibrationChannels(input);
   const combined = noisyOr([ch.social, ch.official, ch.realtime]);
-  let value = combined * ch.unresolved * ch.officialDenial * ch.offline;
-  if (input.unresolved) value = Math.min(value, UNRESOLVED_CAP);
-  return clamp01(value);
+  return clamp01(combined * ch.unresolved * ch.officialDenial * ch.offline);
+}
+
+function rawValue(input: CalibrationInput): number {
+  const value = preCapValue(input);
+  return input.unresolved ? Math.min(value, UNRESOLVED_CAP) : value;
 }
 
 /** Neutralise exactly one factor, for leave-one-out attribution. */
@@ -271,7 +284,7 @@ export function calibrateConfidence(input: CalibrationInput): ConfidenceScore {
       name: "location_resolution",
       weight: input.unresolved ? UNRESOLVED_MULTIPLIER : 1,
       note: input.unresolved
-        ? `location unresolved: x${UNRESOLVED_MULTIPLIER}, hard cap ${UNRESOLVED_CAP}`
+        ? `location unresolved: x${UNRESOLVED_MULTIPLIER} (the hard cap is reported separately as location_cap)`
         : "location resolved to at least one segment",
     },
     {
@@ -290,15 +303,29 @@ export function calibrateConfidence(input: CalibrationInput): ConfidenceScore {
     },
   ];
 
+  const beforeCap = preCapValue(input);
   const factors: ConfidenceFactor[] = definitions.map((d) => {
-    const without = rawValue(ablate(input, d.name));
+    const without = preCapValue(ablate(input, d.name));
     return {
       name: d.name,
       weight: d.weight,
-      contribution: Number((value - without).toFixed(6)),
+      contribution: Number((beforeCap - without).toFixed(6)),
       note: d.note,
     };
   });
+
+  // When the location cap actually reduces the score, say so explicitly rather
+  // than letting the reduction vanish from the audit trail.
+  if (input.unresolved && value < beforeCap) {
+    factors.push({
+      name: "location_cap",
+      weight: UNRESOLVED_CAP,
+      contribution: Number((value - beforeCap).toFixed(6)),
+      note:
+        `unresolved location caps the score at ${UNRESOLVED_CAP}: ` +
+        `${beforeCap.toFixed(3)} -> ${value.toFixed(3)}`,
+    });
+  }
 
   return {
     value: Number(value.toFixed(6)),

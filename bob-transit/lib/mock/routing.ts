@@ -39,10 +39,10 @@ import {
   badgeFor,
   computeReliabilityScore,
   explainRank,
-  fastestByP90,
+  fastestByMean,
   rankItineraries,
 } from "@/components/lib/ranking";
-import { translate } from "@/lib/i18n";
+import { translator } from "@/lib/i18n";
 
 import { DEMO_NOW_MS, toKlIso } from "./clock";
 import { loadTopology, type LoadedTopology } from "./graph";
@@ -508,20 +508,22 @@ export function planMockJourneys(options: PlanMockOptions): Itinerary[] {
   });
 
   const ranked = rankItineraries(itineraries);
-  const fastest = fastestByP90(ranked);
+  // The narrative compares against the quickest option by MEAN duration, because
+  // that is the number the rider sees as "Typical". P90 remains the ranking
+  // tie-break (see compareByReliability).
+  const fastest = fastestByMean(ranked);
+  const tr = translator("en");
   return ranked.map((itinerary) => {
     const explanation = explainRank(itinerary, {
       all: ranked,
       riskLookup: lookup,
       fastest,
+      t: tr,
     });
-    const headline = translate("en", explanation.headline.key, explanation.headline.params);
-    const details = explanation.details
-      .map((fragment) => translate("en", fragment.key, fragment.params))
-      .join(" ");
+    const details = explanation.details.join(" ");
     return {
       ...itinerary,
-      whyThisRank: details ? `${headline} ${details}` : headline,
+      whyThisRank: details ? `${explanation.headline} ${details}` : explanation.headline,
     };
   });
 }
@@ -571,7 +573,7 @@ export function assembleAdvisory(
     );
 
   const recommended = ranked[0];
-  const fastest = fastestByP90(ranked);
+  const fastest = fastestByMean(ranked);
   const consideredSignals = collectConsideredSignals(
     ranked,
     options.riskLookup,

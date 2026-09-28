@@ -66,6 +66,7 @@ export function RouteCard({
   const explanation = explainRank(itinerary, {
     all,
     riskLookup: (segmentId) => riskBySegment.get(segmentId),
+    t,
   });
 
   const rideLegs = itinerary.legs.filter((leg) => leg.kind === "RIDE");
@@ -210,13 +211,13 @@ export function RouteCard({
           {isTop ? t("results.whyTop") : t("results.whyThisRank")}
         </p>
         <p className="mt-1 text-[12px] leading-snug text-slate-200">
-          {t(explanation.headline.key, explanation.headline.params)}
+          {explanation.headline}
         </p>
         {explanation.details.length > 0 ? (
           <ul className="mt-1.5 space-y-0.5">
             {explanation.details.map((detail, index) => (
               <li key={index} className="text-[11px] leading-snug text-slate-400">
-                · {t(detail.key, detail.params)}
+                · {detail}
               </li>
             ))}
           </ul>

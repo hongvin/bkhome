@@ -138,13 +138,21 @@ const ISSUE_PHRASE: Record<IssueType, string> = {
   UNKNOWN: "gangguan perkhidmatan",
 };
 
+/**
+ * Every template MUST include the per-item `mins`, which varies with the
+ * incident and with the author index. An earlier version had three templates
+ * without it; two different incidents then produced byte-identical text, the
+ * global content-hash dedupe in `ingest` swallowed the second one, and a
+ * legitimate cluster dropped below the corroboration floor. The corpus test
+ * `no cross-incident text collisions` now pins this.
+ */
 const SOCIAL_TEMPLATES: Array<(p: Parts) => string> = [
   (p) => `Tren ${p.line} tersangkut kat Stesen ${p.station}, ada ${p.issue}. Dah ${p.mins} minit tak bergerak. ${p.complaint}`,
-  (p) => `Ada ${p.issue} di Stesen ${p.station}. ${p.line} memang teruk hari ini. ${p.complaint}`,
-  (p) => `${p.line}: ${p.issue} di Stesen ${p.station}. ${p.complaint} #rapidkl`,
-  (p) => `Stesen ${p.station} sekarang sesak sebab ${p.issue} kat ${p.line}. ${p.complaint}`,
+  (p) => `Ada ${p.issue} di Stesen ${p.station}, dah ${p.mins} minit. ${p.line} memang teruk hari ini. ${p.complaint}`,
+  (p) => `${p.line}: ${p.issue} di Stesen ${p.station}. Dah ${p.mins} minit. ${p.complaint} #rapidkl`,
+  (p) => `Stesen ${p.station} sekarang sesak sebab ${p.issue} kat ${p.line}, dah ${p.mins} minit. ${p.complaint}`,
   (p) => `Apa jadi ${p.line}? Kat Stesen ${p.station} ada ${p.issue}, dah ${p.mins} minit. ${p.complaint}`,
-  (p) => `Amaran: ${p.issue} pada ${p.line} berhampiran Stesen ${p.station}. ${p.complaint}`,
+  (p) => `Amaran: ${p.issue} pada ${p.line} berhampiran Stesen ${p.station}, dah ${p.mins} minit. ${p.complaint}`,
 ];
 
 const REALTIME_TEMPLATES: Array<(parts: Parts) => string> = [
@@ -236,12 +244,14 @@ function buildCluster(
   const probs = FOLLOW_UP_PROBABILITY[severity];
   const out: CorpusEvidence[] = [];
 
+  // Both `mins` and `complaint` vary with the author index, so two posts in the
+  // same cluster are never byte-identical unless a repost is intended.
   const partsFor = (authorIndex: number): Parts => ({
     line,
     station,
     issue,
     mins: baseMins + authorIndex * 2,
-    complaint,
+    complaint: COMPLAINTS[(COMPLAINTS.indexOf(complaint) + authorIndex) % COMPLAINTS.length]!,
   });
 
   const firstText = SOCIAL_TEMPLATES[0]!(partsFor(0));

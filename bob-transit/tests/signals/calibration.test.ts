@@ -38,7 +38,7 @@ describe("the documented calibration table", () => {
   });
 
   it("holds the reference points from CALIBRATION.md", () => {
-    expect(value({ ...base, socialDistinctAuthors: 1 })).toBeCloseTo(0.18, 6);
+    expect(value({ ...base, socialDistinctAuthors: 1 })).toBeCloseTo(0.22, 6);
     expect(value({ ...base, socialDistinctAuthors: 2 })).toBeCloseTo(0.32, 6);
     expect(value({ ...base, socialDistinctAuthors: 3 })).toBeCloseTo(0.45, 6);
     expect(value({ ...base, socialDistinctAuthors: 4 })).toBeCloseTo(0.53, 6);

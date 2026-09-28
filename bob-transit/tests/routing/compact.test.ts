@@ -101,6 +101,30 @@ describe("windowed expansion equals the full artifact", () => {
     expect(expanded).toEqual(expected);
   });
 
+  test("the exact window planJourneysFromCompact uses matches the full graph", () => {
+    // 08:00 + maxInitialWait(1800) + MAX_PLANNING_HORIZON_SECONDS(6h)
+    const from = 8 * 3600;
+    const to = from + 1800 + 6 * 3600;
+    const expanded = expandConnectionsForWindow(compact, 1, from, to);
+    const expected = graph.connections.filter(
+      (c) => c.serviceId === "MonFri" && c.departureTime >= from && c.departureTime <= to,
+    );
+    expect(expanded.length).toBe(expected.length);
+    expect(expanded).toEqual(expected);
+  });
+
+  test("trips that started before the window still contribute their later stops", () => {
+    // Kelana Jaya runs take ~1h40m end to end, so the 06:00-07:00 headway row
+    // must still feed connections that depart after 08:00.
+    const expanded = expandConnectionsForWindow(compact, 1, 8 * 3600, 9 * 3600);
+    const longRuns = expanded.filter((c) => c.lineId === "KJ" && c.departureTime >= 8 * 3600);
+    expect(longRuns.length).toBeGreaterThan(0);
+    const full = graph.connections.filter(
+      (c) => c.serviceId === "MonFri" && c.lineId === "KJ" && c.departureTime >= 8 * 3600 && c.departureTime <= 9 * 3600,
+    );
+    expect(longRuns.length).toBe(full.length);
+  });
+
   test("expansion is sorted ascending by departureTime", () => {
     const expanded = expandConnectionsForWindow(compact, 1, 6 * 3600, 9 * 3600);
     expect(expanded.length).toBeGreaterThan(1000);

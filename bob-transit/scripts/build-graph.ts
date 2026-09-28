@@ -47,6 +47,7 @@ function main(): void {
   console.log("Transit graph build");
   console.log(`  fixture : ${FIXTURE_DIR}`);
   console.log(`  output  : ${OUTPUT_PATH}`);
+  console.log(`  compact : ${COMPACT_OUTPUT_PATH}`);
   console.log("");
 
   const feed = readGtfsFeed(FIXTURE_DIR);

@@ -146,11 +146,13 @@ export function DisruptionCard({
       <dl className="mt-3 space-y-2 text-[11px]">
         <div className="flex gap-2">
           <dt className="w-16 shrink-0 text-slate-500">{t("alert.what")}</dt>
-          <dd className="min-w-0 flex-1 text-slate-200">{t(`issue.${signal.issueType}`)}</dd>
+          <dd className="min-w-0 flex-1 break-words text-slate-200">
+            {t(`issue.${signal.issueType}`)}
+          </dd>
         </div>
         <div className="flex gap-2">
           <dt className="w-16 shrink-0 text-slate-500">{t("alert.where")}</dt>
-          <dd className="min-w-0 flex-1 text-slate-200">
+          <dd className="min-w-0 flex-1 break-words text-slate-200">
             {location}
             {lineNames ? <span className="text-slate-400"> · {lineNames}</span> : null}
           </dd>

@@ -6,6 +6,24 @@ statements, and exits non-zero when coverage falls below 50%.
 
 Everything below is reproducible: no wall clock, no `Math.random`, no network.
 
+## Measured results (this corpus, reference pipeline)
+
+| Metric | Statement level | Event level |
+|---|---|---|
+| Precision | **80.4%** (37 TP / 46 emitted) | 73.5% |
+| Recall | **90.2%** (37 / 41) | 89.3% (25 / 28) |
+| Coverage | **90.2%** (37 / 41) | 89.3% |
+| F1 | 0.851 | 0.806 |
+| **Median lead time** | **218.4 min** (n = 16) | — |
+
+Companion, assumption-free figure: **median operator latency 222.4 min** — the
+gap between when the disruption started and when Prasarana published. That is the
+ceiling any pipeline could achieve on this archive.
+
+All 9 false positives come from the 12 injected decoy clusters; **no** signal
+derived from a labelled incident failed to match. The 4 remaining false negatives
+are explained per-signal by `--explain`.
+
 ---
 
 ## 1. Corpus
@@ -58,9 +76,11 @@ carries a clock time.
 | `UNREADABLE` | 0 | — |
 | duplicate files merged | 3 | Wayback re-uploads (`__dupN__`) and `-Ver2` / `_FINAL-1` revisions |
 
-The rule-based classifier alone gets 138/165 right. The remaining **29** are
-corrected in `eval/overrides.json`, each with a written reason. That file *is*
-the hand review; the split is reported rather than hidden.
+Every one of the 165 documents was read and the rule output checked against it.
+`eval/overrides.json` holds **34** entries, each with a written reason: they
+correct a wrong classification, restate an issue type, or link a follow-up
+statement to the event it belongs to. That file *is* the hand review; the split
+is reported rather than hidden.
 
 Of the 41 incident statements, **28 are distinct real-world events** — the rest
 are follow-ups, bus-bridging updates and restoration notices for an event already

@@ -17,7 +17,7 @@
   "incidentsSkipped": 1,
   "decoys": 12,
   "decoyEvidence": 35,
-  "reposts": 21
+  "reposts": 20
  },
  "evidence": [
   {
@@ -39,10 +39,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-bbe203ac54",
    "authorHandle": "@social-bbe203ac54",
-   "rawText": "Ada kerosakan landasan di Stesen SRI RAMPAI. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada kerosakan landasan di Stesen SRI RAMPAI, dah 26 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2021-02-08T04:08:00.000Z",
    "language": "ms",
-   "contentHash": "a24b087dd276"
+   "contentHash": "ebec76ffdc7b"
   },
   {
    "id": "ev-102df3324728",
@@ -51,10 +51,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-ddd83f49d8",
    "authorHandle": "@social-ddd83f49d8",
-   "rawText": "Laluan Kelana Jaya: kerosakan landasan di Stesen SRI RAMPAI. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: kerosakan landasan di Stesen SRI RAMPAI. Dah 28 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2021-02-08T04:15:00.000Z",
    "language": "ms",
-   "contentHash": "cc5e4c51efe9"
+   "contentHash": "cc9ab9c43e73"
   },
   {
    "id": "ev-e37ec9d09161",
@@ -63,10 +63,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-17321df33d",
    "authorHandle": "@social-17321df33d",
-   "rawText": "Stesen SRI RAMPAI sekarang sesak sebab kerosakan landasan kat Laluan Kelana Jaya. Kena cari jalan lain ni.",
+   "rawText": "Stesen SRI RAMPAI sekarang sesak sebab kerosakan landasan kat Laluan Kelana Jaya, dah 30 minit. Dah lambat nak pergi kerja.",
    "publishedAt": "2021-02-08T04:23:00.000Z",
    "language": "ms",
-   "contentHash": "219c1154d8eb"
+   "contentHash": "a894ce6c6979"
   },
   {
    "id": "ev-7a44cfa5e344",
@@ -99,10 +99,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-826d775cdc",
    "authorHandle": "@social-826d775cdc",
-   "rawText": "Ada kesesakan teruk di Stesen BANDAR BARU KLANG. Laluan Shah Alam memang teruk hari ini. Sesiapa tahu apa jadi?",
+   "rawText": "Ada kesesakan teruk di Stesen BANDAR BARU KLANG, dah 13 minit. Laluan Shah Alam memang teruk hari ini. Takde pengumuman langsung.",
    "publishedAt": "2021-07-14T04:10:00.000Z",
    "language": "ms",
-   "contentHash": "60cd4e5a9a7c"
+   "contentHash": "ec65eab89a24"
   },
   {
    "id": "ev-c6feaffc293b",
@@ -111,10 +111,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-cc4615926e",
    "authorHandle": "@social-cc4615926e",
-   "rawText": "Laluan Shah Alam: kesesakan teruk di Stesen BANDAR BARU KLANG. Sesiapa tahu apa jadi? #rapidkl",
+   "rawText": "Laluan Shah Alam: kesesakan teruk di Stesen BANDAR BARU KLANG. Dah 15 minit. Dah lambat nak pergi kerja. #rapidkl",
    "publishedAt": "2021-07-14T04:17:00.000Z",
    "language": "ms",
-   "contentHash": "8bc4b5b4b807"
+   "contentHash": "53a9b870426a"
   },
   {
    "id": "ev-e1b89bb15556",
@@ -183,10 +183,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-e3e0b2dc02",
    "authorHandle": "@social-e3e0b2dc02",
-   "rawText": "Ada gangguan sistem semboyan di Stesen ARA DAMANSARA. Laluan Kelana Jaya memang teruk hari ini. Harap cepat pulih.",
+   "rawText": "Ada gangguan sistem semboyan di Stesen ARA DAMANSARA, dah 26 minit. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
    "publishedAt": "2021-11-02T16:12:00.000Z",
    "language": "ms",
-   "contentHash": "e27bbe84e886"
+   "contentHash": "171f18c62e83"
   },
   {
    "id": "ev-c2c52fb1b829",
@@ -195,10 +195,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-f710371014",
    "authorHandle": "@social-f710371014",
-   "rawText": "Laluan Kelana Jaya: gangguan sistem semboyan di Stesen ARA DAMANSARA. Harap cepat pulih. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: gangguan sistem semboyan di Stesen ARA DAMANSARA. Dah 28 minit. Sesiapa tahu apa jadi? #rapidkl",
    "publishedAt": "2021-11-02T16:19:00.000Z",
    "language": "ms",
-   "contentHash": "0bb7e5d8abdf"
+   "contentHash": "f9d707c6db29"
   },
   {
    "id": "ev-270d3dcc6b77",
@@ -219,10 +219,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-c157b1af07",
    "authorHandle": "@social-c157b1af07",
-   "rawText": "Stesen USJ7 sekarang sesak sebab kerosakan landasan kat BRT Laluan Sunway. Takde pengumuman langsung.",
+   "rawText": "Stesen USJ7 sekarang sesak sebab kerosakan landasan kat BRT Laluan Sunway, dah 31 minit. Harap cepat pulih.",
    "publishedAt": "2021-11-05T04:28:00.000Z",
    "language": "ms",
-   "contentHash": "329e7b7f623a"
+   "contentHash": "d307f0a73628"
   },
   {
    "id": "ev-482b40ee5379",
@@ -255,10 +255,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-c4aac9954f",
    "authorHandle": "@social-c4aac9954f",
-   "rawText": "Ada tren terkandas di Stesen PHILEO DAMANSARA. MRT Laluan Kajang memang teruk hari ini. Sesiapa tahu apa jadi?",
+   "rawText": "Ada tren terkandas di Stesen PHILEO DAMANSARA, dah 11 minit. MRT Laluan Kajang memang teruk hari ini. Takde pengumuman langsung.",
    "publishedAt": "2022-01-04T16:13:00.000Z",
    "language": "ms",
-   "contentHash": "bd90fb1b7b2d"
+   "contentHash": "0627c8a0d768"
   },
   {
    "id": "ev-04bc3f5f43b7",
@@ -279,10 +279,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-567fe74332",
    "authorHandle": "@social-567fe74332",
-   "rawText": "MRT Laluan Kajang: tren terkandas di Stesen KWASA SENTRAL. Penumpang makin ramai. #rapidkl",
+   "rawText": "MRT Laluan Kajang: tren terkandas di Stesen KWASA SENTRAL. Dah 29 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2022-01-04T23:39:00.000Z",
    "language": "ms",
-   "contentHash": "6189bae25ecc"
+   "contentHash": "2598f0ce600c"
   },
   {
    "id": "ev-d13f24dc3f0b",
@@ -291,10 +291,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-53dbd60b0b",
    "authorHandle": "@social-53dbd60b0b",
-   "rawText": "Stesen KWASA SENTRAL sekarang sesak sebab tren terkandas kat MRT Laluan Kajang. Penumpang makin ramai.",
+   "rawText": "Stesen KWASA SENTRAL sekarang sesak sebab tren terkandas kat MRT Laluan Kajang, dah 31 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-01-04T23:47:00.000Z",
    "language": "ms",
-   "contentHash": "f3e37680f6c6"
+   "contentHash": "4651b129b659"
   },
   {
    "id": "ev-7061ebab57dc",
@@ -315,10 +315,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-164cc8bb39",
    "authorHandle": "@social-164cc8bb39",
-   "rawText": "Ada tren terkandas di Stesen KL Sentral. MRT Laluan Kajang memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada tren terkandas di Stesen KL Sentral, dah 22 minit. MRT Laluan Kajang memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2022-03-13T16:06:00.000Z",
    "language": "ms",
-   "contentHash": "89d7dd801b89"
+   "contentHash": "392b332b4fb8"
   },
   {
    "id": "ev-ffeebc95fca4",
@@ -327,10 +327,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-155b7331c0",
    "authorHandle": "@social-155b7331c0",
-   "rawText": "MRT Laluan Kajang: tren terkandas di Stesen KL Sentral. Penumpang makin ramai. #rapidkl",
+   "rawText": "MRT Laluan Kajang: tren terkandas di Stesen KL Sentral. Dah 24 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2022-03-13T16:13:00.000Z",
    "language": "ms",
-   "contentHash": "7b601062573d"
+   "contentHash": "29a5a061d696"
   },
   {
    "id": "ev-3840f5af9392",
@@ -339,10 +339,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-15467cf837",
    "authorHandle": "@social-15467cf837",
-   "rawText": "Stesen KL Sentral sekarang sesak sebab tren terkandas kat MRT Laluan Kajang. Penumpang makin ramai.",
+   "rawText": "Stesen KL Sentral sekarang sesak sebab tren terkandas kat MRT Laluan Kajang, dah 26 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-03-13T16:21:00.000Z",
    "language": "ms",
-   "contentHash": "b023d4f15cfb"
+   "contentHash": "dba3add58168"
   },
   {
    "id": "ev-86a909f425d6",
@@ -387,10 +387,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-80adf7e4bc",
    "authorHandle": "@social-80adf7e4bc",
-   "rawText": "Ada lif dan eskalator rosak di Stesen AMPANG PARK. Monorel memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada lif dan eskalator rosak di Stesen AMPANG PARK, dah 14 minit. Monorel memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2022-05-19T16:11:00.000Z",
    "language": "ms",
-   "contentHash": "51e3b0c5146d"
+   "contentHash": "18229dc26d39"
   },
   {
    "id": "ev-b5a37b28df58",
@@ -399,10 +399,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-0448efce8e",
    "authorHandle": "@social-0448efce8e",
-   "rawText": "Monorel: lif dan eskalator rosak di Stesen AMPANG PARK. Penumpang makin ramai. #rapidkl",
+   "rawText": "Monorel: lif dan eskalator rosak di Stesen AMPANG PARK. Dah 16 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2022-05-19T16:18:00.000Z",
    "language": "ms",
-   "contentHash": "a152dc9c9134"
+   "contentHash": "f70c7b9a1969"
   },
   {
    "id": "ev-9b2cc8143a58",
@@ -411,10 +411,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-c42f876d15",
    "authorHandle": "@social-c42f876d15",
-   "rawText": "Stesen AMPANG PARK sekarang sesak sebab lif dan eskalator rosak kat Monorel. Penumpang makin ramai.",
+   "rawText": "Stesen AMPANG PARK sekarang sesak sebab lif dan eskalator rosak kat Monorel, dah 18 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-05-19T16:26:00.000Z",
    "language": "ms",
-   "contentHash": "6e6b3bc00296"
+   "contentHash": "d659e31dbb93"
   },
   {
    "id": "ev-527fb78a43a0",
@@ -435,10 +435,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-03386374d4",
    "authorHandle": "@social-03386374d4",
-   "rawText": "Ada tren terkandas di Stesen UNIVERSITI. Laluan Kelana Jaya memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada tren terkandas di Stesen UNIVERSITI, dah 16 minit. Laluan Kelana Jaya memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2022-05-24T00:44:00.000Z",
    "language": "ms",
-   "contentHash": "4f564dfb2bf7"
+   "contentHash": "4182a109f196"
   },
   {
    "id": "ev-381033770527",
@@ -447,10 +447,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-700353d0e7",
    "authorHandle": "@social-700353d0e7",
-   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen UNIVERSITI. Penumpang makin ramai. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen UNIVERSITI. Dah 18 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2022-05-24T00:51:00.000Z",
    "language": "ms",
-   "contentHash": "2fdf18dc74f2"
+   "contentHash": "2ad7abcaaf3d"
   },
   {
    "id": "ev-0a16fe917ba4",
@@ -459,10 +459,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-0580118885",
    "authorHandle": "@social-0580118885",
-   "rawText": "Stesen UNIVERSITI sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya. Penumpang makin ramai.",
+   "rawText": "Stesen UNIVERSITI sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya, dah 20 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-05-24T00:59:00.000Z",
    "language": "ms",
-   "contentHash": "f44cfcdb1e87"
+   "contentHash": "38115aa8f8ea"
   },
   {
    "id": "ev-3bdfcb62aa4e",
@@ -483,10 +483,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d6926dd4b1",
    "authorHandle": "@social-d6926dd4b1",
-   "rawText": "Ada pintu tren rosak di Stesen KLCC. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada pintu tren rosak di Stesen KLCC, dah 12 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-07-15T04:13:00.000Z",
    "language": "ms",
-   "contentHash": "ee7383beeb5e"
+   "contentHash": "80e28ace9816"
   },
   {
    "id": "ev-f0c974b9c65d",
@@ -495,10 +495,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-41e758f0fd",
    "authorHandle": "@social-41e758f0fd",
-   "rawText": "Laluan Kelana Jaya: pintu tren rosak di Stesen KLCC. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: pintu tren rosak di Stesen KLCC. Dah 14 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2022-07-15T04:20:00.000Z",
    "language": "ms",
-   "contentHash": "7e7a52ea146a"
+   "contentHash": "996d04c40770"
   },
   {
    "id": "ev-29595450c69b",
@@ -531,10 +531,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-3899a5e012",
    "authorHandle": "@social-3899a5e012",
-   "rawText": "Ada tren terkandas di Stesen PUSAT BANDAR PUCHONG. Laluan Sri Petaling memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada tren terkandas di Stesen PUSAT BANDAR PUCHONG, dah 14 minit. Laluan Sri Petaling memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-07-27T04:55:00.000Z",
    "language": "ms",
-   "contentHash": "e20635fc35cc"
+   "contentHash": "ce67fb791b2d"
   },
   {
    "id": "ev-1299f4df032f",
@@ -543,10 +543,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-92ad43ac32",
    "authorHandle": "@social-92ad43ac32",
-   "rawText": "Laluan Sri Petaling: tren terkandas di Stesen PUSAT BANDAR PUCHONG. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Sri Petaling: tren terkandas di Stesen PUSAT BANDAR PUCHONG. Dah 16 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2022-07-27T05:02:00.000Z",
    "language": "ms",
-   "contentHash": "6789139a7196"
+   "contentHash": "c4818a781b46"
   },
   {
    "id": "ev-1ae3570133eb",
@@ -567,10 +567,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-6607815938",
    "authorHandle": "@social-6607815938",
-   "rawText": "Ada tren terkandas di Stesen UNIVERSITI. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
+   "rawText": "Ada tren terkandas di Stesen UNIVERSITI, dah 23 minit. Laluan Kelana Jaya memang teruk hari ini. Takde pengumuman langsung.",
    "publishedAt": "2022-09-02T01:51:00.000Z",
    "language": "ms",
-   "contentHash": "1c57763a6070"
+   "contentHash": "33d091214f38"
   },
   {
    "id": "ev-6248469bf332",
@@ -579,10 +579,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-3ab4711cbb",
    "authorHandle": "@social-3ab4711cbb",
-   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen UNIVERSITI. Sesiapa tahu apa jadi? #rapidkl",
+   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen UNIVERSITI. Dah 25 minit. Dah lambat nak pergi kerja. #rapidkl",
    "publishedAt": "2022-09-02T01:58:00.000Z",
    "language": "ms",
-   "contentHash": "602cf2457c83"
+   "contentHash": "b17c0798b613"
   },
   {
    "id": "ev-685d3194c94f",
@@ -591,10 +591,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-0caf0b9550",
    "authorHandle": "@social-0caf0b9550",
-   "rawText": "Stesen UNIVERSITI sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya. Sesiapa tahu apa jadi?",
+   "rawText": "Stesen UNIVERSITI sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya, dah 27 minit. Penumpang makin ramai.",
    "publishedAt": "2022-09-02T02:06:00.000Z",
    "language": "ms",
-   "contentHash": "62c7bbd53e08"
+   "contentHash": "d9e624af8fa8"
   },
   {
    "id": "ev-9ebc6c93f2d7",
@@ -627,10 +627,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-ba85703955",
    "authorHandle": "@social-ba85703955",
-   "rawText": "Ada tren terkandas di Stesen UNIVERSITI. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada tren terkandas di Stesen UNIVERSITI, dah 15 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-09-10T12:32:00.000Z",
    "language": "ms",
-   "contentHash": "c50edefb16e6"
+   "contentHash": "3324bef17fa7"
   },
   {
    "id": "ev-a0d847caf1f2",
@@ -639,10 +639,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-609865ad7e",
    "authorHandle": "@social-609865ad7e",
-   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen UNIVERSITI. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen UNIVERSITI. Dah 17 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2022-09-10T12:39:00.000Z",
    "language": "ms",
-   "contentHash": "8fdc7061a8cd"
+   "contentHash": "0c201470ed62"
   },
   {
    "id": "ev-ed88a625a922",
@@ -675,10 +675,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-e0fb12ce3f",
    "authorHandle": "@social-e0fb12ce3f",
-   "rawText": "Stesen COCHRANE sekarang sesak sebab tren terkandas kat MRT Laluan Kajang. Sesiapa tahu apa jadi?",
+   "rawText": "Stesen COCHRANE sekarang sesak sebab tren terkandas kat MRT Laluan Kajang, dah 17 minit. Penumpang makin ramai.",
    "publishedAt": "2022-09-28T00:54:00.000Z",
    "language": "ms",
-   "contentHash": "da48d0e17e48"
+   "contentHash": "54cd8a31a61a"
   },
   {
    "id": "ev-8640d957f636",
@@ -723,10 +723,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-ce965a6b16",
    "authorHandle": "@social-ce965a6b16",
-   "rawText": "Stesen TITIWANGSA sekarang sesak sebab kerosakan landasan kat Monorel. Harap cepat pulih.",
+   "rawText": "Stesen TITIWANGSA sekarang sesak sebab kerosakan landasan kat Monorel, dah 9 minit. Takde pengumuman langsung.",
    "publishedAt": "2022-11-07T04:26:00.000Z",
    "language": "ms",
-   "contentHash": "585c44196ced"
+   "contentHash": "c29df9cbcdd6"
   },
   {
    "id": "ev-dcc02318b504",
@@ -807,10 +807,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-dc77a158a6",
    "authorHandle": "@social-dc77a158a6",
-   "rawText": "Ada tren terkandas di Stesen JELATEK. Laluan Kelana Jaya memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada tren terkandas di Stesen JELATEK, dah 22 minit. Laluan Kelana Jaya memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2022-11-15T00:06:00.000Z",
    "language": "ms",
-   "contentHash": "7ebff0164d6a"
+   "contentHash": "33a8879b2a18"
   },
   {
    "id": "ev-c498b2ae900f",
@@ -819,10 +819,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-8d6280cba8",
    "authorHandle": "@social-8d6280cba8",
-   "rawText": "Stesen JELATEK sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya. Penumpang makin ramai.",
+   "rawText": "Stesen JELATEK sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya, dah 26 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2022-11-15T00:21:00.000Z",
    "language": "ms",
-   "contentHash": "56673cf07cac"
+   "contentHash": "d72ac660afb0"
   },
   {
    "id": "ev-34fa2e16462b",
@@ -843,10 +843,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-f5de6f0fa9",
    "authorHandle": "@social-f5de6f0fa9",
-   "rawText": "Laluan Kelana Jaya: kerosakan landasan di Stesen SETIAWANGSA. Sesiapa tahu apa jadi? #rapidkl",
+   "rawText": "Laluan Kelana Jaya: kerosakan landasan di Stesen SETIAWANGSA. Dah 27 minit. Dah lambat nak pergi kerja. #rapidkl",
    "publishedAt": "2023-01-05T08:41:00.000Z",
    "language": "ms",
-   "contentHash": "25a8c7fab8d6"
+   "contentHash": "4a5585d0ba06"
   },
   {
    "id": "ev-95835bf2ecc6",
@@ -867,10 +867,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d7505f839c",
    "authorHandle": "@social-d7505f839c",
-   "rawText": "Ada pintu tren rosak di Stesen JOHAN SETIA. Laluan Shah Alam memang teruk hari ini. Takde pengumuman langsung.",
+   "rawText": "Ada pintu tren rosak di Stesen JOHAN SETIA, dah 8 minit. Laluan Shah Alam memang teruk hari ini. Dah lambat nak pergi kerja.",
    "publishedAt": "2023-01-07T04:09:00.000Z",
    "language": "ms",
-   "contentHash": "2df93c774063"
+   "contentHash": "e5297bcac862"
   },
   {
    "id": "ev-6fe2a5a63237",
@@ -915,10 +915,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-4820017833",
    "authorHandle": "@social-4820017833",
-   "rawText": "Ada gangguan sistem semboyan di Stesen KL Sentral. Monorel memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada gangguan sistem semboyan di Stesen KL Sentral, dah 18 minit. Monorel memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2023-01-18T08:03:00.000Z",
    "language": "ms",
-   "contentHash": "20d92cddaacd"
+   "contentHash": "5da3617b4399"
   },
   {
    "id": "ev-94bdb84c6459",
@@ -927,10 +927,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-4886274a0b",
    "authorHandle": "@social-4886274a0b",
-   "rawText": "Monorel: gangguan sistem semboyan di Stesen KL Sentral. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Monorel: gangguan sistem semboyan di Stesen KL Sentral. Dah 20 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2023-01-18T08:10:00.000Z",
    "language": "ms",
-   "contentHash": "caef493e13d9"
+   "contentHash": "3ecb61d6f295"
   },
   {
    "id": "ev-24184479035b",
@@ -951,10 +951,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-79a4555dab",
    "authorHandle": "@social-79a4555dab",
-   "rawText": "Ada kerosakan landasan di Stesen SENTUL TIMUR. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada kerosakan landasan di Stesen SENTUL TIMUR, dah 7 minit. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-01-25T16:12:00.000Z",
    "language": "ms",
-   "contentHash": "bd4f82ff336d"
+   "contentHash": "5fc300984d91"
   },
   {
    "id": "ev-611e62881450",
@@ -963,10 +963,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-489e33ce34",
    "authorHandle": "@social-489e33ce34",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen SENTUL TIMUR. Dah lambat nak pergi kerja. #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen SENTUL TIMUR. Dah 9 minit. Harap cepat pulih. #rapidkl",
    "publishedAt": "2023-01-25T16:19:00.000Z",
    "language": "ms",
-   "contentHash": "6f7f0740c6c6"
+   "contentHash": "9dc23f1cbce1"
   },
   {
    "id": "ev-dca32277e67e",
@@ -975,10 +975,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d7318227fb",
    "authorHandle": "@social-d7318227fb",
-   "rawText": "Stesen SENTUL TIMUR sekarang sesak sebab kerosakan landasan kat Laluan Ampang. Dah lambat nak pergi kerja.",
+   "rawText": "Stesen SENTUL TIMUR sekarang sesak sebab kerosakan landasan kat Laluan Ampang, dah 11 minit. Kena cari jalan lain ni.",
    "publishedAt": "2023-01-25T16:27:00.000Z",
    "language": "ms",
-   "contentHash": "4e245835456d"
+   "contentHash": "525958f458e0"
   },
   {
    "id": "ev-b865463b0233",
@@ -1035,10 +1035,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-df23502a25",
    "authorHandle": "@social-df23502a25",
-   "rawText": "Ada kerosakan landasan di Stesen AMPANG. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada kerosakan landasan di Stesen AMPANG, dah 25 minit. Laluan Ampang memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2023-01-26T16:07:00.000Z",
    "language": "ms",
-   "contentHash": "ee501e338aa6"
+   "contentHash": "b163839860d4"
   },
   {
    "id": "ev-f71a7c32ac56",
@@ -1047,10 +1047,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-11f0b97a2d",
    "authorHandle": "@social-11f0b97a2d",
-   "rawText": "Ada kerosakan landasan di Stesen SENTUL TIMUR. Laluan Ampang memang teruk hari ini. Sesiapa tahu apa jadi?",
+   "rawText": "Ada kerosakan landasan di Stesen SENTUL TIMUR, dah 22 minit. Laluan Ampang memang teruk hari ini. Takde pengumuman langsung.",
    "publishedAt": "2023-01-26T16:08:00.000Z",
    "language": "ms",
-   "contentHash": "fdcb62d65f59"
+   "contentHash": "1448547395b8"
   },
   {
    "id": "ev-8fbccec52842",
@@ -1059,10 +1059,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-58add67854",
    "authorHandle": "@social-58add67854",
-   "rawText": "Ada kerosakan landasan di Stesen MASJID JAMEK. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada kerosakan landasan di Stesen MASJID JAMEK, dah 9 minit. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-01-26T16:11:00.000Z",
    "language": "ms",
-   "contentHash": "f50b456db31b"
+   "contentHash": "571d679044ae"
   },
   {
    "id": "ev-ad1c20d5ec05",
@@ -1071,10 +1071,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-8158bde318",
    "authorHandle": "@social-8158bde318",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen AMPANG. Penumpang makin ramai. #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen AMPANG. Dah 27 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2023-01-26T16:14:00.000Z",
    "language": "ms",
-   "contentHash": "8598cfca9101"
+   "contentHash": "50382450d87d"
   },
   {
    "id": "ev-b8356dc9c638",
@@ -1083,10 +1083,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d243999927",
    "authorHandle": "@social-d243999927",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen SENTUL TIMUR. Sesiapa tahu apa jadi? #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen SENTUL TIMUR. Dah 24 minit. Dah lambat nak pergi kerja. #rapidkl",
    "publishedAt": "2023-01-26T16:15:00.000Z",
    "language": "ms",
-   "contentHash": "b621c3ebf473"
+   "contentHash": "d1a24589ef04"
   },
   {
    "id": "ev-1f4f4a8226f4",
@@ -1095,10 +1095,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-9ebe34678a",
    "authorHandle": "@social-9ebe34678a",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen MASJID JAMEK. Dah lambat nak pergi kerja. #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen MASJID JAMEK. Dah 11 minit. Harap cepat pulih. #rapidkl",
    "publishedAt": "2023-01-26T16:18:00.000Z",
    "language": "ms",
-   "contentHash": "99c3547e6f0d"
+   "contentHash": "226a9249baeb"
   },
   {
    "id": "ev-ea6d019daab8",
@@ -1107,10 +1107,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-95c5d9c9c5",
    "authorHandle": "@social-95c5d9c9c5",
-   "rawText": "Stesen AMPANG sekarang sesak sebab kerosakan landasan kat Laluan Ampang. Penumpang makin ramai.",
+   "rawText": "Stesen AMPANG sekarang sesak sebab kerosakan landasan kat Laluan Ampang, dah 29 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2023-01-26T16:22:00.000Z",
    "language": "ms",
-   "contentHash": "8d7bd32b8b8b"
+   "contentHash": "df02983f45f5"
   },
   {
    "id": "ev-ea9c88c599cf",
@@ -1119,10 +1119,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-57d306e91f",
    "authorHandle": "@social-57d306e91f",
-   "rawText": "Stesen SENTUL TIMUR sekarang sesak sebab kerosakan landasan kat Laluan Ampang. Sesiapa tahu apa jadi?",
+   "rawText": "Stesen SENTUL TIMUR sekarang sesak sebab kerosakan landasan kat Laluan Ampang, dah 26 minit. Penumpang makin ramai.",
    "publishedAt": "2023-01-26T16:23:00.000Z",
    "language": "ms",
-   "contentHash": "f2c8ea25e45b"
+   "contentHash": "607eae1e008e"
   },
   {
    "id": "ev-9d7d6519f8f9",
@@ -1167,10 +1167,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-48ceab073f",
    "authorHandle": "@social-48ceab073f",
-   "rawText": "Ada kerosakan landasan di Stesen BANDARAYA. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada kerosakan landasan di Stesen BANDARAYA, dah 19 minit. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-01-29T16:12:00.000Z",
    "language": "ms",
-   "contentHash": "02333cef2c53"
+   "contentHash": "b6d03eecb98e"
   },
   {
    "id": "ev-47f2fc7c1b21",
@@ -1179,10 +1179,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-5f18f8cc54",
    "authorHandle": "@social-5f18f8cc54",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen BANDARAYA. Dah lambat nak pergi kerja. #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen BANDARAYA. Dah 21 minit. Harap cepat pulih. #rapidkl",
    "publishedAt": "2023-01-29T16:19:00.000Z",
    "language": "ms",
-   "contentHash": "e6435b9d3c33"
+   "contentHash": "0bb2ea514c78"
   },
   {
    "id": "ev-f1659765a5d4",
@@ -1215,10 +1215,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-50cf5ed3d0",
    "authorHandle": "@social-50cf5ed3d0",
-   "rawText": "Ada kerosakan landasan di Stesen MASJID JAMEK. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada kerosakan landasan di Stesen MASJID JAMEK, dah 6 minit. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-01-31T16:13:00.000Z",
    "language": "ms",
-   "contentHash": "f50b456db31b"
+   "contentHash": "f535a5a7c317"
   },
   {
    "id": "ev-e1e3a8251513",
@@ -1263,10 +1263,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-e2bbde5080",
    "authorHandle": "@social-e2bbde5080",
-   "rawText": "Ada kerosakan landasan di Stesen HANG TUAH. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada kerosakan landasan di Stesen HANG TUAH, dah 27 minit. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-02-01T16:08:00.000Z",
    "language": "ms",
-   "contentHash": "3bb7062fdae7"
+   "contentHash": "bd8e63fbc4d6"
   },
   {
    "id": "ev-1baef816628e",
@@ -1287,10 +1287,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-fad21f9046",
    "authorHandle": "@social-fad21f9046",
-   "rawText": "Ada gangguan perkhidmatan di Stesen BANDARAYA. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada gangguan perkhidmatan di Stesen BANDARAYA, dah 8 minit. Laluan Ampang memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-02-01T16:12:00.000Z",
    "language": "ms",
-   "contentHash": "49a1d181cb58"
+   "contentHash": "84d3cc9beba8"
   },
   {
    "id": "ev-ef9c40637d74",
@@ -1299,10 +1299,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-87d217d963",
    "authorHandle": "@social-87d217d963",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen HANG TUAH. Dah lambat nak pergi kerja. #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen HANG TUAH. Dah 29 minit. Harap cepat pulih. #rapidkl",
    "publishedAt": "2023-02-01T16:15:00.000Z",
    "language": "ms",
-   "contentHash": "f08b6ecf724a"
+   "contentHash": "14867a1c577d"
   },
   {
    "id": "ev-0627310d7dc7",
@@ -1323,10 +1323,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-91329fece9",
    "authorHandle": "@social-91329fece9",
-   "rawText": "Ada tren terkandas di Stesen SENTUL TIMUR. Laluan Sri Petaling memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada tren terkandas di Stesen SENTUL TIMUR, dah 26 minit. Laluan Sri Petaling memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-02-24T16:09:00.000Z",
    "language": "ms",
-   "contentHash": "c3efbc839fc7"
+   "contentHash": "db9351b254b3"
   },
   {
    "id": "ev-fefea3d27487",
@@ -1335,10 +1335,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-e050ac11f9",
    "authorHandle": "@social-e050ac11f9",
-   "rawText": "Laluan Sri Petaling: tren terkandas di Stesen SENTUL TIMUR. Dah lambat nak pergi kerja. #rapidkl",
+   "rawText": "Laluan Sri Petaling: tren terkandas di Stesen SENTUL TIMUR. Dah 28 minit. Harap cepat pulih. #rapidkl",
    "publishedAt": "2023-02-24T16:16:00.000Z",
    "language": "ms",
-   "contentHash": "729cb20f178c"
+   "contentHash": "c94b19bb4a22"
   },
   {
    "id": "ev-336cd52ed59b",
@@ -1359,10 +1359,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-c9a0683a6c",
    "authorHandle": "@social-c9a0683a6c",
-   "rawText": "Ada tren terkandas di Stesen PASAR SENI. Laluan Kelana Jaya memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada tren terkandas di Stesen PASAR SENI, dah 19 minit. Laluan Kelana Jaya memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2023-03-05T16:13:00.000Z",
    "language": "ms",
-   "contentHash": "363555e8f8e9"
+   "contentHash": "8c6aaff8b736"
   },
   {
    "id": "ev-a58ae316d491",
@@ -1371,10 +1371,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-2486d734e7",
    "authorHandle": "@social-2486d734e7",
-   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen PASAR SENI. Penumpang makin ramai. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: tren terkandas di Stesen PASAR SENI. Dah 21 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2023-03-05T16:20:00.000Z",
    "language": "ms",
-   "contentHash": "59493b9f02d5"
+   "contentHash": "a4950b280b11"
   },
   {
    "id": "ev-6aec81866236",
@@ -1383,10 +1383,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d897654096",
    "authorHandle": "@social-d897654096",
-   "rawText": "Stesen PASAR SENI sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya. Penumpang makin ramai.",
+   "rawText": "Stesen PASAR SENI sekarang sesak sebab tren terkandas kat Laluan Kelana Jaya, dah 23 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2023-03-05T16:28:00.000Z",
    "language": "ms",
-   "contentHash": "561c043f8d11"
+   "contentHash": "b815f27cd133"
   },
   {
    "id": "ev-96f1d63f6c04",
@@ -1407,10 +1407,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-267cbdb90b",
    "authorHandle": "@social-267cbdb90b",
-   "rawText": "Ada gangguan perkhidmatan di Stesen DAMAI. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada gangguan perkhidmatan di Stesen DAMAI, dah 23 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2023-03-06T12:01:00.000Z",
    "language": "ms",
-   "contentHash": "059f6a88e059"
+   "contentHash": "c879d76680c2"
   },
   {
    "id": "ev-9d4c8af228b6",
@@ -1419,10 +1419,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-bb4adddf78",
    "authorHandle": "@social-bb4adddf78",
-   "rawText": "Laluan Kelana Jaya: gangguan perkhidmatan di Stesen DAMAI. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: gangguan perkhidmatan di Stesen DAMAI. Dah 25 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2023-03-06T12:08:00.000Z",
    "language": "ms",
-   "contentHash": "9b09cfc64163"
+   "contentHash": "682106c9e852"
   },
   {
    "id": "ev-323596d72c8b",
@@ -1431,10 +1431,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-4cdf2e8d30",
    "authorHandle": "@social-4cdf2e8d30",
-   "rawText": "Stesen DAMAI sekarang sesak sebab gangguan perkhidmatan kat Laluan Kelana Jaya. Kena cari jalan lain ni.",
+   "rawText": "Stesen DAMAI sekarang sesak sebab gangguan perkhidmatan kat Laluan Kelana Jaya, dah 27 minit. Dah lambat nak pergi kerja.",
    "publishedAt": "2023-03-06T12:16:00.000Z",
    "language": "ms",
-   "contentHash": "37d5cbb1ef69"
+   "contentHash": "9afd0f039655"
   },
   {
    "id": "ev-e576c4bf3f8d",
@@ -1467,10 +1467,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-0b34ff60df",
    "authorHandle": "@social-0b34ff60df",
-   "rawText": "Ada tren terkandas di Stesen TAMAN MELATI. Monorel memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada tren terkandas di Stesen TAMAN MELATI, dah 20 minit. Monorel memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2023-03-22T10:47:00.000Z",
    "language": "ms",
-   "contentHash": "a3c279409d4a"
+   "contentHash": "7f816ae4a32b"
   },
   {
    "id": "ev-92a0fd9fa3dd",
@@ -1491,10 +1491,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-526e423fc1",
    "authorHandle": "@social-526e423fc1",
-   "rawText": "Stesen TAMAN MELATI sekarang sesak sebab tren terkandas kat Monorel. Dah lambat nak pergi kerja.",
+   "rawText": "Stesen TAMAN MELATI sekarang sesak sebab tren terkandas kat Monorel, dah 24 minit. Kena cari jalan lain ni.",
    "publishedAt": "2023-03-22T11:02:00.000Z",
    "language": "ms",
-   "contentHash": "031e5d3ab2e3"
+   "contentHash": "c5d4e2d5989f"
   },
   {
    "id": "ev-d7794fa14444",
@@ -1539,10 +1539,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-9e74a9c192",
    "authorHandle": "@social-9e74a9c192",
-   "rawText": "Ada tren terkandas di Stesen PASAR SENI. MRT Laluan Kajang memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada tren terkandas di Stesen PASAR SENI, dah 13 minit. MRT Laluan Kajang memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2023-05-19T09:36:00.000Z",
    "language": "ms",
-   "contentHash": "e081993edeb3"
+   "contentHash": "136023e51bfc"
   },
   {
    "id": "ev-84c77222f633",
@@ -1551,10 +1551,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-2aaa13f95b",
    "authorHandle": "@social-2aaa13f95b",
-   "rawText": "MRT Laluan Kajang: tren terkandas di Stesen PASAR SENI. Penumpang makin ramai. #rapidkl",
+   "rawText": "MRT Laluan Kajang: tren terkandas di Stesen PASAR SENI. Dah 15 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2023-05-19T09:43:00.000Z",
    "language": "ms",
-   "contentHash": "ff3956f5b460"
+   "contentHash": "d43f5ff58982"
   },
   {
    "id": "ev-0fa98c1fe3d9",
@@ -1563,10 +1563,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-f7bc61147b",
    "authorHandle": "@social-f7bc61147b",
-   "rawText": "Stesen PASAR SENI sekarang sesak sebab tren terkandas kat MRT Laluan Kajang. Penumpang makin ramai.",
+   "rawText": "Stesen PASAR SENI sekarang sesak sebab tren terkandas kat MRT Laluan Kajang, dah 17 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2023-05-19T09:51:00.000Z",
    "language": "ms",
-   "contentHash": "d6a7fca4d0d7"
+   "contentHash": "60bdaf65b860"
   },
   {
    "id": "ev-9828e23552cb",
@@ -1599,10 +1599,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-e2e6f32d33",
    "authorHandle": "@social-e2e6f32d33",
-   "rawText": "Ada tren terkandas di Stesen PWTC. Laluan Ampang memang teruk hari ini. Harap cepat pulih.",
+   "rawText": "Ada tren terkandas di Stesen PWTC, dah 26 minit. Laluan Ampang memang teruk hari ini. Kena cari jalan lain ni.",
    "publishedAt": "2023-08-06T04:07:00.000Z",
    "language": "ms",
-   "contentHash": "90a13000db9b"
+   "contentHash": "f47a3ab14da6"
   },
   {
    "id": "ev-49c384a52f3f",
@@ -1611,10 +1611,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-30fabef5bd",
    "authorHandle": "@social-30fabef5bd",
-   "rawText": "Laluan Ampang: tren terkandas di Stesen PWTC. Harap cepat pulih. #rapidkl",
+   "rawText": "Laluan Ampang: tren terkandas di Stesen PWTC. Dah 28 minit. Sesiapa tahu apa jadi? #rapidkl",
    "publishedAt": "2023-08-06T04:14:00.000Z",
    "language": "ms",
-   "contentHash": "d74431ac572a"
+   "contentHash": "e58d9150b26a"
   },
   {
    "id": "ev-926aaa5fee2d",
@@ -1635,10 +1635,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-df670a2098",
    "authorHandle": "@social-df670a2098",
-   "rawText": "Ada kerosakan landasan di Stesen BANDARAYA. Laluan Ampang memang teruk hari ini. Takde pengumuman langsung.",
+   "rawText": "Ada kerosakan landasan di Stesen BANDARAYA, dah 21 minit. Laluan Ampang memang teruk hari ini. Dah lambat nak pergi kerja.",
    "publishedAt": "2023-09-26T16:09:00.000Z",
    "language": "ms",
-   "contentHash": "e86c4bcfe112"
+   "contentHash": "499db4e19b4c"
   },
   {
    "id": "ev-7de4d6787707",
@@ -1647,10 +1647,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-02f2577697",
    "authorHandle": "@social-02f2577697",
-   "rawText": "Laluan Ampang: kerosakan landasan di Stesen BANDARAYA. Takde pengumuman langsung. #rapidkl",
+   "rawText": "Laluan Ampang: kerosakan landasan di Stesen BANDARAYA. Dah 23 minit. Penumpang makin ramai. #rapidkl",
    "publishedAt": "2023-09-26T16:16:00.000Z",
    "language": "ms",
-   "contentHash": "d864f550b637"
+   "contentHash": "9a9ac165ed1e"
   },
   {
    "id": "ev-1eadf83391ce",
@@ -1671,10 +1671,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d93723f2be",
    "authorHandle": "@social-d93723f2be",
-   "rawText": "Ada gangguan sistem semboyan di Stesen SUNGAI BULOH. MRT Laluan Kajang memang teruk hari ini. Sesiapa tahu apa jadi?",
+   "rawText": "Ada gangguan sistem semboyan di Stesen SUNGAI BULOH, dah 21 minit. MRT Laluan Kajang memang teruk hari ini. Takde pengumuman langsung.",
    "publishedAt": "2023-10-16T22:09:00.000Z",
    "language": "ms",
-   "contentHash": "2bcaae8d9c7f"
+   "contentHash": "cee3f8a8b765"
   },
   {
    "id": "ev-a46caf1bacf2",
@@ -1683,10 +1683,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-448b7191f2",
    "authorHandle": "@social-448b7191f2",
-   "rawText": "MRT Laluan Kajang: gangguan sistem semboyan di Stesen SUNGAI BULOH. Sesiapa tahu apa jadi? #rapidkl",
+   "rawText": "MRT Laluan Kajang: gangguan sistem semboyan di Stesen SUNGAI BULOH. Dah 23 minit. Dah lambat nak pergi kerja. #rapidkl",
    "publishedAt": "2023-10-16T22:16:00.000Z",
    "language": "ms",
-   "contentHash": "d2a75197e5f4"
+   "contentHash": "b4463c421754"
   },
   {
    "id": "ev-2a2c92b7286c",
@@ -1707,10 +1707,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-48ee612785",
    "authorHandle": "@social-48ee612785",
-   "rawText": "Ada tren terkandas di Stesen DAMANSARA IDAMAN. Laluan Shah Alam memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada tren terkandas di Stesen DAMANSARA IDAMAN, dah 24 minit. Laluan Shah Alam memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2023-10-25T04:07:00.000Z",
    "language": "ms",
-   "contentHash": "c1b3421d22db"
+   "contentHash": "618ce204c01f"
   },
   {
    "id": "ev-9a2605aa42df",
@@ -1755,10 +1755,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-99e389ec56",
    "authorHandle": "@social-99e389ec56",
-   "rawText": "Laluan Sri Petaling: kerosakan landasan di Stesen BANDARAYA. Dah lambat nak pergi kerja. #rapidkl",
+   "rawText": "Laluan Sri Petaling: kerosakan landasan di Stesen BANDARAYA. Dah 13 minit. Harap cepat pulih. #rapidkl",
    "publishedAt": "2024-01-30T16:16:00.000Z",
    "language": "ms",
-   "contentHash": "767af3120b37"
+   "contentHash": "c2ddc75a23cd"
   },
   {
    "id": "ev-63925206d501",
@@ -1779,10 +1779,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-f8d46bd286",
    "authorHandle": "@social-f8d46bd286",
-   "rawText": "Ada cuaca buruk di Stesen MEDAN TUANKU. Monorel memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada cuaca buruk di Stesen MEDAN TUANKU, dah 15 minit. Monorel memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2024-05-07T06:26:00.000Z",
    "language": "ms",
-   "contentHash": "f439eeb2cf3e"
+   "contentHash": "f4b552925994"
   },
   {
    "id": "ev-e3ac530ea5ff",
@@ -1791,10 +1791,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-0172129e98",
    "authorHandle": "@social-0172129e98",
-   "rawText": "Monorel: cuaca buruk di Stesen MEDAN TUANKU. Penumpang makin ramai. #rapidkl",
+   "rawText": "Monorel: cuaca buruk di Stesen MEDAN TUANKU. Dah 17 minit. Kena cari jalan lain ni. #rapidkl",
    "publishedAt": "2024-05-07T06:33:00.000Z",
    "language": "ms",
-   "contentHash": "fe04d38d308d"
+   "contentHash": "94812a84bd10"
   },
   {
    "id": "ev-b32dcfdefb8b",
@@ -1803,10 +1803,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-6697d8b2f5",
    "authorHandle": "@social-6697d8b2f5",
-   "rawText": "Stesen MEDAN TUANKU sekarang sesak sebab cuaca buruk kat Monorel. Penumpang makin ramai.",
+   "rawText": "Stesen MEDAN TUANKU sekarang sesak sebab cuaca buruk kat Monorel, dah 19 minit. Sesiapa tahu apa jadi?",
    "publishedAt": "2024-05-07T06:41:00.000Z",
    "language": "ms",
-   "contentHash": "f7bcc6aa66e0"
+   "contentHash": "45ab541cee0e"
   },
   {
    "id": "ev-f6380b192c3e",
@@ -1839,10 +1839,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-89216797e7",
    "authorHandle": "@social-89216797e7",
-   "rawText": "Ada gangguan sistem semboyan di Stesen SRI PETALING. Laluan Sri Petaling memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada gangguan sistem semboyan di Stesen SRI PETALING, dah 25 minit. Laluan Sri Petaling memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2024-06-02T04:06:00.000Z",
    "language": "ms",
-   "contentHash": "f800251c4c26"
+   "contentHash": "4389d7cf7d93"
   },
   {
    "id": "ev-0d5c0f5673f3",
@@ -1863,10 +1863,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-018ae0ed30",
    "authorHandle": "@social-018ae0ed30",
-   "rawText": "Ada kerosakan landasan di Stesen KL SENTRAL. Monorel memang teruk hari ini. Penumpang makin ramai.",
+   "rawText": "Ada kerosakan landasan di Stesen KL SENTRAL, dah 9 minit. Monorel memang teruk hari ini. Harap cepat pulih.",
    "publishedAt": "2024-07-18T16:12:00.000Z",
    "language": "ms",
-   "contentHash": "decf0f9ece14"
+   "contentHash": "ef0f7f23bf40"
   },
   {
    "id": "ev-4494c69d6415",
@@ -1923,10 +1923,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-ba8d17344f",
    "authorHandle": "@social-ba8d17344f",
-   "rawText": "Ada pencerobohan landasan di Stesen PASAR SENI. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada pencerobohan landasan di Stesen PASAR SENI, dah 15 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2024-10-06T16:12:00.000Z",
    "language": "ms",
-   "contentHash": "7a600504dfaa"
+   "contentHash": "903ef2efde73"
   },
   {
    "id": "ev-49bc4b339f74",
@@ -1935,10 +1935,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-6e91da3555",
    "authorHandle": "@social-6e91da3555",
-   "rawText": "Laluan Kelana Jaya: pencerobohan landasan di Stesen PASAR SENI. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: pencerobohan landasan di Stesen PASAR SENI. Dah 17 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2024-10-06T16:19:00.000Z",
    "language": "ms",
-   "contentHash": "e3dd40b25b0c"
+   "contentHash": "43f541a5a18e"
   },
   {
    "id": "ev-50e0db2c9e37",
@@ -1947,10 +1947,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-ee23a01133",
    "authorHandle": "@social-ee23a01133",
-   "rawText": "Stesen PASAR SENI sekarang sesak sebab pencerobohan landasan kat Laluan Kelana Jaya. Kena cari jalan lain ni.",
+   "rawText": "Stesen PASAR SENI sekarang sesak sebab pencerobohan landasan kat Laluan Kelana Jaya, dah 19 minit. Dah lambat nak pergi kerja.",
    "publishedAt": "2024-10-06T16:27:00.000Z",
    "language": "ms",
-   "contentHash": "be6794122647"
+   "contentHash": "5572acfe2605"
   },
   {
    "id": "ev-247851e61299",
@@ -1971,10 +1971,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d13b78de98",
    "authorHandle": "@social-d13b78de98",
-   "rawText": "Ada kerosakan landasan di Stesen GOMBAK. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada kerosakan landasan di Stesen GOMBAK, dah 9 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2024-10-14T16:08:00.000Z",
    "language": "ms",
-   "contentHash": "32542e22b8e8"
+   "contentHash": "9e6360170bdf"
   },
   {
    "id": "ev-d959df7afbb4",
@@ -1983,10 +1983,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-5e6aa4e6d1",
    "authorHandle": "@social-5e6aa4e6d1",
-   "rawText": "Laluan Kelana Jaya: kerosakan landasan di Stesen GOMBAK. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: kerosakan landasan di Stesen GOMBAK. Dah 11 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2024-10-14T16:15:00.000Z",
    "language": "ms",
-   "contentHash": "90e74de35401"
+   "contentHash": "351b8f4698fe"
   },
   {
    "id": "ev-275323f151e2",
@@ -1995,10 +1995,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-5c70752c1b",
    "authorHandle": "@social-5c70752c1b",
-   "rawText": "Stesen GOMBAK sekarang sesak sebab kerosakan landasan kat Laluan Kelana Jaya. Kena cari jalan lain ni.",
+   "rawText": "Stesen GOMBAK sekarang sesak sebab kerosakan landasan kat Laluan Kelana Jaya, dah 13 minit. Dah lambat nak pergi kerja.",
    "publishedAt": "2024-10-14T16:23:00.000Z",
    "language": "ms",
-   "contentHash": "5c62b42bf7e4"
+   "contentHash": "2a8196dd7dd9"
   },
   {
    "id": "ev-5a93d944d165",
@@ -2019,10 +2019,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-fbf2387892",
    "authorHandle": "@social-fbf2387892",
-   "rawText": "Ada kerosakan landasan di Stesen WANGSA MAJU. Laluan Kelana Jaya memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada kerosakan landasan di Stesen WANGSA MAJU, dah 6 minit. Laluan Kelana Jaya memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2024-10-15T02:29:00.000Z",
    "language": "ms",
-   "contentHash": "8c82e4cb03cb"
+   "contentHash": "3f85aa0e5f25"
   },
   {
    "id": "ev-df0bfb74ea24",
@@ -2031,10 +2031,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-34f60c3968",
    "authorHandle": "@social-34f60c3968",
-   "rawText": "Stesen WANGSA MAJU sekarang sesak sebab kerosakan landasan kat Laluan Kelana Jaya. Dah lambat nak pergi kerja.",
+   "rawText": "Stesen WANGSA MAJU sekarang sesak sebab kerosakan landasan kat Laluan Kelana Jaya, dah 10 minit. Kena cari jalan lain ni.",
    "publishedAt": "2024-10-15T02:44:00.000Z",
    "language": "ms",
-   "contentHash": "503980e3d324"
+   "contentHash": "cbc150edbd29"
   },
   {
    "id": "ev-c739d153ddb7",
@@ -2067,10 +2067,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-35c250e901",
    "authorHandle": "@social-35c250e901",
-   "rawText": "Ada gangguan perkhidmatan di Stesen PERSIARAN KLCC. Laluan Kelana Jaya memang teruk hari ini. Kena cari jalan lain ni.",
+   "rawText": "Ada gangguan perkhidmatan di Stesen PERSIARAN KLCC, dah 12 minit. Laluan Kelana Jaya memang teruk hari ini. Sesiapa tahu apa jadi?",
    "publishedAt": "2025-01-01T16:11:00.000Z",
    "language": "ms",
-   "contentHash": "bc908958c53e"
+   "contentHash": "1cbc4c87e9ee"
   },
   {
    "id": "ev-eed21c38010f",
@@ -2079,10 +2079,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-6bbd993e3e",
    "authorHandle": "@social-6bbd993e3e",
-   "rawText": "Laluan Kelana Jaya: gangguan perkhidmatan di Stesen PERSIARAN KLCC. Kena cari jalan lain ni. #rapidkl",
+   "rawText": "Laluan Kelana Jaya: gangguan perkhidmatan di Stesen PERSIARAN KLCC. Dah 14 minit. Takde pengumuman langsung. #rapidkl",
    "publishedAt": "2025-01-01T16:18:00.000Z",
    "language": "ms",
-   "contentHash": "2cc7d2699e24"
+   "contentHash": "d84816f5fe73"
   },
   {
    "id": "ev-fedb01bf14ee",
@@ -2091,10 +2091,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-d383257335",
    "authorHandle": "@social-d383257335",
-   "rawText": "Stesen PERSIARAN KLCC sekarang sesak sebab gangguan perkhidmatan kat Laluan Kelana Jaya. Kena cari jalan lain ni.",
+   "rawText": "Stesen PERSIARAN KLCC sekarang sesak sebab gangguan perkhidmatan kat Laluan Kelana Jaya, dah 16 minit. Dah lambat nak pergi kerja.",
    "publishedAt": "2025-01-01T16:26:00.000Z",
    "language": "ms",
-   "contentHash": "073681181c53"
+   "contentHash": "7ea7b0309bcc"
   },
   {
    "id": "ev-3cf7dee77b1e",
@@ -2139,10 +2139,10 @@
    "sourceClass": "SOCIAL",
    "authorId": "social-fe3d002620",
    "authorHandle": "@social-fe3d002620",
-   "rawText": "Ada gangguan perkhidmatan di Stesen BUKIT NANAS. Laluan Kelana Jaya memang teruk hari ini. Dah lambat nak pergi kerja.",
+   "rawText": "Ada gangguan perkhidmatan di Stesen BUKIT NANAS, dah 24 minit. Laluan Kelana Jaya memang teruk hari ini. Penumpang makin ramai.",
    "publishedAt": "2025-01-02T07:58:00.000Z",
    "language": "ms",
-   "contentHash": "6c4ba7d6059d"
+   "contentHash": "f6e0046881cf"
   }
  ]
 }

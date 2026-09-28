@@ -1,14 +1,21 @@
 /**
  * Reliability-first ranking — the product thesis, encoded as a pure function.
  *
- * The router (S1) already returns ranked itineraries, but the UI re-ranks
- * defensively through this module so the interface can never present a
- * speed-first order, even if an upstream change regresses. One definition of
- * "reliable" is shared by the mock router and the view.
+ * WHO OWNS WHAT (read this before changing anything here):
+ *  - S4's `lib/risk/rank.ts` is the canonical reliability score and badge, and
+ *    S1's `lib/routing/reliability.ts` score is router-internal/provisional.
+ *    The API returns the Impact agent's advisory, so **the UI renders
+ *    `advisory.itineraries` in the order the advisory gives them and does not
+ *    re-sort them.** `RouteResults.tsx` maps over the array as-is.
+ *  - `rankItineraries` below exists for the ROUTER side (the mock router that
+ *    stands in for S1/S4 today, and S1 itself), and as the pure function the
+ *    acceptance criterion "the safer route ranks above the faster risky one" is
+ *    proved against. No component calls it.
  *
  * Pure: no I/O, no clock, no React. Directly unit-tested in tests/ui/ranking.test.ts.
  */
 import type {
+  IssueType,
   Itinerary,
   ReliabilityBadge,
   SegmentRisk,
@@ -107,7 +114,16 @@ export function rankItineraries<T extends Itinerary>(itineraries: readonly T[]):
     .map((itinerary, index) => ({ ...itinerary, rank: index + 1 }));
 }
 
-/** The fastest itinerary by P90 arrival — used to explain why it is NOT first. */
+/** The quickest itinerary by MEAN duration — what a naive app would show first. */
+export function fastestByMean(itineraries: readonly Itinerary[]): Itinerary | null {
+  let best: Itinerary | null = null;
+  for (const itinerary of itineraries) {
+    if (!best || itinerary.totalDurationSeconds < best.totalDurationSeconds) best = itinerary;
+  }
+  return best;
+}
+
+/** The fastest itinerary by P90 arrival. Used as the ranking tie-break. */
 export function fastestByP90(itineraries: readonly Itinerary[]): Itinerary | null {
   let best: Itinerary | null = null;
   for (const itinerary of itineraries) {
@@ -117,26 +133,56 @@ export function fastestByP90(itineraries: readonly Itinerary[]): Itinerary | nul
 }
 
 /* ------------------------------------------------------------------ */
-/* Plain-language explanation of a rank, localised through the i18n t() */
+/* Plain-language explanation of a rank                                */
 /* ------------------------------------------------------------------ */
 
-export interface ReasonFragment {
-  key: TranslationKey;
-  params?: Record<string, string | number>;
-}
+/**
+ * Explanations are rendered to FINAL STRINGS here, through a `t` function passed
+ * in by the caller. That is deliberate: an earlier design returned i18n keys
+ * plus params, and the params themselves contained keys (`severity.SEVERE`),
+ * which leaked untranslated into the UI. Resolving in one place makes that
+ * impossible.
+ */
+export type ExplainTranslate = (
+  key: TranslationKey,
+  params?: Record<string, string | number>,
+) => string;
+
+const SEVERITY_KEY: Record<Severity, TranslationKey> = {
+  INFO: "severity.INFO",
+  MINOR: "severity.MINOR",
+  MAJOR: "severity.MAJOR",
+  SEVERE: "severity.SEVERE",
+};
+
+const ISSUE_KEY: Record<IssueType, TranslationKey> = {
+  TRACK_FAULT: "issue.TRACK_FAULT",
+  SIGNAL_FAULT: "issue.SIGNAL_FAULT",
+  VEHICLE_BREAKDOWN: "issue.VEHICLE_BREAKDOWN",
+  ELEVATOR_FAULT: "issue.ELEVATOR_FAULT",
+  DOOR_FAULT: "issue.DOOR_FAULT",
+  CROWDING: "issue.CROWDING",
+  DELAY: "issue.DELAY",
+  ROAD_BLOCKED: "issue.ROAD_BLOCKED",
+  WEATHER: "issue.WEATHER",
+  UNKNOWN: "issue.UNKNOWN",
+};
 
 export interface RankExplanation {
-  /** The headline sentence. */
-  headline: ReasonFragment;
-  /** Supporting evidence lines, shown under the headline. */
-  details: ReasonFragment[];
+  /** The headline sentence, already localised. */
+  headline: string;
+  /** Supporting evidence lines, already localised. */
+  details: string[];
 }
 
 export interface ExplainOptions {
   /** All ranked itineraries, so the explanation can compare against the fastest. */
   all: readonly Itinerary[];
   riskLookup?: SegmentRiskLookup;
+  /** Defaults to `fastestByMean(all)`. */
   fastest?: Itinerary | null;
+  /** Locale-bound translator. */
+  t: ExplainTranslate;
 }
 
 /**
@@ -163,107 +209,82 @@ function worstRiskOn(
   return worst;
 }
 
-function severityKey(severity: Severity): TranslationKey {
-  return `severity.${severity}` as TranslationKey;
-}
-
 /**
  * Why this itinerary sits at this rank, in plain language.
  *
  * The contract also carries `itinerary.whyThisRank` as an English string from
- * the router; the UI prefers this localised composition and falls back to the
- * contract string only if this returns nothing useful.
+ * the router. The UI composes its own localised version and only falls back to
+ * the contract string if this produces nothing.
  */
 export function explainRank(
   itinerary: Itinerary,
   options: ExplainOptions,
 ): RankExplanation {
-  const { all, riskLookup } = options;
-  const fastest =
-    options.fastest === undefined ? fastestByP90(all) : options.fastest;
+  const { all, riskLookup, t } = options;
+  const fastest = options.fastest === undefined ? fastestByMean(all) : options.fastest;
   const worst = worstRiskOn(itinerary, riskLookup);
-  const details: ReasonFragment[] = [];
+  const details: string[] = [];
 
   if (worst) {
-    details.push({
-      key: "why.riskOnBoard",
-      params: {
-        severity: severityKey(worst.severity),
-        issue: `issue.${worst.issueType}`,
+    details.push(
+      t("why.riskOnBoard", {
+        severity: t(SEVERITY_KEY[worst.severity]),
+        issue: t(ISSUE_KEY[worst.issueType]),
         pct: Math.round(worst.degradationProbability * 100),
-      },
-    });
+      }),
+    );
   }
   if (itinerary.expectedDelaySeconds >= 60) {
-    details.push({
-      key: "why.delayAdded",
-      params: { min: Math.round(itinerary.expectedDelaySeconds / 60) },
-    });
+    details.push(
+      t("why.delayAdded", { min: Math.round(itinerary.expectedDelaySeconds / 60) }),
+    );
   }
   if (fastest && fastest.id !== itinerary.id) {
     const delta = Math.round(
-      (itinerary.arrival.p90Seconds - fastest.arrival.p90Seconds) / 60,
+      (itinerary.totalDurationSeconds - fastest.totalDurationSeconds) / 60,
     );
-    if (delta > 0) details.push({ key: "why.slowerThanFastest", params: { delta } });
-  } else if (fastest && fastest.id === itinerary.id) {
-    details.push({ key: "why.fastestOption" });
+    if (delta > 0) details.push(t("why.slowerThanFastest", { delta }));
   }
 
   if (itinerary.rank === 1) {
     if (fastest && fastest.id !== itinerary.id) {
-      // The headline case: the top option is NOT the quickest, and the reason
-      // is a disruption on the route that is.
-      const fastestWorst = fastest ? worstRiskOn(fastest, riskLookup) : undefined;
+      // The headline case: the top option is NOT the quickest, and the reason is
+      // a disruption on the route that is.
+      const fastestWorst = worstRiskOn(fastest, riskLookup);
       if (fastestWorst) {
-        details.unshift({
-          key: "why.avoidsTheDisruption",
-          params: {
-            severity: severityKey(fastestWorst.severity),
-            issue: `issue.${fastestWorst.issueType}`,
-          },
-        });
+        details.unshift(
+          t("why.avoidsTheDisruption", {
+            severity: t(SEVERITY_KEY[fastestWorst.severity]),
+            issue: t(ISSUE_KEY[fastestWorst.issueType]),
+          }),
+        );
       }
       return {
-        headline: {
-          key: "why.saferThanFaster",
-          params: {
-            delta: Math.max(
-              1,
-              Math.round((itinerary.arrival.p90Seconds - fastest.arrival.p90Seconds) / 60),
+        headline: t("why.saferThanFaster", {
+          delta: Math.max(
+            1,
+            Math.round(
+              (itinerary.totalDurationSeconds - fastest.totalDurationSeconds) / 60,
             ),
-          },
-        },
+          ),
+        }),
         details,
       };
     }
-    if (!worst) {
-      return { headline: { key: "why.clean" }, details };
-    }
-    return {
-      headline: { key: "why.mostReliable", params: { count: all.length } },
-      details,
-    };
+    if (!worst) return { headline: t("why.clean"), details };
+    return { headline: t("why.mostReliable", { count: all.length }), details };
   }
 
   if (worst) {
     return {
-      headline: {
-        key: "why.lowerRisk",
-        params: {
-          severity: severityKey(worst.severity),
-          issue: `issue.${worst.issueType}`,
-          pct: Math.round(worst.degradationProbability * 100),
-        },
-      },
+      headline: t("why.lowerRisk", {
+        severity: t(SEVERITY_KEY[worst.severity]),
+        issue: t(ISSUE_KEY[worst.issueType]),
+        pct: Math.round(worst.degradationProbability * 100),
+      }),
       details,
     };
   }
 
-  return {
-    headline: {
-      key: "why.lowerScore",
-      params: { rank: itinerary.rank },
-    },
-    details,
-  };
+  return { headline: t("why.lowerScore", { rank: itinerary.rank }), details };
 }

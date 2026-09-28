@@ -14,9 +14,16 @@ import {
   compareByReliability,
   computeReliabilityScore,
   explainRank,
+  fastestByMean,
   fastestByP90,
   rankItineraries,
 } from "@/components/lib/ranking";
+import { translate, type Locale, type TranslateParams, type TranslationKey } from "@/lib/i18n";
+
+/** Locale-bound translator, same one the components use. */
+function tr(locale: Locale) {
+  return (key: TranslationKey, params?: TranslateParams) => translate(locale, key, params);
+}
 
 function windowFrom(p90: number, mean: number): ArrivalWindow {
   return {
@@ -172,6 +179,12 @@ describe("reliability-first ordering", () => {
     expect(fastest?.id).toBe("fast-risky");
     expect(ranked[0]?.id).not.toBe(fastest?.id);
   });
+
+  it("finds the quickest option by MEAN duration, which is also NOT the top-ranked one", () => {
+    const ranked = rankItineraries([FAST_AND_RISKY, SLOWER_BUT_SAFE]);
+    expect(fastestByMean(ranked)?.id).toBe("fast-risky");
+    expect(ranked[0]?.id).toBe("slow-safe");
+  });
 });
 
 describe("reliability score", () => {
@@ -277,31 +290,49 @@ describe("rank explanations", () => {
     ],
   ]);
 
-  it("explains the top option as slower-but-safer when it is not the fastest", () => {
-    const ranked = rankItineraries([FAST_AND_RISKY, SLOWER_BUT_SAFE]);
-    const top = ranked[0];
-    expect(top).toBeDefined();
-    if (!top) return;
-    const explanation = explainRank(top, {
-      all: ranked,
-      riskLookup: (id) => riskBySegment.get(id),
-    });
-    expect(explanation.headline.key).toBe("why.saferThanFaster");
-    expect(explanation.headline.params?.delta).toBeGreaterThan(0);
-  });
-
-  it("names the severity and issue type of the risk it carries", () => {
+  it("explains the top option as slower-but-safer when it is not the quickest", () => {
     const ranked = rankItineraries([FAST_AND_RISKY, SLOWER_BUT_SAFE]);
     const top = ranked[0];
     if (!top) throw new Error("expected a top itinerary");
     const explanation = explainRank(top, {
       all: ranked,
       riskLookup: (id) => riskBySegment.get(id),
+      t: tr("en"),
     });
-    const riskDetail = explanation.details.find((d) => d.key === "why.riskOnBoard");
-    expect(riskDetail).toBeDefined();
-    expect(riskDetail?.params?.severity).toBe("severity.MINOR");
-    expect(riskDetail?.params?.pct).toBe(31);
+    // Real, already-localised text — not an i18n key, and with no key leaking
+    // into the parameters.
+    expect(explanation.headline).toMatch(/^Slower than the fastest option by \d+ min/);
+    expect(explanation.headline).not.toContain("why.");
+    expect(explanation.details.join(" ")).not.toContain("severity.");
+    expect(explanation.details.join(" ")).not.toContain("issue.");
+  });
+
+  it("names the severity and issue type of the risk the top option carries", () => {
+    const ranked = rankItineraries([FAST_AND_RISKY, SLOWER_BUT_SAFE]);
+    const top = ranked[0];
+    if (!top) throw new Error("expected a top itinerary");
+    const explanation = explainRank(top, {
+      all: ranked,
+      riskLookup: (id) => riskBySegment.get(id),
+      t: tr("en"),
+    });
+    const joined = explanation.details.join(" ");
+    expect(joined).toContain("Minor");
+    expect(joined).toContain("Delay");
+    expect(joined).toContain("31%");
+  });
+
+  it("names the disruption the top option avoids", () => {
+    const ranked = rankItineraries([FAST_AND_RISKY, SLOWER_BUT_SAFE]);
+    const top = ranked[0];
+    if (!top) throw new Error("expected a top itinerary");
+    const explanation = explainRank(top, {
+      all: ranked,
+      riskLookup: (id) => riskBySegment.get(id),
+      t: tr("en"),
+    });
+    expect(explanation.details.join(" ")).toContain("Severe");
+    expect(explanation.details.join(" ")).toContain("Track fault");
   });
 
   it("explains a lower-ranked option by the risk it crosses", () => {
@@ -311,14 +342,32 @@ describe("rank explanations", () => {
     const explanation = explainRank(last, {
       all: ranked,
       riskLookup: (id) => riskBySegment.get(id),
+      t: tr("en"),
     });
-    expect(explanation.headline.key).toBe("why.lowerRisk");
+    expect(explanation.headline).toContain("Severe");
+    expect(explanation.headline).toContain("Track fault");
+    expect(explanation.headline).toContain("82%");
+  });
+
+  it("localises the explanation into Bahasa Malaysia", () => {
+    const ranked = rankItineraries([FAST_AND_RISKY, SLOWER_BUT_SAFE]);
+    const top = ranked[0];
+    if (!top) throw new Error("expected a top itinerary");
+    const explanation = explainRank(top, {
+      all: ranked,
+      riskLookup: (id) => riskBySegment.get(id),
+      t: tr("ms"),
+    });
+    expect(explanation.headline).toMatch(/^Lambat \d+ min/);
+    expect(explanation.details.join(" ")).toContain("Teruk");
+    expect(explanation.details.join(" ")).toContain("Kerosakan landasan");
   });
 
   it("says a clean top option is clean", () => {
     const clean = makeItinerary({ id: "clean", meanSeconds: 1000, p90Seconds: 1100, score: 0.95 });
     const ranked = rankItineraries([clean]);
-    const explanation = explainRank(ranked[0]!, { all: ranked });
-    expect(explanation.headline.key).toBe("why.clean");
+    const explanation = explainRank(ranked[0]!, { all: ranked, t: tr("en") });
+    expect(explanation.headline).toBe("No known disruption on any segment of this route.");
+    expect(explanation.details).toEqual([]);
   });
 });

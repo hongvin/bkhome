@@ -63,11 +63,11 @@ export function RouteResults({
   const selectedSegments = new Set(selected?.legs.flatMap((leg) => leg.segmentIds) ?? []);
 
   return (
-    <div className="flex flex-col gap-3 p-3.5 pt-0">
+    <div className="flex min-w-0 flex-col gap-3 p-3.5 pt-0">
       {error ? (
         <div className={`${CARD} px-3 py-3`}>
           <p className="text-[12px] text-rose-200">{t("common.error")}</p>
-          <p className="mt-1 text-[11px] text-slate-400">{error}</p>
+          <p className="mt-1 break-words text-[11px] text-slate-400">{error}</p>
           <button
             type="button"
             data-no-drag
@@ -126,8 +126,12 @@ export function RouteResults({
           <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
             {t("results.fallback")}
           </p>
-          <p className="mt-1 text-[12px] text-slate-100">{advisory.fallback.description}</p>
-          <p className="mt-1 text-[11px] text-slate-400">{advisory.fallback.note}</p>
+          <p className="mt-1 break-words text-[12px] text-slate-100">
+            {advisory.fallback.description}
+          </p>
+          <p className="mt-1 break-words text-[11px] text-slate-400">
+            {advisory.fallback.note}
+          </p>
         </div>
       ) : null}
 
@@ -136,7 +140,7 @@ export function RouteResults({
           <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
             {t("results.whyWrong")}
           </p>
-          <p className="mt-1 text-[11px] leading-snug text-slate-300">
+          <p className="mt-1 break-words text-[11px] leading-snug text-slate-300">
             {advisory.whyThisCouldBeWrong}
           </p>
         </div>
