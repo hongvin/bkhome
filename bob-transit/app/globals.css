@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* Mobile-first baseline. The map is full-bleed; nothing here may introduce
+   horizontal scroll at 375px. */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --sheet-peek: 15%;
+  --sheet-half: 50%;
+  --sheet-full: 92%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  /* Prevent the whole page from scrolling; the bottom sheet scrolls internally. */
+  overflow: hidden;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Minimum 44x44 CSS px touch targets (A6). */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}

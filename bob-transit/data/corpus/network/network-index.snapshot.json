@@ -1,0 +1,6890 @@
+{
+ "generatedAt": "2024-01-01T00:00:00.000Z",
+ "generatedFrom": "data/gtfs-static/rapid-rail-kl",
+ "warnings": [],
+ "lines": [
+  {
+   "id": "AG",
+   "shortName": "AGL",
+   "longName": "LRT Ampang Line",
+   "longNameMs": "Laluan LRT Ampang",
+   "color": "e57200",
+   "mode": "LRT"
+  },
+  {
+   "id": "KJ",
+   "shortName": "KJL",
+   "longName": "LRT Kelana Jaya Line",
+   "longNameMs": "Laluan LRT Kelana Jaya",
+   "color": "D50032",
+   "mode": "LRT"
+  },
+  {
+   "id": "PH",
+   "shortName": "SPL",
+   "longName": "LRT Sri Petaling Line",
+   "longNameMs": "Laluan LRT Sri Petaling",
+   "color": "76232f",
+   "mode": "LRT"
+  },
+  {
+   "id": "KGL",
+   "shortName": "KGL",
+   "longName": "MRT Kajang Line",
+   "longNameMs": "Laluan MRT Kajang",
+   "color": "047940",
+   "mode": "MRT"
+  },
+  {
+   "id": "PYL",
+   "shortName": "PYL",
+   "longName": "MRT Putrajaya Line",
+   "longNameMs": "Laluan MRT Putrajaya",
+   "color": "FFCD00",
+   "mode": "MRT"
+  },
+  {
+   "id": "MR",
+   "shortName": "MRL",
+   "longName": "KL Monorail Line",
+   "longNameMs": "Laluan Monorel Kuala Lumpur",
+   "color": "84bd00",
+   "mode": "MRL"
+  },
+  {
+   "id": "BRT",
+   "shortName": "BRT",
+   "longName": "BRT Sunway Line",
+   "longNameMs": "Laluan BRT Sunway",
+   "color": "115740",
+   "mode": "BRT"
+  },
+  {
+   "id": "SA",
+   "shortName": "SAL",
+   "longName": "LRT Shah Alam Line",
+   "longNameMs": "Laluan LRT Shah Alam",
+   "color": "00A9E0",
+   "mode": "LRT"
+  }
+ ],
+ "stations": [
+  {
+   "id": "AG1",
+   "name": "SENTUL TIMUR",
+   "nameMs": "SENTUL TIMUR",
+   "lat": 3.185897,
+   "lon": 101.695217,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 1
+   }
+  },
+  {
+   "id": "AG10",
+   "name": "PUDU",
+   "nameMs": "PUDU",
+   "lat": 3.134879,
+   "lon": 101.711957,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 10
+   }
+  },
+  {
+   "id": "AG11",
+   "name": "CHAN SOW LIN",
+   "nameMs": "CHAN SOW LIN",
+   "lat": 3.128105,
+   "lon": 101.715637,
+   "lineIds": [
+    "AG",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 11
+   }
+  },
+  {
+   "id": "AG12",
+   "name": "MIHARJA",
+   "nameMs": "MIHARJA",
+   "lat": 3.120973,
+   "lon": 101.717922,
+   "lineIds": [
+    "AG"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 12
+   }
+  },
+  {
+   "id": "AG13",
+   "name": "MALURI",
+   "nameMs": "MALURI",
+   "lat": 3.12329,
+   "lon": 101.727283,
+   "lineIds": [
+    "AG",
+    "KGL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 13
+   }
+  },
+  {
+   "id": "AG14",
+   "name": "PANDAN JAYA",
+   "nameMs": "PANDAN JAYA",
+   "lat": 3.130141,
+   "lon": 101.739122,
+   "lineIds": [
+    "AG"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 14
+   }
+  },
+  {
+   "id": "AG15",
+   "name": "PANDAN INDAH",
+   "nameMs": "PANDAN INDAH",
+   "lat": 3.134581,
+   "lon": 101.746509,
+   "lineIds": [
+    "AG"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 15
+   }
+  },
+  {
+   "id": "AG16",
+   "name": "CEMPAKA",
+   "nameMs": "CEMPAKA",
+   "lat": 3.138324,
+   "lon": 101.752979,
+   "lineIds": [
+    "AG"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 16
+   }
+  },
+  {
+   "id": "AG17",
+   "name": "CAHAYA",
+   "nameMs": "CAHAYA",
+   "lat": 3.140575,
+   "lon": 101.756677,
+   "lineIds": [
+    "AG"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 17
+   }
+  },
+  {
+   "id": "AG18",
+   "name": "AMPANG",
+   "nameMs": "AMPANG",
+   "lat": 3.150318,
+   "lon": 101.760049,
+   "lineIds": [
+    "AG"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 18
+   }
+  },
+  {
+   "id": "AG2",
+   "name": "SENTUL",
+   "nameMs": "SENTUL",
+   "lat": 3.178484,
+   "lon": 101.695542,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 2
+   }
+  },
+  {
+   "id": "AG3",
+   "name": "TITIWANGSA",
+   "nameMs": "TITIWANGSA",
+   "lat": 3.173497,
+   "lon": 101.695367,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 3
+   }
+  },
+  {
+   "id": "AG4",
+   "name": "PWTC",
+   "nameMs": "PWTC",
+   "lat": 3.166333,
+   "lon": 101.693586,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 4
+   }
+  },
+  {
+   "id": "AG5",
+   "name": "SULTAN ISMAIL",
+   "nameMs": "SULTAN ISMAIL",
+   "lat": 3.161245,
+   "lon": 101.694109,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 5
+   }
+  },
+  {
+   "id": "AG6",
+   "name": "BANDARAYA - UOB",
+   "nameMs": "BANDARAYA - UOB",
+   "lat": 3.155567,
+   "lon": 101.694485,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 6
+   }
+  },
+  {
+   "id": "AG7",
+   "name": "MASJID JAMEK",
+   "nameMs": "MASJID JAMEK",
+   "lat": 3.14927,
+   "lon": 101.696377,
+   "lineIds": [
+    "AG",
+    "KJ",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 7
+   }
+  },
+  {
+   "id": "AG8",
+   "name": "PLAZA RAKYAT",
+   "nameMs": "PLAZA RAKYAT",
+   "lat": 3.144049,
+   "lon": 101.702105,
+   "lineIds": [
+    "AG",
+    "KGL",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 8
+   }
+  },
+  {
+   "id": "AG9",
+   "name": "HANG TUAH",
+   "nameMs": "HANG TUAH",
+   "lat": 3.140012,
+   "lon": 101.705984,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "AG": 9
+   }
+  },
+  {
+   "id": "BRT1",
+   "name": "SUNWAY-SETIA JAYA",
+   "nameMs": "SUNWAY-SETIA JAYA",
+   "lat": 3.0828,
+   "lon": 101.6123,
+   "lineIds": [
+    "BRT"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 7
+   }
+  },
+  {
+   "id": "BRT2",
+   "name": "MENTARI",
+   "nameMs": "MENTARI",
+   "lat": 3.0761,
+   "lon": 101.6101,
+   "lineIds": [
+    "BRT"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 6
+   }
+  },
+  {
+   "id": "BRT3",
+   "name": "SUNWAY LAGOON",
+   "nameMs": "SUNWAY LAGOON",
+   "lat": 3.0706,
+   "lon": 101.6107,
+   "lineIds": [
+    "BRT"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 5
+   }
+  },
+  {
+   "id": "BRT4",
+   "name": "SUNMED",
+   "nameMs": "SUNMED",
+   "lat": 3.0656,
+   "lon": 101.6087,
+   "lineIds": [
+    "BRT"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 4
+   }
+  },
+  {
+   "id": "BRT5",
+   "name": "SunU-Monash",
+   "nameMs": "SunU-Monash",
+   "lat": 3.0654,
+   "lon": 101.6016,
+   "lineIds": [
+    "BRT"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 3
+   }
+  },
+  {
+   "id": "BRT6",
+   "name": "SOUTH QUAY-USJ 1",
+   "nameMs": "SOUTH QUAY-USJ 1",
+   "lat": 3.0617,
+   "lon": 101.5969,
+   "lineIds": [
+    "BRT"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 2
+   }
+  },
+  {
+   "id": "BRT7",
+   "name": "USJ7",
+   "nameMs": "USJ7",
+   "lat": 3.0553,
+   "lon": 101.5919,
+   "lineIds": [
+    "BRT",
+    "KJ"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "BRT": 1
+   }
+  },
+  {
+   "id": "KG04",
+   "name": "KWASA DAMANSARA",
+   "nameMs": "KWASA DAMANSARA",
+   "lat": 3.176146,
+   "lon": 101.572052,
+   "lineIds": [
+    "KGL",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 29
+   }
+  },
+  {
+   "id": "KG05",
+   "name": "KWASA SENTRAL",
+   "nameMs": "KWASA SENTRAL",
+   "lat": 3.170112,
+   "lon": 101.564651,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 28
+   }
+  },
+  {
+   "id": "KG06",
+   "name": "KOTA DAMANSARA",
+   "nameMs": "KOTA DAMANSARA",
+   "lat": 3.150134,
+   "lon": 101.57869,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 27
+   }
+  },
+  {
+   "id": "KG07",
+   "name": "SURIAN",
+   "nameMs": "SURIAN",
+   "lat": 3.14948,
+   "lon": 101.593925,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 26
+   }
+  },
+  {
+   "id": "KG08",
+   "name": "MUTIARA DAMANSARA",
+   "nameMs": "MUTIARA DAMANSARA",
+   "lat": 3.155301,
+   "lon": 101.609077,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 25
+   }
+  },
+  {
+   "id": "KG09",
+   "name": "BANDAR UTAMA",
+   "nameMs": "BANDAR UTAMA",
+   "lat": 3.14671,
+   "lon": 101.618599,
+   "lineIds": [
+    "KGL",
+    "SA"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 24
+   }
+  },
+  {
+   "id": "KG10",
+   "name": "TAMAN TUN DR ISMAIL",
+   "nameMs": "TAMAN TUN DR ISMAIL",
+   "lat": 3.13613,
+   "lon": 101.630539,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 23
+   }
+  },
+  {
+   "id": "KG12",
+   "name": "PHILEO DAMANSARA",
+   "nameMs": "PHILEO DAMANSARA",
+   "lat": 3.129864,
+   "lon": 101.642471,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 22
+   }
+  },
+  {
+   "id": "KG13",
+   "name": "PUSAT BANDAR DAMANSARA",
+   "nameMs": "PUSAT BANDAR DAMANSARA",
+   "lat": 3.143444,
+   "lon": 101.662857,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 21
+   }
+  },
+  {
+   "id": "KG14",
+   "name": "SEMANTAN",
+   "nameMs": "SEMANTAN",
+   "lat": 3.150977,
+   "lon": 101.665497,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 20
+   }
+  },
+  {
+   "id": "KG15",
+   "name": "MUZIUM NEGARA",
+   "nameMs": "MUZIUM NEGARA",
+   "lat": 3.137317,
+   "lon": 101.687336,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 19
+   }
+  },
+  {
+   "id": "KG16",
+   "name": "PASAR SENI",
+   "nameMs": "PASAR SENI",
+   "lat": 3.142293265,
+   "lon": 101.6955642,
+   "lineIds": [
+    "KGL",
+    "KJ"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 18
+   }
+  },
+  {
+   "id": "KG17",
+   "name": "MERDEKA",
+   "nameMs": "MERDEKA",
+   "lat": 3.141969,
+   "lon": 101.70205,
+   "lineIds": [
+    "AG",
+    "KGL",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 17
+   }
+  },
+  {
+   "id": "KG18A",
+   "name": "BUKIT BINTANG",
+   "nameMs": "BUKIT BINTANG",
+   "lat": 3.146503,
+   "lon": 101.710947,
+   "lineIds": [
+    "KGL",
+    "MR"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 16
+   }
+  },
+  {
+   "id": "KG20",
+   "name": "TUN RAZAK EXCHANGE",
+   "nameMs": "TUN RAZAK EXCHANGE",
+   "lat": 3.142403,
+   "lon": 101.720156,
+   "lineIds": [
+    "KGL",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 15
+   }
+  },
+  {
+   "id": "KG21",
+   "name": "COCHRANE",
+   "nameMs": "COCHRANE",
+   "lat": 3.132829,
+   "lon": 101.722962,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 14
+   }
+  },
+  {
+   "id": "KG22",
+   "name": "MALURI",
+   "nameMs": "MALURI",
+   "lat": 3.123623,
+   "lon": 101.727809,
+   "lineIds": [
+    "AG",
+    "KGL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 13
+   }
+  },
+  {
+   "id": "KG23",
+   "name": "TAMAN PERTAMA",
+   "nameMs": "TAMAN PERTAMA",
+   "lat": 3.112547,
+   "lon": 101.729371,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 12
+   }
+  },
+  {
+   "id": "KG24",
+   "name": "TAMAN MIDAH",
+   "nameMs": "TAMAN MIDAH",
+   "lat": 3.104505,
+   "lon": 101.732186,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 11
+   }
+  },
+  {
+   "id": "KG25",
+   "name": "TAMAN MUTIARA",
+   "nameMs": "TAMAN MUTIARA",
+   "lat": 3.090989,
+   "lon": 101.740453,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 10
+   }
+  },
+  {
+   "id": "KG26",
+   "name": "TAMAN CONNAUGHT",
+   "nameMs": "TAMAN CONNAUGHT",
+   "lat": 3.079172,
+   "lon": 101.74522,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 9
+   }
+  },
+  {
+   "id": "KG27",
+   "name": "TAMAN SUNTEX",
+   "nameMs": "TAMAN SUNTEX",
+   "lat": 3.071578,
+   "lon": 101.763552,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 8
+   }
+  },
+  {
+   "id": "KG28",
+   "name": "SRI RAYA",
+   "nameMs": "SRI RAYA",
+   "lat": 3.062273,
+   "lon": 101.772899,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 7
+   }
+  },
+  {
+   "id": "KG29",
+   "name": "BANDAR TUN HUSSEIN ONN",
+   "nameMs": "BANDAR TUN HUSSEIN ONN",
+   "lat": 3.048223,
+   "lon": 101.775109,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 6
+   }
+  },
+  {
+   "id": "KG30",
+   "name": "BATU 11 CHERAS",
+   "nameMs": "BATU 11 CHERAS",
+   "lat": 3.041339,
+   "lon": 101.773383,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 5
+   }
+  },
+  {
+   "id": "KG31",
+   "name": "BUKIT DUKUNG",
+   "nameMs": "BUKIT DUKUNG",
+   "lat": 3.026413,
+   "lon": 101.771072,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 4
+   }
+  },
+  {
+   "id": "KG33",
+   "name": "SUNGAI JERNIH",
+   "nameMs": "SUNGAI JERNIH",
+   "lat": 3.000948,
+   "lon": 101.783857,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 3
+   }
+  },
+  {
+   "id": "KG34",
+   "name": "STADIUM KAJANG",
+   "nameMs": "STADIUM KAJANG",
+   "lat": 2.994514,
+   "lon": 101.786338,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 2
+   }
+  },
+  {
+   "id": "KG35",
+   "name": "KAJANG",
+   "nameMs": "KAJANG",
+   "lat": 2.982778,
+   "lon": 101.790278,
+   "lineIds": [
+    "KGL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KGL": 1
+   }
+  },
+  {
+   "id": "KJ1",
+   "name": "GOMBAK",
+   "nameMs": "GOMBAK",
+   "lat": 3.231793,
+   "lon": 101.724427,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 1
+   }
+  },
+  {
+   "id": "KJ10",
+   "name": "KLCC",
+   "nameMs": "KLCC",
+   "lat": 3.158935,
+   "lon": 101.713287,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 10
+   }
+  },
+  {
+   "id": "KJ11",
+   "name": "KAMPUNG BARU - CBP COOPBANK PERTAMA",
+   "nameMs": "KAMPUNG BARU - CBP COOPBANK PERTAMA",
+   "lat": 3.161386,
+   "lon": 101.706608,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 11
+   }
+  },
+  {
+   "id": "KJ12",
+   "name": "DANG WANGI",
+   "nameMs": "DANG WANGI",
+   "lat": 3.156942,
+   "lon": 101.701975,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 12
+   }
+  },
+  {
+   "id": "KJ13",
+   "name": "MASJID JAMEK",
+   "nameMs": "MASJID JAMEK",
+   "lat": 3.149714,
+   "lon": 101.696815,
+   "lineIds": [
+    "AG",
+    "KJ",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 13
+   }
+  },
+  {
+   "id": "KJ14",
+   "name": "PASAR SENI",
+   "nameMs": "PASAR SENI",
+   "lat": 3.142439,
+   "lon": 101.69531,
+   "lineIds": [
+    "KGL",
+    "KJ"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 14
+   }
+  },
+  {
+   "id": "KJ15",
+   "name": "KL SENTRAL - REDONE",
+   "nameMs": "KL SENTRAL - REDONE",
+   "lat": 3.13442,
+   "lon": 101.68625,
+   "lineIds": [
+    "KJ",
+    "MR"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 15
+   }
+  },
+  {
+   "id": "KJ16",
+   "name": "BANGSAR - BANK RAKYAT",
+   "nameMs": "BANGSAR - BANK RAKYAT",
+   "lat": 3.127588,
+   "lon": 101.679062,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 16
+   }
+  },
+  {
+   "id": "KJ17",
+   "name": "ABDULLAH HUKUM",
+   "nameMs": "ABDULLAH HUKUM",
+   "lat": 3.118735,
+   "lon": 101.672897,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 17
+   }
+  },
+  {
+   "id": "KJ18",
+   "name": "KERINCHI",
+   "nameMs": "KERINCHI",
+   "lat": 3.115506,
+   "lon": 101.668572,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 18
+   }
+  },
+  {
+   "id": "KJ19",
+   "name": "UNIVERSITI",
+   "nameMs": "UNIVERSITI",
+   "lat": 3.114616,
+   "lon": 101.661639,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 19
+   }
+  },
+  {
+   "id": "KJ2",
+   "name": "TAMAN MELATI",
+   "nameMs": "TAMAN MELATI",
+   "lat": 3.219558,
+   "lon": 101.72197,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 2
+   }
+  },
+  {
+   "id": "KJ20",
+   "name": "TAMAN JAYA",
+   "nameMs": "TAMAN JAYA",
+   "lat": 3.104086,
+   "lon": 101.645248,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 20
+   }
+  },
+  {
+   "id": "KJ21",
+   "name": "ASIA JAYA",
+   "nameMs": "ASIA JAYA",
+   "lat": 3.104343,
+   "lon": 101.637695,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 21
+   }
+  },
+  {
+   "id": "KJ22",
+   "name": "TAMAN PARAMOUNT",
+   "nameMs": "TAMAN PARAMOUNT",
+   "lat": 3.104716,
+   "lon": 101.623192,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 22
+   }
+  },
+  {
+   "id": "KJ23",
+   "name": "TAMAN BAHAGIA",
+   "nameMs": "TAMAN BAHAGIA",
+   "lat": 3.11079,
+   "lon": 101.612856,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 23
+   }
+  },
+  {
+   "id": "KJ24",
+   "name": "KELANA JAYA",
+   "nameMs": "KELANA JAYA",
+   "lat": 3.112497,
+   "lon": 101.6043,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 24
+   }
+  },
+  {
+   "id": "KJ25",
+   "name": "LEMBAH SUBANG",
+   "nameMs": "LEMBAH SUBANG",
+   "lat": 3.112094,
+   "lon": 101.591034,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 25
+   }
+  },
+  {
+   "id": "KJ26",
+   "name": "ARA DAMANSARA",
+   "nameMs": "ARA DAMANSARA",
+   "lat": 3.108643,
+   "lon": 101.586372,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 26
+   }
+  },
+  {
+   "id": "KJ27",
+   "name": "GLENMARIE",
+   "nameMs": "GLENMARIE",
+   "lat": 3.094732,
+   "lon": 101.590622,
+   "lineIds": [
+    "KJ",
+    "SA"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 27
+   }
+  },
+  {
+   "id": "KJ28",
+   "name": "SUBANG JAYA",
+   "nameMs": "SUBANG JAYA",
+   "lat": 3.08466,
+   "lon": 101.588127,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 28
+   }
+  },
+  {
+   "id": "KJ29",
+   "name": "SS 15",
+   "nameMs": "SS 15",
+   "lat": 3.075972,
+   "lon": 101.585983,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 29
+   }
+  },
+  {
+   "id": "KJ3",
+   "name": "WANGSA MAJU",
+   "nameMs": "WANGSA MAJU",
+   "lat": 3.205751,
+   "lon": 101.731796,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 3
+   }
+  },
+  {
+   "id": "KJ30",
+   "name": "SS 18",
+   "nameMs": "SS 18",
+   "lat": 3.067182,
+   "lon": 101.585945,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 30
+   }
+  },
+  {
+   "id": "KJ31",
+   "name": "USJ 7",
+   "nameMs": "USJ 7",
+   "lat": 3.054956,
+   "lon": 101.592194,
+   "lineIds": [
+    "BRT",
+    "KJ"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 31
+   }
+  },
+  {
+   "id": "KJ32",
+   "name": "TAIPAN",
+   "nameMs": "TAIPAN",
+   "lat": 3.04815,
+   "lon": 101.590233,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 32
+   }
+  },
+  {
+   "id": "KJ33",
+   "name": "WAWASAN",
+   "nameMs": "WAWASAN",
+   "lat": 3.035062,
+   "lon": 101.588348,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 33
+   }
+  },
+  {
+   "id": "KJ34",
+   "name": "USJ 21",
+   "nameMs": "USJ 21",
+   "lat": 3.029881,
+   "lon": 101.581711,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 34
+   }
+  },
+  {
+   "id": "KJ35",
+   "name": "ALAM MEGAH",
+   "nameMs": "ALAM MEGAH",
+   "lat": 3.023151,
+   "lon": 101.572029,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 35
+   }
+  },
+  {
+   "id": "KJ36",
+   "name": "SUBANG ALAM",
+   "nameMs": "SUBANG ALAM",
+   "lat": 3.009421,
+   "lon": 101.572281,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 36
+   }
+  },
+  {
+   "id": "KJ37",
+   "name": "PUTRA HEIGHTS",
+   "nameMs": "PUTRA HEIGHTS",
+   "lat": 2.996227,
+   "lon": 101.575462,
+   "lineIds": [
+    "KJ",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 37
+   }
+  },
+  {
+   "id": "KJ4",
+   "name": "SRI RAMPAI",
+   "nameMs": "SRI RAMPAI",
+   "lat": 3.199176,
+   "lon": 101.73747,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 4
+   }
+  },
+  {
+   "id": "KJ5",
+   "name": "SETIAWANGSA",
+   "nameMs": "SETIAWANGSA",
+   "lat": 3.17576,
+   "lon": 101.73584,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 5
+   }
+  },
+  {
+   "id": "KJ6",
+   "name": "JELATEK",
+   "nameMs": "JELATEK",
+   "lat": 3.167204,
+   "lon": 101.735344,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 6
+   }
+  },
+  {
+   "id": "KJ7",
+   "name": "DATO' KERAMAT",
+   "nameMs": "DATO' KERAMAT",
+   "lat": 3.16509,
+   "lon": 101.73184,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 7
+   }
+  },
+  {
+   "id": "KJ8",
+   "name": "DAMAI",
+   "nameMs": "DAMAI",
+   "lat": 3.164406,
+   "lon": 101.724489,
+   "lineIds": [
+    "KJ"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 8
+   }
+  },
+  {
+   "id": "KJ9",
+   "name": "AMPANG PARK",
+   "nameMs": "AMPANG PARK",
+   "lat": 3.159894,
+   "lon": 101.719017,
+   "lineIds": [
+    "KJ",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "KJ": 9
+   }
+  },
+  {
+   "id": "MR1",
+   "name": "KL SENTRAL",
+   "nameMs": "KL SENTRAL",
+   "lat": 3.132852,
+   "lon": 101.687817,
+   "lineIds": [
+    "KJ",
+    "MR"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 11
+   }
+  },
+  {
+   "id": "MR10",
+   "name": "CHOW KIT",
+   "nameMs": "CHOW KIT",
+   "lat": 3.167358,
+   "lon": 101.698379,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 2
+   }
+  },
+  {
+   "id": "MR11",
+   "name": "TITIWANGSA",
+   "nameMs": "TITIWANGSA",
+   "lat": 3.173192,
+   "lon": 101.696022,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 1
+   }
+  },
+  {
+   "id": "MR2",
+   "name": "TUN SAMBANTHAN",
+   "nameMs": "TUN SAMBANTHAN",
+   "lat": 3.13132,
+   "lon": 101.69085,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 10
+   }
+  },
+  {
+   "id": "MR3",
+   "name": "MAHARAJALELA",
+   "nameMs": "MAHARAJALELA",
+   "lat": 3.138743,
+   "lon": 101.699268,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 9
+   }
+  },
+  {
+   "id": "MR4",
+   "name": "HANG TUAH",
+   "nameMs": "HANG TUAH",
+   "lat": 3.140511,
+   "lon": 101.706029,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 8
+   }
+  },
+  {
+   "id": "MR5",
+   "name": "IMBI",
+   "nameMs": "IMBI",
+   "lat": 3.14283,
+   "lon": 101.70945,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 7
+   }
+  },
+  {
+   "id": "MR6",
+   "name": "BUKIT BINTANG",
+   "nameMs": "BUKIT BINTANG",
+   "lat": 3.146022,
+   "lon": 101.7115,
+   "lineIds": [
+    "KGL",
+    "MR"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 6
+   }
+  },
+  {
+   "id": "MR7",
+   "name": "RAJA CHULAN",
+   "nameMs": "RAJA CHULAN",
+   "lat": 3.150878,
+   "lon": 101.710432,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 5
+   }
+  },
+  {
+   "id": "MR8",
+   "name": "BUKIT NANAS",
+   "nameMs": "BUKIT NANAS",
+   "lat": 3.156214,
+   "lon": 101.704809,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 4
+   }
+  },
+  {
+   "id": "MR9",
+   "name": "MEDAN TUANKU",
+   "nameMs": "MEDAN TUANKU",
+   "lat": 3.15935,
+   "lon": 101.69888,
+   "lineIds": [
+    "MR"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "MR": 3
+   }
+  },
+  {
+   "id": "PY01",
+   "name": "KWASA DAMANSARA",
+   "nameMs": "KWASA DAMANSARA",
+   "lat": 3.1763324,
+   "lon": 101.5721456,
+   "lineIds": [
+    "KGL",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 36
+   }
+  },
+  {
+   "id": "PY03",
+   "name": "KAMPUNG SELAMAT",
+   "nameMs": "KAMPUNG SELAMAT",
+   "lat": 3.197266,
+   "lon": 101.578499,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 35
+   }
+  },
+  {
+   "id": "PY04",
+   "name": "SUNGAI BULOH",
+   "nameMs": "SUNGAI BULOH",
+   "lat": 3.206429,
+   "lon": 101.581779,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 34
+   }
+  },
+  {
+   "id": "PY05",
+   "name": "DAMANSARA DAMAI",
+   "nameMs": "DAMANSARA DAMAI",
+   "lat": 3.199892,
+   "lon": 101.592623,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 33
+   }
+  },
+  {
+   "id": "PY06",
+   "name": "SRI DAMANSARA BARAT",
+   "nameMs": "SRI DAMANSARA BARAT",
+   "lat": 3.198197,
+   "lon": 101.608302,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 32
+   }
+  },
+  {
+   "id": "PY07",
+   "name": "SRI DAMANSARA SENTRAL",
+   "nameMs": "SRI DAMANSARA SENTRAL",
+   "lat": 3.198815,
+   "lon": 101.621396,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 31
+   }
+  },
+  {
+   "id": "PY08",
+   "name": "SRI DAMANSARA TIMUR",
+   "nameMs": "SRI DAMANSARA TIMUR",
+   "lat": 3.207832,
+   "lon": 101.628716,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 30
+   }
+  },
+  {
+   "id": "PY09",
+   "name": "METRO PRIMA",
+   "nameMs": "METRO PRIMA",
+   "lat": 3.214438,
+   "lon": 101.639402,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 29
+   }
+  },
+  {
+   "id": "PY10",
+   "name": "KEPONG BARU",
+   "nameMs": "KEPONG BARU",
+   "lat": 3.211663,
+   "lon": 101.648193,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 28
+   }
+  },
+  {
+   "id": "PY11",
+   "name": "JINJANG",
+   "nameMs": "JINJANG",
+   "lat": 3.209544,
+   "lon": 101.655829,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 27
+   }
+  },
+  {
+   "id": "PY12",
+   "name": "SRI DELIMA",
+   "nameMs": "SRI DELIMA",
+   "lat": 3.207108,
+   "lon": 101.665749,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 26
+   }
+  },
+  {
+   "id": "PY13",
+   "name": "KAMPUNG BATU",
+   "nameMs": "KAMPUNG BATU",
+   "lat": 3.205521,
+   "lon": 101.675473,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 25
+   }
+  },
+  {
+   "id": "PY14",
+   "name": "KENTOMEN",
+   "nameMs": "KENTOMEN",
+   "lat": 3.19563,
+   "lon": 101.6797,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 24
+   }
+  },
+  {
+   "id": "PY15",
+   "name": "JALAN IPOH",
+   "nameMs": "JALAN IPOH",
+   "lat": 3.189319,
+   "lon": 101.681145,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 23
+   }
+  },
+  {
+   "id": "PY16",
+   "name": "SENTUL BARAT",
+   "nameMs": "SENTUL BARAT",
+   "lat": 3.179369,
+   "lon": 101.684742,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 22
+   }
+  },
+  {
+   "id": "PY17",
+   "name": "TITIWANGSA",
+   "nameMs": "TITIWANGSA",
+   "lat": 3.17408,
+   "lon": 101.69581,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 21
+   }
+  },
+  {
+   "id": "PY18",
+   "name": "HOSPITAL KUALA LUMPUR",
+   "nameMs": "HOSPITAL KUALA LUMPUR",
+   "lat": 3.17405,
+   "lon": 101.70239,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 20
+   }
+  },
+  {
+   "id": "PY19",
+   "name": "RAJA UDA",
+   "nameMs": "RAJA UDA",
+   "lat": 3.16794,
+   "lon": 101.71017,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 19
+   }
+  },
+  {
+   "id": "PY20",
+   "name": "AMPANG PARK",
+   "nameMs": "AMPANG PARK",
+   "lat": 3.16225,
+   "lon": 101.71781,
+   "lineIds": [
+    "KJ",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 18
+   }
+  },
+  {
+   "id": "PY21",
+   "name": "PERSIARAN KLCC",
+   "nameMs": "PERSIARAN KLCC",
+   "lat": 3.15712,
+   "lon": 101.71834,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 17
+   }
+  },
+  {
+   "id": "PY22",
+   "name": "CONLAY",
+   "nameMs": "CONLAY",
+   "lat": 3.15145,
+   "lon": 101.71801,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 16
+   }
+  },
+  {
+   "id": "PY23",
+   "name": "TUN RAZAK EXCHANGE",
+   "nameMs": "TUN RAZAK EXCHANGE",
+   "lat": 3.14289,
+   "lon": 101.72034,
+   "lineIds": [
+    "KGL",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 15
+   }
+  },
+  {
+   "id": "PY24",
+   "name": "CHAN SOW LIN",
+   "nameMs": "CHAN SOW LIN",
+   "lat": 3.12839,
+   "lon": 101.71663,
+   "lineIds": [
+    "AG",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 14
+   }
+  },
+  {
+   "id": "PY27",
+   "name": "KUCHAI",
+   "nameMs": "KUCHAI",
+   "lat": 3.089546,
+   "lon": 101.694124,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 13
+   }
+  },
+  {
+   "id": "PY28",
+   "name": "TAMAN NAGA EMAS",
+   "nameMs": "TAMAN NAGA EMAS",
+   "lat": 3.077688,
+   "lon": 101.699867,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 12
+   }
+  },
+  {
+   "id": "PY29",
+   "name": "SUNGAI BESI",
+   "nameMs": "SUNGAI BESI",
+   "lat": 3.063737,
+   "lon": 101.7084,
+   "lineIds": [
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 11
+   }
+  },
+  {
+   "id": "PY31",
+   "name": "SERDANG RAYA UTARA",
+   "nameMs": "SERDANG RAYA UTARA",
+   "lat": 3.041674,
+   "lon": 101.704928,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 10
+   }
+  },
+  {
+   "id": "PY32",
+   "name": "SERDANG RAYA SELATAN",
+   "nameMs": "SERDANG RAYA SELATAN",
+   "lat": 3.028463,
+   "lon": 101.707514,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 9
+   }
+  },
+  {
+   "id": "PY33",
+   "name": "SERDANG JAYA",
+   "nameMs": "SERDANG JAYA",
+   "lat": 3.0216,
+   "lon": 101.709,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 8
+   }
+  },
+  {
+   "id": "PY34",
+   "name": "UPM",
+   "nameMs": "UPM",
+   "lat": 3.008489,
+   "lon": 101.705396,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 7
+   }
+  },
+  {
+   "id": "PY36",
+   "name": "TAMAN EQUINE",
+   "nameMs": "TAMAN EQUINE",
+   "lat": 2.98942,
+   "lon": 101.67244,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 6
+   }
+  },
+  {
+   "id": "PY37",
+   "name": "PUTRA PERMAI",
+   "nameMs": "PUTRA PERMAI",
+   "lat": 2.98339,
+   "lon": 101.66099,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 5
+   }
+  },
+  {
+   "id": "PY38",
+   "name": "16 SIERRA",
+   "nameMs": "16 SIERRA",
+   "lat": 2.964974,
+   "lon": 101.654812,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 4
+   }
+  },
+  {
+   "id": "PY39",
+   "name": "CYBERJAYA UTARA",
+   "nameMs": "CYBERJAYA UTARA",
+   "lat": 2.95,
+   "lon": 101.6573,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 3
+   }
+  },
+  {
+   "id": "PY40",
+   "name": "CYBERJAYA CITY CENTRE",
+   "nameMs": "CYBERJAYA CITY CENTRE",
+   "lat": 2.9384,
+   "lon": 101.6659,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 2
+   }
+  },
+  {
+   "id": "PY41",
+   "name": "PUTRAJAYA SENTRAL",
+   "nameMs": "PUTRAJAYA SENTRAL",
+   "lat": 2.9313,
+   "lon": 101.6715,
+   "lineIds": [
+    "PYL"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PYL": 1
+   }
+  },
+  {
+   "id": "SA1",
+   "name": "BANDAR UTAMA",
+   "nameMs": "BANDAR UTAMA",
+   "lat": 3.144722,
+   "lon": 101.618611,
+   "lineIds": [
+    "KGL",
+    "SA"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 20
+   }
+  },
+  {
+   "id": "SA10",
+   "name": "STADIUM SHAH ALAM",
+   "nameMs": "STADIUM SHAH ALAM",
+   "lat": 3.079722,
+   "lon": 101.548889,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 13
+   }
+  },
+  {
+   "id": "SA12",
+   "name": "DATO' MENTERI - SA SENTRAL",
+   "nameMs": "DATO' MENTERI - SA SENTRAL",
+   "lat": 3.069722,
+   "lon": 101.521111,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 12
+   }
+  },
+  {
+   "id": "SA14",
+   "name": "UITM SHAH ALAM",
+   "nameMs": "UITM SHAH ALAM",
+   "lat": 3.0625,
+   "lon": 101.501111,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 11
+   }
+  },
+  {
+   "id": "SA15",
+   "name": "SEKSYEN 7",
+   "nameMs": "SEKSYEN 7",
+   "lat": 3.067222,
+   "lon": 101.486667,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 10
+   }
+  },
+  {
+   "id": "SA17",
+   "name": "BANDAR BARU KLANG",
+   "nameMs": "BANDAR BARU KLANG",
+   "lat": 3.0625,
+   "lon": 101.465556,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 9
+   }
+  },
+  {
+   "id": "SA18",
+   "name": "PASAR KLANG",
+   "nameMs": "PASAR KLANG",
+   "lat": 3.067778,
+   "lon": 101.450833,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 8
+   }
+  },
+  {
+   "id": "SA19",
+   "name": "JALAN MERU",
+   "nameMs": "JALAN MERU",
+   "lat": 3.058889,
+   "lon": 101.451944,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 7
+   }
+  },
+  {
+   "id": "SA2",
+   "name": "KAYU ARA",
+   "nameMs": "KAYU ARA",
+   "lat": 3.134722,
+   "lon": 101.616667,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 19
+   }
+  },
+  {
+   "id": "SA20",
+   "name": "JAMBATAN KOTA",
+   "nameMs": "JAMBATAN KOTA",
+   "lat": 3.047222,
+   "lon": 101.4475,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 6
+   }
+  },
+  {
+   "id": "SA21",
+   "name": "TAMAN SELATAN",
+   "nameMs": "TAMAN SELATAN",
+   "lat": 3.026667,
+   "lon": 101.442222,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 5
+   }
+  },
+  {
+   "id": "SA22",
+   "name": "SERI ANDALAS",
+   "nameMs": "SERI ANDALAS",
+   "lat": 3.015833,
+   "lon": 101.440556,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 4
+   }
+  },
+  {
+   "id": "SA23",
+   "name": "KLANG JAYA",
+   "nameMs": "KLANG JAYA",
+   "lat": 3.005278,
+   "lon": 101.441667,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 3
+   }
+  },
+  {
+   "id": "SA24",
+   "name": "BANDAR BUKIT TINGGI",
+   "nameMs": "BANDAR BUKIT TINGGI",
+   "lat": 2.993056,
+   "lon": 101.445833,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 2
+   }
+  },
+  {
+   "id": "SA26",
+   "name": "JOHAN SETIA",
+   "nameMs": "JOHAN SETIA",
+   "lat": 2.976111,
+   "lon": 101.459167,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 1
+   }
+  },
+  {
+   "id": "SA3",
+   "name": "BANDAR UTAMA 11",
+   "nameMs": "BANDAR UTAMA 11",
+   "lat": 3.133333,
+   "lon": 101.604444,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 18
+   }
+  },
+  {
+   "id": "SA5",
+   "name": "DAMANSARA IDAMAN",
+   "nameMs": "DAMANSARA IDAMAN",
+   "lat": 3.122778,
+   "lon": 101.594167,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 17
+   }
+  },
+  {
+   "id": "SA6",
+   "name": "SUBANG",
+   "nameMs": "SUBANG",
+   "lat": 3.106111,
+   "lon": 101.591111,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 16
+   }
+  },
+  {
+   "id": "SA7",
+   "name": "GLENMARIE 2",
+   "nameMs": "GLENMARIE 2",
+   "lat": 3.095278,
+   "lon": 101.588611,
+   "lineIds": [
+    "KJ",
+    "SA"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 15
+   }
+  },
+  {
+   "id": "SA9",
+   "name": "KERJAYA",
+   "nameMs": "KERJAYA",
+   "lat": 3.082222,
+   "lon": 101.561944,
+   "lineIds": [
+    "SA"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "SA": 14
+   }
+  },
+  {
+   "id": "SP1",
+   "name": "SENTUL TIMUR",
+   "nameMs": "SENTUL TIMUR",
+   "lat": 3.185897,
+   "lon": 101.695217,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 1
+   }
+  },
+  {
+   "id": "SP10",
+   "name": "PUDU",
+   "nameMs": "PUDU",
+   "lat": 3.134879,
+   "lon": 101.711957,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 10
+   }
+  },
+  {
+   "id": "SP11",
+   "name": "CHAN SOW LIN",
+   "nameMs": "CHAN SOW LIN",
+   "lat": 3.128105,
+   "lon": 101.715637,
+   "lineIds": [
+    "AG",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 11
+   }
+  },
+  {
+   "id": "SP12",
+   "name": "CHERAS",
+   "nameMs": "CHERAS",
+   "lat": 3.112609,
+   "lon": 101.714178,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 12
+   }
+  },
+  {
+   "id": "SP13",
+   "name": "SALAK SELATAN",
+   "nameMs": "SALAK SELATAN",
+   "lat": 3.102201,
+   "lon": 101.706179,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 13
+   }
+  },
+  {
+   "id": "SP14",
+   "name": "BANDAR TUN RAZAK",
+   "nameMs": "BANDAR TUN RAZAK",
+   "lat": 3.089576,
+   "lon": 101.712466,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 14
+   }
+  },
+  {
+   "id": "SP15",
+   "name": "BANDAR TASIK SELATAN",
+   "nameMs": "BANDAR TASIK SELATAN",
+   "lat": 3.076058,
+   "lon": 101.711107,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 15
+   }
+  },
+  {
+   "id": "SP16",
+   "name": "SUNGAI BESI",
+   "nameMs": "SUNGAI BESI",
+   "lat": 3.063842,
+   "lon": 101.708062,
+   "lineIds": [
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 16
+   }
+  },
+  {
+   "id": "SP17",
+   "name": "BUKIT JALIL",
+   "nameMs": "BUKIT JALIL",
+   "lat": 3.058196,
+   "lon": 101.692125,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 17
+   }
+  },
+  {
+   "id": "SP18",
+   "name": "SRI PETALING",
+   "nameMs": "SRI PETALING",
+   "lat": 3.061445,
+   "lon": 101.687074,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 18
+   }
+  },
+  {
+   "id": "SP19",
+   "name": "AWAN BESAR",
+   "nameMs": "AWAN BESAR",
+   "lat": 3.062131,
+   "lon": 101.670555,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 19
+   }
+  },
+  {
+   "id": "SP2",
+   "name": "SENTUL",
+   "nameMs": "SENTUL",
+   "lat": 3.178484,
+   "lon": 101.695542,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 2
+   }
+  },
+  {
+   "id": "SP20",
+   "name": "MUHIBBAH",
+   "nameMs": "MUHIBBAH",
+   "lat": 3.062229,
+   "lon": 101.662552,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 20
+   }
+  },
+  {
+   "id": "SP21",
+   "name": "ALAM SUTERA",
+   "nameMs": "ALAM SUTERA",
+   "lat": 3.0547,
+   "lon": 101.656468,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 21
+   }
+  },
+  {
+   "id": "SP22",
+   "name": "KINRARA",
+   "nameMs": "KINRARA",
+   "lat": 3.050506,
+   "lon": 101.644294,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 22
+   }
+  },
+  {
+   "id": "SP24",
+   "name": "IOI PUCHONG JAYA",
+   "nameMs": "IOI PUCHONG JAYA",
+   "lat": 3.048101,
+   "lon": 101.62095,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 23
+   }
+  },
+  {
+   "id": "SP25",
+   "name": "PUSAT BANDAR PUCHONG",
+   "nameMs": "PUSAT BANDAR PUCHONG",
+   "lat": 3.033194,
+   "lon": 101.616057,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 24
+   }
+  },
+  {
+   "id": "SP26",
+   "name": "TAMAN PERINDUSTRIAN PUCHONG",
+   "nameMs": "TAMAN PERINDUSTRIAN PUCHONG",
+   "lat": 3.022814,
+   "lon": 101.613514,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 25
+   }
+  },
+  {
+   "id": "SP27",
+   "name": "BANDAR PUTERI",
+   "nameMs": "BANDAR PUTERI",
+   "lat": 3.017111,
+   "lon": 101.612855,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 26
+   }
+  },
+  {
+   "id": "SP28",
+   "name": "PUCHONG PERDANA",
+   "nameMs": "PUCHONG PERDANA",
+   "lat": 3.007913,
+   "lon": 101.605021,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 27
+   }
+  },
+  {
+   "id": "SP29",
+   "name": "PUCHONG PRIMA",
+   "nameMs": "PUCHONG PRIMA",
+   "lat": 2.999808,
+   "lon": 101.596692,
+   "lineIds": [
+    "PH"
+   ],
+   "isInterchange": false,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 28
+   }
+  },
+  {
+   "id": "SP3",
+   "name": "TITIWANGSA",
+   "nameMs": "TITIWANGSA",
+   "lat": 3.173497,
+   "lon": 101.695367,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH",
+    "PYL"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 3
+   }
+  },
+  {
+   "id": "SP31",
+   "name": "PUTRA HEIGHTS",
+   "nameMs": "PUTRA HEIGHTS",
+   "lat": 2.996016,
+   "lon": 101.575521,
+   "lineIds": [
+    "KJ",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 29
+   }
+  },
+  {
+   "id": "SP4",
+   "name": "PWTC",
+   "nameMs": "PWTC",
+   "lat": 3.166333,
+   "lon": 101.693586,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 4
+   }
+  },
+  {
+   "id": "SP5",
+   "name": "SULTAN ISMAIL",
+   "nameMs": "SULTAN ISMAIL",
+   "lat": 3.161245,
+   "lon": 101.694109,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 5
+   }
+  },
+  {
+   "id": "SP6",
+   "name": "BANDARAYA - UOB",
+   "nameMs": "BANDARAYA - UOB",
+   "lat": 3.155567,
+   "lon": 101.694485,
+   "lineIds": [
+    "AG",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 6
+   }
+  },
+  {
+   "id": "SP7",
+   "name": "MASJID JAMEK",
+   "nameMs": "MASJID JAMEK",
+   "lat": 3.14927,
+   "lon": 101.696377,
+   "lineIds": [
+    "AG",
+    "KJ",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 7
+   }
+  },
+  {
+   "id": "SP8",
+   "name": "PLAZA RAKYAT",
+   "nameMs": "PLAZA RAKYAT",
+   "lat": 3.144049,
+   "lon": 101.702105,
+   "lineIds": [
+    "AG",
+    "KGL",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 8
+   }
+  },
+  {
+   "id": "SP9",
+   "name": "HANG TUAH",
+   "nameMs": "HANG TUAH",
+   "lat": 3.140012,
+   "lon": 101.705984,
+   "lineIds": [
+    "AG",
+    "MR",
+    "PH"
+   ],
+   "isInterchange": true,
+   "isAccessible": true,
+   "sequenceByLine": {
+    "PH": 9
+   }
+  }
+ ],
+ "segments": [
+  {
+   "id": "AG:AG18->AG17",
+   "lineId": "AG",
+   "fromStationId": "AG18",
+   "toStationId": "AG17",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 105,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1146
+  },
+  {
+   "id": "AG:AG17->AG16",
+   "lineId": "AG",
+   "fromStationId": "AG17",
+   "toStationId": "AG16",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 54,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 481
+  },
+  {
+   "id": "AG:AG16->AG15",
+   "lineId": "AG",
+   "fromStationId": "AG16",
+   "toStationId": "AG15",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 830
+  },
+  {
+   "id": "AG:AG15->AG14",
+   "lineId": "AG",
+   "fromStationId": "AG15",
+   "toStationId": "AG14",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 80,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 957
+  },
+  {
+   "id": "AG:AG14->AG13",
+   "lineId": "AG",
+   "fromStationId": "AG14",
+   "toStationId": "AG13",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 109,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1519
+  },
+  {
+   "id": "AG:AG13->AG12",
+   "lineId": "AG",
+   "fromStationId": "AG13",
+   "toStationId": "AG12",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 83,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1071
+  },
+  {
+   "id": "AG:AG12->AG11",
+   "lineId": "AG",
+   "fromStationId": "AG12",
+   "toStationId": "AG11",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 82,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 833
+  },
+  {
+   "id": "AG:AG11->AG10",
+   "lineId": "AG",
+   "fromStationId": "AG11",
+   "toStationId": "AG10",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 87,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 857
+  },
+  {
+   "id": "AG:AG10->AG9",
+   "lineId": "AG",
+   "fromStationId": "AG10",
+   "toStationId": "AG9",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 875
+  },
+  {
+   "id": "AG:AG9->AG8",
+   "lineId": "AG",
+   "fromStationId": "AG9",
+   "toStationId": "AG8",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 66,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 622
+  },
+  {
+   "id": "AG:AG8->AG7",
+   "lineId": "AG",
+   "fromStationId": "AG8",
+   "toStationId": "AG7",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 92,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 861
+  },
+  {
+   "id": "AG:AG7->AG6",
+   "lineId": "AG",
+   "fromStationId": "AG7",
+   "toStationId": "AG6",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 95,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 731
+  },
+  {
+   "id": "AG:AG6->AG5",
+   "lineId": "AG",
+   "fromStationId": "AG6",
+   "toStationId": "AG5",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 69,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 633
+  },
+  {
+   "id": "AG:AG5->AG4",
+   "lineId": "AG",
+   "fromStationId": "AG5",
+   "toStationId": "AG4",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 569
+  },
+  {
+   "id": "AG:AG4->AG3",
+   "lineId": "AG",
+   "fromStationId": "AG4",
+   "toStationId": "AG3",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 85,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 821
+  },
+  {
+   "id": "AG:AG3->AG2",
+   "lineId": "AG",
+   "fromStationId": "AG3",
+   "toStationId": "AG2",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 62,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 555
+  },
+  {
+   "id": "AG:AG2->AG1",
+   "lineId": "AG",
+   "fromStationId": "AG2",
+   "toStationId": "AG1",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 79,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 825
+  },
+  {
+   "id": "AG:AG1->AG2",
+   "lineId": "AG",
+   "fromStationId": "AG1",
+   "toStationId": "AG2",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 79,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 825
+  },
+  {
+   "id": "AG:AG2->AG3",
+   "lineId": "AG",
+   "fromStationId": "AG2",
+   "toStationId": "AG3",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 62,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 555
+  },
+  {
+   "id": "AG:AG3->AG4",
+   "lineId": "AG",
+   "fromStationId": "AG3",
+   "toStationId": "AG4",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 85,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 821
+  },
+  {
+   "id": "AG:AG4->AG5",
+   "lineId": "AG",
+   "fromStationId": "AG4",
+   "toStationId": "AG5",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 569
+  },
+  {
+   "id": "AG:AG5->AG6",
+   "lineId": "AG",
+   "fromStationId": "AG5",
+   "toStationId": "AG6",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 69,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 633
+  },
+  {
+   "id": "AG:AG6->AG7",
+   "lineId": "AG",
+   "fromStationId": "AG6",
+   "toStationId": "AG7",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 95,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 731
+  },
+  {
+   "id": "AG:AG7->AG8",
+   "lineId": "AG",
+   "fromStationId": "AG7",
+   "toStationId": "AG8",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 92,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 861
+  },
+  {
+   "id": "AG:AG8->AG9",
+   "lineId": "AG",
+   "fromStationId": "AG8",
+   "toStationId": "AG9",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 66,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 622
+  },
+  {
+   "id": "AG:AG9->AG10",
+   "lineId": "AG",
+   "fromStationId": "AG9",
+   "toStationId": "AG10",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 875
+  },
+  {
+   "id": "AG:AG10->AG11",
+   "lineId": "AG",
+   "fromStationId": "AG10",
+   "toStationId": "AG11",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 87,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 857
+  },
+  {
+   "id": "AG:AG11->AG12",
+   "lineId": "AG",
+   "fromStationId": "AG11",
+   "toStationId": "AG12",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 76,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 833
+  },
+  {
+   "id": "AG:AG12->AG13",
+   "lineId": "AG",
+   "fromStationId": "AG12",
+   "toStationId": "AG13",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 86,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1071
+  },
+  {
+   "id": "AG:AG13->AG14",
+   "lineId": "AG",
+   "fromStationId": "AG13",
+   "toStationId": "AG14",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 108,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1519
+  },
+  {
+   "id": "AG:AG14->AG15",
+   "lineId": "AG",
+   "fromStationId": "AG14",
+   "toStationId": "AG15",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 81,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 957
+  },
+  {
+   "id": "AG:AG15->AG16",
+   "lineId": "AG",
+   "fromStationId": "AG15",
+   "toStationId": "AG16",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 72,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 830
+  },
+  {
+   "id": "AG:AG16->AG17",
+   "lineId": "AG",
+   "fromStationId": "AG16",
+   "toStationId": "AG17",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 56,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 481
+  },
+  {
+   "id": "AG:AG17->AG18",
+   "lineId": "AG",
+   "fromStationId": "AG17",
+   "toStationId": "AG18",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 119,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1146
+  },
+  {
+   "id": "KJ:KJ37->KJ36",
+   "lineId": "KJ",
+   "fromStationId": "KJ37",
+   "toStationId": "KJ36",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 181,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1509
+  },
+  {
+   "id": "KJ:KJ36->KJ35",
+   "lineId": "KJ",
+   "fromStationId": "KJ36",
+   "toStationId": "KJ35",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 144,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1527
+  },
+  {
+   "id": "KJ:KJ35->KJ34",
+   "lineId": "KJ",
+   "fromStationId": "KJ35",
+   "toStationId": "KJ34",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 219,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1310
+  },
+  {
+   "id": "KJ:KJ34->KJ33",
+   "lineId": "KJ",
+   "fromStationId": "KJ34",
+   "toStationId": "KJ33",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 138,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 935
+  },
+  {
+   "id": "KJ:KJ33->KJ32",
+   "lineId": "KJ",
+   "fromStationId": "KJ33",
+   "toStationId": "KJ32",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1470
+  },
+  {
+   "id": "KJ:KJ32->KJ31",
+   "lineId": "KJ",
+   "fromStationId": "KJ32",
+   "toStationId": "KJ31",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 110,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 787
+  },
+  {
+   "id": "KJ:KJ31->KJ30",
+   "lineId": "KJ",
+   "fromStationId": "KJ31",
+   "toStationId": "KJ30",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 250,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1526
+  },
+  {
+   "id": "KJ:KJ30->KJ29",
+   "lineId": "KJ",
+   "fromStationId": "KJ30",
+   "toStationId": "KJ29",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 114,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 977
+  },
+  {
+   "id": "KJ:KJ29->KJ28",
+   "lineId": "KJ",
+   "fromStationId": "KJ29",
+   "toStationId": "KJ28",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 183,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 995
+  },
+  {
+   "id": "KJ:KJ28->KJ27",
+   "lineId": "KJ",
+   "fromStationId": "KJ28",
+   "toStationId": "KJ27",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 196,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1154
+  },
+  {
+   "id": "KJ:KJ27->KJ26",
+   "lineId": "KJ",
+   "fromStationId": "KJ27",
+   "toStationId": "KJ26",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 172,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1617
+  },
+  {
+   "id": "KJ:KJ26->KJ25",
+   "lineId": "KJ",
+   "fromStationId": "KJ26",
+   "toStationId": "KJ25",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 95,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 644
+  },
+  {
+   "id": "KJ:KJ25->KJ24",
+   "lineId": "KJ",
+   "fromStationId": "KJ25",
+   "toStationId": "KJ24",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 153,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1474
+  },
+  {
+   "id": "KJ:KJ24->KJ23",
+   "lineId": "KJ",
+   "fromStationId": "KJ24",
+   "toStationId": "KJ23",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 117,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 969
+  },
+  {
+   "id": "KJ:KJ23->KJ22",
+   "lineId": "KJ",
+   "fromStationId": "KJ23",
+   "toStationId": "KJ22",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 135,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1332
+  },
+  {
+   "id": "KJ:KJ22->KJ21",
+   "lineId": "KJ",
+   "fromStationId": "KJ22",
+   "toStationId": "KJ21",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 146,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1611
+  },
+  {
+   "id": "KJ:KJ21->KJ20",
+   "lineId": "KJ",
+   "fromStationId": "KJ21",
+   "toStationId": "KJ20",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 99,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 839
+  },
+  {
+   "id": "KJ:KJ20->KJ19",
+   "lineId": "KJ",
+   "fromStationId": "KJ20",
+   "toStationId": "KJ19",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 211,
+   "scheduledDwellSeconds": 16,
+   "lengthMeters": 2164
+  },
+  {
+   "id": "KJ:KJ19->KJ18",
+   "lineId": "KJ",
+   "fromStationId": "KJ19",
+   "toStationId": "KJ18",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 112,
+   "scheduledDwellSeconds": 17,
+   "lengthMeters": 776
+  },
+  {
+   "id": "KJ:KJ18->KJ17",
+   "lineId": "KJ",
+   "fromStationId": "KJ18",
+   "toStationId": "KJ17",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 112,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 600
+  },
+  {
+   "id": "KJ:KJ17->KJ16",
+   "lineId": "KJ",
+   "fromStationId": "KJ17",
+   "toStationId": "KJ16",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 143,
+   "scheduledDwellSeconds": 17,
+   "lengthMeters": 1199
+  },
+  {
+   "id": "KJ:KJ16->KJ15",
+   "lineId": "KJ",
+   "fromStationId": "KJ16",
+   "toStationId": "KJ15",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 146,
+   "scheduledDwellSeconds": 27,
+   "lengthMeters": 1102
+  },
+  {
+   "id": "KJ:KJ15->KJ14",
+   "lineId": "KJ",
+   "fromStationId": "KJ15",
+   "toStationId": "KJ14",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 179,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 1344
+  },
+  {
+   "id": "KJ:KJ14->KJ13",
+   "lineId": "KJ",
+   "fromStationId": "KJ14",
+   "toStationId": "KJ13",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 146,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 826
+  },
+  {
+   "id": "KJ:KJ13->KJ12",
+   "lineId": "KJ",
+   "fromStationId": "KJ13",
+   "toStationId": "KJ12",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 119,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 987
+  },
+  {
+   "id": "KJ:KJ12->KJ11",
+   "lineId": "KJ",
+   "fromStationId": "KJ12",
+   "toStationId": "KJ11",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 99,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 713
+  },
+  {
+   "id": "KJ:KJ11->KJ10",
+   "lineId": "KJ",
+   "fromStationId": "KJ11",
+   "toStationId": "KJ10",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 133,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 790
+  },
+  {
+   "id": "KJ:KJ10->KJ9",
+   "lineId": "KJ",
+   "fromStationId": "KJ10",
+   "toStationId": "KJ9",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 115,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 645
+  },
+  {
+   "id": "KJ:KJ9->KJ8",
+   "lineId": "KJ",
+   "fromStationId": "KJ9",
+   "toStationId": "KJ8",
+   "fromSequence": 29,
+   "toSequence": 30,
+   "scheduledRunSeconds": 116,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 788
+  },
+  {
+   "id": "KJ:KJ8->KJ7",
+   "lineId": "KJ",
+   "fromStationId": "KJ8",
+   "toStationId": "KJ7",
+   "fromSequence": 30,
+   "toSequence": 31,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 820
+  },
+  {
+   "id": "KJ:KJ7->KJ6",
+   "lineId": "KJ",
+   "fromStationId": "KJ7",
+   "toStationId": "KJ6",
+   "fromSequence": 31,
+   "toSequence": 32,
+   "scheduledRunSeconds": 100,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 455
+  },
+  {
+   "id": "KJ:KJ6->KJ5",
+   "lineId": "KJ",
+   "fromStationId": "KJ6",
+   "toStationId": "KJ5",
+   "fromSequence": 32,
+   "toSequence": 33,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 953
+  },
+  {
+   "id": "KJ:KJ5->KJ4",
+   "lineId": "KJ",
+   "fromStationId": "KJ5",
+   "toStationId": "KJ4",
+   "fromSequence": 33,
+   "toSequence": 34,
+   "scheduledRunSeconds": 250,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 2610
+  },
+  {
+   "id": "KJ:KJ4->KJ3",
+   "lineId": "KJ",
+   "fromStationId": "KJ4",
+   "toStationId": "KJ3",
+   "fromSequence": 34,
+   "toSequence": 35,
+   "scheduledRunSeconds": 127,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 965
+  },
+  {
+   "id": "KJ:KJ3->KJ2",
+   "lineId": "KJ",
+   "fromStationId": "KJ3",
+   "toStationId": "KJ2",
+   "fromSequence": 35,
+   "toSequence": 36,
+   "scheduledRunSeconds": 163,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1883
+  },
+  {
+   "id": "KJ:KJ2->KJ1",
+   "lineId": "KJ",
+   "fromStationId": "KJ2",
+   "toStationId": "KJ1",
+   "fromSequence": 36,
+   "toSequence": 37,
+   "scheduledRunSeconds": 143,
+   "scheduledDwellSeconds": 17,
+   "lengthMeters": 1388
+  },
+  {
+   "id": "KJ:KJ1->KJ2",
+   "lineId": "KJ",
+   "fromStationId": "KJ1",
+   "toStationId": "KJ2",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 155,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1388
+  },
+  {
+   "id": "KJ:KJ2->KJ3",
+   "lineId": "KJ",
+   "fromStationId": "KJ2",
+   "toStationId": "KJ3",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 160,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1883
+  },
+  {
+   "id": "KJ:KJ3->KJ4",
+   "lineId": "KJ",
+   "fromStationId": "KJ3",
+   "toStationId": "KJ4",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 109,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 965
+  },
+  {
+   "id": "KJ:KJ4->KJ5",
+   "lineId": "KJ",
+   "fromStationId": "KJ4",
+   "toStationId": "KJ5",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 255,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 2610
+  },
+  {
+   "id": "KJ:KJ5->KJ6",
+   "lineId": "KJ",
+   "fromStationId": "KJ5",
+   "toStationId": "KJ6",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 953
+  },
+  {
+   "id": "KJ:KJ6->KJ7",
+   "lineId": "KJ",
+   "fromStationId": "KJ6",
+   "toStationId": "KJ7",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 455
+  },
+  {
+   "id": "KJ:KJ7->KJ8",
+   "lineId": "KJ",
+   "fromStationId": "KJ7",
+   "toStationId": "KJ8",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 112,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 820
+  },
+  {
+   "id": "KJ:KJ8->KJ9",
+   "lineId": "KJ",
+   "fromStationId": "KJ8",
+   "toStationId": "KJ9",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 138,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 788
+  },
+  {
+   "id": "KJ:KJ9->KJ10",
+   "lineId": "KJ",
+   "fromStationId": "KJ9",
+   "toStationId": "KJ10",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 115,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 645
+  },
+  {
+   "id": "KJ:KJ10->KJ11",
+   "lineId": "KJ",
+   "fromStationId": "KJ10",
+   "toStationId": "KJ11",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 114,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 790
+  },
+  {
+   "id": "KJ:KJ11->KJ12",
+   "lineId": "KJ",
+   "fromStationId": "KJ11",
+   "toStationId": "KJ12",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 97,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 713
+  },
+  {
+   "id": "KJ:KJ12->KJ13",
+   "lineId": "KJ",
+   "fromStationId": "KJ12",
+   "toStationId": "KJ13",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 141,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 987
+  },
+  {
+   "id": "KJ:KJ13->KJ14",
+   "lineId": "KJ",
+   "fromStationId": "KJ13",
+   "toStationId": "KJ14",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 147,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 826
+  },
+  {
+   "id": "KJ:KJ14->KJ15",
+   "lineId": "KJ",
+   "fromStationId": "KJ14",
+   "toStationId": "KJ15",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 173,
+   "scheduledDwellSeconds": 27,
+   "lengthMeters": 1344
+  },
+  {
+   "id": "KJ:KJ15->KJ16",
+   "lineId": "KJ",
+   "fromStationId": "KJ15",
+   "toStationId": "KJ16",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 123,
+   "scheduledDwellSeconds": 17,
+   "lengthMeters": 1102
+  },
+  {
+   "id": "KJ:KJ16->KJ17",
+   "lineId": "KJ",
+   "fromStationId": "KJ16",
+   "toStationId": "KJ17",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 135,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1199
+  },
+  {
+   "id": "KJ:KJ17->KJ18",
+   "lineId": "KJ",
+   "fromStationId": "KJ17",
+   "toStationId": "KJ18",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 112,
+   "scheduledDwellSeconds": 17,
+   "lengthMeters": 600
+  },
+  {
+   "id": "KJ:KJ18->KJ19",
+   "lineId": "KJ",
+   "fromStationId": "KJ18",
+   "toStationId": "KJ19",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 108,
+   "scheduledDwellSeconds": 16,
+   "lengthMeters": 776
+  },
+  {
+   "id": "KJ:KJ19->KJ20",
+   "lineId": "KJ",
+   "fromStationId": "KJ19",
+   "toStationId": "KJ20",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 202,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 2164
+  },
+  {
+   "id": "KJ:KJ20->KJ21",
+   "lineId": "KJ",
+   "fromStationId": "KJ20",
+   "toStationId": "KJ21",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 99,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 839
+  },
+  {
+   "id": "KJ:KJ21->KJ22",
+   "lineId": "KJ",
+   "fromStationId": "KJ21",
+   "toStationId": "KJ22",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 145,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1611
+  },
+  {
+   "id": "KJ:KJ22->KJ23",
+   "lineId": "KJ",
+   "fromStationId": "KJ22",
+   "toStationId": "KJ23",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 131,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1332
+  },
+  {
+   "id": "KJ:KJ23->KJ24",
+   "lineId": "KJ",
+   "fromStationId": "KJ23",
+   "toStationId": "KJ24",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 178,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 969
+  },
+  {
+   "id": "KJ:KJ24->KJ25",
+   "lineId": "KJ",
+   "fromStationId": "KJ24",
+   "toStationId": "KJ25",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 155,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1474
+  },
+  {
+   "id": "KJ:KJ25->KJ26",
+   "lineId": "KJ",
+   "fromStationId": "KJ25",
+   "toStationId": "KJ26",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 93,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 644
+  },
+  {
+   "id": "KJ:KJ26->KJ27",
+   "lineId": "KJ",
+   "fromStationId": "KJ26",
+   "toStationId": "KJ27",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 151,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1617
+  },
+  {
+   "id": "KJ:KJ27->KJ28",
+   "lineId": "KJ",
+   "fromStationId": "KJ27",
+   "toStationId": "KJ28",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 159,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1154
+  },
+  {
+   "id": "KJ:KJ28->KJ29",
+   "lineId": "KJ",
+   "fromStationId": "KJ28",
+   "toStationId": "KJ29",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 185,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 995
+  },
+  {
+   "id": "KJ:KJ29->KJ30",
+   "lineId": "KJ",
+   "fromStationId": "KJ29",
+   "toStationId": "KJ30",
+   "fromSequence": 29,
+   "toSequence": 30,
+   "scheduledRunSeconds": 124,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 977
+  },
+  {
+   "id": "KJ:KJ30->KJ31",
+   "lineId": "KJ",
+   "fromStationId": "KJ30",
+   "toStationId": "KJ31",
+   "fromSequence": 30,
+   "toSequence": 31,
+   "scheduledRunSeconds": 254,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1526
+  },
+  {
+   "id": "KJ:KJ31->KJ32",
+   "lineId": "KJ",
+   "fromStationId": "KJ31",
+   "toStationId": "KJ32",
+   "fromSequence": 31,
+   "toSequence": 32,
+   "scheduledRunSeconds": 113,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 787
+  },
+  {
+   "id": "KJ:KJ32->KJ33",
+   "lineId": "KJ",
+   "fromStationId": "KJ32",
+   "toStationId": "KJ33",
+   "fromSequence": 32,
+   "toSequence": 33,
+   "scheduledRunSeconds": 155,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1470
+  },
+  {
+   "id": "KJ:KJ33->KJ34",
+   "lineId": "KJ",
+   "fromStationId": "KJ33",
+   "toStationId": "KJ34",
+   "fromSequence": 33,
+   "toSequence": 34,
+   "scheduledRunSeconds": 138,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 935
+  },
+  {
+   "id": "KJ:KJ34->KJ35",
+   "lineId": "KJ",
+   "fromStationId": "KJ34",
+   "toStationId": "KJ35",
+   "fromSequence": 34,
+   "toSequence": 35,
+   "scheduledRunSeconds": 219,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1310
+  },
+  {
+   "id": "KJ:KJ35->KJ36",
+   "lineId": "KJ",
+   "fromStationId": "KJ35",
+   "toStationId": "KJ36",
+   "fromSequence": 35,
+   "toSequence": 36,
+   "scheduledRunSeconds": 149,
+   "scheduledDwellSeconds": 15,
+   "lengthMeters": 1527
+  },
+  {
+   "id": "KJ:KJ36->KJ37",
+   "lineId": "KJ",
+   "fromStationId": "KJ36",
+   "toStationId": "KJ37",
+   "fromSequence": 36,
+   "toSequence": 37,
+   "scheduledRunSeconds": 182,
+   "scheduledDwellSeconds": 17,
+   "lengthMeters": 1509
+  },
+  {
+   "id": "PH:SP31->SP29",
+   "lineId": "PH",
+   "fromStationId": "SP31",
+   "toStationId": "SP29",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 214,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2388
+  },
+  {
+   "id": "PH:SP29->SP28",
+   "lineId": "PH",
+   "fromStationId": "SP29",
+   "toStationId": "SP28",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 147,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1291
+  },
+  {
+   "id": "PH:SP28->SP27",
+   "lineId": "PH",
+   "fromStationId": "SP28",
+   "toStationId": "SP27",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1343
+  },
+  {
+   "id": "PH:SP27->SP26",
+   "lineId": "PH",
+   "fromStationId": "SP27",
+   "toStationId": "SP26",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 86,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 638
+  },
+  {
+   "id": "PH:SP26->SP25",
+   "lineId": "PH",
+   "fromStationId": "SP26",
+   "toStationId": "SP25",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1188
+  },
+  {
+   "id": "PH:SP25->SP24",
+   "lineId": "PH",
+   "fromStationId": "SP25",
+   "toStationId": "SP24",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1744
+  },
+  {
+   "id": "PH:SP24->SP22",
+   "lineId": "PH",
+   "fromStationId": "SP24",
+   "toStationId": "SP22",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 208,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2606
+  },
+  {
+   "id": "PH:SP22->SP21",
+   "lineId": "PH",
+   "fromStationId": "SP22",
+   "toStationId": "SP21",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 207,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1430
+  },
+  {
+   "id": "PH:SP21->SP20",
+   "lineId": "PH",
+   "fromStationId": "SP21",
+   "toStationId": "SP20",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 114,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1076
+  },
+  {
+   "id": "PH:SP20->SP19",
+   "lineId": "PH",
+   "fromStationId": "SP20",
+   "toStationId": "SP19",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 889
+  },
+  {
+   "id": "PH:SP19->SP18",
+   "lineId": "PH",
+   "fromStationId": "SP19",
+   "toStationId": "SP18",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 90,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1836
+  },
+  {
+   "id": "PH:SP18->SP17",
+   "lineId": "PH",
+   "fromStationId": "SP18",
+   "toStationId": "SP17",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 77,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 667
+  },
+  {
+   "id": "PH:SP17->SP16",
+   "lineId": "PH",
+   "fromStationId": "SP17",
+   "toStationId": "SP16",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 147,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1878
+  },
+  {
+   "id": "PH:SP16->SP15",
+   "lineId": "PH",
+   "fromStationId": "SP16",
+   "toStationId": "SP15",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 106,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1400
+  },
+  {
+   "id": "PH:SP15->SP14",
+   "lineId": "PH",
+   "fromStationId": "SP15",
+   "toStationId": "SP14",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 134,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1511
+  },
+  {
+   "id": "PH:SP14->SP13",
+   "lineId": "PH",
+   "fromStationId": "SP14",
+   "toStationId": "SP13",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1568
+  },
+  {
+   "id": "PH:SP13->SP12",
+   "lineId": "PH",
+   "fromStationId": "SP13",
+   "toStationId": "SP12",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1459
+  },
+  {
+   "id": "PH:SP12->SP11",
+   "lineId": "PH",
+   "fromStationId": "SP12",
+   "toStationId": "SP11",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 138,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1731
+  },
+  {
+   "id": "PH:SP11->SP10",
+   "lineId": "PH",
+   "fromStationId": "SP11",
+   "toStationId": "SP10",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 91,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 857
+  },
+  {
+   "id": "PH:SP10->SP9",
+   "lineId": "PH",
+   "fromStationId": "SP10",
+   "toStationId": "SP9",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 71,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 875
+  },
+  {
+   "id": "PH:SP9->SP8",
+   "lineId": "PH",
+   "fromStationId": "SP9",
+   "toStationId": "SP8",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 622
+  },
+  {
+   "id": "PH:SP8->SP7",
+   "lineId": "PH",
+   "fromStationId": "SP8",
+   "toStationId": "SP7",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 91,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 861
+  },
+  {
+   "id": "PH:SP7->SP6",
+   "lineId": "PH",
+   "fromStationId": "SP7",
+   "toStationId": "SP6",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 96,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 731
+  },
+  {
+   "id": "PH:SP6->SP5",
+   "lineId": "PH",
+   "fromStationId": "SP6",
+   "toStationId": "SP5",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 69,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 633
+  },
+  {
+   "id": "PH:SP5->SP4",
+   "lineId": "PH",
+   "fromStationId": "SP5",
+   "toStationId": "SP4",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 569
+  },
+  {
+   "id": "PH:SP4->SP3",
+   "lineId": "PH",
+   "fromStationId": "SP4",
+   "toStationId": "SP3",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 82,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 821
+  },
+  {
+   "id": "PH:SP3->SP2",
+   "lineId": "PH",
+   "fromStationId": "SP3",
+   "toStationId": "SP2",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 64,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 555
+  },
+  {
+   "id": "PH:SP2->SP1",
+   "lineId": "PH",
+   "fromStationId": "SP2",
+   "toStationId": "SP1",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 83,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 825
+  },
+  {
+   "id": "PH:SP1->SP2",
+   "lineId": "PH",
+   "fromStationId": "SP1",
+   "toStationId": "SP2",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 79,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 825
+  },
+  {
+   "id": "PH:SP2->SP3",
+   "lineId": "PH",
+   "fromStationId": "SP2",
+   "toStationId": "SP3",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 62,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 555
+  },
+  {
+   "id": "PH:SP3->SP4",
+   "lineId": "PH",
+   "fromStationId": "SP3",
+   "toStationId": "SP4",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 85,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 821
+  },
+  {
+   "id": "PH:SP4->SP5",
+   "lineId": "PH",
+   "fromStationId": "SP4",
+   "toStationId": "SP5",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 569
+  },
+  {
+   "id": "PH:SP5->SP6",
+   "lineId": "PH",
+   "fromStationId": "SP5",
+   "toStationId": "SP6",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 69,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 633
+  },
+  {
+   "id": "PH:SP6->SP7",
+   "lineId": "PH",
+   "fromStationId": "SP6",
+   "toStationId": "SP7",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 95,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 731
+  },
+  {
+   "id": "PH:SP7->SP8",
+   "lineId": "PH",
+   "fromStationId": "SP7",
+   "toStationId": "SP8",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 92,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 861
+  },
+  {
+   "id": "PH:SP8->SP9",
+   "lineId": "PH",
+   "fromStationId": "SP8",
+   "toStationId": "SP9",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 66,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 622
+  },
+  {
+   "id": "PH:SP9->SP10",
+   "lineId": "PH",
+   "fromStationId": "SP9",
+   "toStationId": "SP10",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 875
+  },
+  {
+   "id": "PH:SP10->SP11",
+   "lineId": "PH",
+   "fromStationId": "SP10",
+   "toStationId": "SP11",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 87,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 857
+  },
+  {
+   "id": "PH:SP11->SP12",
+   "lineId": "PH",
+   "fromStationId": "SP11",
+   "toStationId": "SP12",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 128,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1731
+  },
+  {
+   "id": "PH:SP12->SP13",
+   "lineId": "PH",
+   "fromStationId": "SP12",
+   "toStationId": "SP13",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1459
+  },
+  {
+   "id": "PH:SP13->SP14",
+   "lineId": "PH",
+   "fromStationId": "SP13",
+   "toStationId": "SP14",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 126,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1568
+  },
+  {
+   "id": "PH:SP14->SP15",
+   "lineId": "PH",
+   "fromStationId": "SP14",
+   "toStationId": "SP15",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 133,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1511
+  },
+  {
+   "id": "PH:SP15->SP16",
+   "lineId": "PH",
+   "fromStationId": "SP15",
+   "toStationId": "SP16",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 107,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1400
+  },
+  {
+   "id": "PH:SP16->SP17",
+   "lineId": "PH",
+   "fromStationId": "SP16",
+   "toStationId": "SP17",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 153,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1878
+  },
+  {
+   "id": "PH:SP17->SP18",
+   "lineId": "PH",
+   "fromStationId": "SP17",
+   "toStationId": "SP18",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 667
+  },
+  {
+   "id": "PH:SP18->SP19",
+   "lineId": "PH",
+   "fromStationId": "SP18",
+   "toStationId": "SP19",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 90,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1836
+  },
+  {
+   "id": "PH:SP19->SP20",
+   "lineId": "PH",
+   "fromStationId": "SP19",
+   "toStationId": "SP20",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 889
+  },
+  {
+   "id": "PH:SP20->SP21",
+   "lineId": "PH",
+   "fromStationId": "SP20",
+   "toStationId": "SP21",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 114,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1076
+  },
+  {
+   "id": "PH:SP21->SP22",
+   "lineId": "PH",
+   "fromStationId": "SP21",
+   "toStationId": "SP22",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 207,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1430
+  },
+  {
+   "id": "PH:SP22->SP24",
+   "lineId": "PH",
+   "fromStationId": "SP22",
+   "toStationId": "SP24",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 208,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2606
+  },
+  {
+   "id": "PH:SP24->SP25",
+   "lineId": "PH",
+   "fromStationId": "SP24",
+   "toStationId": "SP25",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1744
+  },
+  {
+   "id": "PH:SP25->SP26",
+   "lineId": "PH",
+   "fromStationId": "SP25",
+   "toStationId": "SP26",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1188
+  },
+  {
+   "id": "PH:SP26->SP27",
+   "lineId": "PH",
+   "fromStationId": "SP26",
+   "toStationId": "SP27",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 86,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 638
+  },
+  {
+   "id": "PH:SP27->SP28",
+   "lineId": "PH",
+   "fromStationId": "SP27",
+   "toStationId": "SP28",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 111,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1343
+  },
+  {
+   "id": "PH:SP28->SP29",
+   "lineId": "PH",
+   "fromStationId": "SP28",
+   "toStationId": "SP29",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 147,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1291
+  },
+  {
+   "id": "PH:SP29->SP31",
+   "lineId": "PH",
+   "fromStationId": "SP29",
+   "toStationId": "SP31",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 214,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2388
+  },
+  {
+   "id": "KGL:KG04->KG05",
+   "lineId": "KGL",
+   "fromStationId": "KG04",
+   "toStationId": "KG05",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1061
+  },
+  {
+   "id": "KGL:KG05->KG06",
+   "lineId": "KGL",
+   "fromStationId": "KG05",
+   "toStationId": "KG06",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 2714
+  },
+  {
+   "id": "KGL:KG06->KG07",
+   "lineId": "KGL",
+   "fromStationId": "KG06",
+   "toStationId": "KG07",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1693
+  },
+  {
+   "id": "KGL:KG07->KG08",
+   "lineId": "KGL",
+   "fromStationId": "KG07",
+   "toStationId": "KG08",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1802
+  },
+  {
+   "id": "KGL:KG08->KG09",
+   "lineId": "KGL",
+   "fromStationId": "KG08",
+   "toStationId": "KG09",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1425
+  },
+  {
+   "id": "KGL:KG09->KG10",
+   "lineId": "KGL",
+   "fromStationId": "KG09",
+   "toStationId": "KG10",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1772
+  },
+  {
+   "id": "KGL:KG10->KG12",
+   "lineId": "KGL",
+   "fromStationId": "KG10",
+   "toStationId": "KG12",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 1497
+  },
+  {
+   "id": "KGL:KG12->KG13",
+   "lineId": "KGL",
+   "fromStationId": "KG12",
+   "toStationId": "KG13",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 2721
+  },
+  {
+   "id": "KGL:KG13->KG14",
+   "lineId": "KGL",
+   "fromStationId": "KG13",
+   "toStationId": "KG14",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 887
+  },
+  {
+   "id": "KGL:KG14->KG15",
+   "lineId": "KGL",
+   "fromStationId": "KG14",
+   "toStationId": "KG15",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 2861
+  },
+  {
+   "id": "KGL:KG15->KG16",
+   "lineId": "KGL",
+   "fromStationId": "KG15",
+   "toStationId": "KG16",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1068
+  },
+  {
+   "id": "KGL:KG16->KG17",
+   "lineId": "KGL",
+   "fromStationId": "KG16",
+   "toStationId": "KG17",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 721
+  },
+  {
+   "id": "KGL:KG17->KG18A",
+   "lineId": "KGL",
+   "fromStationId": "KG17",
+   "toStationId": "KG18A",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1109
+  },
+  {
+   "id": "KGL:KG18A->KG20",
+   "lineId": "KGL",
+   "fromStationId": "KG18A",
+   "toStationId": "KG20",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1119
+  },
+  {
+   "id": "KGL:KG20->KG21",
+   "lineId": "KGL",
+   "fromStationId": "KG20",
+   "toStationId": "KG21",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1109
+  },
+  {
+   "id": "KGL:KG21->KG22",
+   "lineId": "KGL",
+   "fromStationId": "KG21",
+   "toStationId": "KG22",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1157
+  },
+  {
+   "id": "KGL:KG22->KG23",
+   "lineId": "KGL",
+   "fromStationId": "KG22",
+   "toStationId": "KG23",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1244
+  },
+  {
+   "id": "KGL:KG23->KG24",
+   "lineId": "KGL",
+   "fromStationId": "KG23",
+   "toStationId": "KG24",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 947
+  },
+  {
+   "id": "KGL:KG24->KG25",
+   "lineId": "KGL",
+   "fromStationId": "KG24",
+   "toStationId": "KG25",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1761
+  },
+  {
+   "id": "KGL:KG25->KG26",
+   "lineId": "KGL",
+   "fromStationId": "KG25",
+   "toStationId": "KG26",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1417
+  },
+  {
+   "id": "KGL:KG26->KG27",
+   "lineId": "KGL",
+   "fromStationId": "KG26",
+   "toStationId": "KG27",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 2204
+  },
+  {
+   "id": "KGL:KG27->KG28",
+   "lineId": "KGL",
+   "fromStationId": "KG27",
+   "toStationId": "KG28",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1465
+  },
+  {
+   "id": "KGL:KG28->KG29",
+   "lineId": "KGL",
+   "fromStationId": "KG28",
+   "toStationId": "KG29",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1581
+  },
+  {
+   "id": "KGL:KG29->KG30",
+   "lineId": "KGL",
+   "fromStationId": "KG29",
+   "toStationId": "KG30",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 789
+  },
+  {
+   "id": "KGL:KG30->KG31",
+   "lineId": "KGL",
+   "fromStationId": "KG30",
+   "toStationId": "KG31",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1679
+  },
+  {
+   "id": "KGL:KG31->KG33",
+   "lineId": "KGL",
+   "fromStationId": "KG31",
+   "toStationId": "KG33",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 3168
+  },
+  {
+   "id": "KGL:KG33->KG34",
+   "lineId": "KGL",
+   "fromStationId": "KG33",
+   "toStationId": "KG34",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 767
+  },
+  {
+   "id": "KGL:KG34->KG35",
+   "lineId": "KGL",
+   "fromStationId": "KG34",
+   "toStationId": "KG35",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 29,
+   "lengthMeters": 1376
+  },
+  {
+   "id": "KGL:KG35->KG34",
+   "lineId": "KGL",
+   "fromStationId": "KG35",
+   "toStationId": "KG34",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1376
+  },
+  {
+   "id": "KGL:KG34->KG33",
+   "lineId": "KGL",
+   "fromStationId": "KG34",
+   "toStationId": "KG33",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 767
+  },
+  {
+   "id": "KGL:KG33->KG31",
+   "lineId": "KGL",
+   "fromStationId": "KG33",
+   "toStationId": "KG31",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 3168
+  },
+  {
+   "id": "KGL:KG31->KG30",
+   "lineId": "KGL",
+   "fromStationId": "KG31",
+   "toStationId": "KG30",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1679
+  },
+  {
+   "id": "KGL:KG30->KG29",
+   "lineId": "KGL",
+   "fromStationId": "KG30",
+   "toStationId": "KG29",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 789
+  },
+  {
+   "id": "KGL:KG29->KG28",
+   "lineId": "KGL",
+   "fromStationId": "KG29",
+   "toStationId": "KG28",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1581
+  },
+  {
+   "id": "KGL:KG28->KG27",
+   "lineId": "KGL",
+   "fromStationId": "KG28",
+   "toStationId": "KG27",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1465
+  },
+  {
+   "id": "KGL:KG27->KG26",
+   "lineId": "KGL",
+   "fromStationId": "KG27",
+   "toStationId": "KG26",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 2204
+  },
+  {
+   "id": "KGL:KG26->KG25",
+   "lineId": "KGL",
+   "fromStationId": "KG26",
+   "toStationId": "KG25",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1417
+  },
+  {
+   "id": "KGL:KG25->KG24",
+   "lineId": "KGL",
+   "fromStationId": "KG25",
+   "toStationId": "KG24",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1761
+  },
+  {
+   "id": "KGL:KG24->KG23",
+   "lineId": "KGL",
+   "fromStationId": "KG24",
+   "toStationId": "KG23",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 947
+  },
+  {
+   "id": "KGL:KG23->KG22",
+   "lineId": "KGL",
+   "fromStationId": "KG23",
+   "toStationId": "KG22",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1244
+  },
+  {
+   "id": "KGL:KG22->KG21",
+   "lineId": "KGL",
+   "fromStationId": "KG22",
+   "toStationId": "KG21",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1157
+  },
+  {
+   "id": "KGL:KG21->KG20",
+   "lineId": "KGL",
+   "fromStationId": "KG21",
+   "toStationId": "KG20",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1109
+  },
+  {
+   "id": "KGL:KG20->KG18A",
+   "lineId": "KGL",
+   "fromStationId": "KG20",
+   "toStationId": "KG18A",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1119
+  },
+  {
+   "id": "KGL:KG18A->KG17",
+   "lineId": "KGL",
+   "fromStationId": "KG18A",
+   "toStationId": "KG17",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1109
+  },
+  {
+   "id": "KGL:KG17->KG16",
+   "lineId": "KGL",
+   "fromStationId": "KG17",
+   "toStationId": "KG16",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 721
+  },
+  {
+   "id": "KGL:KG16->KG15",
+   "lineId": "KGL",
+   "fromStationId": "KG16",
+   "toStationId": "KG15",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 40,
+   "lengthMeters": 1068
+  },
+  {
+   "id": "KGL:KG15->KG14",
+   "lineId": "KGL",
+   "fromStationId": "KG15",
+   "toStationId": "KG14",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 2861
+  },
+  {
+   "id": "KGL:KG14->KG13",
+   "lineId": "KGL",
+   "fromStationId": "KG14",
+   "toStationId": "KG13",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 887
+  },
+  {
+   "id": "KGL:KG13->KG12",
+   "lineId": "KGL",
+   "fromStationId": "KG13",
+   "toStationId": "KG12",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 35,
+   "lengthMeters": 2721
+  },
+  {
+   "id": "KGL:KG12->KG10",
+   "lineId": "KGL",
+   "fromStationId": "KG12",
+   "toStationId": "KG10",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1497
+  },
+  {
+   "id": "KGL:KG10->KG09",
+   "lineId": "KGL",
+   "fromStationId": "KG10",
+   "toStationId": "KG09",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1772
+  },
+  {
+   "id": "KGL:KG09->KG08",
+   "lineId": "KGL",
+   "fromStationId": "KG09",
+   "toStationId": "KG08",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1425
+  },
+  {
+   "id": "KGL:KG08->KG07",
+   "lineId": "KGL",
+   "fromStationId": "KG08",
+   "toStationId": "KG07",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1802
+  },
+  {
+   "id": "KGL:KG07->KG06",
+   "lineId": "KGL",
+   "fromStationId": "KG07",
+   "toStationId": "KG06",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 1693
+  },
+  {
+   "id": "KGL:KG06->KG05",
+   "lineId": "KGL",
+   "fromStationId": "KG06",
+   "toStationId": "KG05",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 180,
+   "scheduledDwellSeconds": 26,
+   "lengthMeters": 2714
+  },
+  {
+   "id": "KGL:KG05->KG04",
+   "lineId": "KGL",
+   "fromStationId": "KG05",
+   "toStationId": "KG04",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 22,
+   "lengthMeters": 1061
+  },
+  {
+   "id": "PYL:PY01->PY03",
+   "lineId": "PYL",
+   "fromStationId": "PY01",
+   "toStationId": "PY03",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 189,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 2432
+  },
+  {
+   "id": "PYL:PY03->PY04",
+   "lineId": "PYL",
+   "fromStationId": "PY03",
+   "toStationId": "PY04",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 107,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1082
+  },
+  {
+   "id": "PYL:PY04->PY05",
+   "lineId": "PYL",
+   "fromStationId": "PY04",
+   "toStationId": "PY05",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 126,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1406
+  },
+  {
+   "id": "PYL:PY05->PY06",
+   "lineId": "PYL",
+   "fromStationId": "PY05",
+   "toStationId": "PY06",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 110,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1751
+  },
+  {
+   "id": "PYL:PY06->PY07",
+   "lineId": "PYL",
+   "fromStationId": "PY06",
+   "toStationId": "PY07",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1455
+  },
+  {
+   "id": "PYL:PY07->PY08",
+   "lineId": "PYL",
+   "fromStationId": "PY07",
+   "toStationId": "PY08",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 101,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1291
+  },
+  {
+   "id": "PYL:PY08->PY09",
+   "lineId": "PYL",
+   "fromStationId": "PY08",
+   "toStationId": "PY09",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 114,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1395
+  },
+  {
+   "id": "PYL:PY09->PY10",
+   "lineId": "PYL",
+   "fromStationId": "PY09",
+   "toStationId": "PY10",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1024
+  },
+  {
+   "id": "PYL:PY10->PY11",
+   "lineId": "PYL",
+   "fromStationId": "PY10",
+   "toStationId": "PY11",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 78,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 880
+  },
+  {
+   "id": "PYL:PY11->PY12",
+   "lineId": "PYL",
+   "fromStationId": "PY11",
+   "toStationId": "PY12",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 88,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1134
+  },
+  {
+   "id": "PYL:PY12->PY13",
+   "lineId": "PYL",
+   "fromStationId": "PY12",
+   "toStationId": "PY13",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 88,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1094
+  },
+  {
+   "id": "PYL:PY13->PY14",
+   "lineId": "PYL",
+   "fromStationId": "PY13",
+   "toStationId": "PY14",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 101,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1196
+  },
+  {
+   "id": "PYL:PY14->PY15",
+   "lineId": "PYL",
+   "fromStationId": "PY14",
+   "toStationId": "PY15",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 72,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 720
+  },
+  {
+   "id": "PYL:PY15->PY16",
+   "lineId": "PYL",
+   "fromStationId": "PY15",
+   "toStationId": "PY16",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 116,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1176
+  },
+  {
+   "id": "PYL:PY16->PY17",
+   "lineId": "PYL",
+   "fromStationId": "PY16",
+   "toStationId": "PY17",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1362
+  },
+  {
+   "id": "PYL:PY17->PY18",
+   "lineId": "PYL",
+   "fromStationId": "PY17",
+   "toStationId": "PY18",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 731
+  },
+  {
+   "id": "PYL:PY18->PY19",
+   "lineId": "PYL",
+   "fromStationId": "PY18",
+   "toStationId": "PY19",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1099
+  },
+  {
+   "id": "PYL:PY19->PY20",
+   "lineId": "PYL",
+   "fromStationId": "PY19",
+   "toStationId": "PY20",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 100,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1058
+  },
+  {
+   "id": "PYL:PY20->PY21",
+   "lineId": "PYL",
+   "fromStationId": "PY20",
+   "toStationId": "PY21",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 61,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 573
+  },
+  {
+   "id": "PYL:PY21->PY22",
+   "lineId": "PYL",
+   "fromStationId": "PY21",
+   "toStationId": "PY22",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 72,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 632
+  },
+  {
+   "id": "PYL:PY22->PY23",
+   "lineId": "PYL",
+   "fromStationId": "PY22",
+   "toStationId": "PY23",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 82,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 986
+  },
+  {
+   "id": "PYL:PY23->PY24",
+   "lineId": "PYL",
+   "fromStationId": "PY23",
+   "toStationId": "PY24",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 133,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1664
+  },
+  {
+   "id": "PYL:PY24->PY27",
+   "lineId": "PYL",
+   "fromStationId": "PY24",
+   "toStationId": "PY27",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 340,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 4990
+  },
+  {
+   "id": "PYL:PY27->PY28",
+   "lineId": "PYL",
+   "fromStationId": "PY27",
+   "toStationId": "PY28",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1465
+  },
+  {
+   "id": "PYL:PY28->PY29",
+   "lineId": "PYL",
+   "fromStationId": "PY28",
+   "toStationId": "PY29",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 146,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1818
+  },
+  {
+   "id": "PYL:PY29->PY31",
+   "lineId": "PYL",
+   "fromStationId": "PY29",
+   "toStationId": "PY31",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 160,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 2483
+  },
+  {
+   "id": "PYL:PY31->PY32",
+   "lineId": "PYL",
+   "fromStationId": "PY31",
+   "toStationId": "PY32",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1497
+  },
+  {
+   "id": "PYL:PY32->PY33",
+   "lineId": "PYL",
+   "fromStationId": "PY32",
+   "toStationId": "PY33",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 781
+  },
+  {
+   "id": "PYL:PY33->PY34",
+   "lineId": "PYL",
+   "fromStationId": "PY33",
+   "toStationId": "PY34",
+   "fromSequence": 29,
+   "toSequence": 30,
+   "scheduledRunSeconds": 126,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1512
+  },
+  {
+   "id": "PYL:PY34->PY36",
+   "lineId": "PYL",
+   "fromStationId": "PY34",
+   "toStationId": "PY36",
+   "fromSequence": 30,
+   "toSequence": 31,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 4229
+  },
+  {
+   "id": "PYL:PY36->PY37",
+   "lineId": "PYL",
+   "fromStationId": "PY36",
+   "toStationId": "PY37",
+   "fromSequence": 31,
+   "toSequence": 32,
+   "scheduledRunSeconds": 103,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1437
+  },
+  {
+   "id": "PYL:PY37->PY38",
+   "lineId": "PYL",
+   "fromStationId": "PY37",
+   "toStationId": "PY38",
+   "fromSequence": 32,
+   "toSequence": 33,
+   "scheduledRunSeconds": 142,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 2160
+  },
+  {
+   "id": "PYL:PY38->PY39",
+   "lineId": "PYL",
+   "fromStationId": "PY38",
+   "toStationId": "PY39",
+   "fromSequence": 33,
+   "toSequence": 34,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1688
+  },
+  {
+   "id": "PYL:PY39->PY40",
+   "lineId": "PYL",
+   "fromStationId": "PY39",
+   "toStationId": "PY40",
+   "fromSequence": 34,
+   "toSequence": 35,
+   "scheduledRunSeconds": 125,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1605
+  },
+  {
+   "id": "PYL:PY40->PY41",
+   "lineId": "PYL",
+   "fromStationId": "PY40",
+   "toStationId": "PY41",
+   "fromSequence": 35,
+   "toSequence": 36,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 9,
+   "lengthMeters": 1005
+  },
+  {
+   "id": "PYL:PY41->PY40",
+   "lineId": "PYL",
+   "fromStationId": "PY41",
+   "toStationId": "PY40",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1005
+  },
+  {
+   "id": "PYL:PY40->PY39",
+   "lineId": "PYL",
+   "fromStationId": "PY40",
+   "toStationId": "PY39",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 125,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1605
+  },
+  {
+   "id": "PYL:PY39->PY38",
+   "lineId": "PYL",
+   "fromStationId": "PY39",
+   "toStationId": "PY38",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1688
+  },
+  {
+   "id": "PYL:PY38->PY37",
+   "lineId": "PYL",
+   "fromStationId": "PY38",
+   "toStationId": "PY37",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 142,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 2160
+  },
+  {
+   "id": "PYL:PY37->PY36",
+   "lineId": "PYL",
+   "fromStationId": "PY37",
+   "toStationId": "PY36",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 103,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1437
+  },
+  {
+   "id": "PYL:PY36->PY34",
+   "lineId": "PYL",
+   "fromStationId": "PY36",
+   "toStationId": "PY34",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 240,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 4229
+  },
+  {
+   "id": "PYL:PY34->PY33",
+   "lineId": "PYL",
+   "fromStationId": "PY34",
+   "toStationId": "PY33",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 126,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1512
+  },
+  {
+   "id": "PYL:PY33->PY32",
+   "lineId": "PYL",
+   "fromStationId": "PY33",
+   "toStationId": "PY32",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 781
+  },
+  {
+   "id": "PYL:PY32->PY31",
+   "lineId": "PYL",
+   "fromStationId": "PY32",
+   "toStationId": "PY31",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1497
+  },
+  {
+   "id": "PYL:PY31->PY29",
+   "lineId": "PYL",
+   "fromStationId": "PY31",
+   "toStationId": "PY29",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 160,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 2483
+  },
+  {
+   "id": "PYL:PY29->PY28",
+   "lineId": "PYL",
+   "fromStationId": "PY29",
+   "toStationId": "PY28",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 146,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1818
+  },
+  {
+   "id": "PYL:PY28->PY27",
+   "lineId": "PYL",
+   "fromStationId": "PY28",
+   "toStationId": "PY27",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1465
+  },
+  {
+   "id": "PYL:PY27->PY24",
+   "lineId": "PYL",
+   "fromStationId": "PY27",
+   "toStationId": "PY24",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 340,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 4990
+  },
+  {
+   "id": "PYL:PY24->PY23",
+   "lineId": "PYL",
+   "fromStationId": "PY24",
+   "toStationId": "PY23",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 133,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1664
+  },
+  {
+   "id": "PYL:PY23->PY22",
+   "lineId": "PYL",
+   "fromStationId": "PY23",
+   "toStationId": "PY22",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 82,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 986
+  },
+  {
+   "id": "PYL:PY22->PY21",
+   "lineId": "PYL",
+   "fromStationId": "PY22",
+   "toStationId": "PY21",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 72,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 632
+  },
+  {
+   "id": "PYL:PY21->PY20",
+   "lineId": "PYL",
+   "fromStationId": "PY21",
+   "toStationId": "PY20",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 61,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 573
+  },
+  {
+   "id": "PYL:PY20->PY19",
+   "lineId": "PYL",
+   "fromStationId": "PY20",
+   "toStationId": "PY19",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 100,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1058
+  },
+  {
+   "id": "PYL:PY19->PY18",
+   "lineId": "PYL",
+   "fromStationId": "PY19",
+   "toStationId": "PY18",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1099
+  },
+  {
+   "id": "PYL:PY18->PY17",
+   "lineId": "PYL",
+   "fromStationId": "PY18",
+   "toStationId": "PY17",
+   "fromSequence": 20,
+   "toSequence": 21,
+   "scheduledRunSeconds": 70,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 731
+  },
+  {
+   "id": "PYL:PY17->PY16",
+   "lineId": "PYL",
+   "fromStationId": "PY17",
+   "toStationId": "PY16",
+   "fromSequence": 21,
+   "toSequence": 22,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1362
+  },
+  {
+   "id": "PYL:PY16->PY15",
+   "lineId": "PYL",
+   "fromStationId": "PY16",
+   "toStationId": "PY15",
+   "fromSequence": 22,
+   "toSequence": 23,
+   "scheduledRunSeconds": 116,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1176
+  },
+  {
+   "id": "PYL:PY15->PY14",
+   "lineId": "PYL",
+   "fromStationId": "PY15",
+   "toStationId": "PY14",
+   "fromSequence": 23,
+   "toSequence": 24,
+   "scheduledRunSeconds": 72,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 720
+  },
+  {
+   "id": "PYL:PY14->PY13",
+   "lineId": "PYL",
+   "fromStationId": "PY14",
+   "toStationId": "PY13",
+   "fromSequence": 24,
+   "toSequence": 25,
+   "scheduledRunSeconds": 101,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1196
+  },
+  {
+   "id": "PYL:PY13->PY12",
+   "lineId": "PYL",
+   "fromStationId": "PY13",
+   "toStationId": "PY12",
+   "fromSequence": 25,
+   "toSequence": 26,
+   "scheduledRunSeconds": 88,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1094
+  },
+  {
+   "id": "PYL:PY12->PY11",
+   "lineId": "PYL",
+   "fromStationId": "PY12",
+   "toStationId": "PY11",
+   "fromSequence": 26,
+   "toSequence": 27,
+   "scheduledRunSeconds": 88,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1134
+  },
+  {
+   "id": "PYL:PY11->PY10",
+   "lineId": "PYL",
+   "fromStationId": "PY11",
+   "toStationId": "PY10",
+   "fromSequence": 27,
+   "toSequence": 28,
+   "scheduledRunSeconds": 78,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 880
+  },
+  {
+   "id": "PYL:PY10->PY09",
+   "lineId": "PYL",
+   "fromStationId": "PY10",
+   "toStationId": "PY09",
+   "fromSequence": 28,
+   "toSequence": 29,
+   "scheduledRunSeconds": 73,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1024
+  },
+  {
+   "id": "PYL:PY09->PY08",
+   "lineId": "PYL",
+   "fromStationId": "PY09",
+   "toStationId": "PY08",
+   "fromSequence": 29,
+   "toSequence": 30,
+   "scheduledRunSeconds": 114,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1395
+  },
+  {
+   "id": "PYL:PY08->PY07",
+   "lineId": "PYL",
+   "fromStationId": "PY08",
+   "toStationId": "PY07",
+   "fromSequence": 30,
+   "toSequence": 31,
+   "scheduledRunSeconds": 101,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1291
+  },
+  {
+   "id": "PYL:PY07->PY06",
+   "lineId": "PYL",
+   "fromStationId": "PY07",
+   "toStationId": "PY06",
+   "fromSequence": 31,
+   "toSequence": 32,
+   "scheduledRunSeconds": 104,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1455
+  },
+  {
+   "id": "PYL:PY06->PY05",
+   "lineId": "PYL",
+   "fromStationId": "PY06",
+   "toStationId": "PY05",
+   "fromSequence": 32,
+   "toSequence": 33,
+   "scheduledRunSeconds": 110,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1751
+  },
+  {
+   "id": "PYL:PY05->PY04",
+   "lineId": "PYL",
+   "fromStationId": "PY05",
+   "toStationId": "PY04",
+   "fromSequence": 33,
+   "toSequence": 34,
+   "scheduledRunSeconds": 126,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1406
+  },
+  {
+   "id": "PYL:PY04->PY03",
+   "lineId": "PYL",
+   "fromStationId": "PY04",
+   "toStationId": "PY03",
+   "fromSequence": 34,
+   "toSequence": 35,
+   "scheduledRunSeconds": 107,
+   "scheduledDwellSeconds": 0,
+   "lengthMeters": 1082
+  },
+  {
+   "id": "PYL:PY03->PY01",
+   "lineId": "PYL",
+   "fromStationId": "PY03",
+   "toStationId": "PY01",
+   "fromSequence": 35,
+   "toSequence": 36,
+   "scheduledRunSeconds": 189,
+   "scheduledDwellSeconds": 9,
+   "lengthMeters": 2432
+  },
+  {
+   "id": "MR:MR1->MR2",
+   "lineId": "MR",
+   "fromStationId": "MR1",
+   "toStationId": "MR2",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 377
+  },
+  {
+   "id": "MR:MR2->MR3",
+   "lineId": "MR",
+   "fromStationId": "MR2",
+   "toStationId": "MR3",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 210,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1247
+  },
+  {
+   "id": "MR:MR3->MR4",
+   "lineId": "MR",
+   "fromStationId": "MR3",
+   "toStationId": "MR4",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 776
+  },
+  {
+   "id": "MR:MR4->MR5",
+   "lineId": "MR",
+   "fromStationId": "MR4",
+   "toStationId": "MR5",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 90,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 459
+  },
+  {
+   "id": "MR:MR5->MR6",
+   "lineId": "MR",
+   "fromStationId": "MR5",
+   "toStationId": "MR6",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 422
+  },
+  {
+   "id": "MR:MR6->MR7",
+   "lineId": "MR",
+   "fromStationId": "MR6",
+   "toStationId": "MR7",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 553
+  },
+  {
+   "id": "MR:MR7->MR8",
+   "lineId": "MR",
+   "fromStationId": "MR7",
+   "toStationId": "MR8",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 861
+  },
+  {
+   "id": "MR:MR8->MR9",
+   "lineId": "MR",
+   "fromStationId": "MR8",
+   "toStationId": "MR9",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 745
+  },
+  {
+   "id": "MR:MR9->MR10",
+   "lineId": "MR",
+   "fromStationId": "MR9",
+   "toStationId": "MR10",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 892
+  },
+  {
+   "id": "MR:MR10->MR11",
+   "lineId": "MR",
+   "fromStationId": "MR10",
+   "toStationId": "MR11",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 700
+  },
+  {
+   "id": "MR:MR11->MR10",
+   "lineId": "MR",
+   "fromStationId": "MR11",
+   "toStationId": "MR10",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 700
+  },
+  {
+   "id": "MR:MR10->MR9",
+   "lineId": "MR",
+   "fromStationId": "MR10",
+   "toStationId": "MR9",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 892
+  },
+  {
+   "id": "MR:MR9->MR8",
+   "lineId": "MR",
+   "fromStationId": "MR9",
+   "toStationId": "MR8",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 745
+  },
+  {
+   "id": "MR:MR8->MR7",
+   "lineId": "MR",
+   "fromStationId": "MR8",
+   "toStationId": "MR7",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 861
+  },
+  {
+   "id": "MR:MR7->MR6",
+   "lineId": "MR",
+   "fromStationId": "MR7",
+   "toStationId": "MR6",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 553
+  },
+  {
+   "id": "MR:MR6->MR5",
+   "lineId": "MR",
+   "fromStationId": "MR6",
+   "toStationId": "MR5",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 422
+  },
+  {
+   "id": "MR:MR5->MR4",
+   "lineId": "MR",
+   "fromStationId": "MR5",
+   "toStationId": "MR4",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 90,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 459
+  },
+  {
+   "id": "MR:MR4->MR3",
+   "lineId": "MR",
+   "fromStationId": "MR4",
+   "toStationId": "MR3",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 776
+  },
+  {
+   "id": "MR:MR3->MR2",
+   "lineId": "MR",
+   "fromStationId": "MR3",
+   "toStationId": "MR2",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 210,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1247
+  },
+  {
+   "id": "MR:MR2->MR1",
+   "lineId": "MR",
+   "fromStationId": "MR2",
+   "toStationId": "MR1",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 377
+  },
+  {
+   "id": "BRT:BRT1->BRT2",
+   "lineId": "BRT",
+   "fromStationId": "BRT1",
+   "toStationId": "BRT2",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 784
+  },
+  {
+   "id": "BRT:BRT2->BRT3",
+   "lineId": "BRT",
+   "fromStationId": "BRT2",
+   "toStationId": "BRT3",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 615
+  },
+  {
+   "id": "BRT:BRT3->BRT4",
+   "lineId": "BRT",
+   "fromStationId": "BRT3",
+   "toStationId": "BRT4",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 599
+  },
+  {
+   "id": "BRT:BRT4->BRT5",
+   "lineId": "BRT",
+   "fromStationId": "BRT4",
+   "toStationId": "BRT5",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 789
+  },
+  {
+   "id": "BRT:BRT5->BRT6",
+   "lineId": "BRT",
+   "fromStationId": "BRT5",
+   "toStationId": "BRT6",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 665
+  },
+  {
+   "id": "BRT:BRT6->BRT7",
+   "lineId": "BRT",
+   "fromStationId": "BRT6",
+   "toStationId": "BRT7",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 903
+  },
+  {
+   "id": "BRT:BRT7->BRT6",
+   "lineId": "BRT",
+   "fromStationId": "BRT7",
+   "toStationId": "BRT6",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 903
+  },
+  {
+   "id": "BRT:BRT6->BRT5",
+   "lineId": "BRT",
+   "fromStationId": "BRT6",
+   "toStationId": "BRT5",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 150,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 665
+  },
+  {
+   "id": "BRT:BRT5->BRT4",
+   "lineId": "BRT",
+   "fromStationId": "BRT5",
+   "toStationId": "BRT4",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 789
+  },
+  {
+   "id": "BRT:BRT4->BRT3",
+   "lineId": "BRT",
+   "fromStationId": "BRT4",
+   "toStationId": "BRT3",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 599
+  },
+  {
+   "id": "BRT:BRT3->BRT2",
+   "lineId": "BRT",
+   "fromStationId": "BRT3",
+   "toStationId": "BRT2",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 615
+  },
+  {
+   "id": "BRT:BRT2->BRT1",
+   "lineId": "BRT",
+   "fromStationId": "BRT2",
+   "toStationId": "BRT1",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 120,
+   "scheduledDwellSeconds": 25,
+   "lengthMeters": 784
+  },
+  {
+   "id": "SA:SA1->SA2",
+   "lineId": "SA",
+   "fromStationId": "SA1",
+   "toStationId": "SA2",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 116,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1133
+  },
+  {
+   "id": "SA:SA2->SA3",
+   "lineId": "SA",
+   "fromStationId": "SA2",
+   "toStationId": "SA3",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 140,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1366
+  },
+  {
+   "id": "SA:SA3->SA5",
+   "lineId": "SA",
+   "fromStationId": "SA3",
+   "toStationId": "SA5",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 168,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1637
+  },
+  {
+   "id": "SA:SA5->SA6",
+   "lineId": "SA",
+   "fromStationId": "SA5",
+   "toStationId": "SA6",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 193,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1884
+  },
+  {
+   "id": "SA:SA6->SA7",
+   "lineId": "SA",
+   "fromStationId": "SA6",
+   "toStationId": "SA7",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 127,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1236
+  },
+  {
+   "id": "SA:SA7->SA9",
+   "lineId": "SA",
+   "fromStationId": "SA7",
+   "toStationId": "SA9",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 357,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 3298
+  },
+  {
+   "id": "SA:SA9->SA10",
+   "lineId": "SA",
+   "fromStationId": "SA9",
+   "toStationId": "SA10",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 151,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1476
+  },
+  {
+   "id": "SA:SA10->SA12",
+   "lineId": "SA",
+   "fromStationId": "SA10",
+   "toStationId": "SA12",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 355,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 3279
+  },
+  {
+   "id": "SA:SA12->SA14",
+   "lineId": "SA",
+   "fromStationId": "SA12",
+   "toStationId": "SA14",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 262,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2361
+  },
+  {
+   "id": "SA:SA14->SA15",
+   "lineId": "SA",
+   "fromStationId": "SA14",
+   "toStationId": "SA15",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 173,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1688
+  },
+  {
+   "id": "SA:SA15->SA17",
+   "lineId": "SA",
+   "fromStationId": "SA15",
+   "toStationId": "SA17",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 247,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2402
+  },
+  {
+   "id": "SA:SA17->SA18",
+   "lineId": "SA",
+   "fromStationId": "SA17",
+   "toStationId": "SA18",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 178,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1737
+  },
+  {
+   "id": "SA:SA18->SA19",
+   "lineId": "SA",
+   "fromStationId": "SA18",
+   "toStationId": "SA19",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 996
+  },
+  {
+   "id": "SA:SA19->SA20",
+   "lineId": "SA",
+   "fromStationId": "SA19",
+   "toStationId": "SA20",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 142,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1388
+  },
+  {
+   "id": "SA:SA20->SA21",
+   "lineId": "SA",
+   "fromStationId": "SA20",
+   "toStationId": "SA21",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 242,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2360
+  },
+  {
+   "id": "SA:SA21->SA22",
+   "lineId": "SA",
+   "fromStationId": "SA21",
+   "toStationId": "SA22",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 125,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1219
+  },
+  {
+   "id": "SA:SA22->SA23",
+   "lineId": "SA",
+   "fromStationId": "SA22",
+   "toStationId": "SA23",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 121,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1180
+  },
+  {
+   "id": "SA:SA23->SA24",
+   "lineId": "SA",
+   "fromStationId": "SA23",
+   "toStationId": "SA24",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 147,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1436
+  },
+  {
+   "id": "SA:SA24->SA26",
+   "lineId": "SA",
+   "fromStationId": "SA24",
+   "toStationId": "SA26",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 264,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2396
+  },
+  {
+   "id": "SA:SA26->SA24",
+   "lineId": "SA",
+   "fromStationId": "SA26",
+   "toStationId": "SA24",
+   "fromSequence": 1,
+   "toSequence": 2,
+   "scheduledRunSeconds": 264,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2396
+  },
+  {
+   "id": "SA:SA24->SA23",
+   "lineId": "SA",
+   "fromStationId": "SA24",
+   "toStationId": "SA23",
+   "fromSequence": 2,
+   "toSequence": 3,
+   "scheduledRunSeconds": 147,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1436
+  },
+  {
+   "id": "SA:SA23->SA22",
+   "lineId": "SA",
+   "fromStationId": "SA23",
+   "toStationId": "SA22",
+   "fromSequence": 3,
+   "toSequence": 4,
+   "scheduledRunSeconds": 121,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1180
+  },
+  {
+   "id": "SA:SA22->SA21",
+   "lineId": "SA",
+   "fromStationId": "SA22",
+   "toStationId": "SA21",
+   "fromSequence": 4,
+   "toSequence": 5,
+   "scheduledRunSeconds": 125,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1219
+  },
+  {
+   "id": "SA:SA21->SA20",
+   "lineId": "SA",
+   "fromStationId": "SA21",
+   "toStationId": "SA20",
+   "fromSequence": 5,
+   "toSequence": 6,
+   "scheduledRunSeconds": 242,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2360
+  },
+  {
+   "id": "SA:SA20->SA19",
+   "lineId": "SA",
+   "fromStationId": "SA20",
+   "toStationId": "SA19",
+   "fromSequence": 6,
+   "toSequence": 7,
+   "scheduledRunSeconds": 142,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1388
+  },
+  {
+   "id": "SA:SA19->SA18",
+   "lineId": "SA",
+   "fromStationId": "SA19",
+   "toStationId": "SA18",
+   "fromSequence": 7,
+   "toSequence": 8,
+   "scheduledRunSeconds": 102,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 996
+  },
+  {
+   "id": "SA:SA18->SA17",
+   "lineId": "SA",
+   "fromStationId": "SA18",
+   "toStationId": "SA17",
+   "fromSequence": 8,
+   "toSequence": 9,
+   "scheduledRunSeconds": 178,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1737
+  },
+  {
+   "id": "SA:SA17->SA15",
+   "lineId": "SA",
+   "fromStationId": "SA17",
+   "toStationId": "SA15",
+   "fromSequence": 9,
+   "toSequence": 10,
+   "scheduledRunSeconds": 247,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2402
+  },
+  {
+   "id": "SA:SA15->SA14",
+   "lineId": "SA",
+   "fromStationId": "SA15",
+   "toStationId": "SA14",
+   "fromSequence": 10,
+   "toSequence": 11,
+   "scheduledRunSeconds": 173,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1688
+  },
+  {
+   "id": "SA:SA14->SA12",
+   "lineId": "SA",
+   "fromStationId": "SA14",
+   "toStationId": "SA12",
+   "fromSequence": 11,
+   "toSequence": 12,
+   "scheduledRunSeconds": 262,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 2361
+  },
+  {
+   "id": "SA:SA12->SA10",
+   "lineId": "SA",
+   "fromStationId": "SA12",
+   "toStationId": "SA10",
+   "fromSequence": 12,
+   "toSequence": 13,
+   "scheduledRunSeconds": 355,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 3279
+  },
+  {
+   "id": "SA:SA10->SA9",
+   "lineId": "SA",
+   "fromStationId": "SA10",
+   "toStationId": "SA9",
+   "fromSequence": 13,
+   "toSequence": 14,
+   "scheduledRunSeconds": 151,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1476
+  },
+  {
+   "id": "SA:SA9->SA7",
+   "lineId": "SA",
+   "fromStationId": "SA9",
+   "toStationId": "SA7",
+   "fromSequence": 14,
+   "toSequence": 15,
+   "scheduledRunSeconds": 357,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 3298
+  },
+  {
+   "id": "SA:SA7->SA6",
+   "lineId": "SA",
+   "fromStationId": "SA7",
+   "toStationId": "SA6",
+   "fromSequence": 15,
+   "toSequence": 16,
+   "scheduledRunSeconds": 127,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1236
+  },
+  {
+   "id": "SA:SA6->SA5",
+   "lineId": "SA",
+   "fromStationId": "SA6",
+   "toStationId": "SA5",
+   "fromSequence": 16,
+   "toSequence": 17,
+   "scheduledRunSeconds": 193,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1884
+  },
+  {
+   "id": "SA:SA5->SA3",
+   "lineId": "SA",
+   "fromStationId": "SA5",
+   "toStationId": "SA3",
+   "fromSequence": 17,
+   "toSequence": 18,
+   "scheduledRunSeconds": 168,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1637
+  },
+  {
+   "id": "SA:SA3->SA2",
+   "lineId": "SA",
+   "fromStationId": "SA3",
+   "toStationId": "SA2",
+   "fromSequence": 18,
+   "toSequence": 19,
+   "scheduledRunSeconds": 140,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1366
+  },
+  {
+   "id": "SA:SA2->SA1",
+   "lineId": "SA",
+   "fromStationId": "SA2",
+   "toStationId": "SA1",
+   "fromSequence": 19,
+   "toSequence": 20,
+   "scheduledRunSeconds": 116,
+   "scheduledDwellSeconds": 18,
+   "lengthMeters": 1133
+  }
+ ]
+}

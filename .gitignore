@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local caches (never source)
+.npm-cache/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log

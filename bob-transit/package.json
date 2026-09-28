@@ -1,0 +1,50 @@
+{
+  "name": "bob-transit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "allowScripts": [
+    "protobufjs"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "graph:build": "tsx scripts/build-graph.ts",
+    "eval": "tsx eval/run-eval.ts",
+    "ingest": "tsx worker/ingest.ts",
+    "replay": "tsx scripts/replay-incident.ts",
+    "verify:all": "bash scripts/verify-all.sh"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.8",
+    "adm-zip": "^0.6.1",
+    "clsx": "^2.1.1",
+    "csv-parse": "^7.0.3",
+    "date-fns": "^4.4.0",
+    "maplibre-gl": "^6.11.2",
+    "next": "^15.5.26",
+    "pg": "^8.23.0",
+    "protobufjs": "^8.8.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.3",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "pdfjs-dist": "^6.3.289",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.2"
+  }
+}
