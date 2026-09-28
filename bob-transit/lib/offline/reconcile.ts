@@ -9,10 +9,15 @@
  * It is pure: no network, no clock. `since` and `serverTime` come from the caller.
  */
 
-import type { ReconcileResponse } from "@/lib/contracts/api";
+import type { ReconcileRequest, ReconcileResponse } from "@/lib/contracts/api";
 import type { DisruptionSignal, SignalStatus } from "@/lib/contracts/signal";
 import type { RiskOverlay } from "@/lib/contracts/risk";
 import { formatClockTime, type StalenessLocale } from "./staleness";
+
+/** Build the frozen `ReconcileRequest` body from a cursor. */
+export function toReconcileRequest(since: string): ReconcileRequest {
+  return { since };
+}
 
 /** A signal is "terminal" once it can no longer be acted on. */
 const TERMINAL_STATUSES: readonly SignalStatus[] = ["CLEARED", "REJECTED"];
@@ -283,4 +288,118 @@ function mergeNextSignals(
     if (a.updatedAt !== b.updatedAt) return a.updatedAt < b.updatedAt ? 1 : -1;
     return compare(a.id, b.id);
   });
+}
+
+/* -------------------------------------------------------------------------- */
+/* Applying a server-computed ReconcileResponse                                */
+/* -------------------------------------------------------------------------- */
+
+export interface ApplyServerReconcileResult {
+  nextSignals: DisruptionSignal[];
+  changes: ReconcileChange[];
+  summary: string;
+}
+
+/**
+ * Merge a server-computed `ReconcileResponse` into the device's cached signal
+ * set. This is the counterpart of `reconcile()` for the `GET /api/reconcile`
+ * route: the server did the diff, the device applies it locally.
+ *
+ * `changedSignals` is expected to include newly created signals (a signal created
+ * after the cursor also has `updatedAt` past it); `newSignalIds` says which of
+ * them the device had never seen.
+ */
+export function applyServerReconcile(
+  cachedSignals: readonly DisruptionSignal[],
+  response: ReconcileResponse,
+  options: { locale?: StalenessLocale; since?: string } = {},
+): ApplyServerReconcileResult {
+  const locale = options.locale ?? "en";
+  const cachedById = byId(cachedSignals);
+  const cleared = new Set(response.clearedSignalIds);
+  const newIds = new Set(response.newSignalIds);
+  const changes: ReconcileChange[] = [];
+
+  const replacements = new Map<string, DisruptionSignal>();
+  for (const signal of response.changedSignals) {
+    replacements.set(signal.id, signal);
+    const previous = cachedById.get(signal.id);
+    if (!previous || newIds.has(signal.id)) {
+      changes.push({
+        signalId: signal.id,
+        kind: "NEW",
+        previousConfidence: null,
+        confidence: signal.confidence.value,
+        previousStatus: null,
+        status: signal.status,
+        summary: describeChange("NEW", null, signal, locale),
+      });
+      continue;
+    }
+    const kind = classifyChange(previous, signal) ?? "UPDATED";
+    changes.push({
+      signalId: signal.id,
+      kind,
+      previousConfidence: previous.confidence.value,
+      confidence: signal.confidence.value,
+      previousStatus: previous.status,
+      status: signal.status,
+      summary: describeChange(kind, previous, signal, locale),
+    });
+  }
+
+  for (const id of response.clearedSignalIds) {
+    const previous = cachedById.get(id);
+    if (previous && isTerminalStatus(previous.status)) continue;
+    changes.push({
+      signalId: id,
+      kind: "CLEARED",
+      previousConfidence: previous?.confidence.value ?? null,
+      confidence: null,
+      previousStatus: previous?.status ?? null,
+      status: null,
+      summary: describeChange("CLEARED", previous ?? null, null, locale),
+    });
+  }
+
+  const next = new Map<string, DisruptionSignal>();
+  for (const signal of cachedSignals) {
+    if (cleared.has(signal.id)) continue;
+    if (isTerminalStatus(signal.status)) continue;
+    next.set(signal.id, signal);
+  }
+  for (const [id, signal] of replacements) {
+    if (isTerminalStatus(signal.status)) {
+      next.delete(id);
+      continue;
+    }
+    next.set(id, signal);
+  }
+
+  changes.sort((a, b) => compare(a.signalId, b.signalId));
+  const nextSignals = [...next.values()].sort((a, b) => {
+    if (a.updatedAt !== b.updatedAt) return a.updatedAt < b.updatedAt ? 1 : -1;
+    return compare(a.id, b.id);
+  });
+
+  const newCount = changes.filter((change) => change.kind === "NEW").length;
+  const clearedCount = changes.filter((change) => change.kind === "CLEARED").length;
+  const updatedCount = changes.length - newCount - clearedCount;
+  const counts: string[] = [];
+  if (newCount > 0) counts.push(locale === "ms" ? `${newCount} baharu` : `${newCount} new`);
+  if (clearedCount > 0) {
+    counts.push(locale === "ms" ? `${clearedCount} selesai` : `${clearedCount} cleared`);
+  }
+  if (updatedCount > 0) {
+    counts.push(locale === "ms" ? `${updatedCount} dikemas kini` : `${updatedCount} updated`);
+  }
+  const sinceClock = options.since ? formatClockTime(options.since) : null;
+  const summary =
+    counts.length === 0
+      ? locale === "ms"
+        ? "Tiada perubahan daripada pelayan."
+        : "No changes from the server."
+      : `${counts.join(", ")}${sinceClock ? (locale === "ms" ? ` sejak ${sinceClock}` : ` since ${sinceClock}`) : ""}.`;
+
+  return { nextSignals, changes, summary };
 }

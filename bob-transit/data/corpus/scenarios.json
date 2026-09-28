@@ -1,0 +1,213 @@
+{
+  "corpusVersion": "1.0.0",
+  "capturedFor": "Named, reproducible end-to-end scenarios for tests/signals/**",
+  "note": "Each scenario pins its own `now`, so every assertion is clock-independent. `expect` values are the contract the Verifier must honour; `tests/signals/pipeline.test.ts` asserts them. signalCount 0 means SILENCE, which is a correct answer, not a failure.",
+  "scenarios": [
+    {
+      "id": "kj-signal-fault-cluster",
+      "title": "Three independent witnesses, one segment",
+      "description": "Genuine multi-witness cluster on the Kelana Jaya Line between KLCC and Ampang Park. No official source yet — this is the early-warning case the product exists for.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": ["soc-kj-sig-001", "soc-kj-sig-002", "soc-kj-sig-003"],
+      "expect": {
+        "signalCount": 1,
+        "issueType": "SIGNAL_FAULT",
+        "resolution": "RESOLVED",
+        "minConfidence": 0.4,
+        "maxConfidence": 0.5,
+        "band": "MODERATE",
+        "socialDistinctAuthors": 3,
+        "status": "REPORTED",
+        "minSegmentCount": 2
+      }
+    },
+    {
+      "id": "kj-escalation-four-witnesses",
+      "title": "A fourth independent witness raises confidence",
+      "description": "Same incident with a fourth distinct author. Confidence must be strictly higher than kj-signal-fault-cluster — more corroboration never lowers it.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": ["soc-kj-sig-001", "soc-kj-sig-002", "soc-kj-sig-003", "soc-kj-sig-004"],
+      "expect": {
+        "signalCount": 1,
+        "issueType": "SIGNAL_FAULT",
+        "resolution": "RESOLVED",
+        "minConfidence": 0.5,
+        "maxConfidence": 0.6,
+        "band": "MODERATE",
+        "socialDistinctAuthors": 4,
+        "status": "REPORTED"
+      }
+    },
+    {
+      "id": "kj-official-confirmation",
+      "title": "Operator confirms — the lead-time metric",
+      "description": "The three social witnesses plus the 08:52 KENYATAAN MEDIA. Official confirmation must raise confidence sharply and set operatorNotifiedAt so leadTimeMinutes can be derived.",
+      "now": "2024-03-05T09:10:00+08:00",
+      "sourceIds": [
+        "soc-kj-sig-001",
+        "soc-kj-sig-002",
+        "soc-kj-sig-003",
+        "off-kj-sig-confirm-001"
+      ],
+      "expect": {
+        "signalCount": 1,
+        "issueType": "SIGNAL_FAULT",
+        "resolution": "RESOLVED",
+        "minConfidence": 0.9,
+        "maxConfidence": 1.0,
+        "band": "VERY_HIGH",
+        "socialDistinctAuthors": 3,
+        "officialSources": 1,
+        "status": "CONFIRMED",
+        "operatorNotifiedAt": "2024-03-05T08:52:00+08:00",
+        "leadTimeMinutes": 47
+      }
+    },
+    {
+      "id": "official-alone",
+      "title": "Official statement with no social evidence",
+      "description": "An OFFICIAL_STATEMENT is high-precision and high-latency. On its own it is still a full confirmation.",
+      "now": "2024-03-05T09:10:00+08:00",
+      "sourceIds": ["off-kj-sig-confirm-001"],
+      "expect": {
+        "signalCount": 1,
+        "issueType": "SIGNAL_FAULT",
+        "resolution": "RESOLVED",
+        "minConfidence": 0.85,
+        "maxConfidence": 0.95,
+        "band": "VERY_HIGH",
+        "status": "CONFIRMED"
+      }
+    },
+    {
+      "id": "repost-storm-one-author",
+      "title": "Six reposts of one original are ONE witness",
+      "description": "One original post plus five reposts with explicit original-author attribution. Distinct-author counting must collapse all six to one, leaving confidence below the reportable threshold — silence, not a signal.",
+      "now": "2024-03-05T08:10:00+08:00",
+      "sourceIds": [
+        "soc-repost-orig",
+        "soc-repost-002",
+        "soc-repost-003",
+        "soc-repost-004",
+        "soc-repost-005",
+        "soc-repost-006"
+      ],
+      "expect": {
+        "signalCount": 0,
+        "distinctSocialAuthorsAfterCollapse": 1
+      }
+    },
+    {
+      "id": "sarcasm-and-jokes",
+      "title": "Sarcasm and jokes are not evidence",
+      "description": "Mock praise, absurd alternatives and meme framing about a real line. These are the posts that a sentiment filter would score as the strongest negative evidence. They must be dropped from corroboration entirely.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": ["soc-sarc-001", "soc-sarc-002", "soc-sarc-003", "soc-sarc-004"],
+      "expect": {
+        "signalCount": 0,
+        "allRejected": true,
+        "maxQualityMultiplier": 0.15
+      }
+    },
+    {
+      "id": "stale-throwback",
+      "title": "Quoting an old incident is not a new incident",
+      "description": "Throwback posts, a screenshot of the 2021 Kelana Jaya closure, and a 'last week' reference. All must be rejected as stale rather than reported as a live disruption.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": ["soc-stale-001", "soc-stale-002", "soc-stale-003"],
+      "expect": {
+        "signalCount": 0,
+        "allRejected": true
+      }
+    },
+    {
+      "id": "ambiguous-klang",
+      "title": "Ambiguous place name refuses to pick",
+      "description": "'Klang' matches three distinct physical stations (Pasar Klang, Bandar Baru Klang, Klang Jaya). The Verifier must return UNRESOLVED with every candidate segment listed, never a silent pick.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": ["soc-amb-001", "soc-amb-002", "soc-amb-003"],
+      "expect": {
+        "signalCount": 1,
+        "resolution": "UNRESOLVED",
+        "minConfidence": 0.3,
+        "maxConfidence": 0.45,
+        "band": "MODERATE",
+        "socialDistinctAuthors": 3,
+        "minUnresolvedCandidates": 6
+      }
+    },
+    {
+      "id": "line-wide-kelana-jaya",
+      "title": "A line is not a segment",
+      "description": "'LALUAN KELANA JAYA' names a line, not a segment. The Verifier must refuse to choose one and list every candidate segment on the line.",
+      "now": "2024-03-05T08:30:00+08:00",
+      "sourceIds": ["soc-line-001", "soc-line-002", "soc-line-003"],
+      "expect": {
+        "signalCount": 1,
+        "resolution": "UNRESOLVED",
+        "issueType": "DELAY",
+        "lineIds": ["KJ"],
+        "unresolvedCandidateCount": 72,
+        "minConfidence": 0.3,
+        "maxConfidence": 0.45
+      }
+    },
+    {
+      "id": "single-anecdote-silence",
+      "title": "One post is an anecdote",
+      "description": "A single report of a broken lift at KLCC. Real, but a single post cannot clear the reportable threshold.",
+      "now": "2024-03-05T09:30:00+08:00",
+      "sourceIds": ["soc-single-001"],
+      "expect": {
+        "signalCount": 0
+      }
+    },
+    {
+      "id": "realtime-only-is-weak",
+      "title": "Realtime telemetry is position, not health",
+      "description": "Two stalled-vehicle observations, one platform-crowding observation and one absence-of-vehicle observation. The realtime channel is capped at 0.15, so this stays silent. Absence of a vehicle contributes nothing at all.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": ["rt-kj-stall-001", "rt-kj-stall-002", "rt-kj-absent-001", "rt-kj-crowd-001"],
+      "expect": {
+        "signalCount": 0,
+        "realtimeChannelCap": 0.15
+      }
+    },
+    {
+      "id": "official-denial-suppresses-noise",
+      "title": "An official 'service normal' beats three complaints",
+      "description": "Three social complaints plus an official statement that the line is running normally. Social confidence must be heavily discounted and the claim must not be reported.",
+      "now": "2024-03-05T09:40:00+08:00",
+      "sourceIds": ["soc-denial-001", "soc-denial-002", "soc-denial-003", "off-kj-normal-001"],
+      "expect": {
+        "signalCount": 0,
+        "officialDenialApplied": true
+      }
+    },
+    {
+      "id": "mrt-kajang-planned-track-works",
+      "title": "Official statement about an inter-station track closure",
+      "description": "An explicit 'antara stesen Maluri dan Taman Pertama' claim on the MRT Kajang Line. Both endpoints resolve on one line, so the segment is identified precisely and the canonical line id must be KGL (never MRT).",
+      "now": "2024-03-07T18:00:00+08:00",
+      "sourceIds": ["off-kgl-track-001"],
+      "expect": {
+        "signalCount": 1,
+        "issueType": "TRACK_FAULT",
+        "resolution": "RESOLVED",
+        "lineIds": ["KGL"],
+        "segmentIds": ["KGL:KG22->KG23", "KGL:KG23->KG22"],
+        "status": "CONFIRMED"
+      }
+    },
+    {
+      "id": "empty-corpus",
+      "title": "No evidence at all",
+      "description": "Silence is a valid and correct answer. An empty input must yield an empty signal list, not a placeholder.",
+      "now": "2024-03-05T09:00:00+08:00",
+      "sourceIds": [],
+      "expect": {
+        "signalCount": 0
+      }
+    }
+  ]
+}

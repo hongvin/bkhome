@@ -15,7 +15,7 @@ SHELL := /bin/bash
 export npm_config_cache := $(CURDIR)/.npm-cache
 NPM := env -u npm_config_allow_scripts npm
 
-.PHONY: help install dev build start typecheck test graph eval replay verify-offline verify-all clean
+.PHONY: help install dev build start typecheck test graph eval replay verify-offline verify-router verify-all clean
 
 help:
 	@echo "Klang Valley Transit Reliability — make targets"
@@ -28,6 +28,7 @@ help:
 	@echo "  make eval            A1: precision/recall/median lead time; non-zero exit if coverage < 50%"
 	@echo "  make replay          A3: replay a historical disruption ingest->verify->impact->advisory"
 	@echo "  make verify-offline  A4: assert zero live external network calls on the demo path"
+	@echo "  make verify-router   A2: prove an injected incident changes the recommended route"
 	@echo "  make verify-all      run every acceptance check in sequence"
 
 install:
@@ -65,7 +66,12 @@ replay:
 verify-offline:
 	./node_modules/.bin/tsx scripts/verify-no-network.ts
 
-verify-all: typecheck graph test eval replay verify-offline
+# A2 — a synthetic incident must change the recommended route, offline, from the
+# cached graph artifact alone.
+verify-router:
+	./node_modules/.bin/tsx scripts/verify-router.ts
+
+verify-all: typecheck graph test verify-router eval replay verify-offline
 	@echo ""
 	@echo "=============================================="
 	@echo " ALL ACCEPTANCE CHECKS PASSED"

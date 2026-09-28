@@ -10,8 +10,8 @@
   "orientation": "portrait-primary",
   "start_url": "/",
   "scope": "/",
-  "theme_color": "#0b1220",
-  "background_color": "#0b1220",
+  "theme_color": "#0b0f14",
+  "background_color": "#0b0f14",
   "categories": ["travel", "navigation", "utilities"],
   "prefer_related_applications": false,
   "icons": [

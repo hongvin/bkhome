@@ -24,12 +24,23 @@ Recapture with (network required, one-shot, never run in tests):
 
 ```bash
 ./node_modules/.bin/tsx worker/scripts/capture-fixture.ts
+# write somewhere else instead of clobbering the pinned fixture:
+./node_modules/.bin/tsx worker/scripts/capture-fixture.ts --out=/tmp/new-sample.pb
 ```
+
+> **Recapturing invalidates pinned expectations.** `tests/worker/helpers.ts`
+> pins `FIXTURE_SHA256` and `FIXTURE_ENTITY_COUNT`, and
+> `tests/worker/decode.test.ts` asserts the exact first/second vehicle. Update
+> those in the same change, or the suite will (correctly) fail.
 
 ## Notes
 
 - `rapid-rail-kl` has **no** realtime vehicle-position feed; only bus categories
-  return data. `buildFeedUrl()` accepts the category as a parameter.
+  return data. `buildFeedUrl()` accepts the category as a parameter. Verified:
+  `--category=rapid-rail-kl` returns HTTP 404.
 - The endpoint answers `301` before `200`; the worker follows redirects.
+- The public endpoint rate-limits aggressive polling (HTTP 429 after many
+  requests in a minute). The worker reports this as `kind: "http", status: 429`
+  and exits non-zero without writing — which is the intended scheduler signal.
 - Tests that need a synthetic feed (empty header, unusable entities) encode one
   in-memory with `encodeFeedMessage()` from `worker/proto.ts`.

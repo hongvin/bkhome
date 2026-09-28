@@ -1,0 +1,349 @@
+{
+  "corpusVersion": "1.0.0",
+  "capturedFor": "Klang Valley transit reliability — ingest/verify fixtures",
+  "note": "Hand-authored, offline fixtures. Every failure mode the Verifier must survive is represented here: genuine multi-witness clusters, a repost storm from one original, sarcasm, jokes, throwback screenshots of the 2021/2022 Kelana Jaya closure, a line-wide claim with no segment, an ambiguous place name, and lone anecdotes. Nothing on the demo path touches the network. Timestamps are Asia/Kuala_Lumpur (+08:00) on Tuesday 2024-03-05, morning peak.",
+  "posts": [
+    {
+      "id": "soc-kj-sig-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:ali_kl",
+      "authorHandle": "@ali_kl",
+      "text": "LRT Kelana Jaya tergendala. Tren berhenti antara KLCC dan Ampang Park, dah 10 minit tak bergerak. Signal problem kot.",
+      "publishedAt": "2024-03-05T08:05:00+08:00",
+      "retrievedAt": "2024-03-05T08:05:40+08:00",
+      "url": "https://example.invalid/x/ali_kl/1001",
+      "language": "ms"
+    },
+    {
+      "id": "soc-kj-sig-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:siti_na",
+      "authorHandle": "@siti_na",
+      "text": "Stesen Ampang Park penuh sesak. Sistem isyarat rosak, tren tak bergerak sejak 15 minit. Masih belum pulih.",
+      "publishedAt": "2024-03-05T08:08:00+08:00",
+      "retrievedAt": "2024-03-05T08:08:35+08:00",
+      "url": "https://example.invalid/x/siti_na/2002",
+      "language": "ms"
+    },
+    {
+      "id": "soc-kj-sig-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:daniel_tan",
+      "authorHandle": "@daniel_tan",
+      "text": "Signal fault kat LRT Kelana Jaya line. Train stuck between KLCC and Ampang Park station, almost 20 minutes already. Belum pulih.",
+      "publishedAt": "2024-03-05T08:12:00+08:00",
+      "retrievedAt": "2024-03-05T08:12:50+08:00",
+      "url": "https://example.invalid/x/daniel_tan/3003",
+      "language": "en"
+    },
+    {
+      "id": "soc-kj-sig-004",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:farah_kl",
+      "authorHandle": "@farah_kl",
+      "text": "Dah 25 minit terperangkap dalam tren LRT Kelana Jaya dekat Ampang Park. Sistem isyarat rosak kata pengumuman.",
+      "publishedAt": "2024-03-05T08:15:00+08:00",
+      "retrievedAt": "2024-03-05T08:15:30+08:00",
+      "url": "https://example.invalid/x/farah_kl/4004",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-repost-orig",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:commuter_ina",
+      "authorHandle": "@commuter_ina",
+      "text": "MRT Kajang line tergendala di stesen Maluri. Tren tak bergerak sejak 20 minit. GANGGUAN PERKHIDMATAN.",
+      "publishedAt": "2024-03-05T07:40:00+08:00",
+      "retrievedAt": "2024-03-05T07:40:25+08:00",
+      "url": "https://example.invalid/x/commuter_ina/5005",
+      "language": "ms"
+    },
+    {
+      "id": "soc-repost-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:budak_lrt",
+      "authorHandle": "@budak_lrt",
+      "originalAuthorId": "tw:commuter_ina",
+      "originalAuthorHandle": "@commuter_ina",
+      "repostOfId": "soc-repost-orig",
+      "text": "RT @commuter_ina: MRT Kajang line tergendala di stesen Maluri. Tren tak bergerak sejak 20 minit. GANGGUAN PERKHIDMATAN.",
+      "publishedAt": "2024-03-05T07:42:00+08:00",
+      "retrievedAt": "2024-03-05T07:42:10+08:00",
+      "url": "https://example.invalid/x/budak_lrt/5006",
+      "language": "ms"
+    },
+    {
+      "id": "soc-repost-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:mrt_watch",
+      "authorHandle": "@mrt_watch",
+      "originalAuthorId": "tw:commuter_ina",
+      "originalAuthorHandle": "@commuter_ina",
+      "repostOfId": "soc-repost-orig",
+      "text": "RT @commuter_ina: MRT Kajang line tergendala di stesen Maluri. Tren tak bergerak sejak 20 minit. GANGGUAN PERKHIDMATAN.",
+      "publishedAt": "2024-03-05T07:43:00+08:00",
+      "retrievedAt": "2024-03-05T07:43:12+08:00",
+      "url": "https://example.invalid/x/mrt_watch/5007",
+      "language": "ms"
+    },
+    {
+      "id": "soc-repost-004",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:kl_update",
+      "authorHandle": "@kl_update",
+      "originalAuthorId": "tw:commuter_ina",
+      "originalAuthorHandle": "@commuter_ina",
+      "repostOfId": "soc-repost-orig",
+      "text": "RT @commuter_ina: MRT Kajang line tergendala di stesen Maluri. Tren tak bergerak sejak 20 minit. GANGGUAN PERKHIDMATAN.",
+      "publishedAt": "2024-03-05T07:44:00+08:00",
+      "retrievedAt": "2024-03-05T07:44:05+08:00",
+      "url": "https://example.invalid/x/kl_update/5008",
+      "language": "ms"
+    },
+    {
+      "id": "soc-repost-005",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:transit_fan",
+      "authorHandle": "@transit_fan",
+      "originalAuthorId": "tw:commuter_ina",
+      "originalAuthorHandle": "@commuter_ina",
+      "repostOfId": "soc-repost-orig",
+      "text": "RT @commuter_ina: MRT Kajang line tergendala di stesen Maluri. Tren tak bergerak sejak 20 minit. GANGGUAN PERKHIDMATAN.",
+      "publishedAt": "2024-03-05T07:45:00+08:00",
+      "retrievedAt": "2024-03-05T07:45:30+08:00",
+      "url": "https://example.invalid/x/transit_fan/5009",
+      "language": "ms"
+    },
+    {
+      "id": "soc-repost-006",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:news_bot_kl",
+      "authorHandle": "@news_bot_kl",
+      "originalAuthorId": "tw:commuter_ina",
+      "originalAuthorHandle": "@commuter_ina",
+      "repostOfId": "soc-repost-orig",
+      "text": "Repost: MRT Kajang line tergendala di stesen Maluri. Tren tak bergerak sejak 20 minit. GANGGUAN PERKHIDMATAN. Credit: @commuter_ina",
+      "publishedAt": "2024-03-05T07:47:00+08:00",
+      "retrievedAt": "2024-03-05T07:47:20+08:00",
+      "url": "https://example.invalid/x/news_bot_kl/5010",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-sarc-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:sarcastic_ah",
+      "authorHandle": "@sarcastic_ah",
+      "text": "TERBAIK LA RAPID KL. LRT Kelana Jaya delay 40 minit, memang world class service. /s",
+      "publishedAt": "2024-03-05T08:20:00+08:00",
+      "retrievedAt": "2024-03-05T08:20:30+08:00",
+      "url": "https://example.invalid/x/sarcastic_ah/6001",
+      "language": "ms"
+    },
+    {
+      "id": "soc-sarc-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:joker_kl",
+      "authorHandle": "@joker_kl",
+      "text": "Aku rasa nak beli basikal. LRT Kelana Jaya macam ni lagi cepat jalan kaki 😂😂 #prank",
+      "publishedAt": "2024-03-05T08:22:00+08:00",
+      "retrievedAt": "2024-03-05T08:22:15+08:00",
+      "url": "https://example.invalid/x/joker_kl/6002",
+      "language": "ms"
+    },
+    {
+      "id": "soc-sarc-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:kelakar_my",
+      "authorHandle": "@kelakar_my",
+      "text": "Tahniah Rapid KL, rekod baru dunia! LRT rosak tapi masih boleh senyum. Memang efisien.",
+      "publishedAt": "2024-03-05T08:25:00+08:00",
+      "retrievedAt": "2024-03-05T08:25:10+08:00",
+      "url": "https://example.invalid/x/kelakar_my/6003",
+      "language": "ms"
+    },
+    {
+      "id": "soc-sarc-004",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:meme_central",
+      "authorHandle": "@meme_central",
+      "text": "LRT Kelana Jaya sekarang macam kapal karam. Naik perahu pun boleh sampai lebih awal 😂😂😂 lawak gila",
+      "publishedAt": "2024-03-05T08:27:00+08:00",
+      "retrievedAt": "2024-03-05T08:27:40+08:00",
+      "url": "https://example.invalid/x/meme_central/6004",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-stale-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:nostalgia_kl",
+      "authorHandle": "@nostalgia_kl",
+      "text": "Throwback 2022: LRT Kelana Jaya tutup 2 minggu, bas perantara percuma. Ingat tak? #tbt",
+      "publishedAt": "2024-03-05T08:30:00+08:00",
+      "retrievedAt": "2024-03-05T08:30:20+08:00",
+      "url": "https://example.invalid/x/nostalgia_kl/7001",
+      "language": "ms"
+    },
+    {
+      "id": "soc-stale-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:screenshot_king",
+      "authorHandle": "@screenshot_king",
+      "text": "Screenshot dari group WhatsApp: 'GANGGUAN PERKHIDMATAN LRT LALUAN KELANA JAYA — 2021'. Sila ambil perhatian.",
+      "publishedAt": "2024-03-05T08:33:00+08:00",
+      "retrievedAt": "2024-03-05T08:33:30+08:00",
+      "url": "https://example.invalid/x/screenshot_king/7002",
+      "language": "ms"
+    },
+    {
+      "id": "soc-stale-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:old_news_bot",
+      "authorHandle": "@old_news_bot",
+      "text": "Minggu lepas LRT Kelana Jaya ada gangguan isyarat di KLCC. Sekarang dah ok ke belum?",
+      "publishedAt": "2024-03-05T08:36:00+08:00",
+      "retrievedAt": "2024-03-05T08:36:10+08:00",
+      "url": "https://example.invalid/x/old_news_bot/7003",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-amb-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:klang_local",
+      "authorHandle": "@klang_local",
+      "text": "Stesen Klang penuh sesak pagi ini. Tren lambat 15 minit, orang beratur sampai luar.",
+      "publishedAt": "2024-03-05T08:40:00+08:00",
+      "retrievedAt": "2024-03-05T08:40:30+08:00",
+      "url": "https://example.invalid/x/klang_local/8001",
+      "language": "ms"
+    },
+    {
+      "id": "soc-amb-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:pengguna_klang",
+      "authorHandle": "@pengguna_klang",
+      "text": "Klang: kelewatan 20 minit, platform sesak teruk.",
+      "publishedAt": "2024-03-05T08:44:00+08:00",
+      "retrievedAt": "2024-03-05T08:44:15+08:00",
+      "url": "https://example.invalid/x/pengguna_klang/8002",
+      "language": "ms"
+    },
+    {
+      "id": "soc-amb-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:warga_klang",
+      "authorHandle": "@warga_klang",
+      "text": "Stesen Klang sesak, tren lambat lagi hari ini.",
+      "publishedAt": "2024-03-05T08:47:00+08:00",
+      "retrievedAt": "2024-03-05T08:47:20+08:00",
+      "url": "https://example.invalid/x/warga_klang/8003",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-line-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:kj_rider",
+      "authorHandle": "@kj_rider",
+      "text": "LALUAN KELANA JAYA terjejas teruk pagi ini. Tren lambat 30 minit.",
+      "publishedAt": "2024-03-05T07:55:00+08:00",
+      "retrievedAt": "2024-03-05T07:55:20+08:00",
+      "url": "https://example.invalid/x/kj_rider/9001",
+      "language": "ms"
+    },
+    {
+      "id": "soc-line-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:kj_daily",
+      "authorHandle": "@kj_daily",
+      "text": "Laluan Kelana Jaya lambat lagi. Dah 3 hari berturut-turut.",
+      "publishedAt": "2024-03-05T07:58:00+08:00",
+      "retrievedAt": "2024-03-05T07:58:30+08:00",
+      "url": "https://example.invalid/x/kj_daily/9002",
+      "language": "ms"
+    },
+    {
+      "id": "soc-line-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:kj_commuter",
+      "authorHandle": "@kj_commuter",
+      "text": "LALUAN KELANA JAYA: kelewatan 25 minit, tren tidak berhenti di beberapa stesen.",
+      "publishedAt": "2024-03-05T08:01:00+08:00",
+      "retrievedAt": "2024-03-05T08:01:25+08:00",
+      "url": "https://example.invalid/x/kj_commuter/9003",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-single-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:solo_user",
+      "authorHandle": "@solo_user",
+      "text": "Lif rosak di stesen KLCC, kena naik tangga. Penat.",
+      "publishedAt": "2024-03-05T09:00:00+08:00",
+      "retrievedAt": "2024-03-05T09:00:30+08:00",
+      "url": "https://example.invalid/x/solo_user/1101",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-denial-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:noise_1",
+      "authorHandle": "@noise_1",
+      "text": "LRT Kelana Jaya lambat lagi pagi ini, dah 20 minit tunggu.",
+      "publishedAt": "2024-03-05T09:20:00+08:00",
+      "retrievedAt": "2024-03-05T09:20:30+08:00",
+      "url": "https://example.invalid/x/noise_1/1201",
+      "language": "ms"
+    },
+    {
+      "id": "soc-denial-002",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:noise_2",
+      "authorHandle": "@noise_2",
+      "text": "Kelewatan LRT Kelana Jaya teruk sangat hari ini. GANGGUAN PERKHIDMATAN lagi.",
+      "publishedAt": "2024-03-05T09:22:00+08:00",
+      "retrievedAt": "2024-03-05T09:22:20+08:00",
+      "url": "https://example.invalid/x/noise_2/1202",
+      "language": "ms"
+    },
+    {
+      "id": "soc-denial-003",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:noise_3",
+      "authorHandle": "@noise_3",
+      "text": "LRT Kelana Jaya delay 25 minit. Kenapa takde pengumuman?",
+      "publishedAt": "2024-03-05T09:25:00+08:00",
+      "retrievedAt": "2024-03-05T09:25:10+08:00",
+      "url": "https://example.invalid/x/noise_3/1203",
+      "language": "ms"
+    },
+
+    {
+      "id": "soc-zh-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:ah_hong",
+      "authorHandle": "@ah_hong",
+      "text": "Kelana Jaya 线又坏了，火车停在 KLCC 站，已经等了二十分钟。",
+      "publishedAt": "2024-03-05T08:16:00+08:00",
+      "retrievedAt": "2024-03-05T08:16:30+08:00",
+      "url": "https://example.invalid/x/ah_hong/1301",
+      "language": "zh"
+    },
+    {
+      "id": "soc-ta-001",
+      "sourceClass": "SOCIAL",
+      "authorId": "tw:murugan",
+      "authorHandle": "@murugan",
+      "text": "Kelana Jaya ரயில் KLCC நிலையத்தில் நின்றுவிட்டது, இருபது நிமிடம் காத்திருக்கிறோம்.",
+      "publishedAt": "2024-03-05T08:17:00+08:00",
+      "retrievedAt": "2024-03-05T08:17:30+08:00",
+      "url": "https://example.invalid/x/murugan/1302",
+      "language": "ta"
+    }
+  ]
+}

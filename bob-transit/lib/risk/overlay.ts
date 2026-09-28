@@ -285,16 +285,17 @@ export function createOverlayRiskPenaltyFn(
   return (input: RiskPenaltyInput): RiskPenalty => {
     const risk = lookup(input.segmentId);
     if (!risk) {
-      // Healthy segment: no signal, no cost. Still goes through the frozen
-      // function so the returned shape is always a full RiskPenalty.
-      return base(input);
+      // The overlay is the authority on which segments are degraded. A segment it
+      // does not mention is healthy, so it is priced at zero regardless of what
+      // the caller put in the input's severity/confidence placeholders.
+      return base({ ...input, severity: "INFO", issueType: "UNKNOWN", confidence: 0 });
     }
     return base({
       ...input,
       severity: risk.severity,
       issueType: risk.issueType,
-      // The overlay is authoritative on how bad and how likely this segment is.
-      // A caller-supplied confidence can only raise it, never suppress it.
+      // A caller-supplied confidence can only raise the overlay's, never suppress
+      // it.
       confidence: Math.max(clamp01(input.confidence), risk.confidence),
     });
   };

@@ -9,7 +9,7 @@
  * The HTTP fetcher is injectable, so the whole flow is testable with zero network.
  */
 
-import type { ApiResponse, SignalsResponse } from "@/lib/contracts/api";
+import type { ApiResponse, ReconcileResponse, SignalsResponse } from "@/lib/contracts/api";
 import type { DisruptionSignal } from "@/lib/contracts/signal";
 import type { RiskOverlay } from "@/lib/contracts/risk";
 import type { KeyValueStore } from "./store";
@@ -146,9 +146,9 @@ export async function reconcileOnReconnect(options: ReconnectOptions): Promise<R
 /* -------------------------------------------------------------------------- */
 
 export interface HttpServerStateFetcherOptions {
-  /** Route returning `ApiResponse<SignalsResponse>`. */
+  /** Route returning `ApiResponse<SignalsResponse>`. Default `"/api/signals"`. */
   signalsUrl?: string;
-  /** Route returning `ApiResponse<RiskOverlayResponse>`. */
+  /** Route returning `ApiResponse<RiskOverlayResponse>`. Default `"/api/risk"`. */
   overlayUrl?: string;
   /** Injectable for tests. Defaults to `globalThis.fetch`. */
   fetchImpl?: typeof fetch;
@@ -164,14 +164,14 @@ function isApiOk<T>(value: unknown): value is { ok: true; data: T; meta: { asOf:
  * Reads the server's signal set and overlay from the frozen API envelope.
  *
  * NOTE FOR THE ORCHESTRATOR: this expects two GET routes — `/api/signals` and
- * `/api/risk/overlay` — each returning `ApiResponse<...>` per `lib/contracts/api.ts`.
- * Route files live under `app/`, which S5 owns.
+ * `/api/risk` — each returning `ApiResponse<...>` per `lib/contracts/api.ts`.
+ * Both already exist under `app/api/` (S5's tree).
  */
 export function createHttpServerStateFetcher(
   options: HttpServerStateFetcherOptions = {},
 ): ServerStateFetcher {
   const signalsUrl = options.signalsUrl ?? "/api/signals";
-  const overlayUrl = options.overlayUrl ?? "/api/risk/overlay";
+  const overlayUrl = options.overlayUrl ?? "/api/risk";
 
   return async (since, init) => {
     const fetchImpl = options.fetchImpl ?? globalThis.fetch;
@@ -217,3 +217,54 @@ export function createHttpServerStateFetcher(
 }
 
 export type { ApiResponse };
+
+/* -------------------------------------------------------------------------- */
+/* The server-diff route (`GET /api/reconcile`)                                */
+/* -------------------------------------------------------------------------- */
+
+export type ReconcileFetcher = (
+  since: string,
+  options?: { signal?: AbortSignal },
+) => Promise<ReconcileResponse>;
+
+export interface HttpReconcileFetcherOptions {
+  /** Route returning `ApiResponse<ReconcileResponse>`. Default `"/api/reconcile"`. */
+  url?: string;
+  /** Injectable for tests. Defaults to `globalThis.fetch`. */
+  fetchImpl?: typeof fetch;
+}
+
+/**
+ * Reads the server's own reconciliation diff. Pair it with `applyServerReconcile`
+ * to merge without refetching the whole signal set:
+ *
+ *     const cursor = (await cache.cursor()) ?? EPOCH_CURSOR;
+ *     const response = await createHttpReconcileFetcher()(cursor);
+ *     const { nextSignals, changes, summary } = applyServerReconcile(
+ *       cached?.signals ?? [], response, { since: cursor },
+ *     );
+ */
+export function createHttpReconcileFetcher(
+  options: HttpReconcileFetcherOptions = {},
+): ReconcileFetcher {
+  const url = options.url ?? "/api/reconcile";
+  return async (since, init) => {
+    const fetchImpl = options.fetchImpl ?? globalThis.fetch;
+    if (typeof fetchImpl !== "function") {
+      throw new Error("fetch is not available in this environment");
+    }
+    const response = await fetchImpl(`${url}?since=${encodeURIComponent(since)}`, {
+      signal: init?.signal,
+      credentials: "same-origin",
+      headers: { accept: "application/json" },
+    });
+    if (!response.ok) {
+      throw new Error(`reconcile request returned ${response.status}`);
+    }
+    const body: unknown = await response.json();
+    if (!isApiOk<ReconcileResponse>(body)) {
+      throw new Error("reconcile response is not an ApiOk<ReconcileResponse>");
+    }
+    return body.data;
+  };
+}

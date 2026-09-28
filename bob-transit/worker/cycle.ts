@@ -13,7 +13,7 @@ import {
   fetchFeedBytes,
   type FetchLike,
 } from "./client";
-import { FeedDecodeError, decodeVehiclePositions } from "./decode";
+import { FeedDecodeError, decodeVehiclePositions, type DecodeResult } from "./decode";
 import { jsonLogger, type Logger, type VehiclePositionRepository } from "./types";
 
 /**
@@ -192,7 +192,7 @@ export async function runIngestCycle(
   }
 
   // 2. Decode + normalize (pure, offline).
-  let decoded;
+  let decoded: DecodeResult;
   try {
     decoded = decodeVehiclePositions(bytes, { observedAt });
   } catch (err) {

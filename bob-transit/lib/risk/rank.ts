@@ -46,6 +46,15 @@
  * Transfers are charged because every interchange is an extra failure point
  * (missed connection, no through service), not because they are slow.
  *
+ * ONE ARRIVAL MODEL
+ * -----------------
+ * Per the orchestrator ruling, `lib/routing/reliability.ts::computeArrivalWindow`
+ * is the single canonical arrival model. This module CONSUMES `itinerary.arrival`
+ * and never recomputes it: the P90 the rider sees must be the P90 that drove the
+ * ranking. `expectedDelaySeconds` is read back from the itinerary, where it is the
+ * router's sum of our own `RiskPenalty.penaltySeconds` — the same mu the canonical
+ * window was built from.
+ *
  * TIME IS INJECTED. Nothing here reads the wall clock.
  */
 
@@ -68,7 +77,6 @@ import {
   MATERIAL_RISK_CONFIDENCE_THRESHOLD,
   SEVERITY_BASE_MULTIPLIER,
 } from "@/lib/contracts";
-import { computeArrivalWindow, computeDelayMoments, type SegmentDelayInput } from "./arrival";
 import { estimateGroundTransportFallback } from "./ground";
 import { isAvoidConfidence, isMaterialRisk } from "./penalty";
 
@@ -129,31 +137,18 @@ export function reliabilityBadgeFor(
 
 interface SegmentTraversal {
   segmentId: SegmentId;
-  /** Approximate scheduled run time for this segment. */
-  runSeconds: number;
-  /** Local seconds after midnight when the traversal starts. */
-  atTime: number;
 }
 
 /**
- * Every RIDE-segment traversal in the itinerary. A segment ridden twice is priced
- * twice, because the rider really does take the risk twice.
- *
- * The frozen `ItineraryLeg` carries `scheduledSeconds` for the whole leg and a
- * list of `segmentIds`, not a per-segment run time, so a leg's scheduled time is
- * split evenly across its segments. That is an approximation and it only affects
- * the *seconds* of expected delay, never the ranking: the reliability score uses
- * probabilities and frozen constants only.
+ * Every RIDE-segment traversal in the itinerary. A segment ridden twice is
+ * counted twice, because the rider really does take the risk twice.
  */
 function rideSegmentTraversals(itinerary: Itinerary): SegmentTraversal[] {
   const traversals: SegmentTraversal[] = [];
   for (const leg of itinerary.legs) {
     if (leg.kind !== "RIDE") continue;
-    const ids = leg.segmentIds ?? [];
-    if (ids.length === 0) continue;
-    const runSeconds = Math.max(0, leg.scheduledSeconds) / ids.length;
-    for (const segmentId of ids) {
-      traversals.push({ segmentId, runSeconds, atTime: leg.departureTime });
+    for (const segmentId of leg.segmentIds ?? []) {
+      traversals.push({ segmentId });
     }
   }
   return traversals;
@@ -172,11 +167,15 @@ export interface ItineraryAssessment {
   /** The single worst segment by probability x consequence, if any. */
   worstRisk: SegmentRisk | undefined;
   worstSegmentId: SegmentId | undefined;
-  delayInputs: SegmentDelayInput[];
 }
 
 /**
- * Score one itinerary. Pure: it reads only its arguments.
+ * Score one itinerary's RELIABILITY. Pure: it reads only its arguments.
+ *
+ * The arrival window is NOT computed here. Per the orchestrator ruling there is
+ * one canonical arrival model (`lib/routing/reliability.ts`), the router already
+ * ran it, and `itinerary.arrival` is what the rider sees. Ranking must therefore
+ * consume that window, never produce a rival one.
  */
 export function assessItinerary(
   itinerary: Itinerary,
@@ -184,7 +183,6 @@ export function assessItinerary(
 ): ItineraryAssessment {
   const traversals = rideSegmentTraversals(itinerary);
   const riskySegmentIds = new Set<SegmentId>();
-  const delayInputs: SegmentDelayInput[] = [];
 
   let hazardProduct = 1;
   let maxDegradationProbability = 0;
@@ -194,14 +192,7 @@ export function assessItinerary(
 
   for (const traversal of traversals) {
     const risk = riskLookup?.(traversal.segmentId);
-    if (!risk) {
-      delayInputs.push({
-        segmentId: traversal.segmentId,
-        scheduledRunSeconds: traversal.runSeconds,
-        degradationProbability: 0,
-      });
-      continue;
-    }
+    if (!risk) continue;
 
     const consequence = consequenceWeight(risk.severity, risk.issueType);
     const material = isMaterialRisk(risk.confidence) || isMaterialRisk(risk.degradationProbability);
@@ -222,17 +213,6 @@ export function assessItinerary(
       worstScore = severityWeighted;
       worstRisk = risk;
     }
-
-    delayInputs.push({
-      segmentId: risk.segmentId,
-      scheduledRunSeconds: traversal.runSeconds,
-      degradationProbability: risk.degradationProbability,
-      confidence: risk.confidence,
-      severity: risk.severity,
-      issueType: risk.issueType,
-      isOngoing: true,
-      atTime: traversal.atTime,
-    });
   }
 
   const journeyHazard = 1 - hazardProduct;
@@ -248,12 +228,14 @@ export function assessItinerary(
     reliabilityBadge,
     riskySegmentIds: [...riskySegmentIds].sort(),
     maxDegradationProbability,
-    expectedDelaySeconds: computeDelayMoments(delayInputs).meanSeconds,
+    // The canonical window's mean is `scheduled + mu`, and mu is the router's sum
+    // of our own `RiskPenalty.penaltySeconds`. Reading it back keeps the displayed
+    // expected delay and the displayed mean the same number by construction.
+    expectedDelaySeconds: Math.max(0, itinerary.expectedDelaySeconds),
     crossesAvoidThreshold,
     safe,
     worstRisk,
     worstSegmentId: worstRisk?.segmentId,
-    delayInputs,
   };
 }
 
@@ -297,9 +279,14 @@ function whyThisRank(
       slowerThanFastest > 0
         ? ` It is ${minutes(slowerThanFastest)} min slower than the fastest option; that is the trade reliability-first ranking makes.`
         : " It is also the fastest option.";
+    const unsafeNote = assessment.crossesAvoidThreshold
+      ? ` It crosses a segment above the ${Math.round(
+          AVOID_SEGMENT_CONFIDENCE_THRESHOLD * 100,
+        )}% confidence threshold and no candidate avoids it, so it is not recommended.`
+      : "";
     return `Ranked 1 of ${total}: reliability ${score} (${assessment.reliabilityBadge}) — ${riskClause(
       assessment,
-    )}. ${durationMin} min door to door, ${assessment.itinerary.transferCount} transfer(s).${trade}`;
+    )}. ${durationMin} min door to door, ${assessment.itinerary.transferCount} transfer(s).${trade}${unsafeNote}`;
   }
 
   const fasterThanTop =
@@ -386,23 +373,17 @@ export function rankItineraries(options: RankItinerariesOptions): RankingResult 
     assessments.set(itinerary.id, assessItinerary(itinerary, riskLookup));
   }
 
-  // Recompute arrival windows and total durations from the scheduled legs plus
-  // the risk overlay, so ranking never trusts a duration the router may have
-  // priced with a different penalty function.
+  // The arrival window is the router's canonical one and is CONSUMED, never
+  // recomputed: `Itinerary.arrival` is what flows to the UI, so it must also be
+  // what the ranking was computed against.
   const enriched: ItineraryAssessment[] = [];
   for (const assessment of assessments.values()) {
     const itinerary = assessment.itinerary;
-    const arrival = computeArrivalWindow({
-      departureTime: itinerary.departureTime,
-      scheduledDurationSeconds: sumScheduledSeconds(itinerary),
-      segments: assessment.delayInputs,
-    });
     enriched.push({
       ...assessment,
       itinerary: {
         ...itinerary,
-        arrival,
-        totalDurationSeconds: arrival.meanSeconds - itinerary.departureTime,
+        totalDurationSeconds: itinerary.arrival.meanSeconds - itinerary.departureTime,
         transferCount: countTransfers(itinerary),
         lineCount: countLines(itinerary),
       },
@@ -501,6 +482,11 @@ export function rankItineraries(options: RankItinerariesOptions): RankingResult 
     }))
     .sort((a, b) => (a.signalId < b.signalId ? -1 : a.signalId > b.signalId ? 1 : 0));
 
+  const finalAssessments = new Map<string, ItineraryAssessment>();
+  for (let index = 0; index < ranked.length; index += 1) {
+    finalAssessments.set(ranked[index].id, { ...sorted[index], itinerary: ranked[index] });
+  }
+
   return {
     itineraries: ranked,
     recommendedItineraryId,
@@ -508,7 +494,7 @@ export function rankItineraries(options: RankItinerariesOptions): RankingResult 
     fallback,
     whyThisCouldBeWrong: buildWhyThisCouldBeWrong({
       ranked,
-      assessments,
+      assessments: finalAssessments,
       noSafeAlternative,
       overlay,
       unresolvedSignalIds,
@@ -516,7 +502,7 @@ export function rankItineraries(options: RankItinerariesOptions): RankingResult 
     consideredSignals,
     computedOffline: options.computedOffline ?? overlay?.source === "cache",
     riskAsOf: overlay?.asOf ?? nowIso,
-    assessments,
+    assessments: finalAssessments,
   };
 }
 

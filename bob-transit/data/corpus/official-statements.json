@@ -1,0 +1,55 @@
+{
+  "corpusVersion": "1.0.0",
+  "capturedFor": "Klang Valley transit reliability — OFFICIAL_STATEMENT fixtures",
+  "note": "Hand-authored excerpts written in RapidKL/Prasarana's real 'KENYATAAN MEDIA' register, based on the phrasing of the archived myrapid.com.my statements in eval/archive/media-statements.json (e.g. 'PERKHIDMATAN LRT LALUAN KELANA JAYA TERJEJAS AKIBAT TREN TERKANDAS DI ANTARA STESEN LRT KL SENTRAL DAN PASAR SENI'). OFFICIAL_STATEMENT is high-precision and high-latency: it is a confirmation, never an early warning.",
+  "statements": [
+    {
+      "id": "off-kj-sig-confirm-001",
+      "sourceClass": "OFFICIAL_STATEMENT",
+      "title": "KENYATAAN MEDIA — GANGGUAN PERKHIDMATAN LRT LALUAN KELANA JAYA",
+      "text": "Rapid Rail ingin memaklumkan bahawa terdapat gangguan perkhidmatan di LRT Laluan Kelana Jaya akibat masalah sistem isyarat di antara stesen KLCC dan Ampang Park. Perkhidmatan tren telah dilambatkan dan bas perantara percuma disediakan. Kerja-kerja baik pulih sedang dijalankan. Kami memohon maaf atas kesulitan yang dialami.",
+      "publishedAt": "2024-03-05T08:52:00+08:00",
+      "retrievedAt": "2024-03-05T08:53:10+08:00",
+      "url": "https://example.invalid/myrapid/kenyataan-media/kj-signal-20240305",
+      "authorId": "org:rapid-rail",
+      "authorHandle": "@MyRapidKL",
+      "language": "ms"
+    },
+    {
+      "id": "off-kj-normal-001",
+      "sourceClass": "OFFICIAL_STATEMENT",
+      "title": "STATUS TERKINI — PERKHIDMATAN LRT LALUAN KELANA JAYA",
+      "text": "Status terkini setakat jam 9:30 malam: perkhidmatan LRT Laluan Kelana Jaya beroperasi seperti biasa. Tiada gangguan dilaporkan pada waktu ini. Terima kasih atas kesabaran anda.",
+      "publishedAt": "2024-03-05T09:30:00+08:00",
+      "retrievedAt": "2024-03-05T09:31:00+08:00",
+      "url": "https://example.invalid/myrapid/kenyataan-media/kj-normal-20240305",
+      "authorId": "org:rapid-rail",
+      "authorHandle": "@MyRapidKL",
+      "language": "ms"
+    },
+    {
+      "id": "off-kgl-track-001",
+      "sourceClass": "OFFICIAL_STATEMENT",
+      "title": "KENYATAAN MEDIA — KERJA-KERJA BAIK PULIH LANDASAN MRT LALUAN KAJANG",
+      "text": "Prasarana memaklumkan bahawa kerja-kerja baik pulih landasan di MRT Laluan Kajang antara stesen Maluri dan Taman Pertama akan dijalankan pada hujung minggu ini. Perkhidmatan tren akan dipendekkan dan bas perantara percuma akan disediakan. Sila rancang perjalanan anda.",
+      "publishedAt": "2024-03-07T17:00:00+08:00",
+      "retrievedAt": "2024-03-07T17:02:00+08:00",
+      "url": "https://example.invalid/myrapid/kenyataan-media/kgl-track-20240307",
+      "authorId": "org:prasarana",
+      "authorHandle": "@Prasarana_My",
+      "language": "ms"
+    },
+    {
+      "id": "off-brt-weather-001",
+      "sourceClass": "OFFICIAL_STATEMENT",
+      "title": "KENYATAAN MEDIA — GANGGUAN PERKHIDMATAN BRT SUNWAY AKIBAT CUACA",
+      "text": "Perkhidmatan BRT Laluan Sunway terjejas akibat hujan lebat dan banjir di Jalan Lagoon Selatan. Perkhidmatan dihentikan sementara sehingga keadaan selamat. Sila gunakan perkhidmatan alternatif.",
+      "publishedAt": "2024-03-06T18:10:00+08:00",
+      "retrievedAt": "2024-03-06T18:12:00+08:00",
+      "url": "https://example.invalid/myrapid/kenyataan-media/brt-weather-20240306",
+      "authorId": "org:rapid-bus",
+      "authorHandle": "@MyRapidKL",
+      "language": "ms"
+    }
+  ]
+}

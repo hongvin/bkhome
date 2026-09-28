@@ -1,0 +1,62 @@
+{
+  "corpusVersion": "1.0.0",
+  "capturedFor": "Klang Valley transit reliability — OFFICIAL_REALTIME fixtures",
+  "note": "Machine telemetry and platform sensors. The Verifier trusts this class for POSITION, never for HEALTH: a stalled vehicle is weak evidence of a service fault, and VEHICLE_ABSENT contributes ZERO evidence (absence of a vehicle is not evidence of a fault). Realtime alone must never clear the reportable threshold.",
+  "observations": [
+    {
+      "id": "rt-kj-stall-001",
+      "sourceClass": "OFFICIAL_REALTIME",
+      "observation": "VEHICLE_STALLED",
+      "observedLineId": "KJ",
+      "observedStationId": "KJ10",
+      "text": "Telemetry 08:06:28 — trainset 41 stationary at KLCC platform 1 for 240s (threshold 90s).",
+      "publishedAt": "2024-03-05T08:06:28+08:00",
+      "retrievedAt": "2024-03-05T08:06:31+08:00",
+      "language": "en"
+    },
+    {
+      "id": "rt-kj-stall-002",
+      "sourceClass": "OFFICIAL_REALTIME",
+      "observation": "VEHICLE_STALLED",
+      "observedLineId": "KJ",
+      "observedStationId": "KJ9",
+      "text": "Telemetry 08:09:02 — trainset 12 stationary at Ampang Park platform 2 for 300s (threshold 90s).",
+      "publishedAt": "2024-03-05T08:09:02+08:00",
+      "retrievedAt": "2024-03-05T08:09:05+08:00",
+      "language": "en"
+    },
+    {
+      "id": "rt-kj-absent-001",
+      "sourceClass": "OFFICIAL_REALTIME",
+      "observation": "VEHICLE_ABSENT",
+      "observedLineId": "KJ",
+      "observedStationId": "KJ8",
+      "text": "Telemetry 08:10:44 — no train observed passing Damai in the last 6 minutes.",
+      "publishedAt": "2024-03-05T08:10:44+08:00",
+      "retrievedAt": "2024-03-05T08:10:47+08:00",
+      "language": "en"
+    },
+    {
+      "id": "rt-kj-crowd-001",
+      "sourceClass": "OFFICIAL_REALTIME",
+      "observation": "PLATFORM_CROWD",
+      "observedLineId": "KJ",
+      "observedStationId": "KJ9",
+      "text": "Platform sensor 08:11:10 — Ampang Park platform 2 occupancy 96% of safe capacity.",
+      "publishedAt": "2024-03-05T08:11:10+08:00",
+      "retrievedAt": "2024-03-05T08:11:13+08:00",
+      "language": "en"
+    },
+    {
+      "id": "rt-kj-normal-001",
+      "sourceClass": "OFFICIAL_REALTIME",
+      "observation": "SERVICE_NORMAL",
+      "observedLineId": "KJ",
+      "observedStationId": "KJ15",
+      "text": "Telemetry 09:31:00 — headway at KL Sentral within scheduled band (240s +/- 30s).",
+      "publishedAt": "2024-03-05T09:31:00+08:00",
+      "retrievedAt": "2024-03-05T09:31:04+08:00",
+      "language": "en"
+    }
+  ]
+}

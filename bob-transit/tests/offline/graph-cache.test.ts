@@ -6,6 +6,7 @@ import {
   OfflineNoCacheError,
   defaultGraphFetcher,
   loadGraph,
+  type GraphRefreshOutcome,
 } from "@/lib/offline/graph-cache";
 import { MemoryKeyValueStore } from "@/lib/offline/store";
 import { makeGraph } from "./fixtures";
@@ -34,6 +35,16 @@ afterEach(() => {
   restoreFetch = null;
 });
 
+/** Narrow a scheduled background refresh without a non-null assertion. */
+async function settleRefresh(
+  refresh: Promise<GraphRefreshOutcome> | null,
+): Promise<GraphRefreshOutcome> {
+  if (refresh === null) {
+    throw new Error("expected a background refresh to have been scheduled");
+  }
+  return refresh;
+}
+
 describe("GraphCache round trip", () => {
   it("serialises, stores, loads and deep-equals the transit graph", async () => {
     const store = new MemoryKeyValueStore();
@@ -42,7 +53,7 @@ describe("GraphCache round trip", () => {
 
     expect(await cache.load()).toBeNull();
 
-    const envelope = await cache.save(graph, "2025-01-02T00:35:00.000Z");
+    const envelope = await cache.save(graph, "2025-01-02T00:35:00.000Z", { measure: true });
     expect(envelope.contractsVersion).toBe(CONTRACTS_VERSION);
     expect(envelope.builtAt).toBe(graph.builtAt);
     expect(envelope.byteSize).toBe(JSON.stringify(graph).length);
@@ -52,6 +63,19 @@ describe("GraphCache round trip", () => {
     expect(loaded?.graph).toEqual(graph);
     expect(loaded?.graph.stats.connectionCount).toBe(graph.connections.length);
     expect(loaded?.cachedAt).toBe("2025-01-02T00:35:00.000Z");
+  });
+
+  it("does not stringify a 29 MB graph on every save unless asked to measure", async () => {
+    const store = new MemoryKeyValueStore();
+    const cache = new GraphCache(store);
+    const envelope = await cache.save(makeGraph(), "2025-01-02T00:35:00.000Z");
+    expect(envelope.byteSize).toBeNull();
+
+    const measured = await cache.save(makeGraph(), "2025-01-02T00:35:00.000Z", {
+      byteSize: 29_305_974,
+    });
+    expect(measured.byteSize).toBe(29_305_974);
+    expect((await cache.inspect()).byteSize).toBe(29_305_974);
   });
 
   it("keeps the graph intact across a structured-clone boundary", async () => {
@@ -173,7 +197,7 @@ describe("loadGraph: cache first, network is an optimisation", () => {
     expect(result.label).toBe("as of 08:35, 7 min ago");
     expect(result.refresh).not.toBeNull();
 
-    const outcome = await result.refresh;
+    const outcome = await settleRefresh(result.refresh);
     expect(outcome.status).toBe("refreshed");
     expect(calls).toBe(1);
     expect((await cache.load())?.graph.warnings).toEqual(["fresh"]);
@@ -193,7 +217,7 @@ describe("loadGraph: cache first, network is an optimisation", () => {
       now: () => NOW,
     });
 
-    const outcome = await result.refresh;
+    const outcome = await settleRefresh(result.refresh);
     expect(outcome.status).toBe("failed");
     expect(outcome.error).toContain("upstream down");
     expect((await cache.load())?.graph.warnings).toEqual(["old"]);

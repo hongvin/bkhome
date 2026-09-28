@@ -18,8 +18,15 @@
 
 import type { LineId, SegmentId, StationId } from "@/lib/contracts";
 
-import type { NetworkIndex, NetworkStation } from "./network/build";
+import { extractBetweenMention, foldMalay } from "./malay-text";
+import {
+  type PhysicalPlace,
+  buildPlaces,
+} from "./network/build";
+import type { NetworkIndex } from "./network/build";
 import { isCanonicalLineId } from "./network/parse";
+
+export type { PhysicalPlace };
 
 /* ------------------------------------------------------------------ *
  * Normalisation
@@ -345,100 +352,6 @@ export function typoBudget(length: number): number {
 }
 
 /* ------------------------------------------------------------------ *
- * Physical places (interchange collapsing)
- * ------------------------------------------------------------------ */
-
-export interface PhysicalPlace {
-  key: string;
-  name: string;
-  stationIds: StationId[];
-  lineIds: LineId[];
-  lat: number;
-  lon: number;
-}
-
-function haversineMeters(aLat: number, aLon: number, bLat: number, bLon: number): number {
-  const R = 6_371_000;
-  const toRad = (d: number) => (d * Math.PI) / 180;
-  const dLat = toRad(bLat - aLat);
-  const dLon = toRad(bLon - aLon);
-  const s =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLon / 2) ** 2;
-  return 2 * R * Math.asin(Math.min(1, Math.sqrt(s)));
-}
-
-/**
- * Collapse platform-level StationIds into physical places.
- * Same normalised name OR within 250 m counts as one place. This is what makes
- * "Masjid Jamek" resolve to KJ13 + SP7 + AG7 as a single, unambiguous place.
- */
-export function buildPlaces(index: NetworkIndex): PhysicalPlace[] {
-  const parent = new Map<StationId, StationId>();
-  const find = (x: StationId): StationId => {
-    let root = x;
-    while (parent.get(root) !== root) root = parent.get(root) as StationId;
-    let cur = x;
-    while (parent.get(cur) !== root) {
-      const next = parent.get(cur) as StationId;
-      parent.set(cur, root);
-      cur = next;
-    }
-    return root;
-  };
-  const union = (a: StationId, b: StationId) => {
-    const ra = find(a);
-    const rb = find(b);
-    if (ra !== rb) parent.set(ra, rb);
-  };
-  for (const st of index.stations) parent.set(st.id, st.id);
-
-  const byName = new Map<string, StationId[]>();
-  for (const st of index.stations) {
-    const key = normalizeName(st.name);
-    const list = byName.get(key);
-    if (list) list.push(st.id);
-    else byName.set(key, [st.id]);
-  }
-  for (const ids of byName.values()) {
-    for (let i = 1; i < ids.length; i += 1) union(ids[0], ids[i]);
-  }
-  // Proximity pass: same place, differently spelled names.
-  const stations = index.stations;
-  for (let i = 0; i < stations.length; i += 1) {
-    for (let j = i + 1; j < stations.length; j += 1) {
-      if (find(stations[i].id) === find(stations[j].id)) continue;
-      if (haversineMeters(stations[i].lat, stations[i].lon, stations[j].lat, stations[j].lon) <= 250) {
-        union(stations[i].id, stations[j].id);
-      }
-    }
-  }
-
-  const groups = new Map<StationId, NetworkStation[]>();
-  for (const st of index.stations) {
-    const root = find(st.id);
-    const list = groups.get(root);
-    if (list) list.push(st);
-    else groups.set(root, [st]);
-  }
-  const places: PhysicalPlace[] = [];
-  for (const [root, members] of groups) {
-    const lineIds = new Set<LineId>();
-    for (const m of members) for (const l of m.lineIds) lineIds.add(l);
-    const longest = [...members].sort((a, b) => b.name.length - a.name.length)[0];
-    places.push({
-      key: `PLACE:${normalizeName(longest.name)}`,
-      name: longest.name,
-      stationIds: members.map((m) => m.id).sort(),
-      lineIds: [...lineIds].filter(isCanonicalLineId).sort(),
-      lat: members[0].lat,
-      lon: members[0].lon,
-    });
-  }
-  return places.sort((a, b) => a.key.localeCompare(b.key));
-}
-
-/* ------------------------------------------------------------------ *
  * Alias index
  * ------------------------------------------------------------------ */
 
@@ -504,7 +417,7 @@ function stripDecorations(name: string): string[] {
 }
 
 export function buildAliasIndex(index: NetworkIndex): AliasIndex {
-  const places = buildPlaces(index);
+  const places = buildPlaces(index.stations);
   const placeByStation = new Map<StationId, PhysicalPlace>();
   for (const p of places) for (const id of p.stationIds) placeByStation.set(id, p);
 
@@ -680,22 +593,23 @@ export function extractMentions(
   }
 
   // "antara X dan Y" / "between X and Y" is a SEGMENT claim and outranks the
-  // individual station mentions it contains.
-  const betweenRe = /\b(?:ANTARA|BETWEEN)\s+(.{2,60}?)\s+(?:DAN|AND|HINGGA|TO)\s+(.{2,60}?)(?=$|[.,;!?]|\s+(?:TERJEJAS|GANGGUAN|ROS[AK]|BERHENTI|TIADA|TIDAK)\b)/;
-  const bm = betweenRe.exec(norm);
-  if (bm) {
-    const left = bm[1].trim();
-    const right = bm[2].trim();
+  // individual station mentions it contains. Trimming is shared with the phrase
+  // parser (lib/signals/malay-text.ts) so both halves agree on where a place
+  // name ends and a clause begins.
+  const between = extractBetweenMention(foldMalay(text));
+  if (between) {
+    const [left, right] = between;
     const leftHit = matchStationText(left, aliasIndex);
     const rightHit = matchStationText(right, aliasIndex);
     if (leftHit.stationIds.length > 0 && rightHit.stationIds.length > 0) {
-      const start = bm.index;
+      const idx = norm.indexOf(normalizeName(left));
+      const start = idx < 0 ? 0 : idx;
       mentions.push({
         kind: "SEGMENT",
         text: `${left} -> ${right}`,
         endpoints: [left, right],
         start,
-        end: start + bm[0].length,
+        end: start + left.length + right.length,
       });
     }
   }
@@ -808,6 +722,13 @@ export interface LocationResolution {
   strategy: ResolutionStrategy;
   stationIds: StationId[];
   lineIds: LineId[];
+  /**
+   * Lines the TEXT actually named ("LRT Kelana Jaya", "LALUAN KAJANG"). Distinct
+   * from `lineIds`, which also picks up every line serving a resolved station.
+   * The verifier uses this to keep an interchange's other line out of a
+   * cluster whose witnesses all named one line.
+   */
+  mentionedLineIds: LineId[];
   segmentIds: SegmentId[];
   unresolvedCandidates: SegmentId[];
   /** 0..1 confidence that we know *where* the claim applies. */
@@ -824,7 +745,7 @@ export interface ResolveOptions {
   extraLineMentions?: string[];
 }
 
-function segmentsAtStations(index: NetworkIndex, stationIds: StationId[]): SegmentId[] {
+export function segmentsAtStations(index: NetworkIndex, stationIds: StationId[]): SegmentId[] {
   const out = new Set<SegmentId>();
   for (const stationId of stationIds) {
     const station = index.stationById.get(stationId);
@@ -903,6 +824,7 @@ export function resolveLocation(
           strategy: "SEGMENT_BETWEEN",
           stationIds: [...new Set([...a.stationIds, ...b.stationIds])].sort(),
           lineIds,
+          mentionedLineIds: lineIds,
           segmentIds: segments,
           unresolvedCandidates: [],
           locationConfidence: 0.95,
@@ -961,6 +883,7 @@ export function resolveLocation(
         lineIds: [...new Set(ids.flatMap((id) => index.stationById.get(id)?.lineIds ?? []))]
           .filter(isCanonicalLineId)
           .sort(),
+        mentionedLineIds: lineIds,
         segmentIds: segments,
         unresolvedCandidates: [],
         locationConfidence: Math.min(...stationMatches.map((m) => m.score)),
@@ -984,6 +907,7 @@ export function resolveLocation(
       lineIds: [...new Set(ids.flatMap((id) => index.stationById.get(id)?.lineIds ?? []))]
         .filter(isCanonicalLineId)
         .sort(),
+      mentionedLineIds: lineIds,
       segmentIds: [],
       unresolvedCandidates: candidateSegments,
       locationConfidence: 0.3,
@@ -1007,6 +931,7 @@ export function resolveLocation(
       strategy: "LINE",
       stationIds: [],
       lineIds,
+      mentionedLineIds: lineIds,
       segmentIds: [],
       unresolvedCandidates: candidates,
       locationConfidence: 0.25,
@@ -1030,6 +955,7 @@ export function resolveLocation(
     strategy: "NONE",
     stationIds: [],
     lineIds: [],
+    mentionedLineIds: [],
     segmentIds: [],
     unresolvedCandidates: [],
     locationConfidence: 0,

@@ -105,6 +105,108 @@ function haversineMeters(aLat: number, aLon: number, bLat: number, bLon: number)
   return Math.round(2 * R * Math.asin(Math.min(1, Math.sqrt(s))));
 }
 
+/**
+ * Interchanges whose two platforms have DIFFERENT names AND sit further apart
+ * than the proximity threshold, so neither the name rule nor the distance rule
+ * catches them. Verified against the real network; this list is deliberately
+ * tiny and explicit rather than a loosened threshold that would silently merge
+ * genuinely separate stations (e.g. KL Sentral with Muzium Negara, 344 m).
+ */
+export const CURATED_PLACE_LINKS: ReadonlyArray<readonly [string, string]> = [
+  // Kelana Jaya Line <-> KL Monorail: Dang Wangi and Bukit Nanas, one interchange.
+  ["KJ12", "MR8"],
+];
+
+/** Two platforms closer than this are treated as one physical place. */
+export const SAME_PLACE_RADIUS_METERS = 250;
+
+/** A physical station: every platform id that shares one location. */
+export interface PhysicalPlace {
+  key: string;
+  name: string;
+  stationIds: StationId[];
+  lineIds: LineId[];
+  lat: number;
+  lon: number;
+}
+
+/**
+ * Collapse platform-level StationIds into physical places.
+ *
+ * Same normalised name OR within `SAME_PLACE_RADIUS_METERS` OR an explicit
+ * curated link counts as one place. This is what makes "Masjid Jamek" resolve to
+ * KJ13 + SP7 + AG7 as a single, unambiguous place, while a name that matches
+ * genuinely different stations stays ambiguous.
+ */
+export function buildPlaces(stations: NetworkStation[]): PhysicalPlace[] {
+  const parent = new Map<StationId, StationId>();
+  const find = (x: StationId): StationId => {
+    let root = x;
+    while (parent.get(root) !== root) root = parent.get(root) as StationId;
+    let cur = x;
+    while (parent.get(cur) !== root) {
+      const next = parent.get(cur) as StationId;
+      parent.set(cur, root);
+      cur = next;
+    }
+    return root;
+  };
+  const union = (a: StationId, b: StationId) => {
+    const ra = find(a);
+    const rb = find(b);
+    if (ra !== rb) parent.set(ra, rb);
+  };
+  for (const st of stations) parent.set(st.id, st.id);
+
+  const byName = new Map<string, StationId[]>();
+  for (const st of stations) {
+    const key = st.name.toUpperCase().replace(/\s+/g, " ").trim();
+    const list = byName.get(key);
+    if (list) list.push(st.id);
+    else byName.set(key, [st.id]);
+  }
+  for (const ids of byName.values()) {
+    for (let i = 1; i < ids.length; i += 1) union(ids[0], ids[i]);
+  }
+  for (const [a, b] of CURATED_PLACE_LINKS) {
+    if (parent.has(a) && parent.has(b)) union(a, b);
+  }
+  for (let i = 0; i < stations.length; i += 1) {
+    for (let j = i + 1; j < stations.length; j += 1) {
+      if (find(stations[i].id) === find(stations[j].id)) continue;
+      if (
+        haversineMeters(stations[i].lat, stations[i].lon, stations[j].lat, stations[j].lon) <=
+        SAME_PLACE_RADIUS_METERS
+      ) {
+        union(stations[i].id, stations[j].id);
+      }
+    }
+  }
+
+  const groups = new Map<StationId, NetworkStation[]>();
+  for (const st of stations) {
+    const root = find(st.id);
+    const list = groups.get(root);
+    if (list) list.push(st);
+    else groups.set(root, [st]);
+  }
+  const places: PhysicalPlace[] = [];
+  for (const members of groups.values()) {
+    const lineIds = new Set<LineId>();
+    for (const m of members) for (const l of m.lineIds) lineIds.add(l);
+    const longest = [...members].sort((a, b) => b.name.length - a.name.length)[0];
+    places.push({
+      key: `PLACE:${longest.name.toUpperCase().replace(/\s+/g, " ").trim()}`,
+      name: longest.name,
+      stationIds: members.map((m) => m.id).sort(),
+      lineIds: [...lineIds].sort(),
+      lat: members[0].lat,
+      lon: members[0].lon,
+    });
+  }
+  return places.sort((a, b) => a.key.localeCompare(b.key));
+}
+
 export interface BuildNetworkInput {
   stops: GtfsStopRow[];
   routes: GtfsRouteRow[];
@@ -302,17 +404,13 @@ export function buildNetworkIndex(input: BuildNetworkInput): NetworkIndex {
 
   /* ---------- interchange flags (same place, different lines) ---------- */
   const stations = [...stationById.values()].sort((a, b) => a.id.localeCompare(b.id));
-  for (const st of stations) {
-    const samePlace = stations.filter(
-      (o) =>
-        o.id !== st.id &&
-        (o.name.toUpperCase() === st.name.toUpperCase() ||
-          haversineMeters(o.lat, o.lon, st.lat, st.lon) <= 250),
-    );
-    const lineIds = new Set<LineId>([st.lineIds[0]]);
-    for (const o of samePlace) for (const l of o.lineIds) lineIds.add(l);
-    st.lineIds = [...lineIds].sort();
-    st.isInterchange = st.lineIds.length > 1;
+  for (const place of buildPlaces(stations)) {
+    for (const stationId of place.stationIds) {
+      const st = stationById.get(stationId);
+      if (!st) continue;
+      st.lineIds = [...place.lineIds].filter((l) => lineById.has(l)).sort();
+      st.isInterchange = st.lineIds.length > 1;
+    }
   }
 
   const segmentsByLine = new Map<LineId, NetworkSegment[]>();

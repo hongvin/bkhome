@@ -958,9 +958,10 @@
    "lat": 3.156942,
    "lon": 101.701975,
    "lineIds": [
-    "KJ"
+    "KJ",
+    "MR"
    ],
-   "isInterchange": false,
+   "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
     "KJ": 12
@@ -1618,9 +1619,10 @@
    "lat": 3.156214,
    "lon": 101.704809,
    "lineIds": [
+    "KJ",
     "MR"
    ],
-   "isInterchange": false,
+   "isInterchange": true,
    "isAccessible": true,
    "sequenceByLine": {
     "MR": 4

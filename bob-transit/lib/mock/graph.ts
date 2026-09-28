@@ -26,6 +26,8 @@ import type {
   TransitGraph,
 } from "@/lib/contracts";
 
+import { normaliseLines, normaliseStations } from "./naming";
+
 export const GRAPH_ARTIFACT_REL = "public/graph/transit-graph.json";
 export const GRAPH_FIXTURE_REL = "lib/mock/fixtures/network.json";
 
@@ -98,14 +100,22 @@ export function loadTopology(): LoadedTopology {
   if (cached) return cached;
 
   const artifact = readGraph(GRAPH_ARTIFACT_REL);
-  const graph = artifact ?? readGraph(GRAPH_FIXTURE_REL);
-  if (!graph) {
+  const raw = artifact ?? readGraph(GRAPH_FIXTURE_REL);
+  if (!raw) {
     throw new Error(
       `No transit graph found. Looked for ${GRAPH_ARTIFACT_REL} (run \`make graph\`) ` +
         `and the committed fallback ${GRAPH_FIXTURE_REL}.`,
     );
   }
   const source: TopologySource = artifact ? "artifact" : "fixture";
+
+  // Normalise casing/sponsor suffixes and add BM line names. Applied to the real
+  // artifact and the fallback identically, so integration cannot change names.
+  const graph: TransitGraph = {
+    ...raw,
+    lines: normaliseLines(raw.lines),
+    stations: normaliseStations(raw.stations),
+  };
 
   const lineById = new Map(graph.lines.map((l) => [l.id, l]));
   const stationById = new Map(graph.stations.map((s) => [s.id, s]));

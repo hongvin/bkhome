@@ -138,6 +138,11 @@ export interface IngestCandidate {
   claimedTime: ClaimedTime;
   parse: PhraseParse;
   authenticity: AuthenticityAssessment;
+  /** OFFICIAL_REALTIME only: the structured observation behind this record. */
+  observation?: RealtimeObservationKind;
+  /** OFFICIAL_REALTIME only: machine-provided location, which outranks text. */
+  observedStationId?: string;
+  observedLineId?: string;
   /**
    * Evidence-volume confidence BEFORE verification: counts only, with every
    * quality penalty set to neutral. The drop from this value to the verified

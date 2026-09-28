@@ -14,9 +14,10 @@ import {
   ISSUE_PRIORITY,
   ISSUE_RULES,
   LINE_RULES,
-  NON_INCIDENT_MARKERS,
   PLANNED_MARKERS,
   SEVERITY_RULES,
+  STRONG_NON_INCIDENT_MARKERS,
+  WEAK_NON_INCIDENT_MARKERS,
 } from "./lexicon";
 import {
   resolveStation,
@@ -54,7 +55,7 @@ export interface DateAnchor {
   date: string;
   surface: string;
   index: number;
-  kind: "explicit" | "dateline" | "relative_yesterday";
+  kind: "explicit" | "dateline" | "relative_yesterday" | "relative_today";
 }
 
 export interface OnsetEstimate {
@@ -415,7 +416,15 @@ export function extractTimeMentions(text: string): TimeMention[] {
 // Onset estimation
 // ---------------------------------------------------------------------------
 
-const RELATIVE_YESTERDAY = /\b(semalam|malam\s+tadi|petang\s+tadi|pagi\s+tadi|tengah\s+hari\s+tadi)\b/i;
+/**
+ * Malay relative day references. These are NOT interchangeable:
+ *   "semalam" / "malam tadi"  -> the previous day ("malam tadi" = last night)
+ *   "pagi tadi" / "petang tadi" -> EARLIER TODAY ("petang tadi" = this afternoon)
+ * Treating "petang tadi" as yesterday pushed one monorail onset back 24 hours
+ * and inflated its lead time from 84 to 1525 minutes.
+ */
+const RELATIVE_YESTERDAY = /\b(semalam|malam\s+tadi|malam\s+semalam)\b/i;
+const RELATIVE_TODAY = /\b(pagi\s+tadi|petang\s+tadi|tengah\s+hari\s+tadi|siang\s+tadi|sebentar\s+tadi|tadi)\b/i;
 
 /**
  * Estimate when the disruption began, from the document's own words.
@@ -436,21 +445,31 @@ export function estimateOnset(
 ): OnsetEstimate {
   const folded = fold(text);
   const pubDate = localDate(publishedAt);
+  const datelineDate = dateline?.date ?? pubDate;
   const dates = findDates(folded);
 
+  /**
+   * A statement can only describe something that has already happened, so an
+   * incident date must be on or before the publication date. This is what keeps
+   * "akan ditutup pada 1 April 2022" (a future plan) from being read as the
+   * onset of a 14 March 2022 statement — 6 documents had exactly that bug.
+   */
+  const isPlausibleOnsetDate = (iso: string): boolean => {
+    const t = Date.parse(`${iso}T00:00:00+08:00`);
+    if (Number.isNaN(t)) return false;
+    const pub = Date.parse(`${pubDate}T00:00:00+08:00`);
+    const age = (pub - t) / 86400_000;
+    return age >= -0.5 && age <= 60;
+  };
+
   const anchorFor = (index: number): DateAnchor => {
-    const windowStart = Math.max(0, index - 500);
-    const nearby = dates.filter((d) => d.index < index && d.index >= windowStart);
-    const relative = RELATIVE_YESTERDAY.test(folded.slice(Math.max(0, index - 120), index));
-    if (nearby.length > 0) {
-      const d = nearby[nearby.length - 1]!;
-      const year = d.year ?? Number((dateline?.date ?? pubDate).slice(0, 4));
-      const iso = `${year}-${String(d.month).padStart(2, "0")}-${String(d.day).padStart(2, "0")}`;
-      if (!Number.isNaN(Date.parse(`${iso}T00:00:00Z`))) {
-        return { date: iso, surface: d.surface, index: d.index, kind: "explicit" };
-      }
-    }
-    if (relative) {
+    // "semalam" / "petang tadi" can appear on either side of the clock time
+    // ("...berlaku pada jam 6.56 petang itu ... petang semalam"), so widen the
+    // window forwards as well as backwards.
+    const around = folded.slice(Math.max(0, index - 130), index + 90);
+    // Yesterday is tested first so that "malam tadi" is not swallowed by the
+    // bare "tadi" alternative in RELATIVE_TODAY.
+    if (RELATIVE_YESTERDAY.test(around)) {
       return {
         date: addDays(pubDate, -1),
         surface: "semalam",
@@ -458,21 +477,29 @@ export function estimateOnset(
         kind: "relative_yesterday",
       };
     }
-    return {
-      date: dateline?.date ?? pubDate,
-      surface: dateline?.date ?? pubDate,
-      index,
-      kind: "dateline",
-    };
+    if (RELATIVE_TODAY.test(around)) {
+      return { date: pubDate, surface: "tadi", index, kind: "relative_today" };
+    }
+    const nearby = dates.filter(
+      (d) => d.index < index && d.index >= Math.max(0, index - 220),
+    );
+    for (let i = nearby.length - 1; i >= 0; i--) {
+      const d = nearby[i]!;
+      const year = d.year ?? Number(pubDate.slice(0, 4));
+      const iso = `${year}-${String(d.month).padStart(2, "0")}-${String(d.day).padStart(2, "0")}`;
+      if (isPlausibleOnsetDate(iso)) {
+        return { date: iso, surface: d.surface, index: d.index, kind: "explicit" };
+      }
+    }
+    return { date: datelineDate, surface: datelineDate, index, kind: "dateline" };
   };
 
   const onsetMentions = mentions.filter((m) => m.role === "onset");
-  const usable = onsetMentions.length > 0 ? onsetMentions : [];
-  if (usable.length > 0) {
+  if (onsetMentions.length > 0) {
     // Earliest onset mention wins: the disruption began when it was first seen,
     // and later mentions are usually updates or a second incident.
     let best: { at: number; mention: TimeMention; anchor: DateAnchor } | null = null;
-    for (const m of usable) {
+    for (const m of onsetMentions) {
       const anchor = anchorFor(m.index);
       // `secondsOfDay` is seconds after LOCAL midnight (Asia/Kuala_Lumpur), so
       // the day is anchored at 00:00+08:00, not 00:00Z.
@@ -489,25 +516,30 @@ export function estimateOnset(
     }
   }
 
-  // No usable clock time: fall back to an explicit date if the body states one.
-  const explicit = dates.find((d) => d.year !== null);
+  // No usable clock time. Fall back to an explicit incident date stated in the
+  // body — but never the dateline itself (that is just the publication date)
+  // and never a date in the future relative to publication.
+  const explicit = dates
+    .filter((d) => d.year !== null)
+    .map((d) => ({
+      d,
+      iso: `${d.year}-${String(d.month).padStart(2, "0")}-${String(d.day).padStart(2, "0")}`,
+    }))
+    .filter((x) => x.iso !== datelineDate && isPlausibleOnsetDate(x.iso))
+    .sort((a, b) => a.d.index - b.d.index)[0];
   if (explicit) {
-    const iso = `${explicit.year}-${String(explicit.month).padStart(2, "0")}-${String(explicit.day).padStart(2, "0")}`;
-    if (!Number.isNaN(Date.parse(`${iso}T00:00:00Z`))) {
-      return {
-        at: new Date(Date.parse(`${iso}T00:00:00+08:00`)).toISOString(),
-        basis: "date_only",
-        evidence: explicit.surface,
-        role: "unknown",
-      };
-    }
+    return {
+      at: new Date(Date.parse(`${explicit.iso}T00:00:00+08:00`)).toISOString(),
+      basis: "date_only",
+      evidence: explicit.d.surface,
+      role: "unknown",
+    };
   }
 
-  const fallbackDate = dateline?.date ?? pubDate;
   return {
-    at: new Date(Date.parse(`${fallbackDate}T00:00:00+08:00`)).toISOString(),
+    at: new Date(Date.parse(`${datelineDate}T00:00:00+08:00`)).toISOString(),
     basis: "dateline_only",
-    evidence: fallbackDate,
+    evidence: datelineDate,
     role: "unknown",
   };
 }
@@ -569,7 +601,8 @@ export interface Classification {
   kind: DocKind;
   reason: string;
   disruptionScore: number;
-  nonIncidentScore: number;
+  strongNonIncident: number;
+  weakNonIncident: number;
   plannedScore: number;
 }
 
@@ -579,60 +612,59 @@ export function classifyDocument(text: string): Classification {
       kind: "UNREADABLE",
       reason: "extracted text shorter than 60 characters",
       disruptionScore: 0,
-      nonIncidentScore: 0,
+      strongNonIncident: 0,
+      weakNonIncident: 0,
       plannedScore: 0,
     };
   }
   const u = upper(text);
   const disruptionScore = DISRUPTION_MARKERS.filter((r) => r.test(u)).length;
-  const nonIncidentScore = NON_INCIDENT_MARKERS.filter((r) => r.test(u)).length;
+  const strongNonIncident = STRONG_NON_INCIDENT_MARKERS.filter((r) => r.test(u)).length;
+  const weakNonIncident = WEAK_NON_INCIDENT_MARKERS.filter((r) => r.test(u)).length;
   const plannedScore = PLANNED_MARKERS.filter((r) => r.test(u)).length;
   const lineIds = extractLineIds(text);
+  const base = { disruptionScore, strongNonIncident, weakNonIncident, plannedScore };
 
   if (disruptionScore === 0) {
-    return {
-      kind: "NON_INCIDENT",
-      reason: "no disruption vocabulary present",
-      disruptionScore,
-      nonIncidentScore,
-      plannedScore,
-    };
+    return { kind: "NON_INCIDENT", reason: "no disruption vocabulary present", ...base };
   }
   if (lineIds.length === 0) {
     return {
       kind: "NON_INCIDENT",
       reason: "disruption vocabulary but no identifiable rail line",
-      disruptionScore,
-      nonIncidentScore,
-      plannedScore,
+      ...base,
     };
   }
-  // A planned works/closure notice is a service change, not a reliability failure.
+  // A single decisive non-incident marker beats any amount of disruption talk:
+  // "UJIAN MENUNJUKKAN PETANDA POSITIF" mentions LRT Laluan Kelana Jaya a dozen
+  // times but is a test-result announcement, not a disruption.
+  if (strongNonIncident >= 1) {
+    return {
+      kind: "NON_INCIDENT",
+      reason: `decisive non-incident marker present (${strongNonIncident})`,
+      ...base,
+    };
+  }
+  // Planned works and closures announced in advance are service changes, not
+  // reliability failures — reported separately rather than forced into the set.
   if (plannedScore >= 2 && disruptionScore <= 2) {
     return {
       kind: "PLANNED_SERVICE_CHANGE",
       reason: `planned markers (${plannedScore}) dominate disruption markers (${disruptionScore})`,
-      disruptionScore,
-      nonIncidentScore,
-      plannedScore,
+      ...base,
     };
   }
-  // Corporate / campaign / event documents that merely mention a disruption.
-  if (nonIncidentScore >= 2 && nonIncidentScore > disruptionScore) {
+  if (weakNonIncident >= 2 && weakNonIncident >= disruptionScore) {
     return {
       kind: "NON_INCIDENT",
-      reason: `non-incident markers (${nonIncidentScore}) outweigh disruption markers (${disruptionScore})`,
-      disruptionScore,
-      nonIncidentScore,
-      plannedScore,
+      reason: `weak non-incident markers (${weakNonIncident}) match or exceed disruption markers (${disruptionScore})`,
+      ...base,
     };
   }
   return {
     kind: "INCIDENT",
     reason: `disruption markers (${disruptionScore}) with line(s) ${lineIds.join(",")}`,
-    disruptionScore,
-    nonIncidentScore,
-    plannedScore,
+    ...base,
   };
 }
 

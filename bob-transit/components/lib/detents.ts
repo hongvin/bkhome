@@ -31,12 +31,16 @@ export const DETENT_FRACTION: Readonly<Record<DetentName, number>> = {
 };
 
 /**
- * Content floors. Peek = handle (44) + origin/destination row (48) + action bar
- * (52) + 2 x 8px padding = 152... but the handle shares the row gutter, so the
- * measured floor is 128. Half = three 96px route cards partially visible.
+ * Content floors, in CSS px, measured from the rendered sheet chrome:
+ *   peek = handle strip (4 + 4 + 4) + origin/destination row (48)
+ *        + action bar (6 + 52) + gutter (6)  = 124
+ *   half = three 96px route cards partly visible, plus the action bar.
+ * A bare 15% peek is 100px on a 667px phone, which cannot hold a 48px
+ * origin/destination row and a 52px CTA at 44px touch targets — so the floor is
+ * part of the maths and is asserted in tests/ui/detents.test.ts.
  */
 export const DETENT_MIN_PX: Readonly<Record<DetentName, number>> = {
-  peek: 128,
+  peek: 124,
   half: 300,
   full: 0,
 };
@@ -187,6 +191,33 @@ export function detentCoverage(detent: DetentName, viewportHeight: number): numb
 /** Sheet transition, used by the component so the CSS and the tests agree. */
 export const SHEET_TRANSITION_MS = 260;
 export const SHEET_EASING = "cubic-bezier(0.32, 0.72, 0, 1)";
+
+/**
+ * Fixed chrome heights, in CSS px, matching `BottomSheet.tsx`:
+ *   header  = 4 (pt) + 4 (bar) + 4 (mb) + 48 (origin/destination row)  = 60
+ *   action  = 6 (pt) + 52 (CTA)                                        = 58
+ * plus `env(safe-area-inset-bottom)` below the action bar, added by CSS on top
+ * of the detent height rather than inside it.
+ *
+ * The action bar is pinned to the bottom of the sheet, and the sheet's bottom
+ * edge is the viewport's bottom edge, so its top edge is `viewportHeight -
+ * SHEET_ACTION_BAR_PX` at EVERY detent. That is what keeps the primary CTA
+ * inside the bottom 40% of the viewport (one-handed reach) no matter where the
+ * sheet is.
+ */
+export const SHEET_HEADER_PX = 60;
+export const SHEET_ACTION_BAR_PX = 58;
+
+/** Top edge of the pinned action bar. Independent of detent, by construction. */
+export function actionBarTopPx(viewportHeight: number): number {
+  return viewportHeight - SHEET_ACTION_BAR_PX;
+}
+
+/** Fraction of the viewport below the action bar's top edge. */
+export function actionBarBottomFraction(viewportHeight: number): number {
+  if (viewportHeight <= 0) return 0;
+  return SHEET_ACTION_BAR_PX / viewportHeight;
+}
 
 /**
  * Viewports the design is pinned to. 375x667 is the smallest phone we support

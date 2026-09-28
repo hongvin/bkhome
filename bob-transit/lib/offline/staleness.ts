@@ -84,7 +84,9 @@ export function computeStaleness(
     minutes,
     clock: formatClockTime(asOf, options.timeZoneOffsetSeconds ?? TZ_OFFSET_SECONDS),
     isFuture: deltaMs < 0,
-    isStale: minutes > staleAfter,
+    // Compared on the exact elapsed time, not the floored minute count, so the
+    // boundary is the instant the budget is exceeded rather than a minute later.
+    isStale: deltaMs > staleAfter * 60_000,
   };
 }
 

@@ -15,24 +15,15 @@
 
 import type { IssueType, Severity } from "@/lib/contracts";
 
+import {
+  extractAfterKeyword,
+  extractBetweenMention,
+  foldMalay,
+} from "@/lib/signals/malay-text";
 import { defineTool } from "@/lib/signals/tool";
 import type { PhraseHit, PhraseParse } from "@/lib/signals/types";
 
-/* ------------------------------------------------------------------ *
- * Text helpers
- * ------------------------------------------------------------------ */
-
-/** Fold to a searchable form: uppercase, no diacritics, single spaces. */
-export function foldMalay(input: string): string {
-  return input
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase()
-    .replace(/[’']/g, "'")
-    .replace(/[^A-Z0-9'\- ]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+export { foldMalay };
 
 interface PhraseRule {
   /** Regex over the folded text. */
@@ -65,7 +56,7 @@ const ISSUE_RULES: PhraseRule[] = [
 
   // ---- signalling ----
   { re: /\b(?:SISTEM\s+)?ISYARAT\s+(?:ROS[AK]+|TERJEJAS|GAGAL|MASALAH|GANGGUAN)\b/, canonical: "ISYARAT ROSAK", issueType: "SIGNAL_FAULT", severity: "MAJOR", weight: 3 },
-  { re: /\bGANGGUAN\s+(?:SISTEM\s+)?ISYARAT\b/, canonical: "GANGGUAN ISYARAT", issueType: "SIGNAL_FAULT", severity: "MAJOR", weight: 3 },
+  { re: /\b(?:MASALAH|GANGGUAN|KEROSAKAN)\s+(?:SISTEM\s+)?ISYARAT\b/, canonical: "GANGGUAN ISYARAT", issueType: "SIGNAL_FAULT", severity: "MAJOR", weight: 3 },
   { re: /\bSIGNALL?ING\s+(?:PROBLEM|FAULT|ISSUE|FAILURE)\b/, canonical: "SIGNALLING PROBLEM", issueType: "SIGNAL_FAULT", severity: "MAJOR", weight: 3 },
   { re: /\bSIGNAL\s+(?:FAULT|FAILURE|PROBLEM)\b/, canonical: "SIGNAL FAULT", issueType: "SIGNAL_FAULT", severity: "MAJOR", weight: 3 },
 
@@ -104,7 +95,7 @@ const ISSUE_RULES: PhraseRule[] = [
 const SEVERITY_RULES: PhraseRule[] = [
   { re: /\bBERHENTI\s+SEPENUHNYA\b|\bTIDAK\s+BEROPERASI\b|\bPERKHIDMATAN\s+DIHENTIKAN\b|\bSUSPEND(?:ED|ED)?\b|\bTUTUP\s+SEPENUHNYA\b/, canonical: "TIDAK BEROPERASI", severity: "SEVERE", weight: 3 },
   { re: /\bSEMUA\s+STESEN\b|\bSELURUH\s+LALUAN\b|\bSEPANJANG\s+LALUAN\b|\bWHOLE\s+LINE\b/, canonical: "SELURUH LALUAN", severity: "SEVERE", weight: 3 },
-  { re: /\bSANGAT\s+TERUK\b|\bTERUK\b|\bSEVERE\b|\bMAJOR\b|\bKRITIKAL\b|\bCRITICAL\b/, canonical: "TERUK", severity: "SEVERE", weight: 2 },
+  { re: /\bSANGAT\s+TERUK\b|\bTERUK\b|\bSEVERE\b|\bMAJOR\b|\bKRITIKAL\b|\bCRITICAL\b/, canonical: "TERUK", severity: "MAJOR", weight: 2 },
   { re: /\bSEKURANG[- ]KURANGNYA\s+(\d+)\s*(?:MINIT|MINUTES?|JAM|HOURS?)\b/, canonical: "TEMPOH PANJANG", severity: "MAJOR", weight: 2 },
   { re: /\bLEBIH\s+(?:SATU\s+)?JAM\b|\bMORE\s+THAN\s+AN?\s+HOUR\b/, canonical: "LEBIH SATU JAM", severity: "MAJOR", weight: 2 },
   { re: /\bSEDIKIT\b|\bRINGAN\b|\bMINOR\b|\bSEBENTAR\b|\bBRIEF(?:LY)?\b|\bSLIGHT\b/, canonical: "RINGAN", severity: "MINOR", weight: 2 },
@@ -161,36 +152,8 @@ const HISTORICAL_RULES: Array<{ re: RegExp; daysAgo: number }> = [
 /** Years that can only be in the past for this product. */
 const PAST_YEAR_RE = /\b(20(?:1[5-9]|2[0-4]))\b/;
 
-const LINE_KEYWORD_RE = /\b(?:LALUAN|LINE|ALIRAN|ROUTE)\s+([A-Z0-9][A-Z0-9'\- ]{2,40})/g;
-const STATION_KEYWORD_RE = /\b(?:STESEN|STATION|HENTIAN)\s+([A-Z0-9][A-Z0-9'\- ]{2,40})/g;
-const BETWEEN_RE =
-  /\b(?:ANTARA|BETWEEN)\s+([A-Z0-9][A-Z0-9'\- ]{2,40}?)\s+(?:DAN|AND|HINGGA|TO)\s+([A-Z0-9][A-Z0-9'\- ]{2,40}?)(?=$|[.,;!?]|\s+(?:TERJEJAS|GANGGUAN|ROS[AK]|BERHENTI|TIADA|TIDAK|SEKARANG|KINI)\b)/;
-
-/** Tokens that end a captured place name. */
-const TRAILING_STOPWORDS = new Set([
-  "DAN", "KE", "DI", "YANG", "BERHENTI", "TERJEJAS", "ROS", "ROSAK", "GANGGUAN", "SEKARANG",
-  "KINI", "MASIH", "TIDAK", "TIADA", "ADA", "SEKAT", "SINI", "ITU", "INI", "PADA", "AKAN",
-  "SUDAH", "DAH", "TELAH", "SEHINGGA", "SANGAT", "PULA", "LAH", "UNTUK", "DARI", "SEBAB",
-]);
-
-function captureAfter(re: RegExp, text: string, maxTokens = 5): string[] {
-  const out: string[] = [];
-  re.lastIndex = 0;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(text)) !== null) {
-    const raw = m[1].trim();
-    if (!raw) continue;
-    const toks = raw.split(" ").slice(0, maxTokens);
-    const kept: string[] = [];
-    for (const t of toks) {
-      if (TRAILING_STOPWORDS.has(t) && kept.length > 0) break;
-      if (TRAILING_STOPWORDS.has(t) && kept.length === 0) break;
-      kept.push(t);
-    }
-    if (kept.length > 0) out.push(kept.join(" "));
-  }
-  return out;
-}
+const LINE_KEYWORDS = ["LALUAN", "LINE", "ALIRAN", "ROUTE"];
+const STATION_KEYWORDS = ["STESEN", "STATION", "HENTIAN"];
 
 /* ------------------------------------------------------------------ *
  * The parser
@@ -282,8 +245,6 @@ export function parseMalayDisruptionPhrases(input: string, nowIso?: string): Phr
   }
 
   const recovery = RECOVERY_RULES.some((re) => re.test(text));
-  const ongoing =
-    ONGOING_RULES.some((re) => re.test(text)) || (NOW_RULES.some((re) => re.test(text)) && !recovery);
 
   let timeExpression: string | null = null;
   let impliedDaysAgo: number | null = null;
@@ -302,6 +263,8 @@ export function parseMalayDisruptionPhrases(input: string, nowIso?: string): Phr
       impliedDaysAgo = daysSinceYearStart(Number(y[1]), nowIso);
     }
   }
+  const historical = impliedDaysAgo !== null && impliedDaysAgo >= 1;
+
   if (timeExpression === null) {
     for (const re of NOW_RULES) {
       const m = re.exec(text);
@@ -313,10 +276,14 @@ export function parseMalayDisruptionPhrases(input: string, nowIso?: string): Phr
     }
   }
 
-  const betweenMatch = BETWEEN_RE.exec(text);
-  const between: [string, string] | null = betweenMatch
-    ? [betweenMatch[1].trim(), betweenMatch[2].trim()]
-    : null;
+  // A bare time adverb ("sekarang", "kini") only implies an ONGOING incident when
+  // the text is not explicitly about the past. "Minggu lepas ... sekarang dah ok
+  // ke belum?" must not read as a live report.
+  const ongoing =
+    ONGOING_RULES.some((re) => re.test(text)) ||
+    (NOW_RULES.some((re) => re.test(text)) && !historical && !recovery);
+
+  const between = extractBetweenMention(text);
 
   return {
     hits,
@@ -324,11 +291,11 @@ export function parseMalayDisruptionPhrases(input: string, nowIso?: string): Phr
     issueTypeConfidence,
     severity,
     severityConfidence,
-    lineMentions: captureAfter(LINE_KEYWORD_RE, text),
-    stationMentions: captureAfter(STATION_KEYWORD_RE, text),
+    lineMentions: extractAfterKeyword(text, LINE_KEYWORDS),
+    stationMentions: extractAfterKeyword(text, STATION_KEYWORDS),
     betweenMention: between,
     ongoing,
-    historical: impliedDaysAgo !== null && impliedDaysAgo >= 1,
+    historical,
     recovery,
     timeExpression,
     impliedDaysAgo,

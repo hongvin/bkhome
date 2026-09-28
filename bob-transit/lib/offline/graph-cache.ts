@@ -23,8 +23,15 @@ export interface CachedGraph {
   builtAt: string;
   /** ISO timestamp of when this device stored it. */
   cachedAt: string;
-  /** Serialised size in bytes, so the UI can report cache footprint honestly. */
-  byteSize: number;
+  /**
+   * Serialised size in bytes, so the UI can report the cache footprint honestly.
+   *
+   * `null` unless the caller supplies it (e.g. from a `Content-Length` header) or
+   * asks for it with `measure: true`. The real graph is ~29 MB, and stringifying
+   * that on every save would allocate a second copy of it on a phone for no
+   * benefit — so measuring is opt-in.
+   */
+  byteSize: number | null;
   graph: TransitGraph;
 }
 
@@ -108,13 +115,21 @@ export class GraphCache {
     };
   }
 
-  async save(graph: TransitGraph, cachedAt: string): Promise<CachedGraph> {
+  async save(
+    graph: TransitGraph,
+    cachedAt: string,
+    options: { byteSize?: number | null; measure?: boolean } = {},
+  ): Promise<CachedGraph> {
+    let byteSize: number | null = options.byteSize ?? null;
+    if (byteSize === null && options.measure === true) {
+      byteSize = JSON.stringify(graph).length;
+    }
     const envelope: CachedGraph = {
       cacheKey: this.cacheKey,
       contractsVersion: graph.contractsVersion ?? CONTRACTS_VERSION,
       builtAt: graph.builtAt,
       cachedAt,
-      byteSize: JSON.stringify(graph).length,
+      byteSize,
       graph,
     };
     await this.store.set(this.cacheKey, envelope);

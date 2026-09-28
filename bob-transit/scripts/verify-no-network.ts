@@ -1,16 +1,23 @@
 /**
- * A4 — ZERO live external network calls on the demo path.
+ * A4 — ZERO live EXTERNAL network calls on the demo path.
+ *
+ * "External" is the operative word. This app is ONE Next.js deployment serving
+ * both UI and API, so the request path legitimately fetches its OWN origin
+ * (`/api/route`, `/graph/transit-graph.json`). Those are not external calls —
+ * and the graph fetch is the whole point of the offline-first design.
+ *
+ * What must never happen is a call to a third-party host on the demo path.
  *
  * Two independent checks:
  *
- *   1. STATIC: every source file reachable from a user request must not contain
- *      a network primitive, unless it is on the explicit acquisition allowlist.
- *      Acquisition scripts are one-shot tools whose output is committed as a
- *      fixture; they must never be imported by the request path.
+ *   1. STATIC: request-path sources must not reference an absolute external URL
+ *      in a network primitive, and must not import a network client library.
+ *      One-shot acquisition scripts are allowlisted — their output is committed
+ *      as a fixture and they must never be imported by the request path.
  *
  *   2. RUNTIME: the request path is exercised with `globalThis.fetch` replaced by
- *      a throwing stub. If anything on the demo path reaches for the network,
- *      the run fails.
+ *      a recorder that THROWS on any non-same-origin URL. Same-origin calls are
+ *      permitted and logged.
  *
  * Exits non-zero on any violation.
  */
@@ -21,10 +28,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 
-/**
- * Directories that make up the user-facing request path. Nothing here may touch
- * the network — not at build time, not at request time.
- */
+/** Directories that make up the user-facing request path. */
 const DEMO_PATH_DIRS = [
   "app",
   "components",
@@ -40,38 +44,65 @@ const DEMO_PATH_DIRS = [
 ];
 
 /**
- * Files permitted to perform network I/O. Each is a one-shot acquisition tool
- * whose output is committed as a fixture. Adding a file here is a deliberate,
- * reviewable act.
+ * Files permitted to reach external hosts. Each is a one-shot acquisition tool
+ * whose output is committed as a fixture. Adding a file here is deliberate.
  */
 const ACQUISITION_ALLOWLIST = [
   "eval/fetch-archive.ts",
   "worker/ingest.ts",
+  "worker/client.ts",
+  "worker/scripts/capture-fixture.ts",
   "scripts/acquire-gtfs-static.ts",
 ];
 
-/** Network primitives that are banned on the demo path. */
-const BANNED_PATTERNS: Array<{ re: RegExp; label: string }> = [
-  { re: /\bfetch\s*\(/, label: "fetch()" },
-  { re: /\bXMLHttpRequest\b/, label: "XMLHttpRequest" },
+/**
+ * Absolute URLs that are NOT external: loopback and the wildcard bind address.
+ * Everything else with a scheme+host is a third party.
+ */
+const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "0.0.0.0", "[::1]", "::1"]);
+
+/** Matches an absolute URL and captures its host. */
+const ABSOLUTE_URL_RE = /\bhttps?:\/\/([^\s"'`/)]+)/g;
+
+/**
+ * Network client libraries that have no legitimate place on the request path.
+ * Bare `fetch` is NOT in this list — same-origin fetch is fine.
+ */
+const BANNED_LIBRARIES: Array<{ re: RegExp; label: string }> = [
   { re: /\baxios\b/, label: "axios" },
+  { re: /\bXMLHttpRequest\b/, label: "XMLHttpRequest" },
   { re: /from\s+["']node:https?["']/, label: "node:http(s) import" },
   { re: /from\s+["']node:net["']/, label: "node:net import" },
   { re: /from\s+["']node:dgram["']/, label: "node:dgram import" },
-  { re: /require\(\s*["']https?["']\s*\)/, label: "require('http(s)')" },
   { re: /\bWebSocket\b/, label: "WebSocket" },
   { re: /\bnavigator\.sendBeacon\b/, label: "sendBeacon" },
   { re: /\bEventSource\b/, label: "EventSource" },
 ];
 
 /**
- * Lines that are legitimately not network calls. Kept deliberately narrow —
- * a broad allowlist would defeat the check.
+ * Call sites whose argument we inspect for a third-party host.
+ *
+ * A bare URL string elsewhere in the source is DATA, not a network call — e.g.
+ * `SourceRef.url` provenance links in fixtures. Only URLs that are actually
+ * handed to a network primitive count as violations.
  */
+const NETWORK_CALL_SITES: RegExp[] = [
+  /\bfetch\s*\(/,
+  /\baxios\s*[.(]/,
+  /\bnew\s+WebSocket\s*\(/,
+  /\bnew\s+EventSource\s*\(/,
+  /\bnavigator\.sendBeacon\s*\(/,
+];
+
+/** How many lines after a call site to search for its URL argument. */
+const CALL_ARGUMENT_WINDOW = 6;
+
+/** Lines that legitimately mention a URL without calling it. */
 const LINE_ALLOWLIST: RegExp[] = [
   /\/\/\s*network-allowed/,
   /\/\*\s*network-allowed/,
-  /^\s*\*/, // JSDoc continuation lines
+  /^\s*\*/, // JSDoc continuation
+  /^\s*\/\//, // line comment
 ];
 
 interface Violation {
@@ -79,6 +110,11 @@ interface Violation {
   line: number;
   label: string;
   text: string;
+}
+
+function isExternalHost(host: string): boolean {
+  const bare = host.toLowerCase().replace(/:\d+$/, "");
+  return !LOCAL_HOSTS.has(bare);
 }
 
 async function walk(dir: string, out: string[] = []): Promise<string[]> {
@@ -104,21 +140,38 @@ async function staticCheck(): Promise<Violation[]> {
   const violations: Violation[] = [];
 
   for (const rel of DEMO_PATH_DIRS) {
-    const files = await walk(path.join(ROOT, rel));
-    for (const file of files) {
+    for (const file of await walk(path.join(ROOT, rel))) {
       const relPath = path.relative(ROOT, file);
       if (ACQUISITION_ALLOWLIST.includes(relPath)) continue;
 
-      const source = await readFile(file, "utf8");
-      const lines = source.split("\n");
+      const lines = (await readFile(file, "utf8")).split("\n");
 
       for (let i = 0; i < lines.length; i++) {
         const text = lines[i] ?? "";
         if (LINE_ALLOWLIST.some((re) => re.test(text))) continue;
 
-        for (const { re, label } of BANNED_PATTERNS) {
+        for (const { re, label } of BANNED_LIBRARIES) {
           if (re.test(text)) {
             violations.push({ file: relPath, line: i + 1, label, text: text.trim() });
+          }
+        }
+
+        // Only inspect URLs that are actually handed to a network primitive.
+        // A bare URL string elsewhere is DATA (e.g. SourceRef.url provenance).
+        if (NETWORK_CALL_SITES.some((re) => re.test(text))) {
+          const window = lines.slice(i, i + CALL_ARGUMENT_WINDOW).join("\n");
+          ABSOLUTE_URL_RE.lastIndex = 0;
+          let m: RegExpExecArray | null;
+          while ((m = ABSOLUTE_URL_RE.exec(window)) !== null) {
+            const host = m[1] ?? "";
+            if (isExternalHost(host)) {
+              violations.push({
+                file: relPath,
+                line: i + 1,
+                label: `external URL passed to a network call (${host})`,
+                text: text.trim(),
+              });
+            }
           }
         }
       }
@@ -129,28 +182,46 @@ async function staticCheck(): Promise<Violation[]> {
 }
 
 /**
- * Runtime check: exercise the request path with fetch stubbed to throw.
- * Every module is imported dynamically so this script still runs when an
- * optional module has not landed yet.
+ * Runtime check: exercise the request path with `fetch` replaced by a recorder
+ * that throws on any non-same-origin URL. Same-origin calls are recorded.
  */
-async function runtimeCheck(): Promise<string[]> {
+async function runtimeCheck(): Promise<{ failures: string[]; sameOrigin: string[] }> {
   const failures: string[] = [];
-  const attempted: string[] = [];
+  const sameOrigin: string[] = [];
 
   const originalFetch = globalThis.fetch;
-  const boom = (input: unknown): never => {
-    const url = typeof input === "string" ? input : String(input);
-    attempted.push(url);
-    throw new Error(`NETWORK CALL ATTEMPTED ON DEMO PATH: ${url}`);
+  const guard = (input: unknown): never => {
+    const url =
+      typeof input === "string"
+        ? input
+        : input instanceof URL
+          ? input.href
+          : typeof input === "object" && input !== null && "url" in input
+            ? String((input as { url: unknown }).url)
+            : String(input);
+
+    let host = "";
+    try {
+      host = new URL(url, "http://localhost").hostname;
+    } catch {
+      host = "";
+    }
+
+    if (host && isExternalHost(host)) {
+      throw new Error(`EXTERNAL NETWORK CALL ATTEMPTED ON DEMO PATH: ${url}`);
+    }
+    sameOrigin.push(url);
+    // Same-origin fetches are not served in this harness; report as offline.
+    return Promise.reject(new Error("offline-harness: same-origin fetch not served")) as never;
   };
-  globalThis.fetch = boom as typeof globalThis.fetch;
+  globalThis.fetch = guard as typeof globalThis.fetch;
 
   try {
-    // 1. Graph must load from the committed fixture / built artifact, not the network.
     const graphPath = path.join(ROOT, "public/graph/transit-graph.json");
     try {
-      const raw = await readFile(graphPath, "utf8");
-      const graph = JSON.parse(raw) as { stats?: { connectionCount?: number } };
+      const graph = JSON.parse(await readFile(graphPath, "utf8")) as {
+        stats?: { connectionCount?: number; segmentCount?: number };
+      };
       if (!graph.stats || typeof graph.stats.connectionCount !== "number") {
         failures.push("transit-graph.json is missing stats.connectionCount");
       }
@@ -162,9 +233,6 @@ async function runtimeCheck(): Promise<string[]> {
       );
     }
 
-    // 2. The router must plan a journey without touching the network.
-    //    The specifier is computed so TypeScript does not statically resolve it —
-    //    this script must typecheck even before S1's module lands.
     const routingEntry = ["..", "lib", "routing", "index.ts"].join("/");
     try {
       const routing = (await import(routingEntry)) as Record<string, unknown>;
@@ -179,19 +247,15 @@ async function runtimeCheck(): Promise<string[]> {
         `could not import lib/routing: ${err instanceof Error ? err.message : String(err)}`,
       );
     }
-
-    if (attempted.length > 0) {
-      failures.push(`network attempted during request-path exercise: ${attempted.join(", ")}`);
-    }
   } finally {
     globalThis.fetch = originalFetch;
   }
 
-  return failures;
+  return { failures, sameOrigin };
 }
 
 async function main(): Promise<void> {
-  console.log("A4 — verifying zero live external network calls on the demo path");
+  console.log("A4 — verifying zero live EXTERNAL network calls on the demo path");
   console.log(`repo: ${ROOT}\n`);
 
   const violations = await staticCheck();
@@ -199,9 +263,10 @@ async function main(): Promise<void> {
   console.log("── STATIC CHECK ─────────────────────────────────────────");
   console.log(`scanned request-path dirs: ${DEMO_PATH_DIRS.join(", ")}`);
   console.log(`acquisition allowlist: ${ACQUISITION_ALLOWLIST.join(", ")}`);
+  console.log("policy: same-origin fetches allowed; third-party hosts banned\n");
 
   if (violations.length === 0) {
-    console.log("PASS — no network primitives found on the demo path.\n");
+    console.log("PASS — no external network primitives on the demo path.\n");
   } else {
     console.log(`FAIL — ${violations.length} violation(s):\n`);
     for (const v of violations) {
@@ -212,18 +277,22 @@ async function main(): Promise<void> {
   }
 
   console.log("── RUNTIME CHECK ────────────────────────────────────────");
-  const runtimeFailures = await runtimeCheck();
-  if (runtimeFailures.length === 0) {
-    console.log("PASS — request path exercised with fetch() stubbed to throw.\n");
+  const { failures, sameOrigin } = await runtimeCheck();
+  if (failures.length === 0) {
+    console.log("PASS — request path exercised with fetch() guarded against external hosts.");
+    if (sameOrigin.length > 0) {
+      console.log(`       same-origin calls observed (allowed): ${sameOrigin.join(", ")}`);
+    }
+    console.log("");
   } else {
-    console.log(`FAIL — ${runtimeFailures.length} problem(s):\n`);
-    for (const f of runtimeFailures) console.log(`  - ${f}`);
+    console.log(`FAIL — ${failures.length} problem(s):\n`);
+    for (const f of failures) console.log(`  - ${f}`);
     console.log("");
   }
 
-  const total = violations.length + runtimeFailures.length;
+  const total = violations.length + failures.length;
   if (total > 0) {
-    console.error(`A4 FAILED — ${total} problem(s). The demo path must not touch the network.`);
+    console.error(`A4 FAILED — ${total} problem(s). The demo path must not reach third parties.`);
     process.exit(1);
   }
   console.log("A4 PASSED — zero live external network calls on the demo path.");

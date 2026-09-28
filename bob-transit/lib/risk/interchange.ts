@@ -469,6 +469,11 @@ export interface TransferEstimate {
 export function estimateTransferSeconds(
   input: TransferEstimateInput,
 ): TransferEstimate | null {
+  // A "transfer" from a platform to itself is not a transfer; refuse it rather
+  // than return a plausible-looking 45-second number a router could add to a
+  // journey.
+  if (input.fromStationId === input.toStationId) return null;
+
   const cluster = CLUSTER_BY_STATION.get(input.fromStationId);
   if (!cluster || CLUSTER_BY_STATION.get(input.toStationId) !== cluster) return null;
 

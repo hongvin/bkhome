@@ -559,8 +559,9 @@ class SqlTransitRepository implements TransitRepository {
 
 export interface CreateRepositoryOptions {
   /**
-   * Hosted Postgres connection string. Defaults to `DATABASE_URL`.
-   * When absent (the normal demo case) PGlite is used — no credential required.
+   * Hosted Postgres connection string.
+   *  - omitted (`undefined`) -> use `process.env.DATABASE_URL`
+   *  - `null` or `""`        -> force the embedded PGlite driver
    */
   databaseUrl?: string | null;
   /** Directory for a persistent PGlite database. Defaults to `PGLITE_DATA_DIR`, else in-memory. */
@@ -569,11 +570,18 @@ export interface CreateRepositoryOptions {
   migrate?: boolean;
 }
 
+/** `undefined` means "ask the environment"; `null`/`""` means "force PGlite". */
+export function effectiveDatabaseUrl(options: CreateRepositoryOptions = {}): string | null {
+  const url = options.databaseUrl === undefined ? process.env.DATABASE_URL : options.databaseUrl;
+  if (url === undefined || url === null) return null;
+  const trimmed = url.trim();
+  return trimmed.length > 0 ? trimmed : null;
+}
+
 export function resolveRepositoryDriver(
   options: CreateRepositoryOptions = {},
 ): RepositoryDriver {
-  const url = options.databaseUrl ?? process.env.DATABASE_URL;
-  return url && url.trim().length > 0 ? "pg" : "pglite";
+  return effectiveDatabaseUrl(options) ? "pg" : "pglite";
 }
 
 /**
@@ -583,8 +591,8 @@ export function resolveRepositoryDriver(
 export async function createRepository(
   options: CreateRepositoryOptions = {},
 ): Promise<TransitRepository> {
-  const driver = resolveRepositoryDriver(options);
-  const url = options.databaseUrl ?? process.env.DATABASE_URL;
+  const url = effectiveDatabaseUrl(options);
+  const driver: RepositoryDriver = url ? "pg" : "pglite";
 
   const executor: SqlExecutor =
     driver === "pg"

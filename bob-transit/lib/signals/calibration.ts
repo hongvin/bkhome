@@ -82,6 +82,13 @@ export const OFFICIAL_DENIAL_MULTIPLIER = 0.25;
 /** Scores computed from cached state while offline are visibly degraded. */
 export const OFFLINE_CACHE_MULTIPLIER = 0.85;
 
+/**
+ * Below this quality multiplier a post is not evidence at all: it is dropped
+ * from corroboration rather than merely down-weighted. Sarcasm and stale quotes
+ * both land far below it.
+ */
+export const JUNK_QUALITY_THRESHOLD = 0.5;
+
 /** Evidence older than the window decays linearly to this floor over 3 windows. */
 export const STALE_FLOOR = 0.15;
 export const DEFAULT_WINDOW_MINUTES = 90;

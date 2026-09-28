@@ -14,11 +14,11 @@
  * from corroboration entirely, so a joke can never become a crowd.
  */
 
+import { JUNK_QUALITY_THRESHOLD } from "@/lib/signals/calibration";
 import { defineTool } from "@/lib/signals/tool";
 import type { AuthenticityAssessment, PhraseParse } from "@/lib/signals/types";
 
-/** Below this multiplier a post is not evidence at all. */
-export const JUNK_QUALITY_THRESHOLD = 0.5;
+export { JUNK_QUALITY_THRESHOLD };
 
 interface Marker {
   re: RegExp;

@@ -1,0 +1,296 @@
+{
+  "_comment": [
+    "Hand-review corrections to the rule-based labeller, produced by reading every",
+    "one of the 165 archived media statements (headline + body) and comparing the",
+    "rule output against it. Each entry records WHY the human disagreed.",
+    "",
+    "Positive class (`INCIDENT`) = the operator reports an UNPLANNED event that",
+    "degraded, halted or closed a NAMED rail/BRT line or station. Follow-up",
+    "updates and restoration notices for such an event count as the same class.",
+    "",
+    "Everything else is excluded and reported separately: PLANNED_SERVICE_CHANGE",
+    "(works, tests, migrations, closures announced in advance) and NON_INCIDENT",
+    "(corporate, campaign, event, tender, policy, bus-route changes, retrospective",
+    "investigations, non-transit fires and accidents).",
+    "",
+    "The rules get 138/165 right on their own; these 27 overrides are the residue.",
+    "`sameEventAs` links a later statement to an earlier one about the same real-world event. Both statements stay in the corpus because the pipeline should have flagged both; the report counts distinct events from this field. It does NOT remove entries from recall."
+  ],
+  "overrides": [
+    {
+      "filename": "KENYATAAN-MEDIA-RAPID-RAIL-MOHON-MAAF-ATAS-GANGGUAN-PERKHIDMATAN-MRT-LALUAN-KAJANG.pdf",
+      "kind": "INCIDENT",
+      "issueType": "VEHICLE_BREAKDOWN",
+      "lineIds": [
+        "KGL"
+      ],
+      "note": "Rule said NON_INCIDENT because the body mentions card payment refunds. It is an apology for a real KGL disruption: train 22 failed near Phileo Damansara, single-track working to Semantan."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-PENGGUNA-TERJEJAS-AKIBAT-MASALAH-TEKNIKAL-SEBUAH-TREN-MRT-DI-STESEN-PHILEO-DAMANSARA-1.pdf",
+      "kind": "INCIDENT",
+      "issueType": "VEHICLE_BREAKDOWN",
+      "lineIds": [
+        "KGL"
+      ],
+      "note": "Rule said NON_INCIDENT on a closing-paragraph phrase ('berjalan lancar'). Headline and body report a train stranded at Phileo Damansara.",
+      "sameEventAs": "KENYATAAN-MEDIA-RAPID-RAIL-MOHON-MAAF-ATAS-GANGGUAN-PERKHIDMATAN-MRT-LALUAN-KAJANG.pdf"
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-MAKLUMBALAS-RAPID-KL-MENGENAI-PERKHIDMATAN-MRT-LALUAN-KAJANG-DAN-BAS-PERANTARA-MRT-Final-version.pdf",
+      "kind": "INCIDENT",
+      "issueType": "VEHICLE_BREAKDOWN",
+      "lineIds": [
+        "KGL"
+      ],
+      "note": "Rule said NON_INCIDENT on a weak marker. It is a substantive response about MRT Kajang service and the bridging buses during a disruption."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-MAKLUMBALAS-MEDIA-MENGENAI-ISU-DI-STESEN-LRT-JELATEK-DAN-STESEN-LRT-KLCC_FINAL.pdf",
+      "kind": "INCIDENT",
+      "issueType": "VEHICLE_BREAKDOWN",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule said NON_INCIDENT on 'PEMBUKAAN SEMULA PERKHIDMATAN'. Body reports train 59 withdrawn at Jelatek after a mechanical fault at 08:19 and crowding at KLCC."
+    },
+    {
+      "filename": "Siaran-Akhbar-Rapid-Rail-Mengenai-Kelewatan-Laluan-Kelana-Jaya.pdf",
+      "kind": "INCIDENT",
+      "issueType": "VEHICLE_BREAKDOWN",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule said NON_INCIDENT. Body reports train 59's brake alarm activating at 20:26 near Kampung Baru, 500 passengers evacuated, train stranded at KL Sentral."
+    },
+    {
+      "filename": "SIARAN-MEDIA-GANGGUAN-TEKNIKAL-JEJAS-JADUAL-PERKHIDMATAN-MRT-LALUAN-KAJANG-DAN-MRT-LALUAN-PUTRAJAYA.pdf",
+      "kind": "INCIDENT",
+      "issueType": "SIGNAL_FAULT",
+      "lineIds": [
+        "KGL",
+        "PYL"
+      ],
+      "note": "Rule said NON_INCIDENT because the body mentions 'pembayaran'. Real dual-line disruption: signal failure between Phileo Damansara and Pusat Bandar Damansara at 07:14."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-OPERASI-ALTERNATIF-PERKHIDMATAN-LRT-LALUAN-AMPANG-BERJALAN-LANCAR_FINAL.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule said NON_INCIDENT on 'BERJALAN LANCAR'. It is a service update during the Bandaraya viaduct closure, i.e. the same unplanned disruption.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL-1.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG"
+      ],
+      "note": "Rule said NON_INCIDENT on 'SIASATAN MENYELURUH'. It reports the ongoing suspension of AG/PH service between Masjid Jamek and Bandaraya after the viaduct cracked.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-SIASATAN-MENYELURUH-SEDANG-DIJALANKAN_FINAL.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG"
+      ],
+      "note": "Duplicate-version file of the 1 Feb 2023 investigation update; same unplanned Bandaraya viaduct disruption.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-SIASATAN-LRT-AMPANG.SRI-PETALING-SELESAI_FINAL.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule said NON_INCIDENT on 'SIASATAN ... SELESAI'. It states service was suspended between Masjid Jamek and Bandaraya since 27 Jan 2023 — a real disruption.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "SIARAN-MEDIA-PENGURANGAN-JUMLAH-TREN-YANG-BEROPERASI-DI-ANTARA-SENTUL-TIMUR-DAN-BANDARAYA_FINAL.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule said NON_INCIDENT. Trains withdrawn from service and headway cut to 12 min because the Bandaraya structure and track are damaged — a service degradation, not a planned change.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "RAPID-RAIL-KENYATAAN-MEDIA-PERKHIDMATAN-LRT-LALUAN-AMPANG-SRI-PETALING-PENGGANTUNGAN-OPERASI-ANTARA-STESEN-BANDARAYA-DAN-SENTUL-TIMUR-BERMULA-2-APRIL-2023-Ver4.pdf",
+      "kind": "PLANNED_SERVICE_CHANGE",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule said NON_INCIDENT. This is a scheduled suspension announced in advance (starts 2 April 2023) to allow repairs, so it belongs in PLANNED_SERVICE_CHANGE, not the unplanned-incident set."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-RAPID-KL-MELANJUTKAN-WAKTU-PUNCAK-LRT-LALUAN-AMPANGSRI-PETALING-MONOREL-BERMULA-ESOK.pdf",
+      "kind": "NON_INCIDENT",
+      "issueType": "DELAY",
+      "lineIds": [
+        "AG",
+        "PH",
+        "MR"
+      ],
+      "note": "Rule said INCIDENT. The statement extends peak-hour operating hours; it asserts no new service failure."
+    },
+    {
+      "filename": "RAPID-BUS-SIARAN-MEDIA-RAPID-BUS-MENDAPAT-SOKONGAN-DBKL_v4.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG"
+      ],
+      "note": "Follow-up on the Ampang corridor disruption. Issue type restated to the underlying cause (damaged structure at Bandaraya) rather than the bus-bridging subject of the release.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-SASARAN-200000-PURATA-PENGGUNAAN-HARIAN-SELARAS-PEMBUKAAN-SEMULA-LALUAN-ANTARA-STESEN-MASJID-JAMEK-DAN-STESEN-BANDARAYA-Ver-7.0.pdf",
+      "kind": "NON_INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule said NON_INCIDENT and that is right: despite the 'pembukaan semula' context it is a ridership-target announcement, not a report of a service failure."
+    },
+    {
+      "filename": "RAPID-RAIL-SIARAN-MEDIA-PENUMPANG-LRT-DARI-ARAH-AMPANG-DAN-PUTRA-HEIGHTS-BOLEH-TERUS-KE-MASJID-JAMEK-BERMULA-1-FEBRUARI-2024_FINAL1.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule said NON_INCIDENT. Through-running restored after the Bandaraya closure — a restoration notice for the same unplanned disruption.",
+      "sameEventAs": "KENYATAAN-MEDIA-KEMASKINI-PERKHIDMATAN-LRT-LALUAN-AMPANG-GANGGUAN-PERKHIDMATAN-DI-ANTARA-DUA-STESEN-ATAS-FAKTOR-KESELAMATAN_FINAL_v2.pdf"
+    },
+    {
+      "filename": "RAPID-RAIL-KENYATAAN-MEDIA-SISTEM-SEMBOYAN-YANG-DIPANAH-PETIR-GANGGU-PERKHIDMATAN-LALUAN-KELANA-JAYA-DI-ANTARA-STESEN-GOMBAK-DAN-TAMAN-MELATI_v1.pdf",
+      "kind": "INCIDENT",
+      "issueType": "SIGNAL_FAULT",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Kept as INCIDENT; issue type pinned to SIGNAL_FAULT because the lightning strike damaged the signalling system, which is the fault, not the weather."
+    },
+    {
+      "filename": "RAPID_RAIL_SIARAN_MEDIA_-_GANGGUAN_SUIS_LANDASAN_JEJAS_JADUAL_PERKHIDMATAN_LALUAN_MONOREL1.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "MR"
+      ],
+      "note": "Rule said PLANNED_SERVICE_CHANGE because the body mentions repair works. The headline is 'GANGGUAN SUIS LANDASAN' — an unplanned track-switch failure, and the works are the response to it."
+    },
+    {
+      "filename": "Rapid-Rail-Kenyataan-Media-GANGGUAN-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA_KERJA-KERJA-BAIK-PULIH-GIAT-DIJALANKAN.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule said PLANNED_SERVICE_CHANGE because of 'KERJA-KERJA BAIK PULIH'. The works are the response to an unplanned water-ingress track failure at 10:20 between Wangsa Maju and Sri Rampai."
+    },
+    {
+      "filename": "Rapid-Rail-Kenyataan-Media-GANGGUAN-PERKHIDMATAN-LALUAN-MONOREL-AKIBAT-DAHAN-POKOK-TUMBANG-KE-ATAS-LANDASAN-TREN.pdf",
+      "kind": "INCIDENT",
+      "issueType": "WEATHER",
+      "lineIds": [
+        "MR"
+      ],
+      "note": "Rule said NON_INCIDENT on 'PEMBAYARAN'. A tree fell on the monorail track at 14:20 near Raja Chulan; no service between KL Sentral and Medan Tuanku."
+    },
+    {
+      "filename": "Rapid-Rail-Kenyataan-Media-Stesen-KLCC-Ditutup-Sementara-Waktu_V1.pdf",
+      "kind": "INCIDENT",
+      "issueType": "UNKNOWN",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule said NON_INCIDENT. KLCC station closed to entering passengers after smoke was detected in the electronics room on 2 Jan 2025. No matching IssueType exists in the frozen enum (there is no FIRE/SMOKE member), so UNKNOWN is recorded rather than forcing a wrong label."
+    },
+    {
+      "filename": "Rapid-Rail-Kenyataan-Media-STESEN-KLCC-KEMBALI-DIBUKA-KEPADA-PENUMPANG_020125.pdf",
+      "kind": "INCIDENT",
+      "issueType": "UNKNOWN",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Restoration notice for the 2 Jan 2025 KLCC closure. Same reasoning on UNKNOWN issue type.",
+      "sameEventAs": "Rapid-Rail-Kenyataan-Media-Stesen-KLCC-Ditutup-Sementara-Waktu_V1.pdf"
+    },
+    {
+      "filename": "Rapid-Rail-Siaran-Media-PERKHIDMATAN-MRT-LALUAN-KAJANG-KEMBALI-PULIH-BERMULA-JAM-10.08-MALAM.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "KGL"
+      ],
+      "note": "Rule said NON_INCIDENT. A restoration notice ('kembali pulih') for a KGL disruption."
+    },
+    {
+      "filename": "Rapid-Rail-Siaran-Media-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-KEMBALI-PULIH-BERMULA-JAM-3.30-PETANG.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule said PLANNED_SERVICE_CHANGE. A restoration notice for a KJ disruption, not a planned works notice.",
+      "sameEventAs": "Rapid-Rail-Kenyataan-Media-GANGGUAN-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA_KERJA-KERJA-BAIK-PULIH-GIAT-DIJALANKAN.pdf"
+    },
+    {
+      "filename": "RAPID-RAIL-SIARAN-MEDIA-KEROSAKAN-TEKNIKAL-LANDASAN-BERHAMPIRAN-STESEN-PWTC-JEJAS-JADUAL-PERKHIDMATAN-LRT-LALUAN-AMPANG_SRI-PETALING.pdf",
+      "kind": "INCIDENT",
+      "issueType": "TRACK_FAULT",
+      "lineIds": [
+        "AG",
+        "PH"
+      ],
+      "note": "Rule got the class right but chose VEHICLE_BREAKDOWN; the statement says 'kerosakan teknikal pada landasan' — a track fault at PWTC at 09:58."
+    },
+    {
+      "filename": "RAPID-RAIL-KENYATAAN-MEDIA-GANGGUAN-BEKALAN-KUASA-JEJAS-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-ANTARA-STESEN-LRT-AMPANG-PARK-DAN-STESEN-LRT-MASJID-JAMEK.pdf",
+      "kind": "INCIDENT",
+      "issueType": "UNKNOWN",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule chose ELEVATOR_FAULT from the phrase 'lif, eskalator dan lampu tidak dapat berfungsi', but the cause is a traction/substation power-supply failure across five underground stations at 19:50. The frozen enum has no POWER member, so UNKNOWN is the honest label."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-PENJADUALAN-SEMULA-KERJA-KERJA-NAIK-TARAF-SISTEM-SEMBOYAN-KJL_REV3.pdf",
+      "kind": "PLANNED_SERVICE_CHANGE",
+      "issueType": "SIGNAL_FAULT",
+      "lineIds": [
+        "KJ"
+      ],
+      "note": "Rule said NON_INCIDENT. It is a rescheduling of planned signalling upgrade works, so it belongs in PLANNED_SERVICE_CHANGE."
+    },
+    {
+      "filename": "Rapid-Bus-Kenyataan-media_Perkhidmatan-Rapid-Bus-masih-belum-pulih_19.12.2021.pdf",
+      "kind": "NON_INCIDENT",
+      "issueType": "WEATHER",
+      "lineIds": [],
+      "note": "Rule said INCIDENT with MR+BRT. It is a genuine flood-driven outage but names 68 BUS routes, not a rail or BRT line, so it falls outside the positive class. Recorded here so the exclusion is visible rather than silent."
+    },
+    {
+      "filename": "KENYATAAN-MEDIA-KEMASKINI-GANGGUAN-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-PERKHIDMATAN-KEMBALI-PULIH-SEPENUHNYA-PADA-JAM-9.51-MALAM.pdf",
+      "sameEventAs": "RAPID-RAIL-KENYATAAN-MEDIA-GANGGUAN-BEKALAN-KUASA-JEJAS-PERKHIDMATAN-LRT-LALUAN-KELANA-JAYA-ANTARA-STESEN-LRT-AMPANG-PARK-DAN-STESEN-LRT-MASJID-JAMEK.pdf",
+      "note": "Restoration statement for the same 6 Mar 2023 Kelana Jaya power-supply disruption."
+    }
+  ]
+}

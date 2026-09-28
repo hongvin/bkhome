@@ -10,6 +10,7 @@ export {
   getRepository,
   closeRepositorySingleton,
   resolveRepositoryDriver,
+  effectiveDatabaseUrl,
   SCHEMA_VERSION,
   SCHEMA_SQL,
   MIGRATIONS,
